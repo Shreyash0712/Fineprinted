@@ -1,0 +1,214 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { GradeBadge } from "../components/grade";
+import { SiteFooter } from "../components/site-footer";
+import { SiteHeader } from "../components/site-header";
+
+export const metadata: Metadata = {
+  title: "About — Fineprint",
+  description:
+    "Why Fineprint exists, how the AI pipeline works, and how services earn their grades.",
+};
+
+const TAXONOMY: { tag: string; label: string; points: string; tone: string; desc: string }[] = [
+  {
+    tag: "FORCED_ARBITRATION",
+    label: "Forced arbitration",
+    points: "−30",
+    tone: "text-red-600 dark:text-red-400",
+    desc: "You waive your right to a trial by jury or to join a class action. Disputes go to an arbitrator — often one the company picks.",
+  },
+  {
+    tag: "UNILATERAL_CHANGE",
+    label: "Silent rule changes",
+    points: "−30",
+    tone: "text-red-600 dark:text-red-400",
+    desc: "The service can rewrite the terms at any time without telling you. Continued use means automatic agreement.",
+  },
+  {
+    tag: "DATA_SALE",
+    label: "Data sale",
+    points: "−30",
+    tone: "text-red-600 dark:text-red-400",
+    desc: "Your personal data is explicitly sold or shared with data brokers.",
+  },
+  {
+    tag: "CONTENT_LICENSE_BROAD",
+    label: "Broad content license",
+    points: "−15",
+    tone: "text-orange-600 dark:text-orange-400",
+    desc: "The service claims a perpetual, often irrevocable license to everything you upload or create.",
+  },
+  {
+    tag: "ACCOUNT_TERMINATION",
+    label: "Arbitrary termination",
+    points: "−15",
+    tone: "text-orange-600 dark:text-orange-400",
+    desc: "Your account — and everything in it — can be terminated at any time, for any reason or none.",
+  },
+  {
+    tag: "TRACKING_THIRD_PARTY",
+    label: "Third-party tracking",
+    points: "−5",
+    tone: "text-yellow-600 dark:text-yellow-400",
+    desc: "Extensive tracking and sharing with third parties for targeted advertising.",
+  },
+  {
+    tag: "NOTICE_OF_CHANGE",
+    label: "Advance notice promise",
+    points: "+5",
+    tone: "text-emerald-600 dark:text-emerald-400",
+    desc: "A pro-user clause: the service guarantees 30+ days notice before terms change.",
+  },
+];
+
+const GRADES = [
+  { grade: "A" as const, range: "90–100", desc: "Respectful terms. Rare." },
+  { grade: "B" as const, range: "75–89", desc: "Minor concerns, nothing alarming." },
+  { grade: "C" as const, range: "50–74", desc: "Several hostile clauses worth knowing about." },
+  { grade: "D" as const, range: "25–49", desc: "The fine print works against you." },
+  { grade: "F" as const, range: "< 25", desc: "Read nothing, agree to everything? Not here." },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      <SiteHeader />
+      <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-14">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          Nobody reads the terms.
+          <br />
+          <span className="text-indigo-500 dark:text-indigo-400">So we built something that does.</span>
+        </h1>
+
+        <div className="mt-8 space-y-5 leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p>
+            Studies consistently show that fewer than 1% of users read terms of
+            service agreements — and the ones who try would need weeks per year
+            to get through them all. Companies know this. Some of the most
+            consequential clauses on the internet — giving up your right to
+            sue, licensing away your creations, agreeing to future rules you
+            haven&apos;t seen — hide in documents designed not to be read.
+          </p>
+          <p>
+            <strong>Fineprint reads them for you.</strong> We continuously
+            monitor the Terms of Service, Privacy Policies, and related legal
+            documents of tracked services. Every document is split into
+            individual clauses, and an AI classifies each one against a strict
+            taxonomy of known user-hostile patterns. Every finding is reviewed
+            by a human before it&apos;s published — no auto-generated alarmism.
+          </p>
+          <p>
+            And because terms change quietly,{" "}
+            <Link href="/saved" className="font-medium text-indigo-500 hover:underline dark:text-indigo-400">
+              saving a service
+            </Link>{" "}
+            means you&apos;ll see what changed, when, and what it means — in
+            plain English, not legalese.
+          </p>
+        </div>
+
+        {/* Grading */}
+        <section id="grading" className="mt-16 scroll-mt-24">
+          <h2 className="text-2xl font-bold tracking-tight">How grading works</h2>
+          <p className="mt-3 leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Every service starts with <strong className="text-zinc-900 dark:text-zinc-100">100 points</strong>.
+            Each distinct hostile pattern found in its active documents deducts
+            points; genuinely pro-user clauses earn some back. The final score
+            maps to a letter grade:
+          </p>
+          <ul className="mt-6 space-y-3">
+            {GRADES.map(({ grade, range, desc }) => (
+              <li
+                key={grade}
+                className="flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50"
+              >
+                <GradeBadge grade={grade} size="sm" />
+                <span className="w-16 text-sm tabular-nums text-zinc-500 dark:text-zinc-400">
+                  {range}
+                </span>
+                <span className="text-sm">{desc}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Taxonomy */}
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold tracking-tight">What we look for</h2>
+          <p className="mt-3 leading-relaxed text-zinc-600 dark:text-zinc-400">
+            The AI doesn&apos;t free-style its judgments. Every clause is
+            classified against a fixed taxonomy with fixed point values, so
+            grades are consistent and comparable across services:
+          </p>
+          <ul className="mt-6 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white shadow-sm dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900/50">
+            {TAXONOMY.map((t) => (
+              <li key={t.tag} className="flex gap-4 p-4">
+                <span className={`w-12 shrink-0 text-right font-mono text-sm font-bold tabular-nums ${t.tone}`}>
+                  {t.points}
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold">{t.label}</span>
+                  <span className="mt-0.5 block text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    {t.desc}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Trust */}
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold tracking-tight">Why you can trust the grades</h2>
+          <ul className="mt-5 space-y-4 text-zinc-700 dark:text-zinc-300">
+            <TrustItem title="Human-reviewed, always.">
+              The AI proposes; a human disposes. No grade, flag, or change
+              alert is published without a person signing off on it.
+            </TrustItem>
+            <TrustItem title="Confidence thresholds.">
+              When the AI isn&apos;t sure a clause fits a category, the finding
+              is excluded from the grade until a human explicitly approves it.
+            </TrustItem>
+            <TrustItem title="Semantic change detection.">
+              We diff documents by meaning, not formatting — a reworded
+              sentence is a change; a reshuffled page layout is not.
+            </TrustItem>
+            <TrustItem title="Receipts included.">
+              Every flag links to the original clause text, so you can read
+              exactly what the document says and judge for yourself.
+            </TrustItem>
+          </ul>
+        </section>
+
+        <section className="mt-16 rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-relaxed text-zinc-500 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-400">
+          <strong className="text-zinc-700 dark:text-zinc-300">A note on limits:</strong>{" "}
+          Fineprint is an automated analysis reviewed by humans — it is
+          informational, not legal advice. Grades reflect the patterns we
+          detect in public documents at the time of analysis, and a good grade
+          is not an endorsement.
+        </section>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
+function TrustItem({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <li className="flex gap-3">
+      <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-emerald-500" />
+      <p className="text-sm leading-relaxed">
+        <strong>{title}</strong> {children}
+      </p>
+    </li>
+  );
+}
+
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}

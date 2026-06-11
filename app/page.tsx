@@ -1,65 +1,133 @@
-import Image from "next/image";
+import Link from "next/link";
+import { createPublicClient } from "@/lib/supabase/public";
+import type { Service } from "@/lib/types";
+import { ServiceExplorer } from "./components/service-explorer";
+import { SiteFooter } from "./components/site-footer";
+import { SiteHeader } from "./components/site-header";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const db = createPublicClient();
+  const [{ data }, { count: flaggedCount }, { count: changeCount }] = await Promise.all([
+    db.from("services").select("*").eq("status", "active").order("name"),
+    db
+      .from("classifications")
+      .select("*", { count: "exact", head: true })
+      .neq("category", "OTHER"),
+    db
+      .from("change_events")
+      .select("*", { count: "exact", head: true })
+      .eq("status", "published"),
+  ]);
+  const services = (data ?? []) as Service[];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <SiteHeader />
+      <main className="mx-auto w-full max-w-6xl flex-1 px-6 pb-24">
+        {/* Hero */}
+        <section className="relative py-20 text-center sm:py-28">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 -top-24 mx-auto h-80 max-w-3xl rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-500/15"
+          />
+          <p className="mb-4 inline-block rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600 dark:border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-300">
+            The terms you never read, read for you
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+          <h1 className="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl">
+            Know what you&apos;re{" "}
+            <span className="bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+              agreeing to
+            </span>
+          </h1>
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
+            &ldquo;I have read and agree to the Terms&rdquo; is the biggest lie on
+            the internet. Fineprint reads the legal fine print of the services
+            you use, flags the clauses that work against you, and tells you —
+            in plain English — when the rules quietly change.
+          </p>
+
+          {/* Stats */}
+          <dl className="mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-4">
+            <Stat value={services.length} label="services graded" />
+            <Stat value={flaggedCount ?? 0} label="clauses flagged" />
+            <Stat value={changeCount ?? 0} label="changes caught" />
+          </dl>
+        </section>
+
+        {/* Search + grid */}
+        <section id="browse" className="scroll-mt-24">
+          <ServiceExplorer services={services} />
+        </section>
+
+        {/* How it works */}
+        <section className="mt-28">
+          <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+            How it works
+          </h2>
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            <Step
+              n={1}
+              title="We watch the documents"
+              body="Every tracked service's Terms of Service and Privacy Policy is fetched, normalized, and compared against the last version — down to the individual clause."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <Step
+              n={2}
+              title="AI reads the fine print"
+              body="Changed clauses are classified against a strict taxonomy of user-hostile patterns — forced arbitration, data sales, silent rule changes — and explained in plain English."
+            />
+            <Step
+              n={3}
+              title="Humans sign off"
+              body="Nothing reaches this site without a human reviewing the AI's work. Then grades update and everyone watching the service sees what changed."
+            />
+          </div>
+          <p className="mt-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
+            Curious about the grading scale and clause taxonomy?{" "}
+            <Link href="/about" className="font-medium text-indigo-500 hover:underline dark:text-indigo-400">
+              Read how Fineprint works →
+            </Link>
+          </p>
+        </section>
+
+        {/* CTA */}
+        <section className="mt-24 overflow-hidden rounded-3xl border border-indigo-200/60 bg-gradient-to-br from-indigo-50 via-white to-violet-50 p-10 text-center dark:border-indigo-500/20 dark:from-indigo-500/10 dark:via-zinc-950 dark:to-violet-500/10">
+          <h2 className="text-2xl font-bold tracking-tight">Missing a service you use?</h2>
+          <p className="mx-auto mt-2 max-w-xl text-zinc-600 dark:text-zinc-400">
+            Tell us what to track. Requests are voted on by other users and the
+            most-wanted services get analyzed first.
+          </p>
+          <Link
+            href="/request"
+            className="mt-6 inline-block rounded-xl bg-indigo-500 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-400"
           >
-            Documentation
-          </a>
-        </div>
+            Request a service
+          </Link>
+        </section>
       </main>
+      <SiteFooter />
+    </>
+  );
+}
+
+function Stat({ value, label }: { value: number; label: string }) {
+  return (
+    <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+      <dd className="text-3xl font-extrabold tabular-nums tracking-tight">{value}</dd>
+      <dt className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">{label}</dt>
+    </div>
+  );
+}
+
+function Step({ n, title, body }: { n: number; title: string; body: string }) {
+  return (
+    <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+      <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500/10 text-sm font-bold text-indigo-600 dark:text-indigo-300">
+        {n}
+      </span>
+      <h3 className="mt-4 font-semibold">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{body}</p>
     </div>
   );
 }
