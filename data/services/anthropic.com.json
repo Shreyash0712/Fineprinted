@@ -4,7 +4,7 @@
   "root_domain": "anthropic.com",
   "grade": "A",
   "score": 100,
-  "generated_at": "2026-06-11T21:14:24.148Z",
+  "generated_at": "2026-06-11T21:57:16.383Z",
   "last_published_at": "2026-06-11T15:38:52.889+00:00",
   "summary": {
     "good": [
@@ -38,6 +38,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -48,6 +49,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -58,6 +60,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -68,6 +71,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -78,6 +82,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -88,6 +93,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -98,6 +104,7 @@
     {
       "document_type": "cookie_policy",
       "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
@@ -108,6 +115,7 @@
     {
       "document_type": "privacy_policy",
       "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",

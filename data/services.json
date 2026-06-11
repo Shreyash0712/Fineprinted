@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-11T21:14:33.361Z",
+  "generated_at": "2026-06-11T21:57:25.953Z",
   "stats": {
     "services": 4,
-    "flagged_clauses": 90,
-    "changes_published": 8
+    "flagged_clauses": 121,
+    "changes_published": 10
   },
   "services": [
     {
@@ -34,7 +34,7 @@
       "current_score": 100,
       "current_grade": "A",
       "created_at": "2026-06-11T16:04:29.549174+00:00",
-      "updated_at": "2026-06-11T18:48:03.107+00:00"
+      "updated_at": "2026-06-11T21:57:07.717+00:00"
     },
     {
       "id": "b6ec649e-c39c-496c-b237-d3e5c593b29c",
@@ -44,7 +44,7 @@
       "current_score": 10,
       "current_grade": "F",
       "created_at": "2026-06-11T16:06:29.693676+00:00",
-      "updated_at": "2026-06-11T16:24:58.956+00:00"
+      "updated_at": "2026-06-11T19:18:09.670122+00:00"
     }
   ]
 }

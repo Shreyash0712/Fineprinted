@@ -4,7 +4,7 @@
   "root_domain": "github.com",
   "grade": "D",
   "score": 45,
-  "generated_at": "2026-06-11T21:14:26.801Z",
+  "generated_at": "2026-06-11T21:57:19.789Z",
   "last_published_at": "2026-06-11T16:49:23.427+00:00",
   "summary": {
     "good": [
@@ -40,6 +40,7 @@
     {
       "document_type": "terms_of_service",
       "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
@@ -50,6 +51,7 @@
     {
       "document_type": "terms_of_service",
       "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
@@ -60,6 +62,7 @@
     {
       "document_type": "terms_of_service",
       "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
@@ -70,6 +73,7 @@
     {
       "document_type": "terms_of_service",
       "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
@@ -80,6 +84,7 @@
     {
       "document_type": "terms_of_service",
       "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
@@ -90,6 +95,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -100,6 +106,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -110,6 +117,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -120,6 +128,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -130,6 +139,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -140,6 +150,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -150,6 +161,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -160,6 +172,7 @@
     {
       "document_type": "terms_of_service",
       "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
@@ -170,6 +183,7 @@
     {
       "document_type": "terms_of_service",
       "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
@@ -180,6 +194,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -190,6 +205,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -200,6 +216,7 @@
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
@@ -210,6 +227,7 @@
     {
       "document_type": "terms_of_service",
       "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
@@ -220,6 +238,7 @@
     {
       "document_type": "terms_of_service",
       "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
@@ -230,6 +249,7 @@
     {
       "document_type": "terms_of_service",
       "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
@@ -240,6 +260,7 @@
     {
       "document_type": "terms_of_service",
       "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",

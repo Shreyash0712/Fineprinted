@@ -4,8 +4,8 @@
   "root_domain": "netflix.com",
   "grade": "F",
   "score": 10,
-  "generated_at": "2026-06-11T21:14:33.343Z",
-  "last_published_at": "2026-06-11T16:24:58.956+00:00",
+  "generated_at": "2026-06-11T21:57:25.951Z",
+  "last_published_at": "2026-06-11T19:18:09.670122+00:00",
   "summary": {
     "good": [
       {
@@ -60,16 +60,348 @@
     {
       "document_type": "terms_of_service",
       "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Forced Arbitration",
-      "summary": "You agree you can only sue Netflix individually, not as part of a class or representative lawsuit.",
-      "excerpt": "## Netflix Terms of Use\n\n5\\. Warranties and Limitations on Liability. The Netflix service is provided \"as is\" and without warranty or condition. In particular, the service may not be uninterrupted or error-free. You waive all special, indirect and consequential damages against us. These terms will not limit any non-waivable warranties or mandatory consumer protection rights that apply to you.\n\n6\\. Class Action Waiver. WHERE PERMITTED UNDER THE APPLICABLE LAW, YOU AND NETFLIX AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CL",
+      "summary": "You must settle most disputes with Netflix through arbitration instead of a court trial, unless you opt out within a limited time, meaning you give up the right to a judge or jury.",
+      "excerpt": "## Netflix Terms of Use\n\nWelcome to Netflix! Netflix provides a service that allows users to access entertainment content (\"Netflix content\") over the Internet on certain Internet-connected TV's, computers and other devices (\"Netflix supported devices\").\n\nThe Netflix service is provided to you by Netflix, Inc. You have accepted these Terms of Use, which govern your use of our service. As used in these Terms of Use, \"Netflix service\", \"our service\" or \"the service\" means the service provided by Netflix for discovering and accessing Netflix content. This includes all personalization, features an",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "Netflix can automatically send you software updates and changes without giving you any notice or asking for permission.",
+      "excerpt": "## Netflix Terms of Use\n\n1.10. Netflix Software and Updates. The Netflix software is developed by, or for, Netflix and may solely be used for authorized access to Netflix content through Netflix supported devices. This software may vary by device and medium, and functionalities may also differ between devices. By using our service, you agree to receive, without further notice or prompting, updated versions of the Netflix and related third-party software.\n\n1.11. Device Responsibility. By using our service, you agree to look solely to the entity that manufactured and/or sold you the Netflix supp",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "If you let others use your Netflix account, they must also agree to resolve any disputes through arbitration, meaning you give up the right to a jury trial or class action.",
+      "excerpt": "## Netflix Terms of Use\n\n4\\. Account Access. You are responsible for any activity that occurs through the Netflix account. All persons to whom you give access to your account, whether or not such sharing of access is permitted by these Terms of Use, are bound by these Terms of Use, including the requirement to arbitrate disputes. By allowing others to access the account (which includes access to information on viewing activity for the account), you also agree that such individuals are acting on your behalf and that you are bound by any changes that they may make to the account, including chang",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You give up your right to join a class action lawsuit, have a jury trial, or seek public injunctions, meaning disputes must be handled individually, likely through arbitration.",
+      "excerpt": "## Netflix Terms of Use\n\n5.3. YOU MAY ENCOUNTER THIRD PARTY ADVERTISEMENTS OR OTHER COMMERCIAL CONTENT ON THE NETFLIX SERVICE. NETFLIX DOES NOT ENDORSE OR SPONSOR ANY ADVERTISED PRODUCTS OR SERVICES AND TAKES NO RESPONSIBILITY FOR THE PRODUCTS OR SERVICES PROVIDED BY ADVERTISERS. ANY INTERACTIONS WITH ADVERTISERS, INCLUDING THROUGH ENGAGEMENT WITH INTERACTIVE ADVERTISEMENTS, ARE AT YOUR OWN OPTION AND RISK AND YOU AGREE THAT NETFLIX IS NOT LIABLE FOR ANY DAMAGES THAT YOU MAY INCUR AS A RESULT OF SUCH INTERACTIONS.\n\n5.4. NOTHING IN THESE TERMS OF USE SHALL AFFECT ANY NON-WAIVABLE STATUTORY RIGH",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You agree to bring any disputes with Netflix individually and cannot join or start class or collective lawsuits, except Netflix may choose to handle some claims as a class in court, limiting your arbitration options.",
+      "excerpt": "## Netflix Terms of Use\n\n6.1. Class, Consolidated, and Representative Action Waiver. To the maximum extent permitted by applicable law, for any disputes between you and Netflix that are not subject to the requirement to arbitrate explained below, you and Netflix expressly agree to pursue those non-arbitrable disputes on an individual basis only. This means that you and Netflix will not seek to bring, join, or participate in any class, consolidated, or representative action, collective or class-wide arbitration, or any other action where another individual or entity acts in a representative cap",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You give up the right to ask a court for public injunctive relief and agree that most disputes will be resolved through mandatory arbitration, with any injunctive claims handled separately in court.",
+      "excerpt": "## Netflix Terms of Use\n\n6.2. Public Injunctive Relief Waiver. To the fullest extent permitted by applicable law (including taking into account federal preemption of state laws), you and Netflix also waive the right to seek public injunctive relief. If a court determines that the right to seek public injunctive relief cannot be waived in a particular matter, and if other aspects of the matter must be arbitrated pursuant to the Arbitration Agreement, then the request for public injunctive relief will be severed from the rest of any claim (including any other relief or remedies associated with t",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You give up your right to a jury trial for any court claims against Netflix.",
+      "excerpt": "## Netflix Terms of Use\n\n6.3. Jury Trial Waiver. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, FOR ANY CLAIMS THAT PROCEED IN COURT, YOU AND NETFLIX ALSO WAIVE ANY CONSTITUTIONAL AND STATUTORY RIGHTS TO A TRIAL BY JURY.\n\n6.4. Waiver Enforceability. Any arguments that one or more of the waivers described in this section are void, voidable, unconscionable, or otherwise unenforceable as written must be resolved by a court of competent jurisdiction, not by an arbitrator.\n\n7\\. Miscellaneous\n\n7.1. Governing Law. These Terms of Use shall be governed by and construed in accordance with the laws o",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "Netflix requires you to resolve disputes through arbitration instead of court, limiting your right to a jury trial or class action unless you opt out within the allowed time.",
+      "excerpt": "## Netflix Terms of Use\n\n7.8. Electronic Communication. We will send you information relating to your account (e.g. payment authorizations, invoices, changes in contact details or Payment Method, confirmation messages, notices) in electronic form only. You agree that any notices, agreements, disclosures or other communications that we send to you electronically will satisfy any legal communication requirements, including that such communications be in writing.\n\n8\\. Arbitration Agreement\n\nTHIS SECTION OF THE TERMS OF USE IS REFERRED TO AS THE “ARBITRATION AGREEMENT.” PLEASE READ THIS SECTION CA",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "If you have a dispute with Netflix, you must first try informal resolution and, if that fails, the dispute will be settled through arbitration rather than a court trial or jury.",
+      "excerpt": "## Netflix Terms of Use\n\nIf disagreements between us arise, Netflix seeks to resolve those disagreements amicably and fairly. Accordingly, our dispute resolution process encourages us to work together to reconcile any disagreements. This includes an informal dispute resolution process and, if we don’t reach acceptable solutions through informal means, going to arbitration. Please read this Arbitration Agreement for more information.",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You agree to resolve any legal disputes with Netflix through arbitration instead of going to court, covering almost all types of claims, including those involving minors.",
+      "excerpt": "## Netflix Terms of Use\n\n(a) Scope of Arbitration Agreement. This agreement to arbitrate applies to any “Dispute” between you and Netflix, excluding those exceptions listed below. “Dispute” means any dispute, claim, or controversy, whether based in contract, tort, statute, fraud, misrepresentation, or any other legal theory, for which either you or Netflix seeks legal recourse, including disputes regarding the validity, enforceability, or scope of this agreement to arbitrate or any portion of it. In Disputes involving minors, Disputes asserted both by the minor(s) and/or by the minor’s or mino",
+      "confidence": 100
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "Netflix requires most disputes to be resolved through arbitration, but you can go to court for the specific types of claims listed in the exceptions.",
+      "excerpt": "## Netflix Terms of Use\n\nThe exceptions to this mandatory arbitration requirement are (i) claims that can be brought as individual actions in small-claims court; (ii) pursuit of enforcement actions through a government agency if applicable law allows it; (iii) an action to compel or uphold any prior arbitration decision; (iv) your or Netflix’s right to seek injunctive relief in a court of law to preserve the status quo while an arbitration proceeds; (v) claims of intellectual property infringement (including claims of piracy or the unauthorized acquisition of a third party’s Netflix account); ",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires you to resolve disputes through arbitration, while allowing Netflix to terminate or suspend your account at its discretion without using the arbitration process.",
+      "excerpt": "## Netflix Terms of Use\n\nThis Arbitration Agreement applies only to Disputes and does not prevent you or Netflix from taking unilateral actions that they are entitled to take under these Terms of Use or any other applicable law. This means, for example, that you can terminate your Netflix account without following this process for resolving Disputes. Likewise, Netflix may suspend or terminate an account (for example, because it detected a violation of these Terms of Use), in its sole discretion, without following this dispute resolution process, but you may use the dispute resolution process t",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You must follow Netflix's notice and informal resolution steps before you can go to arbitration, and you cannot sue in court for most disputes, meaning you waive the right to a jury trial.",
+      "excerpt": "## Netflix Terms of Use\n\nThe Notice of Dispute requirement is designed to allow Netflix (or you, if Netflix has asserted a Dispute against you) to make a fair, fact-based offer of settlement if Netflix (or you) chooses to do so. You and Netflix cannot proceed to arbitration unless all information required in a Notice of Dispute is provided, you have participated in good faith in the Informal Resolution process, and the Informal Resolution period has expired. If you or Netflix proceed to arbitration without having provided a compliant Notice of Dispute, and without having engaged in Informal Re",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You must resolve disputes through individual arbitration and cannot bring a class action; you may use small‑claims court for qualifying cases, but arbitration is mandatory for other disputes.",
+      "excerpt": "## Netflix Terms of Use\n\nAll applicable statutes of limitation are deemed to be tolled beginning on the date a compliant Notice of Dispute is sent.\n\n(c) Small Claims Court. You and Netflix agree that, notwithstanding the obligation to arbitrate Disputes, Disputes that qualify for small-claims court in the county where you live may be brought as individual actions in such small-claims courts. Netflix hopes you will try Informal Resolution first, and you must do so before commencing an arbitration, but you do not have to complete the Informal Resolution process before going to small-claims court",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You agree that any disputes with Netflix must be resolved through binding, individual arbitration rather than a court trial or class action.",
+      "excerpt": "## Netflix Terms of Use\n\nYou and Netflix agree that Disputes will be settled by Binding, Individual, Confidential Arbitration conducted by JAMS, according to the FAA, federal arbitration law, the JAMS Streamlined Arbitration Rules and Procedures, and, if applicable, the JAMS Mass Arbitration Procedures and Guidelines (together, the “JAMS Rules”), available at [https://www.jamsadr.com/adr-rules-procedures](https://www.jamsadr.com/adr-rules-procedures), as modified by the terms of this Arbitration Agreement. The arbitrator will apply this Arbitration Agreement and all other applicable contractua",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You must resolve any disputes with Netflix through individual arbitration, not through a court trial or class action, and the arbitrator cannot award relief to anyone else.",
+      "excerpt": "## Netflix Terms of Use\n\nIf JAMS is not available or willing to arbitrate, you and Netflix will mutually select an alternative arbitral forum. If you and Netflix cannot agree on an alternative arbitral forum, either party may invoke 9 U.S.C. § 5 to request that a court of competent jurisdiction appoint an arbitrator. If there is a dispute over which arbitration provider will administer the arbitration, only a court (and not an arbitrator or arbitration administrator) can resolve that dispute, and the arbitration will be stayed until the court resolves that dispute.\n\n“Arbitration” means that an",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires disputes to be resolved through binding arbitration, limiting court appeals and effectively waiving the right to a jury trial or class action.",
+      "excerpt": "## Netflix Terms of Use\n\n“Binding” means that both you and Netflix will have to live with the arbitrator’s decision, except to the limited extent that appeals to a court are permitted under the FAA. As limited by the FAA, this Arbitration Agreement, and the rules applicable to the arbitration, the arbitrator will have exclusive authority to make all procedural and substantive decisions regarding any Dispute and to grant any remedy that would otherwise be available in court, including the power to determine the question of arbitrability. The arbitrator will have authority to award temporary, in",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You agree to resolve disputes through arbitration with a single arbitrator, following JAMS rules, rather than going to court.",
+      "excerpt": "## Netflix Terms of Use\n\n(e) Arbitration Procedure and Forum. The arbitration will be conducted by a single arbitrator appointed according to the JAMS Rules. JAMS will propose arbitrator candidates who have experience resolving disputes of the type asserted in the arbitration demand. The arbitrator will be bound by the JAMS Rules and by the terms of this Arbitration Agreement. You and Netflix agree that the arbitration will be conducted in the English language, all documents must be submitted to the arbitrator in English, and—unless the arbitrator orders otherwise for reasons of financial hard",
+      "confidence": 70
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "If you have a dispute, you must resolve it through arbitration rather than a court trial, with the process and hearing format defined by the clause.",
+      "excerpt": "## Netflix Terms of Use\n\nFor Disputes in which the claimant seeks less than $10,000 United States Dollars, the arbitrator will decide the matter solely on the basis of written submissions, without a formal hearing, unless the arbitrator decides that a formal hearing is necessary. For matters in which the claimant seeks $10,000 United States Dollars or more, or smaller matters in which the arbitrator determines a hearing to be necessary, hearings will be conducted by video or telephone, unless the arbitrator determines that an in-person hearing is necessary. If an in-person hearing is required,",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You agree to resolve disputes through arbitration, giving up the right to a court trial or jury, and the arbitrator can issue orders and decisions as described.",
+      "excerpt": "## Netflix Terms of Use\n\nThe arbitrator may issue orders (including subpoenas to third parties, to the extent permitted by law) allowing you and Netflix to conduct discovery sufficient to allow each party to prepare their claims and/or defenses, taking into consideration both the amount in controversy and the principle that arbitration is designed to be a speedy and efficient method for resolving disputes. For example, you and Netflix agree that the Apex Doctrine applies and therefore precludes depositions of either party’s current or former high-level officers absent a showing that the office",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You must resolve disputes with Netflix through individual arbitration, not through a jury trial or class action, and any award is limited to your specific case.",
+      "excerpt": "## Netflix Terms of Use\n\nTo the fullest extent allowed by applicable law, the arbitrator may award only legal or equitable remedies that are Individual to you or Netflix to satisfy one of our individual claims that the arbitrator determines are supported by credible relevant evidence.\n\nAn arbitration award, and any judgment confirming it, applies only to that specific case; it cannot be used or offered as precedent in any other case except to enforce the award itself. For the sake of clarification only, rulings in arbitrations involving Netflix and other persons have no preclusive effect in an",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "If arbitration awards exceed $1 million, either side can appeal to an arbitration panel, and consumer arbitration fees follow JAMS rules.",
+      "excerpt": "## Netflix Terms of Use\n\nIf the arbitration yields a monetary award that exceeds $1,000,000 United States Dollars, or a monetary award plus injunctive relief that the losing party demonstrates will cost more than $1,000,000 United States Dollars to implement, or if the arbitration demand included a request for such relief exceeding $1,000,000 United States Dollars that the arbitrator declines to award, either party has the right to appeal the award to an arbitration appellate panel. The notice of appeal must be served in writing on the opposing party within 14 days after the award becomes fina",
+      "confidence": 80
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "If many similar disputes are filed together, Netflix only covers its portion of the arbitration fees and you must pay your share, meaning you must resolve disputes through arbitration rather than a court trial.",
+      "excerpt": "## Netflix Terms of Use\n\n(i) Coordinated Filings. If 25 or more Disputes are initiated with JAMS that raise similar claims, and counsel for the claimants are the same or coordinated, these will be considered “Coordinated Cases.” Netflix will pay only its share of arbitration fees for Coordinated Cases; the claimants will be responsible for their share of those fees as set by the JAMS Rules. Applicable statutes of limitations will be tolled for all claimants who have provided compliant Notices of Dispute to Netflix, but demands for arbitration in Coordinated Cases will only be filed with JAMS a",
+      "confidence": 80
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "If you bring a claim, it may be handled through a mandatory arbitration process where a group of cases is selected for a bellwether trial, and you may have to wait for that process rather than go to court.",
+      "excerpt": "## Netflix Terms of Use\n\nOnce all compliant Notices of Dispute have been provided to Netflix for Coordinated Cases, counsel for claimants and counsel for Netflix will confer in good faith regarding the number of cases that should proceed to bellwether arbitrations that will allow each side to test the merits of its arguments, before the remainder of claims may be filed with the arbitration provider. Any number chosen for bellwether arbitrations must be an even number so as to allow each side to designate half of the cases selected. If counsel for claimants and for Netflix do not agree on the n",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You must resolve disputes through a mandatory arbitration process with a single arbitrator and later a required mediation, limiting your ability to go to court or a jury.",
+      "excerpt": "## Netflix Terms of Use\n\nA single arbitrator will preside over each Coordinated Case chosen for a bellwether proceeding, and only one Coordinated Case may be assigned to each arbitrator as part of a bellwether process, unless the parties agree otherwise.\n\nOnce all bellwether trials have concluded (or sooner, if Netflix and counsel for the claimants in Coordinated Cases agree), the parties must make a good-faith effort to resolve all remaining Disputes that were not chosen for a bellwether proceeding by engaging in a single mediation of all remaining Disputes. Each side will pay half of the app",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "If arbitration doesn’t resolve your dispute, you must sue Netflix in specific California courts and you give up the right to a jury trial or a broad class action, though a limited class may be allowed.",
+      "excerpt": "## Netflix Terms of Use\n\nIf the mediation does not yield a global resolution to the Coordinated Cases, then claimants in Coordinated Cases who provided compliant Notices of Dispute but whose Disputes were not resolved in bellwether proceedings will no longer have the right to arbitrate their Disputes. Instead, outstanding claims from such cases may be filed only in the state courts in Los Angeles County, California or, if federal jurisdiction exists, in the United States District Court for the Central District of California, and you consent as part of these Terms to venue for such cases exclus",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You must follow the specified arbitration process, and a court can stop you from filing lawsuits or arbitration requests that don’t follow it.",
+      "excerpt": "## Netflix Terms of Use\n\nA court, not an arbitrator, has the authority to enforce this bellwether process and may enjoin the filing of lawsuits or arbitration demands not made in compliance with it.",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You must agree to resolve disputes through arbitration unless you send a written opt‑out within 30 days; otherwise you cannot sue in court or join a class action.",
+      "excerpt": "## Netflix Terms of Use\n\n(j) Your 30-Day Right to Opt Out. You have the right to opt out of, and not to be bound by, this Arbitration Agreement (but you may not opt out of the separate class action waiver). To opt out, you must notify Netflix in writing no later than 30 days after first becoming subject to this Arbitration Agreement, unless a longer period is required by applicable law. Your opt-out notice must include your name and address, the contact information associated with your Netflix account (if you have one), and a clear statement that you want to opt out of this Arbitration Agreeme",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You must keep the arbitration agreement unless you opt out within a short window after Netflix notifies you of changes, and the agreement stays in effect even after your account ends.",
+      "excerpt": "## Netflix Terms of Use\n\nOnce the 30-day period to opt out expires, you may only opt out of future material changes to the Arbitration Agreement by sending written notice within 30 days after Netflix provides notice of those changes, unless a longer period is required by law. You will remain bound by the Arbitration Agreement that you previously accepted.\n\nWe hope and strongly encourage that, in the interest of resolving Disputes amicably and fairly, you will use the Informal Resolution process to resolve Disputes even if you opt out of the Arbitration Agreement.\n\n(k) Survival. This Arbitratio",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "Netflix can change its arbitration agreement at any time, but it cannot make changes that would make arbitration less favorable to a user after a dispute has started.",
+      "excerpt": "## Netflix Terms of Use\n\n(l) Modification. Although Netflix may revise this Arbitration Agreement in its discretion (as it may modify any of these Terms of Use), Netflix does not have the right to alter this agreement, or the arbitration rules specified herein, with respect to any Dispute once that Dispute arises if such change would make arbitration procedures materially less favorable to the claimant. The question of whether a change is materially less favorable to the claimant will be decided by JAMS as a process matter.",
+      "confidence": 80
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You agree to resolve disputes through arbitration and waive the right to a class action; if the class‑action waiver is invalid, the arbitration clause may be void, but the rest of the terms stay in effect.",
+      "excerpt": "## Netflix Terms of Use\n\n(m) Entire Agreement; Severability. This Arbitration Agreement is the full and complete agreement relating to the formal resolution of Disputes. If any provision of this Arbitration Agreement is found invalid, unenforceable, or illegal, then you and Netflix agree that the provision will be severed, and the rest of these terms will remain in effect and be construed as if any severed provision had not been included. The sole exception is that, if the prohibition on class arbitrations is found invalid, unenforceable, or illegal, you and Netflix agree that this entire agre",
       "confidence": 95
     },
     {
       "document_type": "privacy_policy",
       "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
@@ -80,6 +412,7 @@
     {
       "document_type": "cookie_policy",
       "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
@@ -90,6 +423,7 @@
     {
       "document_type": "terms_of_service",
       "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
@@ -100,36 +434,40 @@
     {
       "document_type": "terms_of_service",
       "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
-      "summary": "Netflix can suspend or end your access to interactive features at any time if you break the rules or pose a safety/legal risk.",
-      "excerpt": "## Netflix Terms of Use\n\n1.11. Interactive Features. We may offer certain Interactive Features as part of the service. “Interactive Features” means any real-time or near-real-time functionality that enables users to participate in or interact with programming or other users, for example live chat, polls, voting, multiplayer gaming, game shows, and live voting. Use of Interactive Features is subject to these Terms of Use, our [Community Guidelines](https://help.netflix.com/legal/gamescommunityguidelines) and, where posted, the official rules for the specific event. We may take interim measures ",
-      "confidence": 90
-    },
-    {
-      "document_type": "terms_of_service",
-      "category": "ACCOUNT_TERMINATION",
-      "severity": "major",
-      "points": -15,
-      "label": "Arbitrary Account Termination",
-      "summary": "Netflix can suspend or close your account, especially if they suspect fraud or unauthorized use, and you’re responsible for any activity done through your account.",
-      "excerpt": "## Netflix Terms of Use\n\n4\\. Account Access. You are responsible for any activity that occurs through the Netflix account. By allowing others to access the account (which includes access to information on viewing activity for the account), you agree that such individuals are acting on your behalf and that you are bound by any changes that they may make to the account, including changes to subscription plans. To help maintain control over the account and to prevent any unauthorized users from accessing the account, you should maintain control over the devices that are used to access the service",
+      "summary": "Netflix can suspend or end your access to interactive features, like chat or voting, if you break the rules or pose a safety/legal risk.",
+      "excerpt": "## Netflix Terms of Use\n\n1.12. Interactive Features. We may offer certain Interactive Features as part of the service. “Interactive Features” means any real-time or near-real-time functionality that enables users to participate in or interact with programming or other users, for example live chat, polls, voting, multiplayer gaming, game shows, and live voting. Use of Interactive Features is subject to these Terms of Use, our [Community Guidelines](https://help.netflix.com/legal/gamescommunityguidelines) and, where posted, the official rules for the specific event. We may (but are not obligated",
       "confidence": 95
     },
     {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "Netflix can use any feedback you give them forever, worldwide, for any purpose without paying you, and you give up any moral rights to that feedback.",
-      "excerpt": "## Netflix Terms of Use\n\n7.2. Unsolicited Materials. Netflix does not accept unsolicited materials or ideas for Netflix content and is not responsible for the similarity of any of its content or programming in any media to materials or ideas transmitted to Netflix.\n\n7.3. Feedback. Netflix is free to use any comments, information, ideas, concepts, reviews, or techniques or any other material contained in any communication you may send to us (\"Feedback\"), including responses to questionnaires or through postings to the Netflix service, including related websites and user interfaces, worldwide an",
+      "summary": "If you send Netflix any ideas or material, you won’t be paid and you give up any right to claim ownership or compensation if Netflix uses something similar.",
+      "excerpt": "## Netflix Terms of Use\n\n7.2. Unsolicited Materials. Netflix does not accept unsolicited materials or ideas for Netflix content, and is not responsible for the similarity of any of its content or programming in any media to materials or ideas transmitted to Netflix. Should you send any unsolicited materials or ideas, you do so with the understanding that no additional consideration of any sort will be provided to you, and you are waiving any claim against Netflix and its affiliates regarding the use of such materials and ideas, even if material or an idea is used that is substantially similar ",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "Netflix can use any feedback you provide forever, for any purpose, without paying you, and you give up any moral rights to that feedback.",
+      "excerpt": "## Netflix Terms of Use\n\n7.3. Feedback. Netflix is free to use any comments, information, ideas, concepts, reviews, or techniques or any other material contained in any communication you may send to us (\"Feedback\"), including responses to questionnaires or through postings to the Netflix service, including our websites and user interfaces, worldwide and in perpetuity without further compensation, acknowledgement or payment to you for any purpose including, developing, manufacturing and marketing products and creating, modifying or improving the Netflix service. In addition, you agree not to en",
       "confidence": 95
     },
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -140,6 +478,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -150,6 +489,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -160,6 +500,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -170,6 +511,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -180,6 +522,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -190,6 +533,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -200,6 +544,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -210,6 +555,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -220,6 +566,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -230,6 +577,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -240,6 +588,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -250,6 +599,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -260,6 +610,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -270,6 +621,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -280,6 +632,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -290,6 +643,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -300,6 +654,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -310,6 +665,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -320,6 +676,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -330,6 +687,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -340,6 +698,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -350,6 +709,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -360,6 +720,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -370,6 +731,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -380,6 +742,7 @@
     {
       "document_type": "privacy_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -390,6 +753,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -400,6 +764,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -410,6 +775,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -420,6 +786,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -430,6 +797,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -440,6 +808,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -450,6 +819,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -460,6 +830,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -470,6 +841,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -480,6 +852,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -490,6 +863,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -500,6 +874,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -510,6 +885,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -520,6 +896,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -530,6 +907,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -540,6 +918,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -550,6 +929,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -560,6 +940,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -570,6 +951,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -580,6 +962,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -590,6 +973,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -600,6 +984,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -610,6 +995,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -620,6 +1006,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -630,6 +1017,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -640,6 +1028,7 @@
     {
       "document_type": "cookie_policy",
       "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
@@ -650,25 +1039,37 @@
     {
       "document_type": "terms_of_service",
       "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
-      "summary": "Netflix promises to give you at least a month’s notice before it raises prices or changes your subscription plan, and you can cancel anytime, though you won’t get a refund for unused time.",
-      "excerpt": "## Netflix Terms of Use\n\n2.6. Cancellation. You can cancel your Netflix subscription at any time. To cancel, go to the \"Account\" page and follow the instructions for cancellation. The cancellation will take effect at the end of the billing period. To the extent permitted by the applicable law, payments are non-refundable and we do not provide refunds or credits for any partial subscription periods or unused Netflix content. You can see when your subscription will end on the \"Account\" page. If you signed up for Netflix using your account with a third party as a Payment Method and wish to cancel",
+      "summary": "Netflix promises to give you at least a month’s notice before changing prices or subscription plans, and you can cancel if you don’t accept the changes.",
+      "excerpt": "## Netflix Terms of Use\n\n2.6. Cancellation. You can cancel your Netflix subscription at any time. To cancel, go to the \"Account\" page and follow the cancellation instructions. The cancellation will take effect at the end of the billing period. You can see when your subscription will end on the \"Account\" page. If you signed up for Netflix using your account with a third party as a Payment Method and wish to cancel your Netflix subscription you may need to do so through that third party, for example by visiting your account with the applicable third party and turning off auto-renew, or unsubscri",
       "confidence": 95
     },
     {
       "document_type": "terms_of_service",
       "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
-      "summary": "Netflix promises to give you at least a month’s notice before any material changes to the terms take effect.",
-      "excerpt": "## Netflix Terms of Use\n\n7.6. Changes to these Terms and Assignment. We may, from time to time, change these Terms of Use. In case of material changes we will notify you at least one month before such changes apply to you. We may assign or transfer our agreement with you including our associated rights and obligations at any time and you agree to cooperate with us in connection with such an assignment or transfer.\n\n7.7. Events Beyond our Reasonable Control. The Netflix service and/or some of the Netflix content may not be available f at any time as a result of events beyond our reasonable cont",
+      "summary": "Netflix says most changes to the terms become effective immediately, but any major changes will take effect one month after they notify you, giving you advance notice.",
+      "excerpt": "## Netflix Terms of Use\n\n7.6. Changes to these Terms and Assignment. We may, from time to time, change these Terms of Use. Such revisions shall be effective immediately; provided however, for existing members, material revisions shall, unless otherwise stated, be effective one month following notice to you. We may assign our agreement with you to any affiliated company or to any entity that succeeds to all or substantially all of our business or assets related to the applicable Netflix service.\n\n7.7. Events Beyond our Reasonable Control. The Netflix service and/or some of the Netflix content m",
       "confidence": 95
     }
   ],
   "history": [
+    {
+      "id": "1657461c-89fc-4d8e-855e-0534e0820ebf",
+      "date": "2026-06-11T19:18:09.670122+00:00",
+      "document_type": "terms_of_service",
+      "points": -85,
+      "summary": "Changes to the terms of service limit users' ability to engage in class action lawsuits and require disputes to be resolved through individual arbitration. This means users will not be able to join or start group lawsuits and must handle disputes one-on-one, likely through arbitration, rather than going to court or having a jury trial. Users also give up the right to seek public injunctions through a court. No user-friendly changes were found.",
+      "added": 34,
+      "modified": 12,
+      "removed": 1
+    },
     {
       "id": "25935c79-9f8e-4f1c-a6ba-7965c2057459",
       "date": "2026-06-11T16:24:58.956+00:00",
