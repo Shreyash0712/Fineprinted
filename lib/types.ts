@@ -30,6 +30,13 @@ export type ClauseSeverity =
   | "positive"
   | "neutral";
 
+/**
+ * Whose side a clause is on. The category is the *topic* (e.g. DATA_SALE);
+ * the stance decides the sign: "we sell your data" is hostile, "we do NOT
+ * sell your data" is protective. Severity derives from (category, stance).
+ */
+export type ClauseStance = "hostile" | "protective" | "neutral";
+
 export type ServiceStatus = "pending" | "active" | "archived";
 
 export type RequestStatus =
@@ -86,9 +93,12 @@ export interface Clause {
 export interface Classification {
   clause_hash: string;
   category: ClauseCategory;
+  stance: ClauseStance;
   severity: ClauseSeverity;
   plain_english_summary: string;
   confidence_score: number;
+  /** Rows below grading.TAXONOMY_VERSION are treated as cache misses. */
+  taxonomy_version: number;
   model: string | null;
   admin_approved: boolean;
   created_at: string;
@@ -140,4 +150,28 @@ export interface Watch {
   target: string;
   verified: boolean;
   created_at: string;
+}
+
+// ---------------------------------------------------------------------------
+// Pipeline runs (executed on GitHub Actions, polled by the admin UI)
+// ---------------------------------------------------------------------------
+
+export type PipelineRunStatus = "queued" | "running" | "succeeded" | "failed";
+
+export interface PipelineRunEvent {
+  level: "info" | "success" | "warn" | "error";
+  step: string;
+  message: string;
+  at: string;
+}
+
+export interface PipelineRun {
+  id: string;
+  service_id: string;
+  status: PipelineRunStatus;
+  events: PipelineRunEvent[];
+  error: string | null;
+  created_at: string;
+  started_at: string | null;
+  finished_at: string | null;
 }

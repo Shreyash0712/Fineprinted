@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-06-11T21:14:33.361Z",
+  "stats": {
+    "services": 4,
+    "flagged_clauses": 90,
+    "changes_published": 8
+  },
+  "services": [
+    {
+      "id": "23a66d06-6133-4b8f-bfea-e595f8536728",
+      "name": "Anthropic",
+      "root_domain": "anthropic.com",
+      "status": "active",
+      "current_score": 100,
+      "current_grade": "A",
+      "created_at": "2026-06-11T15:14:33.398282+00:00",
+      "updated_at": "2026-06-11T15:38:52.889+00:00"
+    },
+    {
+      "id": "e8335548-a877-4be8-b0a9-c6c9e3d8efb2",
+      "name": "Github",
+      "root_domain": "github.com",
+      "status": "active",
+      "current_score": 45,
+      "current_grade": "D",
+      "created_at": "2026-06-11T16:28:03.994905+00:00",
+      "updated_at": "2026-06-11T16:49:23.427+00:00"
+    },
+    {
+      "id": "7f5fd960-df5a-44ab-a0b3-0381ccaaedf3",
+      "name": "Google",
+      "root_domain": "google.com",
+      "status": "active",
+      "current_score": 100,
+      "current_grade": "A",
+      "created_at": "2026-06-11T16:04:29.549174+00:00",
+      "updated_at": "2026-06-11T18:48:03.107+00:00"
+    },
+    {
+      "id": "b6ec649e-c39c-496c-b237-d3e5c593b29c",
+      "name": "Netflix",
+      "root_domain": "netflix.com",
+      "status": "active",
+      "current_score": 10,
+      "current_grade": "F",
+      "created_at": "2026-06-11T16:06:29.693676+00:00",
+      "updated_at": "2026-06-11T16:24:58.956+00:00"
+    }
+  ]
+}

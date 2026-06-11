@@ -1,0 +1,263 @@
+{
+  "id": "e8335548-a877-4be8-b0a9-c6c9e3d8efb2",
+  "name": "Github",
+  "root_domain": "github.com",
+  "grade": "D",
+  "score": 45,
+  "generated_at": "2026-06-11T21:14:26.801Z",
+  "last_published_at": "2026-06-11T16:49:23.427+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "Promises advance notice before terms change.",
+        "points": 5
+      }
+    ],
+    "bad": [
+      {
+        "text": "The rules can change without telling you.",
+        "points": -30
+      },
+      {
+        "text": "They keep a broad license to content you create.",
+        "points": -15
+      },
+      {
+        "text": "Your account can be closed at any time, for any reason.",
+        "points": -15
+      }
+    ]
+  },
+  "documents": [
+    {
+      "type": "terms_of_service",
+      "urls": [
+        "https://docs.github.com/site-policy/github-terms/github-terms-of-service"
+      ]
+    }
+  ],
+  "clauses": [
+    {
+      "document_type": "terms_of_service",
+      "category": "UNILATERAL_CHANGE",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "Beta preview features can be altered, discontinued, or unsupported at any time, possibly without notice, and you must keep any confidential information you receive private.",
+      "excerpt": "## [K. Beta Previews](#k-beta-previews)\n\n**Short version:** _Beta Previews may not be supported or may change at any time. You may receive confidential information through those programs that must remain confidential while the program is private. We'd love your feedback to make our Beta Previews better._",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "UNILATERAL_CHANGE",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "The provider can modify or discontinue beta features whenever it wants, and it doesn’t have to tell you beforehand.",
+      "excerpt": "## [1\\. Subject to Change](#1-subject-to-change)\n\nBeta Previews may not be supported and may be changed at any time without notice. In addition, Beta Previews are not subject to the same security measures and auditing to which the Service has been and is subject. **By using a Beta Preview, you use it at your own risk.**",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "UNILATERAL_CHANGE",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "The price you agree to stays the same during your current payment period, but the company can raise the price when that period ends.",
+      "excerpt": "## [1\\. Pricing](#1-pricing)\n\nOur pricing and payment terms are available at [github.com/pricing](https://github.com/pricing). If you agree to a subscription price, that will remain your price for the duration of the payment term; however, prices are subject to change at the end of a payment term.",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "UNILATERAL_CHANGE",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "The service can change or shut down any part of the website whenever it wants, and it doesn’t have to tell you beforehand.",
+      "excerpt": "## [R. Changes to These Terms](#r-changes-to-these-terms)\n\nWe reserve the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Website (or any part of it) with or without notice.",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "UNILATERAL_CHANGE",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "GitHub can change the agreement by posting a new version, without needing your signature, as allowed in another section of the terms.",
+      "excerpt": "## [5\\. Amendments; Complete Agreement](#5-amendments-complete-agreement)\n\nThis Agreement may only be modified by a written amendment signed by an authorized representative of GitHub, or by the posting by GitHub of a revised version in accordance with [Section R. Changes to These Terms](#r-changes-to-these-terms). These Terms of Service, together with the GitHub Privacy Statement, represent the complete and exclusive statement of the agreement between you and us. This Agreement supersedes any proposal or prior agreement oral or written, and any other communications between you and GitHub relat",
+      "confidence": 75
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "You keep ownership of what you post, but you give the service a license to use, display, and share that content so the service can operate, and they can remove it or close your account if needed.",
+      "excerpt": "## [D. User-Generated Content](#d-user-generated-content)\n\n**Short version:** _You own content you create, but you allow us certain rights to it, so that we can display and share the content you post. You still have control over your content, and responsibility for it, and the rights you grant us are limited to those we need to provide the service. We have the right to remove content or close Accounts if we need to._",
+      "confidence": 80
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "By posting, you give the service and other users a broad, ongoing license to use your content, without payment, that lasts until you delete it (unless others have already copied it).",
+      "excerpt": "## [3\\. Ownership and License Grants](#3-ownership-and-license-grants)\n\nYou own Your Content. If you post Content you did not create, you are responsible for ensuring you have the right to post it and for complying with any applicable licenses.\n\nYou grant us and other Users the licenses in Sections D.4–D.8. These licenses apply to Your Content. If Your Content already includes a license granting us the permissions we need, no additional license is required. You will not receive payment for these rights. These licenses end when you remove Your Content, unless other Users have forked it.",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "You give GitHub and its affiliates a broad, ongoing right to store, copy, analyze, and use your content—including for training AI—without paying you.",
+      "excerpt": "## [4\\. License Grant to Us](#4-license-grant-to-us)\n\nYou grant GitHub and our Affiliates the right to store, host, archive, parse, display, and make copies of Your Content as necessary to provide, develop, and improve the Service, including by training AI Features, and for the purpose of training, developing, and improving artificial intelligence and machine learning models and technologies of our Affiliates. This license includes the right to do things like copy it to our database and make backups; show it to you and other Users; parse it into a search index or otherwise analyze it on our se",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "When you make a repository public, you give other users a worldwide, nonexclusive license to view, copy, and fork your content through the service.",
+      "excerpt": "## [5\\. License Grant to Other Users](#5-license-grant-to-other-users)\n\nYour Content that you post publicly, including issues, comments, and contributions to other Users' repositories, may be viewed by others. By setting your repositories to be viewed publicly, you agree to allow others to view and \"fork\" your repositories (this means that others may make their own copies within the Service in repositories they control).\n\nBy making a repository public, you grant other Users a nonexclusive, worldwide license to use, display, perform and reproduce (by forking) Your Content through the Service as",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "When you add content to a repository, you automatically grant the same license to that content as the repository’s existing license, and you confirm you have the right to do so.",
+      "excerpt": "## [6\\. Contributions Under Repository License](#6-contributions-under-repository-license)\n\nWhenever you add Content to a repository containing notice of a license, you license that Content under the same terms, and you agree that you have the right to license that Content under those terms. If you have a separate agreement to license that Content under different terms, such as a contributor license agreement, that agreement will supersede.\n\nIsn't this just how it works already? Yep. This is widely accepted as the norm in the open-source community; it's commonly referred to by the shorthand \"i",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "When you put content in a public repository, you give GitHub permission to make that content available to anyone on the internet, and you don’t limit others from accessing or using it legally.",
+      "excerpt": "## [8\\. Public Repositories and Lawful Access](#8-public-repositories-and-lawful-access)\n\nBy choosing to contribute Content to a public repository, you are choosing to and directing us to make such Content accessible to everyone on the internet. Unless specifically set forth herein, these Terms do not restrict lawful access to or use of the contents of public repositories by third parties, or by GitHub or its Affiliates.",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "GitHub can use the content you provide to private repositories for AI features to develop, train, and improve the service, unless you opt out, but they treat it as confidential otherwise.",
+      "excerpt": "## [3\\. Access](#3-access)\n\n-   You may enable various GitHub services or features that require additional rights to Your Content in private repositories. These rights may vary depending on the service or feature, but GitHub will continue to treat your private repository Content as confidential. If those services or features require rights in addition to those we need to provide the GitHub Service, we will provide an explanation of those rights.\n-   If you provide your private repository content as Input to AI Features, we may use that Input to provide, develop, train, and improve the Service,",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "ACCOUNT_TERMINATION",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "The service may close the accounts of users who repeatedly violate copyright rules, such as by ignoring DMCA takedown notices.",
+      "excerpt": "## [F. Copyright Infringement and DMCA Policy](#f-copyright-infringement-and-dmca-policy)\n\nIf you believe that content on our website violates your copyright, please contact us in accordance with our [Digital Millennium Copyright Act Policy](/en/site-policy/content-removal-policies/dmca-takedown-policy). If you are a copyright owner and you believe that content on GitHub violates your rights, please contact us via [our convenient DMCA form](https://github.com/contact/dmca) or by emailing [copyright@github.com](mailto:copyright@github.com). There may be legal consequences for sending a false or",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "ACCOUNT_TERMINATION",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "GitHub can suspend or end your API access (and possibly your account) if they deem your usage abusive or excessive, and they’ll try to warn you by email first.",
+      "excerpt": "## [H. API Terms](#h-api-terms)\n\n**Short version:** _You agree to these Terms of Service, plus this Section H, when using any of GitHub's APIs (Application Programming Interface), including use of the API through a third party product that accesses GitHub._\n\nAbuse or excessively frequent requests to GitHub via the API may result in the temporary or permanent suspension of your Account's access to the API. GitHub, in our sole discretion, will determine abuse or excessive usage of the API. We will make a reasonable attempt to warn you via email prior to suspension.\n\nYou may not share API tokens ",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "You give GitHub a license to use your inputs and outputs to train and improve its AI models, unless you opt out in your account settings.",
+      "excerpt": "## [3\\. Development and Improvement Using Your Input and Output](#3-development-and-improvement-using-your-input-and-output)\n\nWe use your Inputs to generate Outputs and provide the AI Features. You also grant GitHub and its Affiliates a license to collect and use your Inputs and Outputs to develop, train and improve artificial intelligence and machine learning models and technologies including those that power AI Features, unless (a) you opt out through your account settings, or (b) your use of the Service is governed by a GitHub Customer Agreement or volume licensing agreement. If you opt out",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "You give GitHub a broad, possibly perpetual license to use the data you input into and receive from its AI features to improve the service, but this does not cover other content you store elsewhere.",
+      "excerpt": "## [3\\. Development and Improvement Using Your Input and Output](#3-development-and-improvement-using-your-input-and-output)\n\nThe license in this Section J.3 is in addition to, and does not limit, the rights granted to GitHub and its Affiliates under Sections D.4 and D.8. This license does not extend to Your Content stored in repositories that are not provided as Input to an AI Feature.\n\nThe opt-out right described in this section applies solely to the use of your Inputs and Outputs as described in this section, and does not apply to the license granted in Sections D.4-D.8 or to any Content th",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "If you give GitHub any feedback, you give them a permanent, worldwide, royalty‑free license to use, modify, and commercialize that feedback however they want.",
+      "excerpt": "## [3\\. Feedback](#3-feedback)\n\nWe’re always trying to improve our products and services, and your feedback as a Beta Preview user will help us do that. If you choose to give us any ideas, know-how, algorithms, code contributions, suggestions, enhancement requests, recommendations or any other feedback for our products or services (collectively, “Feedback”), you acknowledge and agree that GitHub will have a royalty-free, fully paid-up, worldwide, transferable, sub-licensable, irrevocable and perpetual license to implement, use, modify, commercially exploit and/or incorporate the Feedback into ",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "ACCOUNT_TERMINATION",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "GitHub can suspend or end your access to the site at any time, for any reason, and it doesn’t have to tell you beforehand.",
+      "excerpt": "## [3\\. GitHub May Terminate](#3-github-may-terminate)\n\nGitHub has the right to suspend or terminate your access to all or any part of the Website at any time, with or without cause, with or without notice, effective immediately. GitHub reserves the right to refuse service to anyone for any reason at any time.",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "NOTICE_OF_CHANGE",
+      "severity": "positive",
+      "points": 5,
+      "label": "Notice Before Changes",
+      "summary": "The company can change the terms, but promises to give you at least 30 days' notice before any material changes take effect.",
+      "excerpt": "## [Summary](#summary)\n\nWe provide our service as is, and we make no promises or guarantees about this service. **Please read this section carefully; you should understand what to expect.**\n\n[P. Limitation of Liability](#p-limitation-of-liability)\n\nWe will not be liable for damages or losses arising from your use or inability to use the service or otherwise arising under this agreement. **Please read this section carefully; it limits our obligations to you.**\n\n[Q. Release and Indemnification](#q-release-and-indemnification)\n\nYou are fully responsible for your use of the service.\n\n[R. Changes t",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "NOTICE_OF_CHANGE",
+      "severity": "positive",
+      "points": 5,
+      "label": "Notice Before Changes",
+      "summary": "You must pay any fees for using GitHub, and GitHub promises to clearly tell you about those fees and give you advance notice before any price changes.",
+      "excerpt": "## [L. Payment](#l-payment)\n\n**Short version:** _You are responsible for any fees associated with your use of GitHub. We are responsible for communicating those fees to you clearly and accurately, and letting you know well in advance if those prices change._",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "NOTICE_OF_CHANGE",
+      "severity": "positive",
+      "points": 5,
+      "label": "Notice Before Changes",
+      "summary": "The company can change the terms at any time, but will give at least 30 days' notice for important changes like price hikes, while less important tweaks don’t require notice.",
+      "excerpt": "## [R. Changes to These Terms](#r-changes-to-these-terms)\n\n**Short version:** _We want our users to be informed of important changes to our terms, but some changes aren't that important — we don't want to bother you every time we fix a typo. So while we may modify this agreement at any time, we will notify users of any material changes and give you time to adjust to them._\n\nWe reserve the right, at our sole discretion, to amend these Terms of Service at any time and will update these Terms of Service in the event of any such amendments. We will notify our Users of material changes to this Agre",
+      "confidence": 95
+    }
+  ],
+  "history": [
+    {
+      "id": "b8a10d63-9ff5-4951-92b2-0ece6200f5be",
+      "date": "2026-06-11T16:49:23.427+00:00",
+      "document_type": "terms_of_service",
+      "points": -55,
+      "summary": "The company can change terms with at least 30 days' notice. Users give the service a broad license to use, display, and share their posted content. The service and users can use public repository content without payment. GitHub can use private repository content for AI features unless users opt out. No user-hostile changes were found beyond standard terms.",
+      "added": 79,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}

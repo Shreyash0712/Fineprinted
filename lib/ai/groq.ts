@@ -47,6 +47,9 @@ function parseRetryAfterSeconds(res: Response, body: string): number {
 /** Give up rather than silently sleeping through a daily-quota 429. */
 const MAX_RETRY_WAIT_S = 15 * 60;
 
+/** Abort a single HTTP request after this long; retried like a 5xx. */
+const REQUEST_TIMEOUT_MS = 120_000;
+
 interface ChatOptions {
   model: string;
   system: string;
@@ -76,24 +79,35 @@ async function chat(opts: ChatOptions): Promise<string> {
       opts.onWait?.(`Waiting ~${s}s for ${opts.model} rate-limit budget`)
     );
 
-    const res = await fetch(GROQ_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: opts.model,
-        messages: [
-          { role: "system", content: opts.system },
-          { role: "user", content: opts.user },
-        ],
-        temperature: opts.temperature ?? 0.1,
-        max_tokens: maxTokens,
-        ...(opts.reasoningEffort ? { reasoning_effort: opts.reasoningEffort } : {}),
-        ...(opts.json ? { response_format: { type: "json_object" } } : {}),
-      }),
-    });
+    let res: Response;
+    try {
+      res = await fetch(GROQ_URL, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: opts.model,
+          messages: [
+            { role: "system", content: opts.system },
+            { role: "user", content: opts.user },
+          ],
+          temperature: opts.temperature ?? 0.1,
+          max_tokens: maxTokens,
+          ...(opts.reasoningEffort ? { reasoning_effort: opts.reasoningEffort } : {}),
+          ...(opts.json ? { response_format: { type: "json_object" } } : {}),
+        }),
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+      });
+    } catch (err) {
+      // Timeouts and transient network failures retry with backoff.
+      if (attempt >= 6) throw err;
+      const wait = 2 * (attempt + 1);
+      opts.onWait?.(`Groq request failed (${err instanceof Error ? err.name : "error"}) — retrying in ${wait}s`);
+      await sleep(wait * 1000);
+      continue;
+    }
 
     if (res.status === 429 || res.status >= 500) {
       const body = await res.text();

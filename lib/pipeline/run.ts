@@ -1,6 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { BULK_MODEL, groqText } from "../ai/groq";
-import { SEVERITY_POINTS } from "../grading";
+import { isFlagged, signedPoints, TAXONOMY_VERSION } from "../grading";
 import { sha256 } from "../hash";
 import { putSnapshot, r2Configured } from "../r2";
 import { createAdminClient } from "../supabase/admin";
@@ -9,19 +9,29 @@ import { classifyClauses, copyClassifications } from "./classify";
 import { diffClauses, type ClauseDiff, type OldClause } from "./diff";
 import { discoverDocuments } from "./discovery";
 import { extractDocument } from "./extract";
+import { recomputeServiceGrade } from "./grade";
 import { segmentMarkdown } from "./segment";
 
 /**
- * Pipeline orchestrator (spec 3.1). Runs every stage for each document of a
- * service, emitting progress events for the admin SSE stream. Ends by
- * writing a *draft* change_event per changed document — the "review pause".
- * Publishing (grade update + service activation) is a separate admin action.
+ * Pipeline orchestrator (spec 3.1). Runs every stage for each document of
+ * a service, emitting progress events for the admin run log. Change events
+ * publish automatically — there is no review gate — and the run ends by
+ * recomputing the service's grade. The static exporter (run right after in
+ * the same workflow) then pushes the results to the public site. The
+ * remaining quality gate is the confidence threshold: low-confidence
+ * classifications never affect grades unless an admin approves them.
  */
 
 export interface PipelineEvent {
   level: "info" | "success" | "warn" | "error";
   step: string;
   message: string;
+}
+
+/** Minimal shape read back from change_events.diff (jsonb). */
+interface ChangeEventLikeDiff {
+  added?: { hash: string }[];
+  modified?: { hash: string }[];
 }
 
 type Emit = (event: PipelineEvent) => void;
@@ -52,12 +62,10 @@ function severityScore(
   diff: ClauseDiff,
   classifications: Map<string, Classification>
 ): number {
-  let score = 0;
-  for (const clause of [...diff.added, ...diff.modified.map((m) => m.clause)]) {
-    const c = classifications.get(clause.hash);
-    if (c && c.category !== "OTHER") score += SEVERITY_POINTS[c.severity];
-  }
-  return score;
+  const involved = [...diff.added, ...diff.modified.map((m) => m.clause)]
+    .map((clause) => classifications.get(clause.hash))
+    .filter((c): c is Classification => !!c);
+  return signedPoints(involved);
 }
 
 async function summarizeChanges(
@@ -68,7 +76,7 @@ async function summarizeChanges(
 ): Promise<string> {
   const flagged = [...diff.added, ...diff.modified.map((m) => m.clause)]
     .map((cl) => ({ cl, c: classifications.get(cl.hash) }))
-    .filter((x) => x.c && x.c.category !== "OTHER")
+    .filter((x) => x.c && isFlagged(x.c))
     .slice(0, 15);
 
   const lines = [
@@ -77,9 +85,9 @@ async function summarizeChanges(
       ? `First analysis. ${diff.added.length} clauses extracted.`
       : `Changes: ${diff.added.length} added, ${diff.modified.length} modified, ${diff.removed.length} removed clauses.`,
     "",
-    "Flagged clauses:",
+    "Flagged clauses (stance says whether the clause works against users or protects them):",
     ...flagged.map(
-      (x) => `- [${x.c!.category}] ${x.c!.plain_english_summary}`
+      (x) => `- [${x.c!.category} / ${x.c!.stance}] ${x.c!.plain_english_summary}`
     ),
   ];
 
@@ -98,6 +106,132 @@ async function summarizeChanges(
       ? `Initial analysis: ${diff.added.length} clauses, ${flagged.length} flagged.`
       : `${diff.added.length} added, ${diff.modified.length} modified, ${diff.removed.length} removed; ${flagged.length} flagged.`;
   }
+}
+
+/**
+ * Document text is unchanged, but if any of its clauses were classified
+ * under an older taxonomy version, re-evaluate them and draft a
+ * "taxonomy update" change event so the admin can review and publish the
+ * corrected grade. Hashes referenced by published change events are swept
+ * too (even if the clause has since left the document) so historical
+ * point deltas shown on the public site get corrected as well. With no
+ * stale rows this stays the $0 skip.
+ */
+async function reclassifyIfStale(
+  db: SupabaseClient,
+  document: Document,
+  snapshotId: string,
+  emit: Emit
+): Promise<void> {
+  const step = document.type;
+
+  const { data: clauses, error } = await db
+    .from("clauses")
+    .select("clause_hash, content")
+    .eq("snapshot_id", snapshotId)
+    .order("position");
+  if (error) throw new Error(`clauses lookup failed: ${error.message}`);
+
+  const unique = new Map((clauses ?? []).map((c) => [c.clause_hash, c.content]));
+  const currentHashes = new Set(unique.keys());
+
+  // Historical hashes from published events of this document.
+  const { data: pastEvents, error: pastError } = await db
+    .from("change_events")
+    .select("diff")
+    .eq("document_id", document.id)
+    .eq("status", "published");
+  if (pastError) throw new Error(`change_events lookup failed: ${pastError.message}`);
+  const historical = new Set<string>();
+  for (const event of pastEvents ?? []) {
+    const diff = event.diff as ChangeEventLikeDiff | null;
+    for (const c of diff?.added ?? []) historical.add(c.hash);
+    for (const c of diff?.modified ?? []) historical.add(c.hash);
+  }
+  for (const hash of unique.keys()) historical.delete(hash);
+
+  const hashes = [...unique.keys(), ...historical];
+  const stale = new Set<string>();
+  for (let i = 0; i < hashes.length; i += 200) {
+    const { data: rows, error: clsError } = await db
+      .from("classifications")
+      .select("clause_hash, taxonomy_version")
+      .in("clause_hash", hashes.slice(i, i + 200));
+    if (clsError) throw new Error(`classifications lookup failed: ${clsError.message}`);
+    for (const row of rows ?? []) {
+      if ((row.taxonomy_version ?? 1) < TAXONOMY_VERSION) stale.add(row.clause_hash);
+    }
+  }
+
+  if (stale.size === 0) {
+    emit({ level: "success", step, message: "Content hash unchanged — skipping ($0)" });
+    return;
+  }
+
+  // Clause hashes are content-addressed, so any clauses row with the hash
+  // (from any snapshot) carries the text for historical ones.
+  const missingContent = [...stale].filter((h) => !unique.has(h));
+  for (let i = 0; i < missingContent.length; i += 100) {
+    const { data: rows, error: contentError } = await db
+      .from("clauses")
+      .select("clause_hash, content")
+      .in("clause_hash", missingContent.slice(i, i + 100));
+    if (contentError) throw new Error(`historical clause lookup failed: ${contentError.message}`);
+    for (const row of rows ?? []) {
+      if (!unique.has(row.clause_hash)) unique.set(row.clause_hash, row.content);
+    }
+  }
+  // Hashes whose text is gone entirely can't be re-evaluated — leave them.
+  for (const hash of [...stale]) {
+    if (!unique.has(hash)) stale.delete(hash);
+  }
+  if (stale.size === 0) {
+    emit({ level: "success", step, message: "Content hash unchanged — skipping ($0)" });
+    return;
+  }
+
+  emit({
+    level: "info",
+    step,
+    message: `Content unchanged, but ${stale.size} clause(s) were classified under an older taxonomy — re-evaluating`,
+  });
+
+  const toClassify = [...stale].map((hash) => ({ hash, content: unique.get(hash) ?? "" }));
+  const { byHash, llmCalls } = await classifyClauses(db, toClassify, (message) =>
+    emit({ level: "info", step, message })
+  );
+
+  const reclassified = [...byHash.values()];
+  const { error: eventError } = await db.from("change_events").insert({
+    document_id: document.id,
+    previous_snapshot_id: snapshotId,
+    new_snapshot_id: snapshotId,
+    severity_score: signedPoints(reclassified),
+    ai_summary: `Taxonomy update: ${stale.size} clause(s) re-evaluated under the current scoring rules. The document text did not change.`,
+    status: "published",
+    published_at: new Date().toISOString(),
+    diff: {
+      added: [],
+      modified: toClassify.map((c) => ({
+        hash: c.hash,
+        old_hash: c.hash,
+        excerpt: excerpt(c.content),
+        old_excerpt: excerpt(c.content),
+        similarity: 1,
+      })),
+      removed: [],
+      cosmetic_count: 0,
+      unchanged_count: [...currentHashes].filter((h) => !stale.has(h)).length,
+      llm_calls: llmCalls,
+    },
+  });
+  if (eventError) throw new Error(`change_event insert failed: ${eventError.message}`);
+
+  emit({
+    level: "success",
+    step,
+    message: `Taxonomy-update event published (${stale.size} clauses re-scored)`,
+  });
 }
 
 async function processDocument(
@@ -154,7 +288,7 @@ async function processDocument(
   if (prevError) throw new Error(`previous snapshot lookup failed: ${prevError.message}`);
 
   if (prevSnapshot && prevSnapshot.content_hash === contentHash) {
-    emit({ level: "success", step, message: "Content hash unchanged — skipping ($0)" });
+    await reclassifyIfStale(db, document, prevSnapshot.id, emit);
     return;
   }
 
@@ -218,11 +352,20 @@ async function processDocument(
     db,
     diff.cosmetic.map((c) => ({ newHash: c.clause.hash, oldHash: c.oldHash }))
   );
-  if (copied > 0) {
-    emit({ level: "info", step, message: `Copied ${copied} classifications for cosmetic changes ($0)` });
+  if (copied.size > 0) {
+    emit({ level: "info", step, message: `Copied ${copied.size} classifications for cosmetic changes ($0)` });
   }
 
-  const toClassify = [...diff.added, ...diff.modified.map((m) => m.clause)].map((c) => ({
+  // Cosmetic clauses whose old classification was stale (older taxonomy)
+  // are not copied — classify them fresh alongside the real changes.
+  const uncopiedCosmetic = diff.cosmetic
+    .filter((c) => !copied.has(c.clause.hash))
+    .map((c) => c.clause);
+  const toClassify = [
+    ...diff.added,
+    ...diff.modified.map((m) => m.clause),
+    ...uncopiedCosmetic,
+  ].map((c) => ({
     hash: c.hash,
     content: c.content,
   }));
@@ -230,14 +373,14 @@ async function processDocument(
     emit({ level: "info", step, message })
   );
 
-  const flaggedCount = [...byHash.values()].filter((c) => c.category !== "OTHER").length;
+  const flaggedCount = [...byHash.values()].filter(isFlagged).length;
   emit({
     level: "info",
     step,
     message: `Classification done: ${flaggedCount} flagged clauses, ${llmCalls} LLM calls`,
   });
 
-  // --- Draft change event (the review pause) ---
+  // --- Change event (published immediately — no review gate) ---
   const aiSummary = await summarizeChanges(document.type, !prevSnapshot, diff, byHash);
   const { data: event, error: eventError } = await db
     .from("change_events")
@@ -247,7 +390,8 @@ async function processDocument(
       new_snapshot_id: snapshot.id,
       severity_score: severityScore(diff, byHash),
       ai_summary: aiSummary,
-      status: "draft",
+      status: "published",
+      published_at: new Date().toISOString(),
       diff: {
         added: diff.added.map((c) => ({ hash: c.hash, excerpt: excerpt(c.content) })),
         modified: diff.modified.map((m) => ({
@@ -273,7 +417,7 @@ async function processDocument(
   emit({
     level: "success",
     step,
-    message: `Draft change event created (${event.id}) — awaiting review`,
+    message: `Change event published (${event.id})`,
   });
 }
 
@@ -352,5 +496,22 @@ export async function runServicePipeline(serviceId: string, emit: Emit): Promise
   if (failures === docs.length && docs.length > 0) {
     throw new Error("All documents failed to process");
   }
+
+  // --- Grade update (automatic — there is no manual publish) ---
+  const result = await recomputeServiceGrade(db, serviceId);
+  if (result) {
+    emit({
+      level: "success",
+      step: "grade",
+      message: `Grade updated: ${result.grade} (${result.score}/100)`,
+    });
+  } else {
+    emit({
+      level: "warn",
+      step: "grade",
+      message: "No published documents yet — grade unchanged",
+    });
+  }
+
   emit({ level: "success", step: "done", message: "Pipeline finished" });
 }

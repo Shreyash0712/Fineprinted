@@ -1,22 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 const STORAGE_KEY = "fp_theme";
 
-export function ThemeToggle() {
-  // null until mounted — avoids a hydration mismatch since the server
-  // can't know the visitor's theme.
-  const [dark, setDark] = useState<boolean | null>(null);
+// The <html> class list is the source of truth for the theme; subscribe to
+// it directly so the button stays correct no matter who toggles the class.
+function subscribe(callback: () => void): () => void {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+  return () => observer.disconnect();
+}
 
-  useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark"));
-  }, []);
+export function ThemeToggle() {
+  // null on the server — it can't know the visitor's theme, and rendering a
+  // neutral placeholder avoids a hydration mismatch.
+  const dark = useSyncExternalStore<boolean | null>(
+    subscribe,
+    () => document.documentElement.classList.contains("dark"),
+    () => null
+  );
 
   function toggle() {
     const next = !document.documentElement.classList.contains("dark");
     document.documentElement.classList.toggle("dark", next);
-    setDark(next);
     try {
       localStorage.setItem(STORAGE_KEY, next ? "dark" : "light");
     } catch {

@@ -1,26 +1,16 @@
 import Link from "next/link";
-import { createPublicClient } from "@/lib/supabase/public";
-import type { Service } from "@/lib/types";
+import { loadServicesIndex } from "@/lib/static-data";
 import { ServiceExplorer } from "./components/service-explorer";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 
-export const revalidate = 60;
+// Fully static: service data is committed to the repo (data/services.json)
+// by the export workflow, and each commit triggers a redeploy. Browsing
+// the site costs zero database calls.
+export const dynamic = "force-static";
 
 export default async function Home() {
-  const db = createPublicClient();
-  const [{ data }, { count: flaggedCount }, { count: changeCount }] = await Promise.all([
-    db.from("services").select("*").eq("status", "active").order("name"),
-    db
-      .from("classifications")
-      .select("*", { count: "exact", head: true })
-      .neq("category", "OTHER"),
-    db
-      .from("change_events")
-      .select("*", { count: "exact", head: true })
-      .eq("status", "published"),
-  ]);
-  const services = (data ?? []) as Service[];
+  const { services, stats } = await loadServicesIndex();
 
   return (
     <>
@@ -50,9 +40,9 @@ export default async function Home() {
 
           {/* Stats */}
           <dl className="mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-4">
-            <Stat value={services.length} label="services graded" />
-            <Stat value={flaggedCount ?? 0} label="clauses flagged" />
-            <Stat value={changeCount ?? 0} label="changes caught" />
+            <Stat value={stats.services} label="services graded" />
+            <Stat value={stats.flagged_clauses} label="clauses flagged" />
+            <Stat value={stats.changes_published} label="changes caught" />
           </dl>
         </section>
 
@@ -79,8 +69,8 @@ export default async function Home() {
             />
             <Step
               n={3}
-              title="Humans sign off"
-              body="Nothing reaches this site without a human reviewing the AI's work. Then grades update and everyone watching the service sees what changed."
+              title="Grades update automatically"
+              body="Results publish as soon as analysis finishes. AI can make mistakes — that's why every flag links to the original clause text, and shaky low-confidence findings are left out of the grade."
             />
           </div>
           <p className="mt-8 text-center text-sm text-zinc-500 dark:text-zinc-400">

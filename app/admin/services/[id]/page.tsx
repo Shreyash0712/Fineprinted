@@ -1,18 +1,21 @@
 import { notFound } from "next/navigation";
 import { requireAdmin } from "@/lib/admin/auth";
-import { CATEGORY_LABELS, CONFIDENCE_REVIEW_THRESHOLD, SEVERITY_POINTS } from "@/lib/grading";
+import {
+  classificationLabel,
+  CONFIDENCE_REVIEW_THRESHOLD,
+  SEVERITY_POINTS,
+} from "@/lib/grading";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type {
   ChangeEvent,
   Classification,
   Document,
   DocumentType,
+  PipelineRun,
   Service,
 } from "@/lib/types";
 import {
   approveClassification,
-  dismissEvent,
-  publishEvent,
   saveDocumentUrls,
   updateServiceName,
 } from "../../actions";
@@ -51,7 +54,6 @@ export default async function ServicePage({
 }) {
   await requireAdmin();
   const { id } = await params;
-  const servicePath = `/admin/services/${id}`;
   const db = createAdminClient();
 
   const { data: service } = await db
@@ -81,6 +83,15 @@ export default async function ServicePage({
     events = (eventRows ?? []) as ChangeEvent[];
   }
 
+  // Latest pipeline run — the panel resumes polling if it's still active.
+  const { data: latestRun } = await db
+    .from("pipeline_runs")
+    .select("*")
+    .eq("service_id", id)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
   // Classifications for every changed clause referenced by the events
   const changedHashes = [
     ...new Set(
@@ -99,8 +110,8 @@ export default async function ServicePage({
     for (const row of rows ?? []) classByHash.set(row.clause_hash, row as Classification);
   }
 
-  const drafts = events.filter((e) => e.status === "draft");
-  const history = events.filter((e) => e.status !== "draft");
+  // No review gate: runs publish themselves, so every event is history.
+  const history = events;
 
   return (
     <main className="space-y-10">
@@ -137,10 +148,16 @@ export default async function ServicePage({
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-400">
           Pipeline
         </h2>
-        <RunPipeline serviceId={svc.id} />
+        <RunPipeline serviceId={svc.id} initialRun={(latestRun as PipelineRun) ?? null} />
         <p className="mt-2 text-xs text-zinc-500">
-          Runs discovery (if no URLs are set below), extraction, hashing, diffing and
-          classification, then creates a draft change event for review.
+          Dispatches a GitHub Actions job that runs discovery (if no URLs are set
+          below), extraction, hashing, diffing and classification, then{" "}
+          <strong className="text-zinc-400">
+            publishes the results and updates the public site automatically
+          </strong>{" "}
+          — there is no review step. Low-confidence findings are excluded from the
+          grade unless approved below. Long waits are normal — the job sleeps
+          through free-tier LLM rate limits.
         </p>
       </section>
 
@@ -184,35 +201,14 @@ export default async function ServicePage({
         </div>
       </section>
 
-      {/* Draft change events — the publishing gate */}
+      {/* Published change events */}
       <section>
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-400">
-          Awaiting review {drafts.length > 0 && `(${drafts.length})`}
+          Change events {history.length > 0 && `(${history.length})`}
         </h2>
-        {drafts.length === 0 ? (
-          <p className="text-sm text-zinc-500">Nothing awaiting review.</p>
+        {history.length === 0 ? (
+          <p className="text-sm text-zinc-500">No runs have produced changes yet.</p>
         ) : (
-          <div className="space-y-4">
-            {drafts.map((event) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                document={docById.get(event.document_id)}
-                classByHash={classByHash}
-                servicePath={servicePath}
-                reviewable
-              />
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* History */}
-      {history.length > 0 && (
-        <section>
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-400">
-            History
-          </h2>
           <div className="space-y-4">
             {history.map((event) => (
               <EventCard
@@ -220,12 +216,12 @@ export default async function ServicePage({
                 event={event}
                 document={docById.get(event.document_id)}
                 classByHash={classByHash}
-                servicePath={servicePath}
+                serviceId={svc.id}
               />
             ))}
           </div>
-        </section>
-      )}
+        )}
+      </section>
     </main>
   );
 }
@@ -234,14 +230,12 @@ function EventCard({
   event,
   document,
   classByHash,
-  servicePath,
-  reviewable = false,
+  serviceId,
 }: {
   event: ChangeEvent;
   document: Document | undefined;
   classByHash: Map<string, Classification>;
-  servicePath: string;
-  reviewable?: boolean;
+  serviceId: string;
 }) {
   const diff = event.diff;
   const changed = [...(diff?.added ?? []), ...(diff?.modified ?? [])];
@@ -249,7 +243,9 @@ function EventCard({
     .map((c) => ({ excerpt: c.excerpt, classification: classByHash.get(c.hash) }))
     .filter(
       (x): x is { excerpt: string; classification: Classification } =>
-        !!x.classification && x.classification.category !== "OTHER"
+        !!x.classification &&
+        x.classification.category !== "OTHER" &&
+        x.classification.severity !== "neutral"
     );
 
   return (
@@ -302,7 +298,7 @@ function EventCard({
             <li key={c.clause_hash} className="rounded-md bg-zinc-900 p-3">
               <div className="mb-1 flex flex-wrap items-center gap-2">
                 <span className={`rounded px-2 py-0.5 text-xs ${severityBadge[c.severity]}`}>
-                  {CATEGORY_LABELS[c.category]}
+                  {classificationLabel(c)}
                 </span>
                 <span className="text-xs tabular-nums text-zinc-500">
                   {SEVERITY_POINTS[c.severity] > 0 ? "+" : ""}
@@ -316,15 +312,13 @@ function EventCard({
                       <span className="text-xs text-yellow-400">
                         low confidence — not counted until approved
                       </span>
-                      {reviewable && (
-                        <form
-                          action={approveClassification.bind(null, c.clause_hash, servicePath)}
-                        >
-                          <button className="rounded bg-emerald-600/20 px-2 py-0.5 text-xs text-emerald-300 hover:bg-emerald-600/30">
-                            Approve
-                          </button>
-                        </form>
-                      )}
+                      <form
+                        action={approveClassification.bind(null, c.clause_hash, serviceId)}
+                      >
+                        <button className="rounded bg-emerald-600/20 px-2 py-0.5 text-xs text-emerald-300 hover:bg-emerald-600/30">
+                          Approve
+                        </button>
+                      </form>
                     </>
                   ))}
               </div>
@@ -343,7 +337,7 @@ function EventCard({
       )}
 
       {diff && (diff.modified.length > 0 || diff.removed.length > 0) && (
-        <details className="mb-3">
+        <details>
           <summary className="cursor-pointer text-xs text-zinc-500">Full diff detail</summary>
           <div className="mt-2 space-y-2">
             {diff.modified.map((m) => (
@@ -366,21 +360,6 @@ function EventCard({
             ))}
           </div>
         </details>
-      )}
-
-      {reviewable && (
-        <div className="flex gap-2">
-          <form action={publishEvent.bind(null, event.id)}>
-            <button className="rounded-md bg-emerald-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-emerald-500">
-              Publish
-            </button>
-          </form>
-          <form action={dismissEvent.bind(null, event.id)}>
-            <button className="rounded-md bg-zinc-800 px-4 py-1.5 text-sm text-zinc-300 hover:bg-zinc-700">
-              Dismiss
-            </button>
-          </form>
-        </div>
       )}
     </div>
   );

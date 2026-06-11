@@ -1,0 +1,44 @@
+{
+  "id": "7f5fd960-df5a-44ab-a0b3-0381ccaaedf3",
+  "name": "Google",
+  "root_domain": "google.com",
+  "grade": "A",
+  "score": 100,
+  "generated_at": "2026-06-11T21:14:29.052Z",
+  "last_published_at": "2026-06-11T18:48:03.107+00:00",
+  "summary": {
+    "good": [],
+    "bad": []
+  },
+  "documents": [
+    {
+      "type": "privacy_policy",
+      "urls": [
+        "https://google.com/privacy"
+      ]
+    }
+  ],
+  "clauses": [],
+  "history": [
+    {
+      "id": "0a75fc18-6d97-4708-92ce-ae83bfdcc201",
+      "date": "2026-06-11T18:48:03.107+00:00",
+      "document_type": "privacy_policy",
+      "points": 0,
+      "summary": "The company updated its privacy policy by making changes to three sections and removing one section. The changes involve revisions to how user data is handled and protected, but do not add new requirements for collecting user information. No user-hostile changes were found. These updates aim to provide clearer guidelines on data usage and user rights.",
+      "added": 0,
+      "modified": 3,
+      "removed": 1
+    },
+    {
+      "id": "d10f45f4-681b-4f28-ab45-c480e134ff29",
+      "date": "2026-06-11T16:05:26.167+00:00",
+      "document_type": "privacy_policy",
+      "points": -30,
+      "summary": "The company confirms it does not sell personal information to anyone and provides users with privacy controls to manage their data. This means users have some control over their information and can expect it to be kept private. No user-hostile changes were found in this clause.",
+      "added": 4,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}

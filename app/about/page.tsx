@@ -95,8 +95,10 @@ export default function AboutPage() {
             monitor the Terms of Service, Privacy Policies, and related legal
             documents of tracked services. Every document is split into
             individual clauses, and an AI classifies each one against a strict
-            taxonomy of known user-hostile patterns. Every finding is reviewed
-            by a human before it&apos;s published — no auto-generated alarmism.
+            taxonomy of known user-hostile patterns — results publish
+            automatically, with the original clause text attached so you can
+            always verify a finding yourself. AI can make mistakes; that&apos;s
+            exactly why the receipts are part of the product.
           </p>
           <p>
             And because terms change quietly,{" "}
@@ -156,19 +158,28 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Direction matters: deductions only apply when a clause{" "}
+            <em>imposes</em> a practice. A clause that explicitly rules one out
+            — &ldquo;we do <strong>not</strong> sell your personal
+            data&rdquo; — counts <span className="font-mono text-emerald-600 dark:text-emerald-400">+5</span>{" "}
+            in the service&apos;s favor instead. Each pattern counts once per
+            service, no matter how many clauses repeat it.
+          </p>
         </section>
 
         {/* Trust */}
         <section className="mt-16">
-          <h2 className="text-2xl font-bold tracking-tight">Why you can trust the grades</h2>
+          <h2 className="text-2xl font-bold tracking-tight">How we keep grades honest</h2>
           <ul className="mt-5 space-y-4 text-zinc-700 dark:text-zinc-300">
-            <TrustItem title="Human-reviewed, always.">
-              The AI proposes; a human disposes. No grade, flag, or change
-              alert is published without a person signing off on it.
+            <TrustItem title="Fully automated — and upfront about it.">
+              Analysis publishes without human editing, so what you see is
+              exactly what the AI found. AI can make mistakes, which is why
+              everything below exists.
             </TrustItem>
             <TrustItem title="Confidence thresholds.">
               When the AI isn&apos;t sure a clause fits a category, the finding
-              is excluded from the grade until a human explicitly approves it.
+              is automatically excluded from the grade.
             </TrustItem>
             <TrustItem title="Semantic change detection.">
               We diff documents by meaning, not formatting — a reworded
@@ -183,10 +194,11 @@ export default function AboutPage() {
 
         <section className="mt-16 rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-relaxed text-zinc-500 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-400">
           <strong className="text-zinc-700 dark:text-zinc-300">A note on limits:</strong>{" "}
-          Fineprint is an automated analysis reviewed by humans — it is
-          informational, not legal advice. Grades reflect the patterns we
-          detect in public documents at the time of analysis, and a good grade
-          is not an endorsement.
+          Fineprint is a fully automated AI analysis — it can make mistakes,
+          and it is informational, not legal advice. Grades reflect the
+          patterns detected in public documents at the time of analysis, and a
+          good grade is not an endorsement. When something matters to you,
+          read the linked clause yourself.
         </section>
       </main>
       <SiteFooter />

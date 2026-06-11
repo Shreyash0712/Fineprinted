@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { after } from "next/server";
 import {
   ADMIN_COOKIE,
   createSessionToken,
@@ -10,9 +11,11 @@ import {
   verifyPassword,
 } from "@/lib/admin/auth";
 import { sanitizeToRootDomain } from "@/lib/domain";
-import { computeScore, scoreToGrade } from "@/lib/grading";
+import { dispatchWorkflow, githubConfigured } from "@/lib/github";
+import { recomputeServiceGrade } from "@/lib/pipeline/grade";
+import { createRun, failRun, isRunActive } from "@/lib/pipeline/run-store";
 import { createAdminClient } from "@/lib/supabase/admin";
-import type { Classification, DocumentType } from "@/lib/types";
+import type { DocumentType } from "@/lib/types";
 
 // ---------------------------------------------------------------------------
 // Auth
@@ -175,12 +178,99 @@ export async function saveDocumentUrls(formData: FormData): Promise<void> {
 }
 
 // ---------------------------------------------------------------------------
-// Review & publishing gate
+// Pipeline execution (GitHub Actions; inline fallback for local dev)
+// ---------------------------------------------------------------------------
+
+export interface TriggerPipelineResult {
+  runId: string | null;
+  /** True when an already-active run was returned instead of a new one. */
+  resumed: boolean;
+  error: string | null;
+}
+
+/**
+ * Kicks off a pipeline run. On Vercel this only inserts a pipeline_runs
+ * row and dispatches the GitHub Actions workflow (~200ms) — the run
+ * itself can then sleep through free-tier rate limits for as long as it
+ * needs. The admin UI polls the run row for progress.
+ */
+export async function triggerPipeline(serviceId: string): Promise<TriggerPipelineResult> {
+  await requireAdmin();
+  const db = createAdminClient();
+
+  // Re-attach to an in-flight run instead of stacking a second one (which
+  // would fight over the same rate-limit budget).
+  const { data: lastRun } = await db
+    .from("pipeline_runs")
+    .select("*")
+    .eq("service_id", serviceId)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (lastRun && isRunActive(lastRun)) {
+    return { runId: lastRun.id, resumed: true, error: null };
+  }
+
+  const run = await createRun(db, serviceId);
+
+  if (githubConfigured()) {
+    try {
+      await dispatchWorkflow({ mode: "pipeline", run_id: run.id });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      await failRun(db, run.id, message);
+      return { runId: null, resumed: false, error: message };
+    }
+    return { runId: run.id, resumed: false, error: null };
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    // Local dev: no wall-clock limit, so run inline after the response.
+    // The pipeline module is imported lazily to keep it out of the
+    // serverless bundle for this actions file.
+    after(async () => {
+      const { executePipelineRun } = await import("@/lib/pipeline/runs");
+      await executePipelineRun(run.id).catch(() => {
+        // executePipelineRun already recorded the failure on the run row
+      });
+    });
+    return { runId: run.id, resumed: false, error: null };
+  }
+
+  const message =
+    "GITHUB_REPO / GITHUB_PAT are not configured. In production the pipeline must run on " +
+    "GitHub Actions — a Vercel function times out long before free-tier rate limits allow " +
+    "a run to finish. See README → “Pipeline execution”.";
+  await failRun(db, run.id, message);
+  return { runId: null, resumed: false, error: message };
+}
+
+/** Manually re-dispatch the static-data export (e.g. after a failed sync). */
+export async function syncStaticData(): Promise<{ error: string | null }> {
+  await requireAdmin();
+  if (!githubConfigured()) {
+    return { error: "GITHUB_REPO / GITHUB_PAT are not configured." };
+  }
+  try {
+    await dispatchWorkflow({ mode: "export" });
+    return { error: null };
+  } catch (err) {
+    return { error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Classification overrides
+//
+// There is no publish gate anymore — the pipeline publishes and grades
+// automatically. The one manual lever left: low-confidence classifications
+// are excluded from grades until an admin approves them, so approving one
+// recomputes the grade and re-syncs the public site.
 // ---------------------------------------------------------------------------
 
 export async function approveClassification(
   clauseHash: string,
-  servicePath: string
+  serviceId: string
 ): Promise<void> {
   await requireAdmin();
   const db = createAdminClient();
@@ -189,101 +279,18 @@ export async function approveClassification(
     .update({ admin_approved: true })
     .eq("clause_hash", clauseHash);
   if (error) throw new Error(error.message);
-  revalidatePath(servicePath);
-}
 
-/** Recompute a service's score from the latest snapshot of every document. */
-async function recomputeServiceGrade(serviceId: string): Promise<{ score: number }> {
-  const db = createAdminClient();
-  const { data: docs, error } = await db
-    .from("documents")
-    .select("id")
-    .eq("service_id", serviceId);
-  if (error) throw new Error(error.message);
+  await recomputeServiceGrade(db, serviceId);
 
-  const all: Pick<
-    Classification,
-    "category" | "severity" | "confidence_score" | "admin_approved"
-  >[] = [];
-
-  for (const doc of docs ?? []) {
-    const { data: snap } = await db
-      .from("snapshots")
-      .select("id")
-      .eq("document_id", doc.id)
-      .order("fetched_at", { ascending: false })
-      .limit(1)
-      .maybeSingle();
-    if (!snap) continue;
-
-    const { data: clauses } = await db
-      .from("clauses")
-      .select("clause_hash")
-      .eq("snapshot_id", snap.id);
-    const hashes = [...new Set((clauses ?? []).map((c) => c.clause_hash))];
-
-    for (let i = 0; i < hashes.length; i += 200) {
-      const { data: cls, error: clsError } = await db
-        .from("classifications")
-        .select("category, severity, confidence_score, admin_approved")
-        .in("clause_hash", hashes.slice(i, i + 200));
-      if (clsError) throw new Error(clsError.message);
-      all.push(...(cls ?? []));
+  // Best-effort site sync; the next export catches up if this one fails.
+  if (githubConfigured()) {
+    try {
+      await dispatchWorkflow({ mode: "export" });
+    } catch (err) {
+      console.error("static data export dispatch failed:", err);
     }
   }
 
-  const score = computeScore(all);
-  const { error: updateError } = await db
-    .from("services")
-    .update({ current_score: score, current_grade: scoreToGrade(score), status: "active" })
-    .eq("id", serviceId);
-  if (updateError) throw new Error(updateError.message);
-  return { score };
-}
-
-export async function publishEvent(eventId: string): Promise<void> {
-  await requireAdmin();
-  const db = createAdminClient();
-
-  const { data: event, error } = await db
-    .from("change_events")
-    .select("id, status, document_id, documents(service_id)")
-    .eq("id", eventId)
-    .single();
-  if (error || !event) throw new Error("Change event not found");
-  if (event.status !== "draft") throw new Error("Only draft events can be published");
-
-  const { error: pubError } = await db
-    .from("change_events")
-    .update({ status: "published", published_at: new Date().toISOString() })
-    .eq("id", eventId);
-  if (pubError) throw new Error(pubError.message);
-
-  const serviceId = (event.documents as unknown as { service_id: string }).service_id;
-  await recomputeServiceGrade(serviceId);
-
-  // Alert dispatch (email/Telegram) is a later phase.
   revalidatePath(`/admin/services/${serviceId}`);
   revalidatePath("/admin");
-}
-
-export async function dismissEvent(eventId: string): Promise<void> {
-  await requireAdmin();
-  const db = createAdminClient();
-
-  const { data: event, error } = await db
-    .from("change_events")
-    .select("id, document_id, documents(service_id)")
-    .eq("id", eventId)
-    .single();
-  if (error || !event) throw new Error("Change event not found");
-
-  const { error: updateError } = await db
-    .from("change_events")
-    .update({ status: "dismissed" })
-    .eq("id", eventId);
-  if (updateError) throw new Error(updateError.message);
-
-  const serviceId = (event.documents as unknown as { service_id: string }).service_id;
-  revalidatePath(`/admin/services/${serviceId}`);
 }

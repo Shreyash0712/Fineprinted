@@ -1,78 +1,172 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import type { PipelineEvent } from "@/lib/pipeline/run";
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { PipelineRun, PipelineRunEvent } from "@/lib/types";
+import { triggerPipeline } from "../../actions";
 
-const levelColor: Record<PipelineEvent["level"], string> = {
+/**
+ * Pipeline control panel. Triggering only dispatches a GitHub Actions
+ * workflow; this panel then polls the pipeline_runs row for progress.
+ * Surviving a page refresh is free — the server passes the latest run in
+ * as initialRun and polling resumes if it is still active.
+ */
+
+const POLL_MS = 3_000;
+const QUEUED_HINT_MS = 5 * 60 * 1000;
+
+const levelColor: Record<PipelineRunEvent["level"], string> = {
   info: "text-zinc-400",
   success: "text-emerald-400",
   warn: "text-yellow-400",
   error: "text-red-400",
 };
 
-export function RunPipeline({ serviceId }: { serviceId: string }) {
-  const [lines, setLines] = useState<PipelineEvent[]>([]);
-  const [running, setRunning] = useState(false);
+const STATUS_BADGE: Record<PipelineRun["status"], string> = {
+  queued: "bg-yellow-600/20 text-yellow-300",
+  running: "bg-indigo-600/20 text-indigo-300",
+  succeeded: "bg-emerald-600/15 text-emerald-300",
+  failed: "bg-red-600/20 text-red-300",
+};
+
+function isActive(run: PipelineRun | null): boolean {
+  return !!run && (run.status === "queued" || run.status === "running");
+}
+
+export function RunPipeline({
+  serviceId,
+  initialRun,
+}: {
+  serviceId: string;
+  initialRun: PipelineRun | null;
+}) {
+  const [run, setRun] = useState<PipelineRun | null>(initialRun);
+  const [actionError, setActionError] = useState<string | null>(null);
+  const [pending, setPending] = useState(false);
+  const [queuedLong, setQueuedLong] = useState(false);
   const router = useRouter();
-  const sourceRef = useRef<EventSource | null>(null);
   const logRef = useRef<HTMLDivElement | null>(null);
+  const wasActiveRef = useRef(isActive(initialRun));
 
   useEffect(() => {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight });
-  }, [lines]);
+  }, [run?.events.length]);
 
-  useEffect(() => () => sourceRef.current?.close(), []);
+  const poll = useCallback(async () => {
+    if (!run) return;
+    try {
+      const res = await fetch(`/api/admin/runs/${run.id}`, { cache: "no-store" });
+      if (!res.ok) return;
+      const next = (await res.json()) as PipelineRun;
+      setRun(next);
+      setQueuedLong(
+        next.status === "queued" &&
+          Date.now() - new Date(next.created_at).getTime() > QUEUED_HINT_MS
+      );
+      if (wasActiveRef.current && !isActive(next)) {
+        wasActiveRef.current = false;
+        router.refresh(); // pull in the new draft change events
+      }
+    } catch {
+      // transient network error — next tick retries
+    }
+  }, [run?.id, router]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  function start() {
-    setLines([]);
-    setRunning(true);
-    const source = new EventSource(
-      `/api/admin/pipeline?serviceId=${encodeURIComponent(serviceId)}`
-    );
-    sourceRef.current = source;
+  useEffect(() => {
+    if (!isActive(run)) return;
+    wasActiveRef.current = true;
+    const t = setInterval(poll, POLL_MS);
+    return () => clearInterval(t);
+  }, [run?.id, run?.status, poll]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    source.onmessage = (e) => {
-      setLines((prev) => [...prev, JSON.parse(e.data) as PipelineEvent]);
-    };
-    const finish = () => {
-      source.close();
-      setRunning(false);
-      router.refresh();
-    };
-    source.addEventListener("end", finish);
-    source.onerror = () => {
-      // Close instead of letting EventSource auto-reconnect, which would
-      // re-run the whole pipeline.
-      setLines((prev) => [
-        ...prev,
-        { level: "error", step: "stream", message: "Stream disconnected" },
-      ]);
-      finish();
-    };
+  async function start() {
+    setPending(true);
+    setActionError(null);
+    setQueuedLong(false);
+    try {
+      const result = await triggerPipeline(serviceId);
+      if (result.error) {
+        setActionError(result.error);
+      } else if (result.runId) {
+        if (result.resumed) {
+          setActionError("A run is already in progress — re-attached to it.");
+        }
+        setRun({
+          id: result.runId,
+          service_id: serviceId,
+          status: "queued",
+          events: [],
+          error: null,
+          created_at: new Date().toISOString(),
+          started_at: null,
+          finished_at: null,
+        });
+        wasActiveRef.current = true;
+      }
+    } finally {
+      setPending(false);
+    }
   }
 
   return (
     <div className="space-y-3">
-      <button
-        onClick={start}
-        disabled={running}
-        className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-400 disabled:opacity-50"
-      >
-        {running ? "Running…" : "Run pipeline"}
-      </button>
-      {lines.length > 0 && (
+      <div className="flex flex-wrap items-center gap-3">
+        <button
+          onClick={start}
+          disabled={pending || isActive(run)}
+          className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-400 disabled:opacity-50"
+        >
+          {isActive(run) ? "Running…" : pending ? "Starting…" : "Run pipeline"}
+        </button>
+        {run && (
+          <span className={`rounded px-2 py-0.5 text-xs ${STATUS_BADGE[run.status]}`}>
+            {run.status}
+          </span>
+        )}
+        {run && (
+          <span className="text-xs text-zinc-500">
+            started {new Date(run.created_at).toLocaleString()}
+          </span>
+        )}
+      </div>
+
+      {actionError && (
+        <p className="rounded-md border border-yellow-600/30 bg-yellow-600/10 px-3 py-2 text-xs text-yellow-300">
+          {actionError}
+        </p>
+      )}
+
+      {run?.status === "queued" && (
+        <p className="text-xs text-zinc-500">
+          Waiting for a GitHub Actions runner to pick the job up…
+          {queuedLong && (
+            <span className="text-yellow-400">
+              {" "}
+              This is taking long — check the repository&apos;s Actions tab and that the
+              workflow secrets are configured.
+            </span>
+          )}
+        </p>
+      )}
+
+      {run && run.events.length > 0 && (
         <div
           ref={logRef}
           className="max-h-72 overflow-y-auto rounded-lg border border-zinc-800 bg-black p-3 font-mono text-xs leading-relaxed"
         >
-          {lines.map((line, i) => (
+          {run.events.map((line, i) => (
             <div key={i} className={levelColor[line.level]}>
               <span className="text-zinc-600">[{line.step}]</span> {line.message}
             </div>
           ))}
-          {running && <div className="animate-pulse text-zinc-500">▍</div>}
+          {isActive(run) && <div className="animate-pulse text-zinc-500">▍</div>}
         </div>
+      )}
+
+      {run?.status === "failed" && run.error && (
+        <p className="rounded-md border border-red-600/30 bg-red-600/10 px-3 py-2 text-xs text-red-300">
+          {run.error}
+        </p>
       )}
     </div>
   );

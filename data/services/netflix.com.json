@@ -1,0 +1,703 @@
+{
+  "id": "b6ec649e-c39c-496c-b237-d3e5c593b29c",
+  "name": "Netflix",
+  "root_domain": "netflix.com",
+  "grade": "F",
+  "score": 10,
+  "generated_at": "2026-06-11T21:14:33.343Z",
+  "last_published_at": "2026-06-11T16:24:58.956+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "Promises advance notice before terms change.",
+        "points": 5
+      }
+    ],
+    "bad": [
+      {
+        "text": "You give up your right to sue or join a class action.",
+        "points": -30
+      },
+      {
+        "text": "The rules can change without telling you.",
+        "points": -30
+      },
+      {
+        "text": "Your account can be closed at any time, for any reason.",
+        "points": -15
+      },
+      {
+        "text": "They keep a broad license to content you create.",
+        "points": -15
+      },
+      {
+        "text": "You are tracked for third-party advertising.",
+        "points": -5
+      }
+    ]
+  },
+  "documents": [
+    {
+      "type": "terms_of_service",
+      "urls": [
+        "https://help.netflix.com/legal/termsofuse"
+      ]
+    },
+    {
+      "type": "privacy_policy",
+      "urls": [
+        "https://help.netflix.com/legal/privacy"
+      ]
+    },
+    {
+      "type": "cookie_policy",
+      "urls": [
+        "https://netflix.com/cookies"
+      ]
+    }
+  ],
+  "clauses": [
+    {
+      "document_type": "terms_of_service",
+      "category": "FORCED_ARBITRATION",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "You agree you can only sue Netflix individually, not as part of a class or representative lawsuit.",
+      "excerpt": "## Netflix Terms of Use\n\n5\\. Warranties and Limitations on Liability. The Netflix service is provided \"as is\" and without warranty or condition. In particular, the service may not be uninterrupted or error-free. You waive all special, indirect and consequential damages against us. These terms will not limit any non-waivable warranties or mandatory consumer protection rights that apply to you.\n\n6\\. Class Action Waiver. WHERE PERMITTED UNDER THE APPLICABLE LAW, YOU AND NETFLIX AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CL",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "UNILATERAL_CHANGE",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "Netflix can modify its privacy statement whenever it wants, only giving the notice that the law requires, and if you keep using the service you’re deemed to accept the changes; you can stop using the service if you don’t agree.",
+      "excerpt": "## Changes to this Privacy Statement\n\nWe will update this Privacy Statement from time to time in response to changing legal, regulatory, or operational requirements. We will provide notice of any such changes as required by law. Your continued use of the Netflix service after any such updates take effect will constitute acknowledgement and (as applicable) acceptance of those changes. If you do not want to acknowledge or accept any updates to this Privacy Statement, you may cancel your account. To see when this Privacy Statement was last updated, please see the \"Last Updated\" date below.",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "UNILATERAL_CHANGE",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "Netflix can modify its privacy statement whenever it wants, only giving the notice that the law requires, and if you keep using the service you’re deemed to accept the changes; you can stop using the service if you don’t agree.",
+      "excerpt": "## Changes to this Privacy Statement\n\nWe will update this Privacy Statement from time to time in response to changing legal, regulatory, or operational requirements. We will provide notice of any such changes as required by law. Your continued use of the Netflix service after any such updates take effect will constitute acknowledgement and (as applicable) acceptance of those changes. If you do not want to acknowledge or accept any updates to this Privacy Statement, you may cancel your account. To see when this Privacy Statement was last updated, please see the \"Last Updated\" date below.",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "ACCOUNT_TERMINATION",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "Netflix can end or limit your account if you break these rules, such as using bots, reverse engineering, or other prohibited actions.",
+      "excerpt": "## Netflix Terms of Use\n\n(iv) use any robot, spider, scraper or other automated means to access the Netflix service;\n\n(v) decompile, reverse engineer or disassemble any software or other products or processes accessible through the Netflix service;\n\n(vi) insert any code or product or manipulate the content of the Netflix service in any way;\n\n(vii) use any data mining, data gathering or extraction method;\n\n(viii) upload, post, e-mail or otherwise send or transmit any material designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equ",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "ACCOUNT_TERMINATION",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "Netflix can suspend or end your access to interactive features at any time if you break the rules or pose a safety/legal risk.",
+      "excerpt": "## Netflix Terms of Use\n\n1.11. Interactive Features. We may offer certain Interactive Features as part of the service. “Interactive Features” means any real-time or near-real-time functionality that enables users to participate in or interact with programming or other users, for example live chat, polls, voting, multiplayer gaming, game shows, and live voting. Use of Interactive Features is subject to these Terms of Use, our [Community Guidelines](https://help.netflix.com/legal/gamescommunityguidelines) and, where posted, the official rules for the specific event. We may take interim measures ",
+      "confidence": 90
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "ACCOUNT_TERMINATION",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "Netflix can suspend or close your account, especially if they suspect fraud or unauthorized use, and you’re responsible for any activity done through your account.",
+      "excerpt": "## Netflix Terms of Use\n\n4\\. Account Access. You are responsible for any activity that occurs through the Netflix account. By allowing others to access the account (which includes access to information on viewing activity for the account), you agree that such individuals are acting on your behalf and that you are bound by any changes that they may make to the account, including changes to subscription plans. To help maintain control over the account and to prevent any unauthorized users from accessing the account, you should maintain control over the devices that are used to access the service",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "Netflix can use any feedback you give them forever, worldwide, for any purpose without paying you, and you give up any moral rights to that feedback.",
+      "excerpt": "## Netflix Terms of Use\n\n7.2. Unsolicited Materials. Netflix does not accept unsolicited materials or ideas for Netflix content and is not responsible for the similarity of any of its content or programming in any media to materials or ideas transmitted to Netflix.\n\n7.3. Feedback. Netflix is free to use any comments, information, ideas, concepts, reviews, or techniques or any other material contained in any communication you may send to us (\"Feedback\"), including responses to questionnaires or through postings to the Netflix service, including related websites and user interfaces, worldwide an",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service gathers detailed data about the ads you see and interact with, your device, IP address, and inferred interests, and shares this with advertising companies to deliver targeted ads.",
+      "excerpt": "## The Categories of Personal Information We Collect\n\n-   Advertising information: We collect information about the advertisements on the Netflix service that you view or interact with, device information (such as resettable device identifiers), IP addresses, inferences we make about you or your household based on data we collect from or about you (such as the types of ads you or your household prefer to see), and information provided by Advertising Companies (such as your demographic information, likely interests they have collected or inferred from your interactions and purchases through the",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix collects detailed device, network, and identifier information—including cookies and advertising IDs—to track your usage and location.",
+      "excerpt": "## The Categories of Personal Information We Collect\n\n-   Device and network information: We collect information about your computer or other Netflix supported devices you might use to access our service (such as smart TVs, mobile devices, set top boxes, gaming systems, and other streaming media devices), your network, and network devices. The information includes:\n\n-   device IDs or other unique identifiers, including for your network devices, and devices that are Netflix supported on your network;\n\n-   IP addresses (which can be used to tell us the general location of your device, such as yo",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix gathers personal data directly from you and automatically as you use the service, including details about your device, usage, and advertising information, which can be used for tracking and targeted ads.",
+      "excerpt": "## Where We Collect Personal Information From\n\nWe collect your personal information from the following sources:\n\n-   Directly from you: When you register with the Netflix service, update your Netflix account or profile, purchase products or services from us, correspond with us, or respond to our surveys, you may provide (and we will collect) the following [categories of personal information](#categories): personal details, payment details, purchase information, Netflix account/profile information, and communications.\n\n-   Automatically when you use our service: We automatically collect the fol",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix explains that it gathers your personal information from various places, including payment services, its own games, marketing partners, support forums, and publicly available online posts.",
+      "excerpt": "## Where We Collect Personal Information From\n\n-   provide us with payment processing services including payment or balance information, or updates to that information; and\n\n-   provide Netflix games, or portions or features of those games, as part of the Netflix service (for example, some Netflix games are licensed from and run by Service Providers).\n\n-   Netflix Marketing Providers when you interact with marketing campaigns promoting the Netflix service or Netflix content (such as our ads on third party services). Please see the “Cookies and other Technologies” section below for details.\n\n- ",
+      "confidence": 80
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may gather identifiers and demographic data about you from advertisers and ad‑tech companies to serve and measure ads.",
+      "excerpt": "## Where We Collect Personal Information From\n\n-   Advertising Companies: We may collect advertising information about you from other sources to support advertisements, including the following (collectively referred to as “Advertising Companies”):\n\n-   Advertisers that run advertisements on Netflix (“Advertisers”) may provide us with or allow us to collect unique identifiers (for example, cookies or resettable device identifiers), and demographic information and other information (such as information about the interactions and purchases on their websites and apps and likely interests they have",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service gathers personal data about you from other companies—like your location, demographics, and inferred interests—to use for advertising purposes.",
+      "excerpt": "## Where We Collect Personal Information From\n\n-   online and offline information providers to support advertisements (for example, they may provide us your general location information based on your device’s IP address, such as city, state, and postal code, supplement information we may have about you with demographic data, or provide us information about your likely interests they have collected or inferred based on your activities online).",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix says it will use your personal data to improve its service and to share it with partner companies for promotions and integrations.",
+      "excerpt": "## How We Use Your Personal Information\n\n-   To research, analyze, and improve our services such as analyzing and understanding how users interact with the Netflix service, to improve our services and optimize Netflix content selection and service delivery. This may also include processing your personal information in connection with any surveys you participate in. We use the following [categories of personal information](#categories) for this purpose: personal details, payment details, purchase information, Netflix account/profile information, usage information, device and network information",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix will use your personal data to send you marketing messages and may share it with third‑party services for personalized advertising.",
+      "excerpt": "## How We Use Your Personal Information\n\n-   To send marketing and informational messages including news and promotional communications about our service, new features, available Netflix content, Offers, as well as Netflix marketing on third party services. Any of these messages, including Netflix marketing on third party services, may be personalized for you or your likely interests. Please see the section “Communication Preferences” below to change your communications preferences. To understand your choices in connection with Netflix’s marketing on third party services, please see the “Cooki",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix says it will use your personal data to serve and measure ads, including behavioral advertising, and for security purposes, which may involve sharing information with third‑party advertisers.",
+      "excerpt": "## How We Use Your Personal Information\n\n-   To support advertisements including to provide, analyze, administer, enhance, optimize, select, deliver, and measure advertisements. We use the following [categories of personal information](#categories) for this purpose: personal details, payment details, purchase information, Netflix account/profile information, usage information, advertising information, and device and network information.\n\nWe use your personal information to present you with advertisements. Some of our advertisements may be Behavioral Advertisements. Please see the section “Adve",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix can share your personal information with its affiliated companies and use it for things like service provision, advertising, and marketing.",
+      "excerpt": "## Who We Disclose Personal Information To\n\nWe may disclose your [personal information](#categories) to the following parties:\n\n-   The Netflix family of companies: We share your personal information among the Netflix family of companies (see [help.netflix.com/legal/corpinfo](https://help.netflix.com/legal/corpinfo)) as needed for the following [purposes](#howuse): to provide our service; to administer and operate our business; to research, analyze, and improve our services; to enable Partner integrations and promotions; to send marketing and informational messages; to support advertisements; ",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The company shares your personal information with its service providers for things like security, payments, marketing, and improving the service, and these providers may also monitor your messages.",
+      "excerpt": "## Who We Disclose Personal Information To\n\n-   Service Providers: We use Service Providers to perform services on our behalf or to assist us with the provision of services to you. For example, we use Service Providers to provide communications, security, infrastructure and IT services, game-related services, to personalize and improve our service, and to process payments. We do not authorize them to use or disclose your personal information except in connection with providing their services (which may include maintaining and improving their services). To help maintain the safety and security ",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service may share your personal information with partner companies for things like recommendations, research, and marketing, allowing those partners to process your data.",
+      "excerpt": "## Who We Disclose Personal Information To\n\n-   Partners: If you have a relationship with one or more of our Partners, we may share certain personal information with them in compliance with applicable law. For example, depending on what Partner services you use, we may share personal information so that Netflix content and features can be suggested to you in the Partner’s user interface. Partners may process your personal information for the following [purposes](#howuse): to administer and operate our business; to research, analyze, and improve our services; to enable Partner integrations and ",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may share your personal information with its marketing partners so they can measure and improve advertising, but it does not share details about what you watch.",
+      "excerpt": "## Who We Disclose Personal Information To\n\n-   Netflix marketing providers: When we market Netflix on third party services, some of those services, as well as the marketing Service Providers that we use to purchase, deliver, optimize, or measure our marketing (collectively “Netflix Marketing Providers”), may receive information from us (for example, the steps completed in the Netflix registration process). Common uses of this type of information are to measure the effectiveness and optimize our marketing campaigns. Netflix uses contractual and technical measures designed to prevent Netflix Ma",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may share your personal information with advertising companies and promotional partners so they can target ads and send marketing messages.",
+      "excerpt": "## Who We Disclose Personal Information To\n\n-   Advertising Companies: We may disclose certain personal information to Advertising Companies (see definition above) in order to select advertisements shown on Netflix, to facilitate interaction with advertisements, and to measure and improve effectiveness of advertisements. These companies may process your personal information for the following [purposes](#howuse): to support advertisements.\n\n-   Promotional collaborations: We may collaborate with third parties for Offers. To fulfill these types of Offers, we and the third parties may use your pe",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may share pseudonymized contact info with third‑party services so they can match you and send you Netflix marketing on those platforms, but you can control this in your account settings.",
+      "excerpt": "## Communication and Marketing Preferences\n\n-   Matched Identifier Communications from Netflix. Some third party services allow us to reach users with online marketing about Netflix content or the Netflix service by sending privacy protective contact information to the third party. Privacy protective contact information means we use pseudonymization technologies (such as hashing) to convert the original contact information (such as an email address or phone number) into a value (typically a long alphanumeric sequence of characters) that cannot, by itself, reveal your identity or contact inform",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix uses cookies and similar technologies to market its service and content, and you can manage or reset these tracking tools using the provided options.",
+      "excerpt": "## Communication and Marketing Preferences\n\n-   Marketing of the Netflix service using cookies and similar technologies. To exercise choice around cookies or resettable device IDs collected for marketing of the Netflix service or Netflix content on third party service, please use the tools described in the “[Cookies and other Technologies](#cookies)” section below.",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix lets you turn off behavioral ads, but you’ll still see non‑behavioral ads and the service still tracks you for advertising purposes, with limited opt‑out options for kids.",
+      "excerpt": "## Advertising Choices\n\n-   Behavioral Advertising Choices for Advertisements on Netflix\n\nWe respect your Behavioral Advertising preferences, as applicable. If you are eligible for Behavioral Advertisements, a “Behavioral Advertising” setting will be available to you in the “Privacy and data settings” menu (for the relevant profile) of the “Account” section of our website that you can adjust at any time.\n\nIf your Behavioral Advertisements setting is off, you will still see advertisements, but they will be non-behavioral advertisements.\n\nAn option to opt out is not provided in a Kids profile be",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause points users to an external advertising choice program, indicating that their data may be used for targeted ads and that they can manage those preferences.",
+      "excerpt": "## Advertising Choices\n\n-   In the US: [Digital Advertising Alliance (DAA)](https://youradchoices.com/)\n\nTo learn more about your personal information choices, please see [help.netflix.com/node/100637](https://help.netflix.com/node/100637).",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service and its partners use cookies, pixel tags, and device IDs to track you for various purposes, though you may be able to manage your choices elsewhere.",
+      "excerpt": "## Section D: Cookies and other Technologies\n\nWe, our Service Providers, Netflix Marketing Providers, and Advertising Companies use cookies, other similar technologies (such as pixel tags), hashed identifiers, and resettable device identifiers for various reasons. This section explains the types of technologies used, what they do, and your corresponding choices. To choose whether or not to receive cookies and similar technologies, please see the section below “[How can I exercise choice regarding these technologies?](#choice)”",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service uses cookies, pixel tags, and similar technologies to identify and track your device, which may affect functionality if you decline them.",
+      "excerpt": "## Cookies and Similar Technologies, Pixel Tags and other Identifiers\n\nCookies are small data files that are commonly stored on your device when you access websites and online services. The text in a cookie contains a string of numbers and letters that may uniquely identify a device and can contain other information as well. This allows the web server to recognize your browser each time it connects to that web server.\n\nWe use other technologies such as browser storage and plugins (for example, HTML5, IndexedDB, and WebSQL). Like cookies, these other technologies may store small amounts of data",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may collect device identifiers (like advertising IDs) from your mobile or streaming device, which can be used to track you for advertising purposes.",
+      "excerpt": "## Cookies and Similar Technologies, Pixel Tags and other Identifiers\n\nIf you use a Netflix app (such as the main Netflix app, or a Netflix game app) on a mobile device, tablet, or streaming media device, we may collect a resettable device identifier from your device. Resettable device identifiers can be used like cookies and are found on many mobile devices and tablets (for example, the “Identifier for Advertisers” on Apple iOS devices and the “Google Advertising ID” on Android devices), and certain streaming media devices.",
+      "confidence": 80
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix uses tracking technologies to collect data about your usage and shares it with its marketing providers and advertising companies for personalized ads and marketing purposes.",
+      "excerpt": "## Why Does Netflix Use These Technologies?\n\nWe use these types of technologies for various reasons, including to provide our service (for example, by making it easy to access our service by remembering you when you return); to administer and operate our business, to research, analyze and improve our services (for example, to improve site performance, monitor visitor traffic and actions on our site, and to test the effectiveness of our user interface); to send marketing and informational messages (for example, to deliver and tailor our marketing, and to understand interactions with our emails,",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix tracks your activity with pixel tags and identifiers to understand email interactions and to show ads on third‑party sites, sharing data for advertising and analytics purposes.",
+      "excerpt": "## Why Does Netflix Use These Technologies?\n\nWe use pixel tags in our emails to understand how members interact with our service. Our use of pixel tags helps us understand when links within messages are clicked, or the emails are opened. We may also use pixel tags placed on Advertiser sites and applications to support advertising.\n\nNetflix uses hashed identifiers and resettable identifiers to display marketing for our service or Netflix content on third party services, to support advertisements (including delivering advertisements to you), and for analytics and optimization purposes.\n\nTo learn",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause tells users how to manage cookies and hashed identifiers used for marketing, but notes the service ignores browser “do not track” signals.",
+      "excerpt": "## How can I exercise choice regarding these technologies?\n\n-   To exercise choice regarding cookies\n\nFor more information about cookies set through our service and to exercise choices regarding cookies, [click here](#cookie-preferences). We do not currently respond to web browser “do not track\" signals.\n\n-   To exercise choice regarding hashed identifiers for Netflix Marketing\n\nTo exercise choice regarding Netflix’s use of hashed identifiers for Netflix marketing communications on third party services, please configure the appropriate setting under Matched Identifier Communications in the \"Pr",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "You can turn off Netflix’s use of resettable device IDs in your device’s privacy or ads settings; if you do, you’ll still see ads but they won’t be targeted using that identifier.",
+      "excerpt": "## How can I exercise choice regarding these technologies?\n\nTo exercise choice regarding Netflix’s use of resettable device identifiers (for marketing the Netflix service or Netflix content, or as used to support advertisements), please configure the appropriate setting on your device (usually found under \"privacy\" or \"ads\" in your device settings). If you choose not to allow this, you may still see marketing messages promoting Netflix and advertisements on that device but it will not be selected based on the use of a resettable device identifier. Note that your choice regarding the resettable",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause tells you how to control or delete tracking technologies like cookies, browser storage, and pixel tags, and points you to advertising choices for behavioral ads.",
+      "excerpt": "## How can I exercise choice regarding these technologies?\n\nIn addition to any choices we may offer you in the Netflix service, there are several ways to exercise choice regarding technologies that are similar to cookies, such as browser storage and plugins (for example, HTML5, IndexedDB, and WebSQL). For example, many popular browsers provide the ability to clear browser storage, typically in the settings or preferences area. See your browser's help function or support area to learn more. Most email clients have settings that allow you to prevent the automatic downloading of images, including",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service gathers detailed data about the ads you see and interact with, your device, IP address, and inferred interests, and shares this with advertising companies to deliver targeted ads.",
+      "excerpt": "## The Categories of Personal Information We Collect\n\n-   Advertising information: We collect information about the advertisements on the Netflix service that you view or interact with, device information (such as resettable device identifiers), IP addresses, inferences we make about you or your household based on data we collect from or about you (such as the types of ads you or your household prefer to see), and information provided by Advertising Companies (such as your demographic information, likely interests they have collected or inferred from your interactions and purchases through the",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix collects detailed device, network, and identifier information—including cookies and advertising IDs—to track your usage and location.",
+      "excerpt": "## The Categories of Personal Information We Collect\n\n-   Device and network information: We collect information about your computer or other Netflix supported devices you might use to access our service (such as smart TVs, mobile devices, set top boxes, gaming systems, and other streaming media devices), your network, and network devices. The information includes:\n\n-   device IDs or other unique identifiers, including for your network devices, and devices that are Netflix supported on your network;\n\n-   IP addresses (which can be used to tell us the general location of your device, such as yo",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix gathers personal data directly from you and automatically as you use the service, including details about your device, usage, and advertising information, which can be used for tracking and targeted ads.",
+      "excerpt": "## Where We Collect Personal Information From\n\nWe collect your personal information from the following sources:\n\n-   Directly from you: When you register with the Netflix service, update your Netflix account or profile, purchase products or services from us, correspond with us, or respond to our surveys, you may provide (and we will collect) the following [categories of personal information](#categories): personal details, payment details, purchase information, Netflix account/profile information, and communications.\n\n-   Automatically when you use our service: We automatically collect the fol",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix explains that it gathers your personal information from various places, including payment services, its own games, marketing partners, support forums, and publicly available online posts.",
+      "excerpt": "## Where We Collect Personal Information From\n\n-   provide us with payment processing services including payment or balance information, or updates to that information; and\n\n-   provide Netflix games, or portions or features of those games, as part of the Netflix service (for example, some Netflix games are licensed from and run by Service Providers).\n\n-   Netflix Marketing Providers when you interact with marketing campaigns promoting the Netflix service or Netflix content (such as our ads on third party services). Please see the “Cookies and other Technologies” section below for details.\n\n- ",
+      "confidence": 80
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may gather identifiers and demographic data about you from advertisers and ad‑tech companies to serve and measure ads.",
+      "excerpt": "## Where We Collect Personal Information From\n\n-   Advertising Companies: We may collect advertising information about you from other sources to support advertisements, including the following (collectively referred to as “Advertising Companies”):\n\n-   Advertisers that run advertisements on Netflix (“Advertisers”) may provide us with or allow us to collect unique identifiers (for example, cookies or resettable device identifiers), and demographic information and other information (such as information about the interactions and purchases on their websites and apps and likely interests they have",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service gathers personal data about you from other companies—like your location, demographics, and inferred interests—to use for advertising purposes.",
+      "excerpt": "## Where We Collect Personal Information From\n\n-   online and offline information providers to support advertisements (for example, they may provide us your general location information based on your device’s IP address, such as city, state, and postal code, supplement information we may have about you with demographic data, or provide us information about your likely interests they have collected or inferred based on your activities online).",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix says it will use your personal data to improve its service and to share it with partner companies for promotions and integrations.",
+      "excerpt": "## How We Use Your Personal Information\n\n-   To research, analyze, and improve our services such as analyzing and understanding how users interact with the Netflix service, to improve our services and optimize Netflix content selection and service delivery. This may also include processing your personal information in connection with any surveys you participate in. We use the following [categories of personal information](#categories) for this purpose: personal details, payment details, purchase information, Netflix account/profile information, usage information, device and network information",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix will use your personal data to send you marketing messages and may share it with third‑party services for personalized advertising.",
+      "excerpt": "## How We Use Your Personal Information\n\n-   To send marketing and informational messages including news and promotional communications about our service, new features, available Netflix content, Offers, as well as Netflix marketing on third party services. Any of these messages, including Netflix marketing on third party services, may be personalized for you or your likely interests. Please see the section “Communication Preferences” below to change your communications preferences. To understand your choices in connection with Netflix’s marketing on third party services, please see the “Cooki",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix says it will use your personal data to serve and measure ads, including behavioral advertising, and for security purposes, which may involve sharing information with third‑party advertisers.",
+      "excerpt": "## How We Use Your Personal Information\n\n-   To support advertisements including to provide, analyze, administer, enhance, optimize, select, deliver, and measure advertisements. We use the following [categories of personal information](#categories) for this purpose: personal details, payment details, purchase information, Netflix account/profile information, usage information, advertising information, and device and network information.\n\nWe use your personal information to present you with advertisements. Some of our advertisements may be Behavioral Advertisements. Please see the section “Adve",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix can share your personal information with its affiliated companies and use it for things like service provision, advertising, and marketing.",
+      "excerpt": "## Who We Disclose Personal Information To\n\nWe may disclose your [personal information](#categories) to the following parties:\n\n-   The Netflix family of companies: We share your personal information among the Netflix family of companies (see [help.netflix.com/legal/corpinfo](https://help.netflix.com/legal/corpinfo)) as needed for the following [purposes](#howuse): to provide our service; to administer and operate our business; to research, analyze, and improve our services; to enable Partner integrations and promotions; to send marketing and informational messages; to support advertisements; ",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The company shares your personal information with its service providers for things like security, payments, marketing, and improving the service, and these providers may also monitor your messages.",
+      "excerpt": "## Who We Disclose Personal Information To\n\n-   Service Providers: We use Service Providers to perform services on our behalf or to assist us with the provision of services to you. For example, we use Service Providers to provide communications, security, infrastructure and IT services, game-related services, to personalize and improve our service, and to process payments. We do not authorize them to use or disclose your personal information except in connection with providing their services (which may include maintaining and improving their services). To help maintain the safety and security ",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service may share your personal information with partner companies for things like recommendations, research, and marketing, allowing those partners to process your data.",
+      "excerpt": "## Who We Disclose Personal Information To\n\n-   Partners: If you have a relationship with one or more of our Partners, we may share certain personal information with them in compliance with applicable law. For example, depending on what Partner services you use, we may share personal information so that Netflix content and features can be suggested to you in the Partner’s user interface. Partners may process your personal information for the following [purposes](#howuse): to administer and operate our business; to research, analyze, and improve our services; to enable Partner integrations and ",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may share your personal information with its marketing partners so they can measure and improve advertising, but it does not share details about what you watch.",
+      "excerpt": "## Who We Disclose Personal Information To\n\n-   Netflix marketing providers: When we market Netflix on third party services, some of those services, as well as the marketing Service Providers that we use to purchase, deliver, optimize, or measure our marketing (collectively “Netflix Marketing Providers”), may receive information from us (for example, the steps completed in the Netflix registration process). Common uses of this type of information are to measure the effectiveness and optimize our marketing campaigns. Netflix uses contractual and technical measures designed to prevent Netflix Ma",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may share your personal information with advertising companies and promotional partners so they can target ads and send marketing messages.",
+      "excerpt": "## Who We Disclose Personal Information To\n\n-   Advertising Companies: We may disclose certain personal information to Advertising Companies (see definition above) in order to select advertisements shown on Netflix, to facilitate interaction with advertisements, and to measure and improve effectiveness of advertisements. These companies may process your personal information for the following [purposes](#howuse): to support advertisements.\n\n-   Promotional collaborations: We may collaborate with third parties for Offers. To fulfill these types of Offers, we and the third parties may use your pe",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may share pseudonymized contact info with third‑party services so they can match you and send you Netflix marketing on those platforms, but you can control this in your account settings.",
+      "excerpt": "## Communication and Marketing Preferences\n\n-   Matched Identifier Communications from Netflix. Some third party services allow us to reach users with online marketing about Netflix content or the Netflix service by sending privacy protective contact information to the third party. Privacy protective contact information means we use pseudonymization technologies (such as hashing) to convert the original contact information (such as an email address or phone number) into a value (typically a long alphanumeric sequence of characters) that cannot, by itself, reveal your identity or contact inform",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix uses cookies and similar technologies to market its service and content, and you can manage or reset these tracking tools using the provided options.",
+      "excerpt": "## Communication and Marketing Preferences\n\n-   Marketing of the Netflix service using cookies and similar technologies. To exercise choice around cookies or resettable device IDs collected for marketing of the Netflix service or Netflix content on third party service, please use the tools described in the “[Cookies and other Technologies](#cookies)” section below.",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix lets you turn off behavioral ads, but you’ll still see non‑behavioral ads and the service still tracks you for advertising purposes, with limited opt‑out options for kids.",
+      "excerpt": "## Advertising Choices\n\n-   Behavioral Advertising Choices for Advertisements on Netflix\n\nWe respect your Behavioral Advertising preferences, as applicable. If you are eligible for Behavioral Advertisements, a “Behavioral Advertising” setting will be available to you in the “Privacy and data settings” menu (for the relevant profile) of the “Account” section of our website that you can adjust at any time.\n\nIf your Behavioral Advertisements setting is off, you will still see advertisements, but they will be non-behavioral advertisements.\n\nAn option to opt out is not provided in a Kids profile be",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause points users to an external advertising choice program, indicating that their data may be used for targeted ads and that they can manage those preferences.",
+      "excerpt": "## Advertising Choices\n\n-   In the US: [Digital Advertising Alliance (DAA)](https://youradchoices.com/)\n\nTo learn more about your personal information choices, please see [help.netflix.com/node/100637](https://help.netflix.com/node/100637).",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service and its partners use cookies, pixel tags, and device IDs to track you for various purposes, though you may be able to manage your choices elsewhere.",
+      "excerpt": "## Section D: Cookies and other Technologies\n\nWe, our Service Providers, Netflix Marketing Providers, and Advertising Companies use cookies, other similar technologies (such as pixel tags), hashed identifiers, and resettable device identifiers for various reasons. This section explains the types of technologies used, what they do, and your corresponding choices. To choose whether or not to receive cookies and similar technologies, please see the section below “[How can I exercise choice regarding these technologies?](#choice)”",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The service uses cookies, pixel tags, and similar technologies to identify and track your device, which may affect functionality if you decline them.",
+      "excerpt": "## Cookies and Similar Technologies, Pixel Tags and other Identifiers\n\nCookies are small data files that are commonly stored on your device when you access websites and online services. The text in a cookie contains a string of numbers and letters that may uniquely identify a device and can contain other information as well. This allows the web server to recognize your browser each time it connects to that web server.\n\nWe use other technologies such as browser storage and plugins (for example, HTML5, IndexedDB, and WebSQL). Like cookies, these other technologies may store small amounts of data",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix may collect device identifiers (like advertising IDs) from your mobile or streaming device, which can be used to track you for advertising purposes.",
+      "excerpt": "## Cookies and Similar Technologies, Pixel Tags and other Identifiers\n\nIf you use a Netflix app (such as the main Netflix app, or a Netflix game app) on a mobile device, tablet, or streaming media device, we may collect a resettable device identifier from your device. Resettable device identifiers can be used like cookies and are found on many mobile devices and tablets (for example, the “Identifier for Advertisers” on Apple iOS devices and the “Google Advertising ID” on Android devices), and certain streaming media devices.",
+      "confidence": 80
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix uses tracking technologies to collect data about your usage and shares it with its marketing providers and advertising companies for personalized ads and marketing purposes.",
+      "excerpt": "## Why Does Netflix Use These Technologies?\n\nWe use these types of technologies for various reasons, including to provide our service (for example, by making it easy to access our service by remembering you when you return); to administer and operate our business, to research, analyze and improve our services (for example, to improve site performance, monitor visitor traffic and actions on our site, and to test the effectiveness of our user interface); to send marketing and informational messages (for example, to deliver and tailor our marketing, and to understand interactions with our emails,",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Netflix tracks your activity with pixel tags and identifiers to understand email interactions and to show ads on third‑party sites, sharing data for advertising and analytics purposes.",
+      "excerpt": "## Why Does Netflix Use These Technologies?\n\nWe use pixel tags in our emails to understand how members interact with our service. Our use of pixel tags helps us understand when links within messages are clicked, or the emails are opened. We may also use pixel tags placed on Advertiser sites and applications to support advertising.\n\nNetflix uses hashed identifiers and resettable identifiers to display marketing for our service or Netflix content on third party services, to support advertisements (including delivering advertisements to you), and for analytics and optimization purposes.\n\nTo learn",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause tells users how to manage cookies and hashed identifiers used for marketing, but notes the service ignores browser “do not track” signals.",
+      "excerpt": "## How can I exercise choice regarding these technologies?\n\n-   To exercise choice regarding cookies\n\nFor more information about cookies set through our service and to exercise choices regarding cookies, [click here](#cookie-preferences). We do not currently respond to web browser “do not track\" signals.\n\n-   To exercise choice regarding hashed identifiers for Netflix Marketing\n\nTo exercise choice regarding Netflix’s use of hashed identifiers for Netflix marketing communications on third party services, please configure the appropriate setting under Matched Identifier Communications in the \"Pr",
+      "confidence": 95
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "You can turn off Netflix’s use of resettable device IDs in your device’s privacy or ads settings; if you do, you’ll still see ads but they won’t be targeted using that identifier.",
+      "excerpt": "## How can I exercise choice regarding these technologies?\n\nTo exercise choice regarding Netflix’s use of resettable device identifiers (for marketing the Netflix service or Netflix content, or as used to support advertisements), please configure the appropriate setting on your device (usually found under \"privacy\" or \"ads\" in your device settings). If you choose not to allow this, you may still see marketing messages promoting Netflix and advertisements on that device but it will not be selected based on the use of a resettable device identifier. Note that your choice regarding the resettable",
+      "confidence": 90
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause tells you how to control or delete tracking technologies like cookies, browser storage, and pixel tags, and points you to advertising choices for behavioral ads.",
+      "excerpt": "## How can I exercise choice regarding these technologies?\n\nIn addition to any choices we may offer you in the Netflix service, there are several ways to exercise choice regarding technologies that are similar to cookies, such as browser storage and plugins (for example, HTML5, IndexedDB, and WebSQL). For example, many popular browsers provide the ability to clear browser storage, typically in the settings or preferences area. See your browser's help function or support area to learn more. Most email clients have settings that allow you to prevent the automatic downloading of images, including",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "NOTICE_OF_CHANGE",
+      "severity": "positive",
+      "points": 5,
+      "label": "Notice Before Changes",
+      "summary": "Netflix promises to give you at least a month’s notice before it raises prices or changes your subscription plan, and you can cancel anytime, though you won’t get a refund for unused time.",
+      "excerpt": "## Netflix Terms of Use\n\n2.6. Cancellation. You can cancel your Netflix subscription at any time. To cancel, go to the \"Account\" page and follow the instructions for cancellation. The cancellation will take effect at the end of the billing period. To the extent permitted by the applicable law, payments are non-refundable and we do not provide refunds or credits for any partial subscription periods or unused Netflix content. You can see when your subscription will end on the \"Account\" page. If you signed up for Netflix using your account with a third party as a Payment Method and wish to cancel",
+      "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "NOTICE_OF_CHANGE",
+      "severity": "positive",
+      "points": 5,
+      "label": "Notice Before Changes",
+      "summary": "Netflix promises to give you at least a month’s notice before any material changes to the terms take effect.",
+      "excerpt": "## Netflix Terms of Use\n\n7.6. Changes to these Terms and Assignment. We may, from time to time, change these Terms of Use. In case of material changes we will notify you at least one month before such changes apply to you. We may assign or transfer our agreement with you including our associated rights and obligations at any time and you agree to cooperate with us in connection with such an assignment or transfer.\n\n7.7. Events Beyond our Reasonable Control. The Netflix service and/or some of the Netflix content may not be available f at any time as a result of events beyond our reasonable cont",
+      "confidence": 95
+    }
+  ],
+  "history": [
+    {
+      "id": "25935c79-9f8e-4f1c-a6ba-7965c2057459",
+      "date": "2026-06-11T16:24:58.956+00:00",
+      "document_type": "privacy_policy",
+      "points": -35,
+      "summary": "The policy now more clearly explains that Netflix collects and shares user data with third-party advertisers and partners to deliver targeted ads, track usage, and for marketing purposes. This includes gathering data from various sources, such as device information, online activity, and publicly available posts. Users should be aware that their data may be used for behavioral advertising and shared with affiliated companies and service providers. No user-friendly changes were found.",
+      "added": 69,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "9399742a-b108-4c78-bb0c-a80be1499441",
+      "date": "2026-06-11T16:24:41.494+00:00",
+      "document_type": "terms_of_service",
+      "points": -55,
+      "summary": "Netflix can end or limit your account if you break the rules, and you could lose access to interactive features. The company also reserves the right to suspend or close your account if they suspect fraud or unauthorized use. When changes are made to your subscription plan or prices, Netflix will give you at least a month's notice, and you can cancel at any time. No issues that seem directly user-hostile were found beyond standard terms.",
+      "added": 24,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "53254a69-0701-4471-bc26-465770042b28",
+      "date": "2026-06-11T16:24:32.077+00:00",
+      "document_type": "cookie_policy",
+      "points": -35,
+      "summary": "Netflix updated its cookie policy to provide more details about data collection and sharing practices. The company gathers more detailed data about users, including ad interactions, device information, and inferred interests, to deliver targeted ads. This data is shared with advertising companies, and users' information may be used for behavioral advertising and marketing purposes. No user-hostile changes were found that would prevent users from accessing the service.",
+      "added": 69,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}

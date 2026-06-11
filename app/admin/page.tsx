@@ -3,6 +3,7 @@ import { requireAdmin } from "@/lib/admin/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { Service, ServiceRequest } from "@/lib/types";
 import { addService, approveRequest, rejectRequest } from "./actions";
+import { SyncButton } from "./sync-button";
 
 export const dynamic = "force-dynamic";
 
@@ -96,9 +97,12 @@ export default async function AdminDashboard() {
 
       {/* Services */}
       <section>
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-400">
-          Services
-        </h2>
+        <div className="mb-3 flex items-center justify-between gap-4">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+            Services
+          </h2>
+          <SyncButton />
+        </div>
         {!services?.length ? (
           <p className="text-sm text-zinc-500">No services yet — add one above.</p>
         ) : (
