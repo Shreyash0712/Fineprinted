@@ -47,6 +47,21 @@ function parseRetryAfterSeconds(res: Response, body: string): number {
 /** Give up rather than silently sleeping through a daily-quota 429. */
 const MAX_RETRY_WAIT_S = 15 * 60;
 
+/**
+ * Thrown when retries are exhausted on a 429 — usually the daily token
+ * quota (TPD). Callers should NOT retry the same work another way; the
+ * budget is gone until it refills.
+ */
+export class GroqRateLimitError extends Error {
+  constructor(
+    message: string,
+    readonly retryAfterS: number
+  ) {
+    super(message);
+    this.name = "GroqRateLimitError";
+  }
+}
+
 /** Abort a single HTTP request after this long; retried like a 5xx. */
 const REQUEST_TIMEOUT_MS = 120_000;
 
@@ -113,10 +128,12 @@ async function chat(opts: ChatOptions): Promise<string> {
       const body = await res.text();
       const wait = res.status === 429 ? parseRetryAfterSeconds(res, body) : 2 * (attempt + 1);
       if (attempt >= 6 || wait > MAX_RETRY_WAIT_S) {
-        throw new Error(
+        const message =
           `Groq ${res.status} (retry-after ${Math.ceil(wait)}s): ${body.slice(0, 300)}. ` +
-            "Likely a daily quota — re-run later; cached classifications make the redo cheap."
-        );
+          "Likely a daily quota — re-run later; cached classifications make the redo cheap.";
+        throw res.status === 429
+          ? new GroqRateLimitError(message, Math.ceil(wait))
+          : new Error(message);
       }
       if (res.status === 429) limiter.penalize(wait);
       opts.onWait?.(`Groq ${res.status} — retrying in ${Math.ceil(wait)}s`);

@@ -39,6 +39,9 @@ export async function executePipelineRun(runId: string): Promise<void> {
   let chain: Promise<void> = Promise.resolve();
   const emit = (event: { level: PipelineRunEvent["level"]; step: string; message: string }) => {
     events.push({ ...event, at: new Date().toISOString() });
+    // Mirror to stdout so the GitHub Actions log (and the dev console)
+    // shows live progress — the DB events exist for the admin panel.
+    console.log(`[${event.level}][${event.step}] ${event.message}`);
     const snapshot = [...events];
     chain = chain
       .then(async () => {

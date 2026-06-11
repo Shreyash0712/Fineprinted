@@ -1,5 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { groqJson, REASONING_MODEL } from "../ai/groq";
+import { GroqRateLimitError, groqJson, REASONING_MODEL } from "../ai/groq";
 import { deriveSeverity, TAXONOMY_VERSION } from "../grading";
 import type { Classification, ClauseCategory, ClauseStance } from "../types";
 
@@ -235,6 +235,9 @@ export async function classifyClauses(
       const verdicts = await classifyBatchWithLlm(batch, log);
       await upsert(batch.map((c, i) => toRow(c.hash, verdicts[i])));
     } catch (err) {
+      // Out of quota: single calls would burn the same empty budget —
+      // surface it so the run fails fast with a clear "re-run later".
+      if (err instanceof GroqRateLimitError) throw err;
       // Malformed batch output → classify that batch clause-by-clause.
       if (batch.length > 1) {
         log(
