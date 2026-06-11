@@ -4,8 +4,8 @@
   "root_domain": "anthropic.com",
   "grade": "A",
   "score": 100,
-  "generated_at": "2026-06-11T21:57:16.383Z",
-  "last_published_at": "2026-06-11T15:38:52.889+00:00",
+  "generated_at": "2026-06-11T23:55:31.814Z",
+  "last_published_at": "2026-06-11T23:55:11.036+00:00",
   "summary": {
     "good": [
       {
@@ -42,20 +42,9 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "Anthropic and its partners use cookies and similar technologies to track your activity across their services and possibly share that data with third parties.",
-      "excerpt": "Anthropic is an AI safety and research company working to build reliable, interpretable, and steerable AI systems.\n\nThis policy provides information about how and when we, our service providers, and our business partners use cookies, beacons, pixels, or similar technologies (“cookies”). For more information about cookies, see [https://www.aboutcookies.org/cookie-faq](https://www.aboutcookies.org/cookie-faq). Terms used in this policy but not defined here have their meaning set forth in our [Privacy Policy](https://www.anthropic.com/legal/privacy), which also includes additional details about t",
-      "confidence": 80
-    },
-    {
-      "document_type": "cookie_policy",
-      "category": "TRACKING_THIRD_PARTY",
-      "stance": "hostile",
-      "severity": "minor",
-      "points": -5,
-      "label": "Third-Party Tracking",
-      "summary": "Anthropic uses cookies to identify you, personalize your experience, market products, and collect usage data, and it shares some of that information with its service providers.",
+      "summary": "The clause states that Anthropic uses cookies to collect information about users, personalize experiences, and market products, including sharing data with service providers.",
       "excerpt": "## How Anthropic Uses Cookies\n\nWe use cookies to manage the Services and to collect information about you and your use of the Services. Cookies help us to recognize you, customize or personalize your experience, market additional products or services to you, and analyze the use of our Services to make it more useful to you. Cookies may also allow us to collect demographic and statistical data and provide this information to our service providers to help deliver their services.\n\nWe use cookies for the following purposes. You can also visit our [cookies table](https://support.anthropic.com/en/ar",
-      "confidence": 90
+      "confidence": 92
     },
     {
       "document_type": "cookie_policy",
@@ -64,20 +53,9 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "The clause says the service uses cookies to market its services, share information with its providers and business partners, and collect aggregated data about users for advertising purposes.",
+      "summary": "The clause explains that marketing cookies are used to target users and provide aggregated reporting, indicating data is used for advertising purposes.",
       "excerpt": "## How Anthropic Uses Cookies\n\nMarketing\n\nCookies help us market our Services more effectively to users that we, our service providers, and our business partners believe may be interested in using our Services. They also help provide us with aggregated reporting and help us know when marketing content has been shown to you.\n\nCookie Purpose and Description",
-      "confidence": 90
-    },
-    {
-      "document_type": "cookie_policy",
-      "category": "TRACKING_THIRD_PARTY",
-      "stance": "hostile",
-      "severity": "minor",
-      "points": -5,
-      "label": "Third-Party Tracking",
-      "summary": "The clause tells you how to manage cookies but says the service may still track you and share your data for advertising, and it does not honor Do Not Track signals.",
-      "excerpt": "## Managing Your Cookie Settings\n\nMost browsers allow you to remove or manage cookie functions and adjust your privacy and security preferences. For information on how to do this, access the “help” menu on your browser, or access [http://www.aboutcookies.org/how-to-control-cookies](http://www.aboutcookies.org/how-to-control-cookies). Due to differences between websites and other technologies, you may need to take additional steps to opt out. Please check your settings for additional information. Please note, however, that disabling all cookies may mean that you may not be able to take full adv",
-      "confidence": 90
+      "confidence": 92
     },
     {
       "document_type": "privacy_policy",
@@ -108,9 +86,9 @@
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
-      "summary": "Anthropic can change its cookie policy, but it will inform you of any significant changes and update the effective date, so you should check for updates when using the service.",
+      "summary": "The company says it may update its cookie policy and will inform users of any material changes, encouraging them to review updates when they use the service.",
       "excerpt": "## Changes to Our Cookie Policy\n\nAnthropic may update this Cookie Policy from time to time. We will notify you of any material changes to this Cookie Policy, as appropriate, and update the Effective Date at the top of this page. We encourage you to review this page for updates when you access the Services.",
-      "confidence": 95
+      "confidence": 90
     },
     {
       "document_type": "privacy_policy",
@@ -125,6 +103,16 @@
     }
   ],
   "history": [
+    {
+      "id": "1902448b-6af7-4e2d-b2a6-4ab80dd8abab",
+      "date": "2026-06-11T23:55:11.036+00:00",
+      "document_type": "cookie_policy",
+      "points": 0,
+      "summary": "Taxonomy update: 6 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
+      "added": 0,
+      "modified": 6,
+      "removed": 0
+    },
     {
       "id": "da21b1db-f4b0-430f-a0d1-c94030b38a22",
       "date": "2026-06-11T15:38:52.889+00:00",
