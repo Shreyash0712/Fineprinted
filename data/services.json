@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-12T03:51:07.115Z",
+  "generated_at": "2026-06-12T04:19:42.508Z",
   "stats": {
     "services": 4,
-    "flagged_clauses": 130,
-    "changes_published": 27
+    "flagged_clauses": 127,
+    "changes_published": 28
   },
   "services": [
     {
@@ -11,10 +11,10 @@
       "name": "Anthropic",
       "root_domain": "anthropic.com",
       "status": "active",
-      "current_score": 0,
+      "current_score": 20,
       "current_grade": "F",
       "created_at": "2026-06-12T00:50:12.244698+00:00",
-      "updated_at": "2026-06-12T03:05:25.878+00:00"
+      "updated_at": "2026-06-12T04:19:05.146+00:00"
     },
     {
       "id": "e8335548-a877-4be8-b0a9-c6c9e3d8efb2",

@@ -3,9 +3,9 @@
   "name": "Anthropic",
   "root_domain": "anthropic.com",
   "grade": "F",
-  "score": 0,
-  "generated_at": "2026-06-12T03:05:36.312Z",
-  "last_published_at": "2026-06-12T03:05:25.878+00:00",
+  "score": 20,
+  "generated_at": "2026-06-12T04:19:28.039Z",
+  "last_published_at": "2026-06-12T04:19:05.146+00:00",
   "summary": {
     "good": [
       {
@@ -22,10 +22,6 @@
       }
     ],
     "bad": [
-      {
-        "text": "Your personal data can be sold or shared with brokers.",
-        "points": -30
-      },
       {
         "text": "The rules can change without telling you.",
         "points": -30
@@ -69,28 +65,6 @@
     }
   ],
   "clauses": [
-    {
-      "document_type": "privacy_policy",
-      "category": "DATA_SALE",
-      "stance": "hostile",
-      "severity": "critical",
-      "points": -30,
-      "label": "Data Sale",
-      "summary": "Anthropic may share your personal data with affiliates, service providers, and your organization for various business purposes, allowing broad third‑party access.",
-      "excerpt": "## 3\\. Recipients and Third-Party Data Sources\n\nAnthropic will disclose personal data to, or receive personal data from, the following categories of third parties for the purposes explained in this Policy:\n\n-   Affiliates & corporate partners: Anthropic discloses the categories of personal data described above between and among its affiliates and related entities.\n-   Service providers & business partners: Anthropic may receive and disclose the categories of personal data described above with service providers and business partners for a variety of business purposes, including website and data",
-      "confidence": 80
-    },
-    {
-      "document_type": "privacy_policy",
-      "category": "DATA_SALE",
-      "stance": "hostile",
-      "severity": "critical",
-      "points": -30,
-      "label": "Data Sale",
-      "summary": "The clause outlines multiple ways Anthropic can send your data to third‑party services, integrations, and legal authorities, giving them extensive rights to share your information.",
-      "excerpt": "## 3\\. Recipients and Third-Party Data Sources\n\n-   As part of a significant corporate event: If Anthropic is involved in a merger, corporate transaction, bankruptcy, or other situation involving the transfer of business assets, Anthropic will receive or disclose your personal data as part of these corporate transactions.\n-   Third-Party Websites, Integrations, and Services: Our Services allow you to connect to and interact with third-party applications, services, and content (“Third-Party Services”) via the Services and through integrations you enable, such as Connectors, plugins, webhooks, a",
-      "confidence": 85
-    },
     {
       "document_type": "terms_of_service",
       "category": "UNILATERAL_CHANGE",
@@ -224,17 +198,6 @@
       "confidence": 97
     },
     {
-      "document_type": "privacy_policy",
-      "category": "NOTICE_OF_CHANGE",
-      "stance": "protective",
-      "severity": "positive",
-      "points": 5,
-      "label": "Notice Before Changes",
-      "summary": "The clause says the privacy policy may be updated and the company will notify users of material changes and provide access to summaries and prior versions.",
-      "excerpt": "## 8\\. Changes to Our Privacy Policy\n\nAnthropic may update this Privacy Policy from time to time. We will notify you of any material changes to this Privacy Policy, as appropriate, and update the Effective Date at the top of [https://www.anthropic.com/legal/privacy](https://www.anthropic.com/legal/privacy). You can view a summary of privacy policy changes and previous versions in our [Privacy Center](https://privacy.anthropic.com/en/articles/10301952-updates-to-our-privacy-policy).",
-      "confidence": 95
-    },
-    {
       "document_type": "terms_of_service",
       "category": "CONTENT_LICENSE_BROAD",
       "stance": "protective",
@@ -258,6 +221,16 @@
     }
   ],
   "history": [
+    {
+      "id": "1e7b2f72-a080-4003-b1b4-3002fed43da0",
+      "date": "2026-06-12T04:19:05.146+00:00",
+      "document_type": "privacy_policy",
+      "points": 0,
+      "summary": "Taxonomy update: 38 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
+      "added": 0,
+      "modified": 38,
+      "removed": 0
+    },
     {
       "id": "0a914259-da83-46f9-bace-d1e3c4efdc60",
       "date": "2026-06-12T03:05:25.878+00:00",
@@ -302,7 +275,7 @@
       "id": "1b7ce758-9b31-4761-82d1-8f1186561ede",
       "date": "2026-06-12T00:55:17.418+00:00",
       "document_type": "privacy_policy",
-      "points": -20,
+      "points": 5,
       "summary": "Anthropic updated its data sharing practices, now allowing the company to share personal data with affiliates, service providers, and other organizations for business purposes. This change may allow third parties to access user data. However, Anthropic also introduced more user-friendly elements, such as not selling personal data and giving users the option to opt out of targeted advertising. Users will also be notified of future policy changes and have access to summaries and prior versions.",
       "added": 40,
       "modified": 0,
