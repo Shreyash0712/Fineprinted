@@ -2,28 +2,183 @@
   "id": "8737a4a3-d46e-4eee-8eeb-060375c6442c",
   "name": "Reddit",
   "root_domain": "reddit.com",
-  "grade": "A",
-  "score": 100,
-  "generated_at": "2026-06-12T18:39:18.195Z",
-  "last_published_at": "2026-06-12T18:38:29.815+00:00",
+  "grade": "C",
+  "score": 50,
+  "generated_at": "2026-06-12T19:03:25.500Z",
+  "last_published_at": "2026-06-12T19:02:38.115+00:00",
   "summary": {
     "good": [
       {
         "text": "Says it does not sell your personal data.",
         "points": 5
+      },
+      {
+        "text": "Promises advance notice before terms change.",
+        "points": 5
       }
     ],
-    "bad": []
+    "bad": [
+      {
+        "text": "The rules can change without telling you.",
+        "points": -30
+      },
+      {
+        "text": "They keep a broad license to content you create.",
+        "points": -15
+      },
+      {
+        "text": "Your account can be closed at any time, for any reason.",
+        "points": -15
+      }
+    ]
   },
   "documents": [
     {
       "type": "privacy_policy",
       "urls": [
-        "https://reddit.com/privacy"
+        "https://www.reddit.com/policies/privacy-policy"
+      ]
+    },
+    {
+      "type": "other",
+      "urls": [
+        "https://redditinc.com/policies/user-agreement-march-31-2026"
       ]
     }
   ],
   "clauses": [
+    {
+      "document_type": "other",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "Reddit may add, remove, modify, suspend, or discontinue features at any time, with or without notice, and isn’t liable for those changes.",
+      "excerpt": "## 3\\. Your Use of the Services\n\nWe are always improving our Services. This means we may add or remove features, products, or functionalities; we will try to notify you beforehand, but that won’t always be possible. We reserve the right to modify, suspend, or discontinue the Services (in whole or in part) at any time, with or without notice to you. Any future release, update, or other addition to functionality of the Services will be subject to these Terms, which may be updated from time to time. You agree that we will not be liable to you or to any third party for any modification, suspension",
+      "confidence": 98
+    },
+    {
+      "document_type": "other",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "The company can change the terms at its discretion, posting the new version and possibly emailing you, and you’re bound by them if you keep using the service.",
+      "excerpt": "## 15\\. Changes to these Terms\n\nWe may make changes to these Terms from time to time. If we make changes, we will post the revised Terms and update the Effective Date above. If the changes, in our sole discretion, are material, we may also notify you by sending an email to the address associated with your Account or by otherwise providing you with notice through our Services. By continuing to access or use the Services on or after the Effective Date of the revised Terms, you agree to be bound by the revised Terms. If you do not agree to the revised Terms, you must stop accessing and using our ",
+      "confidence": 95
+    },
+    {
+      "document_type": "other",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Unilateral Changes",
+      "summary": "Reddit can add, remove, modify, suspend, or discontinue any part of the service at any time, with or without notice, and isn’t liable for those changes.",
+      "excerpt": "## 3\\. Your Use of the Services\n\nWe do not guarantee that the Services will always be available or uninterrupted. We are always improving our Services. This means we may add or remove features, products, or functionalities; we will try to notify you beforehand, but that won’t always be possible. We reserve the right to modify, suspend, or discontinue the Services (in whole or in part) at any time, with or without notice to you. Any future release, update, or other addition to functionality of the Services will be subject to these Terms, which may be updated from time to time. You agree that we",
+      "confidence": 96
+    },
+    {
+      "document_type": "other",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "You keep ownership of your content but grant Reddit a broad, perpetual license to use it in many ways.",
+      "excerpt": "## 5\\. Your Content\n\nThe Services may contain information, text, links, graphics, photos, videos, audio, streams, software, tools, or other materials (“**Content**”), including Content created with or submitted to the Services by you or through your Account (“**Your Content**”). We take no responsibility for and we do not expressly or implicitly endorse, support, or guarantee the completeness, truthfulness, accuracy, or reliability of any of Your Content.\n\nBy submitting Your Content to the Services, you represent and warrant that you have all rights, power, and authority necessary to grant the",
+      "confidence": 95
+    },
+    {
+      "document_type": "other",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "By submitting content you give Reddit a worldwide, royalty‑free, perpetual, irrevocable, transferable license to use, modify, and distribute it, including for AI training.",
+      "excerpt": "## 5\\. Your Content\n\nWhen Your Content is created with or submitted to the Services, you grant us a worldwide, royalty-free, perpetual, irrevocable, non-exclusive, transferable, and sublicensable license to use, copy, modify, adapt, prepare derivative works of, distribute, store, perform, and display Your Content and any name, username, voice, or likeness provided in connection with Your Content in all media formats and channels now known or later developed anywhere in the world. This license includes the right for us to make Your Content available for syndication, broadcast, distribution, or ",
+      "confidence": 95
+    },
+    {
+      "document_type": "other",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "Any ideas or feedback you provide can be used by Reddit without compensation, and Reddit may delete or disable your content at any time for any reason.",
+      "excerpt": "## 5\\. Your Content\n\nAny ideas, suggestions, and feedback about Reddit or our Services that you provide to us are entirely voluntary, and you agree that Reddit may use such ideas, suggestions, and feedback without compensation or obligation to you.\n\nAlthough we have no obligation to screen, edit, or monitor Your Content, we may, in our sole discretion, delete, deem your content ineligible for monetization, or remove Your Content, at any time and for any reason, including for violating these Terms, our [Reddit Rules](/policies/reddit-rules?hsLang=en), or our [other terms and policies](https://w",
+      "confidence": 90
+    },
+    {
+      "document_type": "other",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "Reddit can remove or limit your ability to moderate a subreddit at any time for any reason, even without breaching the terms.",
+      "excerpt": "## 8\\. Moderators\n\nModerating a subreddit is an unofficial, voluntary position that may be available to users of the Services. We are not responsible for actions taken by the moderators. We reserve the right to revoke or limit a user’s ability to moderate at any time and for any reason or no reason, including for a breach of these Terms.\n\nIf you choose to moderate a subreddit:\n\n-   You agree to follow the [Moderator Code of Conduct](https://www.redditinc.com/policies/moderator-code-of-conduct?hsLang=en);\n\n-   You agree that when you receive reports related to a subreddit you moderate, you will",
+      "confidence": 95
+    },
+    {
+      "document_type": "other",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "Reddit may overturn any moderator decision it deems not in the platform's interest, even though it has no obligation to do so.",
+      "excerpt": "## 8\\. Moderators\n\n-   If you have access to non-public information as a result of moderating a subreddit, you will use such information only in connection with your performance as a moderator; and\n\n-   You may create and enforce rules for the subreddits you moderate, provided that such rules do not conflict with these Terms, the [Reddit Rules](/policies/reddit-rules?hsLang=en), or the [Moderator Code of Conduct](https://www.redditinc.com/policies/moderator-code-of-conduct?hsLang=en).\n\nReddit reserves the right, but has no obligation, to overturn any action or decision of a moderator if Reddit",
+      "confidence": 93
+    },
+    {
+      "document_type": "other",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "It states that all service materials are owned by Reddit or its licensors and users get no ownership rights, limiting how they can use those materials.",
+      "excerpt": "## 11\\. Intellectual Property\n\nThe Services are owned and operated by Reddit. The visual interfaces, graphics, design, compilation, information, data, computer code, products, services, trademarks, and all other elements of the Services (“**Materials**”) provided by Reddit are protected by intellectual property and other laws. All Materials included in the Services are the property of Reddit or its third-party licensors. You acknowledge and agree that you shall not acquire any ownership rights whatsoever by downloading Materials or by purchasing Paid Services. Except as expressly authorized by",
+      "confidence": 93
+    },
+    {
+      "document_type": "other",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "Reddit can suspend or terminate your account at any time for any reason, while you can also end the agreement by deleting your account.",
+      "excerpt": "## 17\\. Termination\n\nYou may terminate these Terms at any time and for any reason by deleting your Account and discontinuing use of all Services. If you stop using the Services without deleting your Account, your Account may be deactivated due to prolonged inactivity.\n\nTo the fullest extent permitted by applicable law, we may suspend or terminate your Account, moderator status, or ability to access or use the Services at any time for any or no reason, including for violating these Terms or our [Reddit Rules](/policies/reddit-rules?hsLang=en).\n\nThe following sections will survive any terminatio",
+      "confidence": 95
+    },
+    {
+      "document_type": "other",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "Any ideas, suggestions, or feedback you give Reddit can be used by Reddit without compensation, and Reddit may edit, delete, or remove your content at any time for any reason.",
+      "excerpt": "## 5\\. Your Content\n\nAny ideas, suggestions, and feedback about Reddit or our Services that you provide to us are entirely voluntary, and you agree that Reddit may use such ideas, suggestions, and feedback without compensation or obligation to you.\n\nAlthough we reserve the right to review, screen, edit, or monitor Your Content, we do not necessarily review all of it at the time it is submitted to the Services. However, we may, in our sole discretion, delete, deem your content ineligible for monetization, or remove Your Content at any time and for any reason, including for violating these Terms",
+      "confidence": 94
+    },
+    {
+      "document_type": "other",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Arbitrary Account Termination",
+      "summary": "Reddit can suspend or terminate your account at any time for any reason, while you can end the agreement by deleting your account.",
+      "excerpt": "## 16\\. Termination\n\nYou may terminate these Terms at any time and for any reason by deleting your Account and discontinuing use of all Services. If you stop using the Services without deleting your Account, your Account may be deactivated due to prolonged inactivity.\n\nTo the fullest extent permitted by applicable law, we may suspend or terminate your Account, moderator status, or ability to access or use the Services at any time for any or no reason, including for violating these Terms or our [Reddit Rules](/policies/reddit-rules?hsLang=en).\n\nThe following sections will survive any terminatio",
+      "confidence": 96
+    },
     {
       "document_type": "privacy_policy",
       "category": "DATA_SALE",
@@ -45,9 +200,30 @@
       "summary": "Reddit states it does not sell personal data or work with data brokers, assuring users their private information isn’t commercially traded.",
       "excerpt": "## Our policies\n\nAll of our users get [privacy rights](https://www.reddit.com/policies/privacy-policy) – not just those in select countries\n\nWe’re open with our community about how and [why we collect data](https://www.reddit.com/policies/privacy-policy)\n\nWe prioritize transparency and openly share about what we do on the platform and why in our recurring [transparency reports](/transparency?hsLang=en) and quarterly [r/redditsafety](https://www.reddit.com/r/RedditSafety/) [](https://www.reddit.com/r/RedditSafety/)posts\n\nWe build our business in a way that respects redditors and their privacy²\n",
       "confidence": 95
+    },
+    {
+      "document_type": "other",
+      "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Notice Before Changes",
+      "summary": "Reddit will post any term changes, notify you by email or in‑service notice at least 30 days before they take effect, and you can stop using the service if you disagree.",
+      "excerpt": "## 14\\. Changes to these Terms\n\nWe may make changes to these Terms from time to time. If we make changes, we will post the revised Terms and update the Effective Date above. If the changes, in our reasonable discretion, are material, we will notify you by sending an email to the address associated with your Account or by otherwise providing you with notice through our Services at least 30 days before the date they become effective. By continuing to access or use the Services on or after the Effective Date of the revised Terms, you agree to be bound by the revised Terms. If you do not agree to ",
+      "confidence": 93
     }
   ],
   "history": [
+    {
+      "id": "dfb5a88e-83f2-41b5-a1e1-03c27bc30095",
+      "date": "2026-06-12T19:02:38.115+00:00",
+      "document_type": "other",
+      "points": -55,
+      "summary": "Reddit made changes to allow itself to add, remove, or modify features without notice or liability. Users' content is still owned by them, but Reddit has a broad license to use it in many ways, including AI training, without providing compensation. Reddit can also terminate or limit users' accounts and moderation abilities at any time for any reason. The terms can be changed at Reddit's discretion, binding users to the new version if they continue using the service.",
+      "added": 115,
+      "modified": 0,
+      "removed": 0
+    },
     {
       "id": "995f8163-c838-4e2e-ba09-06aac16c4a86",
       "date": "2026-06-12T18:38:29.815+00:00",
