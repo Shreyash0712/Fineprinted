@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { loadServicesIndex } from "@/lib/static-data";
-import { ServiceExplorer } from "./components/service-explorer";
+import { HomeSavedServices } from "./components/home-saved-services";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 
@@ -10,14 +10,15 @@ import { SiteHeader } from "./components/site-header";
 export const dynamic = "force-static";
 
 export default async function Home() {
-  const { services, stats } = await loadServicesIndex();
+  const { stats } = await loadServicesIndex();
 
   return (
     <>
       <SiteHeader />
       <main className="mx-auto w-full max-w-5xl flex-1 px-6 pb-24">
+        <HomeSavedServices />
         {/* Hero */}
-        <section className="relative py-12 text-center sm:py-20 animate-fade-in-up">
+        <section className="relative py-8 text-center sm:py-12 animate-fade-in-up">
           <p className="mb-4 inline-block rounded-full border border-accent/20 bg-accent-light px-3.5 py-1 text-xs font-semibold tracking-wide text-accent dark:border-accent/30 dark:bg-[#201B14] dark:text-[#E2C7A2]">
             The terms you never read, read for you
           </p>
@@ -45,7 +46,7 @@ export default async function Home() {
           </dl>
 
           {/* Live Translation Mockup UI */}
-          <div className="mt-12 md:mt-16 flex flex-col md:flex-row items-stretch justify-center gap-6 md:gap-8 text-left max-w-4xl mx-auto opacity-95 animate-fade-in-up animation-delay-100">
+          <div className="mt-8 md:mt-10 flex flex-col md:flex-row items-stretch justify-center gap-6 md:gap-8 text-left max-w-4xl mx-auto opacity-95 animate-fade-in-up animation-delay-100">
             {/* Left Mockup Document */}
             <div className="flex-1 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 flex flex-col justify-between">
               <div>
@@ -91,13 +92,9 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Search + grid */}
-        <section id="browse" className="scroll-mt-24 animate-fade-in-up animation-delay-100">
-          <ServiceExplorer services={services} />
-        </section>
 
         {/* How it works */}
-        <section className="mt-16 sm:mt-24 border-t border-zinc-200/40 pt-12 sm:pt-16 dark:border-zinc-900/40">
+        <section className="mt-10 sm:mt-14 border-t border-zinc-200/40 pt-8 sm:pt-10 dark:border-zinc-900/40">
           <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl font-heading">
             How it works
           </h2>
@@ -127,7 +124,7 @@ export default async function Home() {
         </section>
 
         {/* Facts & Oddities Section */}
-        <section className="mt-16 sm:mt-24 border-t border-zinc-200/40 pt-12 sm:pt-16 dark:border-zinc-900/40">
+        <section className="mt-10 sm:mt-14 border-t border-zinc-200/40 pt-8 sm:pt-10 dark:border-zinc-900/40">
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent dark:text-[#D7B88F]">Did you know?</p>
             <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-4xl font-heading">
@@ -164,7 +161,7 @@ export default async function Home() {
         </section>
 
         {/* CTA */}
-        <section className="mt-16 sm:mt-24 overflow-hidden rounded-3xl border border-accent/10 bg-gradient-to-br from-accent-light/40 via-[#FAF9F5]/40 to-accent-light/10 p-10 text-center dark:border-accent/15 dark:from-[#1C1813]/20 dark:via-[#0B0B0C] dark:to-accent-light/5">
+        <section className="mt-10 sm:mt-14 overflow-hidden rounded-3xl border border-accent/10 bg-gradient-to-br from-accent-light/40 via-[#FAF9F5]/40 to-accent-light/10 p-10 text-center dark:border-accent/15 dark:from-[#1C1813]/20 dark:via-[#0B0B0C] dark:to-accent-light/5">
           <h2 className="text-2xl font-bold tracking-tight font-heading">Missing a service you use?</h2>
           <p className="mx-auto mt-2 max-w-xl text-zinc-550 dark:text-zinc-400">
             Tell us what to track. Requests are voted on by other users and the

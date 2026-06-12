@@ -189,7 +189,11 @@ export async function getWatchlist(fingerprint: string): Promise<WatchlistEntry[
   if (serviceIds.length === 0) return [];
 
   const [{ data: services }, { data: events }] = await Promise.all([
-    db.from("services").select("*").in("id", serviceIds).eq("status", "active"),
+    db
+      .from("services")
+      .select("id, name, root_domain, current_grade, current_score")
+      .in("id", serviceIds)
+      .eq("status", "active"),
     db
       .from("change_events")
       .select("id, ai_summary, severity_score, published_at, documents!inner(service_id, type)")

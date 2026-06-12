@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { loadServicesIndex } from "@/lib/static-data";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
-import { GradeBadge } from "../components/grade";
 
 export const dynamic = "force-static";
 
@@ -13,8 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default async function SitemapPage() {
-  const { services } = await loadServicesIndex();
-
   return (
     <>
       <SiteHeader />
@@ -30,7 +26,8 @@ export default async function SitemapPage() {
             <section className="space-y-4">
               <h2 className="text-lg font-bold font-heading text-accent">Core Pages</h2>
               <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 space-y-4">
-                <SitemapLink href="/" title="Browse services" desc="The homepage directory of all tracked services, grades, and recent rule changes." />
+                <SitemapLink href="/" title="Home" desc="The homepage showcasing terms analysis features, live translation, and your saved services." />
+                <SitemapLink href="/browse" title="Browse services" desc="A clean place to search and view all tracked services on Fineprinted." />
                 <SitemapLink href="/request" title="Request a service" desc="Submit a root domain for tracking or upvote an existing request." />
                 <SitemapLink href="/about" title="About Fineprinted" desc="How the automated AI pipeline analyzes clauses, grades them, and keeps results verifiable." />
                 <SitemapLink href="/saved" title="Your Watchlist (Saved)" desc="Access your saved services to keep track of critical legal changes." />
@@ -52,32 +49,6 @@ export default async function SitemapPage() {
               </div>
             </section>
           </div>
-
-          {/* Tracked Services */}
-          <section className="mt-12 space-y-4">
-            <h2 className="text-lg font-bold font-heading text-accent">Tracked Services ({services.length})</h2>
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
-              {services.length === 0 ? (
-                <p className="text-sm text-zinc-500">No services tracked yet.</p>
-              ) : (
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {services.map((s) => (
-                    <Link
-                      key={s.id}
-                      href={`/s/${s.root_domain}`}
-                      className="flex items-center gap-3 rounded-xl border border-zinc-100 hover:border-accent/30 p-3 bg-zinc-50/50 hover:bg-white transition dark:border-zinc-850 dark:bg-zinc-950/20 dark:hover:bg-zinc-900/40"
-                    >
-                      <GradeBadge grade={s.current_grade} size="sm" />
-                      <div className="min-w-0 flex-1">
-                        <span className="block truncate text-sm font-semibold text-zinc-800 dark:text-zinc-200">{s.name}</span>
-                        <span className="block truncate text-2xs text-zinc-500">{s.root_domain}</span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          </section>
         </div>
       </main>
       <SiteFooter />

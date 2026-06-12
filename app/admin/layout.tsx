@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { logout } from "./actions";
-import { LogoIcon } from "../components/site-header";
 import { ThemeToggle } from "../components/theme-toggle";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -14,10 +13,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <header className="sticky top-0 z-50 w-full bg-[#FAF9F5]/50 dark:bg-[#0B0B0C]/50 backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-900/50 py-4 transition-all">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6">
           <Link href="/admin" className="flex items-center gap-2.5 text-base font-bold tracking-tight sm:text-lg">
-            <LogoIcon className="h-7 w-7" />
             <span className="font-heading">Fine<span className="text-accent">printed</span> <span className="text-zinc-400 dark:text-zinc-550 font-normal text-xs sm:text-sm">/ admin</span></span>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden sm:flex items-center gap-4 text-sm font-medium">
             <Link href="/admin/requests" className="text-xs text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 transition">

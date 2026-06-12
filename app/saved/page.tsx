@@ -67,7 +67,7 @@ export default function SavedPage() {
             <div className="rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-800 py-16 text-center bg-white dark:bg-zinc-900/10">
               <p className="text-sm text-zinc-400">Nothing saved yet.</p>
               <Link
-                href="/"
+                href="/browse"
                 className="mt-3 inline-block rounded-lg bg-accent hover:bg-accent-hover px-4 py-2 text-sm font-semibold text-white shadow-md transition"
               >
                 Browse services

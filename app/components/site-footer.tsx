@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { LogoIcon } from "./site-header";
 
 export function SiteFooter() {
   return (
@@ -7,7 +6,6 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-5xl gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
           <Link href="/" className="flex items-center gap-2.5 text-lg font-bold tracking-tight">
-            <LogoIcon className="h-7 w-7" />
             <span>Fine<span className="text-accent">printed</span></span>
           </Link>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-zinc-550 dark:text-zinc-400 font-medium">
@@ -19,7 +17,7 @@ export function SiteFooter() {
         <div>
           <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-heading">Explore</h3>
           <ul className="mt-3 space-y-2 text-sm text-zinc-550 dark:text-zinc-405">
-            <li><FooterLink href="/">Browse services</FooterLink></li>
+            <li><FooterLink href="/browse">Browse services</FooterLink></li>
             <li><FooterLink href="/saved">Your watchlist</FooterLink></li>
             <li><FooterLink href="/request">Request a service</FooterLink></li>
           </ul>

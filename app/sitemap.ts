@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
-import { loadServicesIndex } from "@/lib/static-data";
+import { loadServicesIndex, type ServiceIndexEntry } from "@/lib/static-data";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Use Vercel's URL variable if available, otherwise default to a standard fallback
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL 
     || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://fineprinted.vercel.app");
 
-  let services: any[] = [];
+  let services: ServiceIndexEntry[] = [];
   try {
     const data = await loadServicesIndex();
     services = data.services || [];
@@ -27,6 +27,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "daily" as const,
       priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/browse`,
+      lastModified: new Date(),
+      changeFrequency: "daily" as const,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
