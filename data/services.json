@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-12T04:19:42.508Z",
+  "generated_at": "2026-06-12T18:11:49.967Z",
   "stats": {
-    "services": 4,
-    "flagged_clauses": 127,
-    "changes_published": 28
+    "services": 5,
+    "flagged_clauses": 150,
+    "changes_published": 29
   },
   "services": [
     {
@@ -15,6 +15,16 @@
       "current_grade": "F",
       "created_at": "2026-06-12T00:50:12.244698+00:00",
       "updated_at": "2026-06-12T04:19:05.146+00:00"
+    },
+    {
+      "id": "6b72883e-0eff-431b-bf39-2128175f9126",
+      "name": "Flipkart",
+      "root_domain": "flipkart.com",
+      "status": "active",
+      "current_score": 5,
+      "current_grade": "F",
+      "created_at": "2026-06-12T17:40:26.485643+00:00",
+      "updated_at": "2026-06-12T18:11:00.141+00:00"
     },
     {
       "id": "e8335548-a877-4be8-b0a9-c6c9e3d8efb2",
