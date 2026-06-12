@@ -2,22 +2,18 @@
   "id": "e8335548-a877-4be8-b0a9-c6c9e3d8efb2",
   "name": "Github",
   "root_domain": "github.com",
-  "grade": "D",
-  "score": 30,
-  "generated_at": "2026-06-11T23:25:25.463Z",
-  "last_published_at": "2026-06-11T23:25:06.867+00:00",
+  "grade": "C",
+  "score": 55,
+  "generated_at": "2026-06-12T03:50:59.100Z",
+  "last_published_at": "2026-06-12T03:33:27.307+00:00",
   "summary": {
     "good": [
-      {
-        "text": "Promises advance notice before terms change.",
-        "points": 5
-      },
       {
         "text": "You keep ownership and control of your content.",
         "points": 5
       },
       {
-        "text": "Fair process before your account is closed.",
+        "text": "Promises advance notice before terms change.",
         "points": 5
       },
       {
@@ -30,10 +26,6 @@
       }
     ],
     "bad": [
-      {
-        "text": "Your personal data can be sold or shared with brokers.",
-        "points": -30
-      },
       {
         "text": "The rules can change without telling you.",
         "points": -30
@@ -75,25 +67,14 @@
   "clauses": [
     {
       "document_type": "terms_of_service",
-      "category": "DATA_SALE",
-      "stance": "hostile",
-      "severity": "critical",
-      "points": -30,
-      "label": "Data Sale",
-      "summary": "If you provide private repository content to AI features, the service may use that content to develop, train, and improve its services unless you opt out, and it may also be disclosed if required by law.",
-      "excerpt": "## [3\\. Access](#3-access)\n\n-   You may enable various GitHub services or features that require additional rights to Your Content in private repositories. These rights may vary depending on the service or feature, but GitHub will continue to treat your private repository Content as confidential. If those services or features require rights in addition to those we need to provide the GitHub Service, we will provide an explanation of those rights.\n-   If you provide your private repository content as Input to AI Features, we may use that Input to provide, develop, train, and improve the Service,",
-      "confidence": 94
-    },
-    {
-      "document_type": "terms_of_service",
       "category": "UNILATERAL_CHANGE",
       "stance": "hostile",
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
-      "summary": "GitHub may modify or discontinue beta preview features at any time without obligation to support them.",
+      "summary": "Beta preview features may be altered or discontinued at any time without any guarantee of support.",
       "excerpt": "## [K. Beta Previews](#k-beta-previews)\n\n**Short version:** _Beta Previews may not be supported or may change at any time. You may receive confidential information through those programs that must remain confidential while the program is private. We'd love your feedback to make our Beta Previews better._",
-      "confidence": 93
+      "confidence": 90
     },
     {
       "document_type": "terms_of_service",
@@ -102,7 +83,7 @@
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
-      "summary": "GitHub can modify or discontinue beta features at any time without notifying you, and beta versions have fewer security protections, so you use them entirely at your own risk.",
+      "summary": "GitHub can modify or discontinue beta features at any time without notifying you, and you use them at your own risk.",
       "excerpt": "## [1\\. Subject to Change](#1-subject-to-change)\n\nBeta Previews may not be supported and may be changed at any time without notice. In addition, Beta Previews are not subject to the same security measures and auditing to which the Service has been and is subject. **By using a Beta Preview, you use it at your own risk.**",
       "confidence": 95
     },
@@ -113,19 +94,8 @@
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
-      "summary": "GitHub may raise your subscription price after the current payment term ends, without requiring additional consent beyond the original agreement.",
+      "summary": "Your subscription price stays the same during a payment term, but GitHub can raise prices when the term ends.",
       "excerpt": "## [1\\. Pricing](#1-pricing)\n\nOur pricing and payment terms are available at [github.com/pricing](https://github.com/pricing). If you agree to a subscription price, that will remain your price for the duration of the payment term; however, prices are subject to change at the end of a payment term.",
-      "confidence": 92
-    },
-    {
-      "document_type": "terms_of_service",
-      "category": "UNILATERAL_CHANGE",
-      "stance": "hostile",
-      "severity": "critical",
-      "points": -30,
-      "label": "Unilateral Changes",
-      "summary": "GitHub may change or shut down any part of the website at any time, with or without notice to you.",
-      "excerpt": "## [R. Changes to These Terms](#r-changes-to-these-terms)\n\nWe reserve the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Website (or any part of it) with or without notice.",
       "confidence": 95
     },
     {
@@ -135,31 +105,9 @@
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
-      "summary": "GitHub can modify the agreement either by a signed written amendment or by posting a revised version, allowing changes without your consent.",
-      "excerpt": "## [5\\. Amendments; Complete Agreement](#5-amendments-complete-agreement)\n\nThis Agreement may only be modified by a written amendment signed by an authorized representative of GitHub, or by the posting by GitHub of a revised version in accordance with [Section R. Changes to These Terms](#r-changes-to-these-terms). These Terms of Service, together with the GitHub Privacy Statement, represent the complete and exclusive statement of the agreement between you and us. This Agreement supersedes any proposal or prior agreement oral or written, and any other communications between you and GitHub relat",
-      "confidence": 93
-    },
-    {
-      "document_type": "privacy_policy",
-      "category": "DATA_SALE",
-      "stance": "hostile",
-      "severity": "critical",
-      "points": -30,
-      "label": "Data Sale",
-      "summary": "GitHub may share your personal data with many parties, including affiliates, law enforcement, partners, and the public, often without requiring your consent.",
-      "excerpt": "## [Sharing of Personal Data](#sharing-of-personal-data)\n\n-   Abuse and Fraud Prevention Entities: We may disclose Personal Data based on a good faith belief it is needed to prevent fraud, abuse, or attacks on our Services, or to protect the safety of GitHub and our users.\n-   Affiliates: Personal Data may be shared with GitHub affiliates, including Microsoft, to facilitate customer service, marketing and advertising, order fulfillment, billing, technical support, legal and compliance obligations, product development and improvement (including training and improving artificial intelligence and",
-      "confidence": 92
-    },
-    {
-      "document_type": "privacy_policy",
-      "category": "DATA_SALE",
-      "stance": "hostile",
-      "severity": "critical",
-      "points": -30,
-      "label": "Data Sale",
-      "summary": "The clause details the categories of personal data collected, shared with third parties, and used for advertising, indicating that the company shares user data for marketing purposes.",
-      "excerpt": "## [Mandatory Disclosures](#mandatory-disclosures)\n\n-   We collected the following categories of personal information in the last 12 months: identifiers/contact information, demographic information (such as gender), payment card information associated with you, commercial information, Internet or other electronic network activity information, geolocation data, audio, electronic, visual or similar information, and inferences drawn from the above.\n-   The sources of personal information from whom we collected are: directly from you, automatically or from third parties.\n-   The business or commer",
-      "confidence": 96
+      "summary": "GitHub may modify or shut down the website, in whole or in part, at any time and without giving notice.",
+      "excerpt": "## [R. Changes to These Terms](#r-changes-to-these-terms)\n\nWe reserve the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Website (or any part of it) with or without notice.",
+      "confidence": 95
     },
     {
       "document_type": "terms_of_service",
@@ -168,8 +116,19 @@
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
-      "summary": "If you are under 13, the service will terminate your account immediately, and other restrictions on account use are enforced.",
+      "summary": "Allows GitHub to immediately terminate accounts of users under 13 or who violate the listed requirements.",
       "excerpt": "## [3\\. Account Requirements](#3-account-requirements)\n\n-   You must be a human to create an Account. Accounts registered by \"bots\" or other automated methods are not permitted. We do permit machine accounts:\n-   A machine account is an Account set up by an individual human who accepts the Terms on behalf of the Account, provides a valid email address, and is responsible for its actions. A machine account is used exclusively for performing automated tasks. Multiple users may direct the actions of a machine account, but the owner of the Account is ultimately responsible for the machine's action",
+      "confidence": 94
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "Users must allow the service and its affiliates to store, copy, analyze, and use their content—including for AI training—without compensation.",
+      "excerpt": "## [4\\. License Grant to Us](#4-license-grant-to-us)\n\nYou grant GitHub and our Affiliates the right to store, host, archive, parse, display, and make copies of Your Content as necessary to provide, develop, and improve the Service, including by training AI Features, and for the purpose of training, developing, and improving artificial intelligence and machine learning models and technologies of our Affiliates. This license includes the right to do things like copy it to our database and make backups; show it to you and other Users; parse it into a search index or otherwise analyze it on our se",
       "confidence": 90
     },
     {
@@ -179,53 +138,9 @@
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "You keep ownership of your content but must grant GitHub broad rights to store, display, copy, and share it, including for AI training, and the company can remove it or close your account.",
-      "excerpt": "## [D. User-Generated Content](#d-user-generated-content)\n\n**Short version:** _You own content you create, but you allow us certain rights to it, so that we can display and share the content you post. You still have control over your content, and responsibility for it, and the rights you grant us are limited to those we need to provide the service. We have the right to remove content or close Accounts if we need to._",
-      "confidence": 95
-    },
-    {
-      "document_type": "terms_of_service",
-      "category": "CONTENT_LICENSE_BROAD",
-      "stance": "hostile",
-      "severity": "major",
-      "points": -15,
-      "label": "Broad Content License",
-      "summary": "You retain ownership, but you must give GitHub and other users licenses to use your content as needed for the service, without payment, and the licenses end only when you delete the content.",
-      "excerpt": "## [3\\. Ownership and License Grants](#3-ownership-and-license-grants)\n\nYou own Your Content. If you post Content you did not create, you are responsible for ensuring you have the right to post it and for complying with any applicable licenses.\n\nYou grant us and other Users the licenses in Sections D.4–D.8. These licenses apply to Your Content. If Your Content already includes a license granting us the permissions we need, no additional license is required. You will not receive payment for these rights. These licenses end when you remove Your Content, unless other Users have forked it.",
-      "confidence": 95
-    },
-    {
-      "document_type": "terms_of_service",
-      "category": "CONTENT_LICENSE_BROAD",
-      "stance": "hostile",
-      "severity": "major",
-      "points": -15,
-      "label": "Broad Content License",
-      "summary": "You grant GitHub and its affiliates rights to store, copy, analyze, and use your content for providing the service and for training AI models, which is a broad, perpetual license.",
-      "excerpt": "## [4\\. License Grant to Us](#4-license-grant-to-us)\n\nYou grant GitHub and our Affiliates the right to store, host, archive, parse, display, and make copies of Your Content as necessary to provide, develop, and improve the Service, including by training AI Features, and for the purpose of training, developing, and improving artificial intelligence and machine learning models and technologies of our Affiliates. This license includes the right to do things like copy it to our database and make backups; show it to you and other Users; parse it into a search index or otherwise analyze it on our se",
-      "confidence": 95
-    },
-    {
-      "document_type": "terms_of_service",
-      "category": "CONTENT_LICENSE_BROAD",
-      "stance": "hostile",
-      "severity": "major",
-      "points": -15,
-      "label": "Broad Content License",
-      "summary": "By making a repository public you allow other users to view, copy, and fork your content under a non‑exclusive worldwide license, giving them broad usage rights.",
-      "excerpt": "## [5\\. License Grant to Other Users](#5-license-grant-to-other-users)\n\nYour Content that you post publicly, including issues, comments, and contributions to other Users' repositories, may be viewed by others. By setting your repositories to be viewed publicly, you agree to allow others to view and \"fork\" your repositories (this means that others may make their own copies within the Service in repositories they control).\n\nBy making a repository public, you grant other Users a nonexclusive, worldwide license to use, display, perform and reproduce (by forking) Your Content through the Service as",
-      "confidence": 95
-    },
-    {
-      "document_type": "terms_of_service",
-      "category": "CONTENT_LICENSE_BROAD",
-      "stance": "hostile",
-      "severity": "major",
-      "points": -15,
-      "label": "Broad Content License",
-      "summary": "When you add content to a repository that shows a license, you automatically grant that same license for your contribution, and any separate agreement you have will take precedence.",
+      "summary": "When you add content to a repository with a license notice, you automatically grant the same license to that content and confirm you have the right to do so.",
       "excerpt": "## [6\\. Contributions Under Repository License](#6-contributions-under-repository-license)\n\nWhenever you add Content to a repository containing notice of a license, you license that Content under the same terms, and you agree that you have the right to license that Content under those terms. If you have a separate agreement to license that Content under different terms, such as a contributor license agreement, that agreement will supersede.\n\nIsn't this just how it works already? Yep. This is widely accepted as the norm in the open-source community; it's commonly referred to by the shorthand \"i",
-      "confidence": 95
+      "confidence": 92
     },
     {
       "document_type": "terms_of_service",
@@ -234,7 +149,7 @@
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "You keep moral rights to your content but must waive them so GitHub can use your content without attribution and make adaptations as needed.",
+      "summary": "You keep moral rights to your content but waive them so GitHub can use your content without attribution and make adaptations as needed.",
       "excerpt": "## [7\\. Moral Rights](#7-moral-rights)\n\nYou retain all moral rights to Your Content that you upload, publish, or submit to any part of the Service, including the rights of integrity and attribution. However, you waive these rights and agree not to assert them against us or our Affiliates, to enable GitHub and our Affiliates to reasonably exercise the rights granted in Section D.4, but not otherwise.\n\nTo the extent this agreement is not enforceable by applicable law, you grant GitHub the rights we need to use Your Content without attribution and to make reasonable adaptations of Your Content as",
       "confidence": 95
     },
@@ -245,18 +160,7 @@
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "By contributing to a public repository you direct the service to make your content publicly accessible to anyone on the internet, with no additional restrictions.",
-      "excerpt": "## [8\\. Public Repositories and Lawful Access](#8-public-repositories-and-lawful-access)\n\nBy choosing to contribute Content to a public repository, you are choosing to and directing us to make such Content accessible to everyone on the internet. Unless specifically set forth herein, these Terms do not restrict lawful access to or use of the contents of public repositories by third parties, or by GitHub or its Affiliates.",
-      "confidence": 92
-    },
-    {
-      "document_type": "terms_of_service",
-      "category": "CONTENT_LICENSE_BROAD",
-      "stance": "hostile",
-      "severity": "major",
-      "points": -15,
-      "label": "Broad Content License",
-      "summary": "By using the service, you allow GitHub to automatically collect publicly available content to train commercial AI systems and you cannot block or retaliate against that access.",
+      "summary": "By using automated means to collect public content for commercial AI, you waive any restrictions and allow GitHub to access and use that data without limitation.",
       "excerpt": "## [9\\. Access Reciprocity](#9-access-reciprocity)\n\nBy using automated means to access, collect, or otherwise use (“Access”) any publicly accessible Content from the Service for the purpose of developing or training any commercially available artificial intelligence model, machine learning system, or similar technology (a \"Commercial AI System\"), you hereby waive any and all policies, terms, conditions, or contractual provisions governing products, services, websites or datasets you own or operate that would otherwise prohibit, restrict, or place conditions upon GitHub's Access to any publicly",
       "confidence": 93
     },
@@ -267,9 +171,9 @@
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
-      "summary": "The service will terminate the accounts of users who repeatedly infringe copyright after receiving valid DMCA notices.",
+      "summary": "GitHub will terminate the accounts of users who repeatedly infringe copyright under its DMCA policy.",
       "excerpt": "## [F. Copyright Infringement and DMCA Policy](#f-copyright-infringement-and-dmca-policy)\n\nIf you believe that content on our website violates your copyright, please contact us in accordance with our [Digital Millennium Copyright Act Policy](/en/site-policy/content-removal-policies/dmca-takedown-policy). If you are a copyright owner and you believe that content on GitHub violates your rights, please contact us via [our convenient DMCA form](https://github.com/contact/dmca) or by emailing [copyright@github.com](mailto:copyright@github.com). There may be legal consequences for sending a false or",
-      "confidence": 93
+      "confidence": 90
     },
     {
       "document_type": "terms_of_service",
@@ -278,7 +182,7 @@
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "The service owns all content and only grants you limited rights to use it as they specify.",
+      "summary": "The service owns all its content and only grants you limited rights to use it in the ways they specify.",
       "excerpt": "## [G. Intellectual Property Notice](#g-intellectual-property-notice)\n\n**Short version:** _We own the service and all of our content. In order for you to use our content, we give you certain rights to it, but you may only use our content in the way we have allowed._",
       "confidence": 95
     },
@@ -289,9 +193,20 @@
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "GitHub retains all IP rights and forbids copying or reusing any part of its site without written permission.",
+      "summary": "GitHub retains all IP rights to the website and service and restricts you from copying or reusing any design elements without written permission.",
       "excerpt": "## [1\\. GitHub's Rights to Content](#1-githubs-rights-to-content)\n\nGitHub and our licensors, vendors, agents, and/or our content providers retain ownership of all intellectual property rights of any kind related to the Website and Service. We reserve all rights that are not expressly granted to you under this Agreement or by law. The look and feel of the Website and Service is copyright © GitHub, Inc. All rights reserved. You may not duplicate, copy, or reuse any portion of the HTML/CSS, JavaScript, or visual design elements or concepts without express written permission from GitHub.",
       "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -15,
+      "label": "Broad Content License",
+      "summary": "To use GitHub’s trademarks or logos you must follow their trademark guidelines, otherwise you may not use them.",
+      "excerpt": "## [2\\. GitHub Trademarks and Logos](#2-github-trademarks-and-logos)\n\nIf you’d like to use GitHub’s trademarks, you must follow all of our trademark guidelines, including those on our logos page: [https://github.com/logos](https://github.com/logos).",
+      "confidence": 90
     },
     {
       "document_type": "terms_of_service",
@@ -300,7 +215,7 @@
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
-      "summary": "GitHub can suspend or terminate your API access if it deems your usage abusive or excessive, and it may do so after a warning email.",
+      "summary": "GitHub can suspend or permanently block your API access if it deems your usage abusive or excessive, with only a warning email before suspension.",
       "excerpt": "## [H. API Terms](#h-api-terms)\n\n**Short version:** _You agree to these Terms of Service, plus this Section H, when using any of GitHub's APIs (Application Programming Interface), including use of the API through a third party product that accesses GitHub._\n\nAbuse or excessively frequent requests to GitHub via the API may result in the temporary or permanent suspension of your Account's access to the API. GitHub, in our sole discretion, will determine abuse or excessive usage of the API. We will make a reasonable attempt to warn you via email prior to suspension.\n\nYou may not share API tokens ",
       "confidence": 95
     },
@@ -311,9 +226,9 @@
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "Unless you opt out, you grant GitHub a license to collect and use your inputs and outputs to train and improve its AI models.",
+      "summary": "Unless you opt out, you grant GitHub and its affiliates a broad license to use your inputs and outputs to train and improve AI models.",
       "excerpt": "## [3\\. Development and Improvement Using Your Input and Output](#3-development-and-improvement-using-your-input-and-output)\n\nWe use your Inputs to generate Outputs and provide the AI Features. You also grant GitHub and its Affiliates a license to collect and use your Inputs and Outputs to develop, train and improve artificial intelligence and machine learning models and technologies including those that power AI Features, unless (a) you opt out through your account settings, or (b) your use of the Service is governed by a GitHub Customer Agreement or volume licensing agreement. If you opt out",
-      "confidence": 92
+      "confidence": 85
     },
     {
       "document_type": "terms_of_service",
@@ -322,9 +237,9 @@
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "Any feedback you provide gives GitHub a perpetual, worldwide, royalty‑free license to use, modify, and commercialize that feedback without further compensation to you.",
+      "summary": "Any feedback you provide gives GitHub a perpetual, royalty‑free, worldwide license to use and commercialize it.",
       "excerpt": "## [3\\. Feedback](#3-feedback)\n\nWe’re always trying to improve our products and services, and your feedback as a Beta Preview user will help us do that. If you choose to give us any ideas, know-how, algorithms, code contributions, suggestions, enhancement requests, recommendations or any other feedback for our products or services (collectively, “Feedback”), you acknowledge and agree that GitHub will have a royalty-free, fully paid-up, worldwide, transferable, sub-licensable, irrevocable and perpetual license to implement, use, modify, commercially exploit and/or incorporate the Feedback into ",
-      "confidence": 98
+      "confidence": 96
     },
     {
       "document_type": "terms_of_service",
@@ -344,7 +259,7 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "GitHub uses essential and non‑essential cookies to keep you logged in, remember preferences, secure the service, and for targeted advertising on enterprise pages, which may be less relevant if you disable them.",
+      "summary": "GitHub uses essential and non‑essential cookies to keep you logged in, remember preferences, secure the service, and for analytics, and also uses cookies on enterprise pages to personalize ads and measure targeted advertising.",
       "excerpt": "## [Cookies and tracking technologies](#cookies-and-tracking-technologies)\n\nGitHub uses cookies to provide, secure and improve our Service or to develop new features and functionality of our Service. For example, we use them to (i) keep you logged in, (ii) remember your preferences, (iii) identify your device for security and fraud purposes, including as needed to maintain the integrity of our Service, (iv) compile statistical reports, and (v) provide information and insight for future development of GitHub. We provide more information about [cookies on GitHub](/en/site-policy/privacy-policies",
       "confidence": 95
     },
@@ -355,9 +270,9 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "GitHub’s emails contain pixel tags that track opens and IP addresses, and it explains cookie lifetimes while noting you can delete them.",
+      "summary": "GitHub embeds a pixel tag in emails to detect opens and capture your IP address, and explains cookie lifetimes while noting you can delete them.",
       "excerpt": "## [Cookies and tracking technologies](#cookies-and-tracking-technologies)\n\nOur emails to users may contain a pixel tag, which is a small, clear image that can tell us whether or not you have opened an email and what your IP address is. We use this pixel tag to make our email communications more effective and to make sure we are not sending you unwanted email.\n\nThe length of time a cookie will stay on your browser or device depends on whether it is a “persistent” or “session” cookie. Session cookies will only stay on your device until you stop browsing. Persistent cookies stay until they expir",
-      "confidence": 93
+      "confidence": 92
     },
     {
       "document_type": "privacy_policy",
@@ -366,7 +281,7 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "GitHub uses cookies, web beacons, and other technologies to operate its services and for sales and marketing on enterprise pages, potentially identifying your device.",
+      "summary": "GitHub uses cookies, web beacons, and other technologies to operate its services and, on enterprise marketing pages, for sales and marketing purposes.",
       "excerpt": "## [What are cookies and similar technologies?](#what-are-cookies-and-similar-technologies)\n\nWe use cookies and similar technologies, such as web beacons, local storage, and mobile analytics, to operate and provide our Services. When visiting Enterprise Marketing Pages, like resources.github.com, these and additional cookies, like advertising IDs, may be used for sales and marketing purposes.\n\nCookies are small text files stored by your browser on your device. A cookie can later be read when your browser connects to a web server in the same domain that placed the cookie. The text in a cookie c",
       "confidence": 94
     },
@@ -377,9 +292,9 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "GitHub describes web beacons, third‑party content, mobile identifiers, and flash cookies that let third parties collect data about your device for advertising and analytics.",
+      "summary": "GitHub describes web beacons, third‑party content, mobile analytics identifiers, and flash cookies that enable third parties to collect data and serve ads.",
       "excerpt": "## [What are cookies and similar technologies?](#what-are-cookies-and-similar-technologies)\n\nWeb beacons are electronic images (also called “single-pixel” or “clear GIFs”) that are contained within a website or email. When your browser opens a webpage or email that contains a web beacon, it automatically connects to the web server that hosts the image (typically operated by a third party). This allows that web server to log information about your device and to set and read its own cookies. In the same way, third-party content on our websites (such as embedded videos, plug-ins, or ads) results ",
-      "confidence": 94
+      "confidence": 93
     },
     {
       "document_type": "privacy_policy",
@@ -388,7 +303,7 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "GitHub and its partners use cookies and similar technologies to collect and share detailed information about your online activity for purposes like targeted advertising.",
+      "summary": "GitHub and its partners use cookies and similar technologies to track your activity, build profiles, and serve targeted ads, sharing this data with third parties.",
       "excerpt": "## [How do we and our partners use cookies and similar technologies?](#how-do-we-and-our-partners-use-cookies-and-similar-technologies)\n\nThe GitHub Services use cookies and similar technologies for a variety of purposes, including to store your preferences and settings, enable you to sign-in, analyze how our Services perform, track your interaction with the Services, develop inferences, combat fraud, and fulfill other legitimate purposes. Some of these cookies and technologies may be provided by third parties, including service providers and advertising partners. For example, our analytics and",
       "confidence": 95
     },
@@ -399,7 +314,7 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "GitHub uses required, analytics, and social media cookies, allowing third parties to track your behavior and serve personalized ads based on your activity.",
+      "summary": "GitHub uses required, analytics, social media, and advertising cookies, including third‑party tracking for personalized ads and profiling.",
       "excerpt": "## [How do we and our partners use cookies and similar technologies?](#how-do-we-and-our-partners-use-cookies-and-similar-technologies)\n\nGitHub uses required cookies to perform essential website functions and to provide the services. For example, cookies are used to log you in, save your language preferences, provide a shopping cart experience, improve performance, route traffic between web servers, detect the size of your screen, determine page load times, improve user experience, and for audience measurement. These cookies are necessary for our websites to work.\n\nAnalytics\n\nWe allow third pa",
       "confidence": 95
     },
@@ -410,19 +325,8 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "GitHub and third parties use advertising cookies to monitor which ads you click and make purchases, tailoring future ads to your interests.",
+      "summary": "GitHub and third parties use advertising cookies to track which ads you click and purchases you make, tailoring future ads to your interests.",
       "excerpt": "## [How do we and our partners use cookies and similar technologies?](#how-do-we-and-our-partners-use-cookies-and-similar-technologies)\n\nIn addition, GitHub and third parties use advertising cookies to show you new ads based on ads you've already seen. Cookies also track which ads you click or purchases you make after clicking an ad. This is done both for payment purposes and to show you ads that are more relevant to you. For example, cookies are used to detect when you click an ad and to show you ads based on your social media interests and website browsing history.",
-      "confidence": 95
-    },
-    {
-      "document_type": "terms_of_service",
-      "category": "NOTICE_OF_CHANGE",
-      "stance": "protective",
-      "severity": "positive",
-      "points": 5,
-      "label": "Notice Before Changes",
-      "summary": "The company may change the terms but will give users at least 30 days' notice of any material changes.",
-      "excerpt": "## [Summary](#summary)\n\nWe provide our service as is, and we make no promises or guarantees about this service. **Please read this section carefully; you should understand what to expect.**\n\n[P. Limitation of Liability](#p-limitation-of-liability)\n\nWe will not be liable for damages or losses arising from your use or inability to use the service or otherwise arising under this agreement. **Please read this section carefully; it limits our obligations to you.**\n\n[Q. Release and Indemnification](#q-release-and-indemnification)\n\nYou are fully responsible for your use of the service.\n\n[R. Changes t",
       "confidence": 95
     },
     {
@@ -432,7 +336,7 @@
       "severity": "positive",
       "points": 5,
       "label": "You Keep Your Content",
-      "summary": "The previous AI‑training permission does not apply to academic research or to users whose services have fewer than 700 million monthly active users.",
+      "summary": "The previous clause does not apply to academic research or to users with fewer than 700 million monthly active users, limiting GitHub’s rights in those cases.",
       "excerpt": "## [9\\. Access Reciprocity](#9-access-reciprocity)\n\nThis Section D.9 does not apply to Access solely for the purpose of academic research or if, on the date you Access the Content, the number of monthly active users of the products or services made available by you is less than 700 million in the preceding calendar month. For the purposes of this Section, \"you\" shall refer to you and any entity that directly or indirectly controls, is controlled by, or is under common control with you (affiliates).",
       "confidence": 90
     },
@@ -443,20 +347,31 @@
       "severity": "positive",
       "points": 5,
       "label": "You Keep Your Content",
-      "summary": "GitHub states it does not own the content you provide or the output it generates, leaving ownership with you, though you must ensure any third‑party rights are respected.",
-      "excerpt": "## [2\\. Ownership](#2-ownership)\n\nGitHub does not claim ownership of your Input or Output.\n\nOutput may contain material that resembles code or content in the model's training data or that is subject to third-party copyrights or open source license terms. You are responsible for determining whether your use of Output requires a third-party license and for complying with any such license.",
-      "confidence": 93
+      "summary": "GitHub will only access private repository content for security, support, service integrity, legal compliance, or with your consent, treating it as confidential.",
+      "excerpt": "## [E. Private Repositories](#e-private-repositories)\n\n**Short version:** _We treat the content of private repositories as confidential, and we only access it as described in Section E.3 below—for security purposes, to assist the repository owner with a support matter, to maintain the integrity of the Service, to comply with our legal obligations, if we have reason to believe the contents are in violation of the law, or with your consent._",
+      "confidence": 92
     },
     {
       "document_type": "terms_of_service",
-      "category": "ACCOUNT_TERMINATION",
+      "category": "CONTENT_LICENSE_BROAD",
       "stance": "protective",
       "severity": "positive",
       "points": 5,
-      "label": "Fair Account Termination",
-      "summary": "You can close your account at any time, and GitHub will handle your information responsibly after closure.",
-      "excerpt": "## [M. Cancellation and Termination](#m-cancellation-and-termination)\n\n**Short version:** _You may close your Account at any time. If you do, we'll treat your information responsibly._",
+      "label": "You Keep Your Content",
+      "summary": "The agreement itself is released under a Creative Commons Zero license, allowing anyone to reuse the policy text freely.",
+      "excerpt": "## [3\\. License to GitHub Policies](#3-license-to-github-policies)\n\nThis Agreement is licensed under this [Creative Commons Zero license](https://creativecommons.org/publicdomain/zero/1.0/). For details, see our [site-policy repository](https://github.com/github/site-policy#license).",
       "confidence": 95
+    },
+    {
+      "document_type": "terms_of_service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "You Keep Your Content",
+      "summary": "GitHub states it does not own the user's input or the AI's output, leaving ownership with the user and placing responsibility on them to respect any third‑party rights.",
+      "excerpt": "## [2\\. Ownership](#2-ownership)\n\nGitHub does not claim ownership of your Input or Output.\n\nOutput may contain material that resembles code or content in the model's training data or that is subject to third-party copyrights or open source license terms. You are responsible for determining whether your use of Output requires a third-party license and for complying with any such license.",
+      "confidence": 93
     },
     {
       "document_type": "terms_of_service",
@@ -465,9 +380,9 @@
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
-      "summary": "The terms can be amended at any time, but users will be notified of material changes at least 30 days before they take effect.",
+      "summary": "The provider will give you at least 30 days’ notice of any material changes to the terms, such as price increases, before they take effect.",
       "excerpt": "## [R. Changes to These Terms](#r-changes-to-these-terms)\n\n**Short version:** _We want our users to be informed of important changes to our terms, but some changes aren't that important — we don't want to bother you every time we fix a typo. So while we may modify this agreement at any time, we will notify users of any material changes and give you time to adjust to them._\n\nWe reserve the right, at our sole discretion, to amend these Terms of Service at any time and will update these Terms of Service in the event of any such amendments. We will notify our Users of material changes to this Agre",
-      "confidence": 95
+      "confidence": 98
     },
     {
       "document_type": "privacy_policy",
@@ -476,8 +391,19 @@
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
-      "summary": "GitHub will inform users at least 30 days before any material privacy changes, either on the website or by email.",
+      "summary": "GitHub will give at least 30 days’ notice before material changes to the privacy statement, via the website or email.",
       "excerpt": "## [Changes to Our Privacy Statement](#changes-to-our-privacy-statement)\n\nGitHub may periodically revise this Privacy Statement. If there are material changes to the statement, we will provide at least 30 days prior notice by updating our website or sending an email to your primary email address associated with your GitHub account.",
+      "confidence": 98
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Limited Tracking",
+      "summary": "The clause informs users they can disable non‑essential cookies via GitHub’s settings or browser tools, giving them control over tracking.",
+      "excerpt": "## [What are your cookie choices and controls?](#what-are-your-cookie-choices-and-controls)\n\nYou have several options to disable non-essential cookies:\n\n1.  **Specifically on GitHub Enterprise Marketing Pages**\n\nAny GitHub page that serves non-essential cookies will have a link in the page’s footer to cookie settings. You can express your preferences at any time by clicking on that link and updating your settings.\n\nSome users will also be able to manage non-essential cookies via a cookie consent banner, including the options to accept, manage, and reject all non-essential cookies.\n\n2.  **Gener",
       "confidence": 95
     },
     {
@@ -487,8 +413,8 @@
       "severity": "positive",
       "points": 5,
       "label": "Limited Tracking",
-      "summary": "The clause explains how you can disable non‑essential cookies through GitHub’s settings or standard browser tools, giving you control over tracking.",
-      "excerpt": "## [What are your cookie choices and controls?](#what-are-your-cookie-choices-and-controls)\n\nYou have several options to disable non-essential cookies:\n\n1.  **Specifically on GitHub Enterprise Marketing Pages**\n\nAny GitHub page that serves non-essential cookies will have a link in the page’s footer to cookie settings. You can express your preferences at any time by clicking on that link and updating your settings.\n\nSome users will also be able to manage non-essential cookies via a cookie consent banner, including the options to accept, manage, and reject all non-essential cookies.\n\n2.  **Gener",
+      "summary": "The clause explains how you can limit non‑essential cookies and tracking via browser settings, extensions, Do Not Track signals, and Global Privacy Control, and states GitHub will not sell your data.",
+      "excerpt": "## [What are your cookie choices and controls?](#what-are-your-cookie-choices-and-controls)\n\n-   If your browser sends a [Do Not Track](https://en.wikipedia.org/wiki/Do_Not_Track) (DNT) signal, GitHub will not set non-essential cookies and will not load third party resources which set non-essential cookies.\n-   Many browsers provide cookie controls which may limit the types of cookies you encounter online. Check out the documentation for your browser to learn more.\n-   If you enable a browser extension designed to block tracking, such as [Privacy Badger](https://en.wikipedia.org/wiki/Privacy_B",
       "confidence": 95
     },
     {
@@ -498,18 +424,7 @@
       "severity": "positive",
       "points": 5,
       "label": "No Data Sale",
-      "summary": "It tells users how to request access, deletion, correction, or opt‑out of sharing their personal information, giving them control over their data.",
-      "excerpt": "## [Exercising your Privacy Rights](#exercising-your-privacy-rights)\n\nTo make an access, deletion, correction, or opt-out request, please send an email to privacy\\[at\\]github\\[dot\\]com and follow the instructions provided. We may need to verify your identity before processing your request. If you choose to use an authorized agent to submit a request on your behalf, please ensure they have your signed permission or power of attorney as required.\n\nTo opt out of the sharing of your personal information, you can click on the \"Do Not Share My Personal Information\" link on the footer of our Websites",
-      "confidence": 93
-    },
-    {
-      "document_type": "privacy_policy",
-      "category": "DATA_SALE",
-      "stance": "protective",
-      "severity": "positive",
-      "points": 5,
-      "label": "No Data Sale",
-      "summary": "The clause tells California users that the company does not share their personal information with third parties for direct marketing and provides a way to request confirmation of this practice.",
+      "summary": "The clause tells users that the company does not sell or share their personal information with third parties for direct marketing, and provides a way for California residents to request confirmation of this practice.",
       "excerpt": "## [Shine the Light Act](#shine-the-light-act)\n\nUnder California Civil Code section 1798.83, also known as the “Shine the Light” law, California residents who have provided personal information to a business with which the individual has established a business relationship for personal, family, or household purposes (“California Customers”) may request information about whether the business has disclosed personal information to any third parties for the third parties’ direct marketing purposes. Please be aware that we do not disclose personal information to any third parties for their direct m",
       "confidence": 96
     },
@@ -520,9 +435,9 @@
       "severity": "positive",
       "points": 5,
       "label": "Limited Tracking",
-      "summary": "The clause tells users in Colorado, Connecticut, or Virginia they can appeal a denied rights request and that the service does not do the type of profiling covered by Colorado law, so there’s no need to opt out.",
+      "summary": "It informs users that GitHub does not engage in profiling that affects legal decisions and outlines rights to opt out, protecting user privacy.",
       "excerpt": "## [Colorado/Connecticut/Virginia](#coloradoconnecticutvirginia)\n\nIf you live in Colorado, Connecticut, or Virginia you have some additional rights:\n\n-   If we deny your rights request, you have the right to appeal that decision. We will provide you with the necessary information to submit an appeal at that time.\n-   You have the right to opt out of profiling in furtherance of decisions that produce legal or similarly significant effects concerning the consumer. GitHub does not engage in such profiling as defined by Colorado law, so there’s no need to opt out.",
-      "confidence": 95
+      "confidence": 90
     },
     {
       "document_type": "privacy_policy",
@@ -531,12 +446,42 @@
       "severity": "positive",
       "points": 5,
       "label": "No Data Sale",
-      "summary": "The clause states that the company does not sell your personal information as defined by Nevada law, and provides an email address for privacy questions.",
+      "summary": "GitHub states it does not sell users' covered information under Nevada law and offers a contact for further questions.",
       "excerpt": "## [Nevada](#nevada)\n\nWe do not sell your covered information, as defined under Chapter 603A of the Nevada Revised Statutes. If you still have questions about your covered information or anything else in our Privacy Statement, please send an email to privacy\\[at\\]github\\[dot\\]com.",
       "confidence": 95
     }
   ],
   "history": [
+    {
+      "id": "39857282-7b3e-4945-afe8-d7ef339df6b6",
+      "date": "2026-06-12T03:33:27.307+00:00",
+      "document_type": "cookie_policy",
+      "points": 0,
+      "summary": "Taxonomy update: 4 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
+      "added": 0,
+      "modified": 4,
+      "removed": 0
+    },
+    {
+      "id": "f9b18f3c-3d9a-435a-8e6e-fab5af292566",
+      "date": "2026-06-12T03:33:23.909+00:00",
+      "document_type": "privacy_policy",
+      "points": 10,
+      "summary": "Taxonomy update: 52 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
+      "added": 0,
+      "modified": 52,
+      "removed": 0
+    },
+    {
+      "id": "7f953006-b5f1-4ed0-8fbc-939128b2335a",
+      "date": "2026-06-12T03:26:25.327+00:00",
+      "document_type": "terms_of_service",
+      "points": -50,
+      "summary": "Taxonomy update: 79 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
+      "added": 0,
+      "modified": 79,
+      "removed": 0
+    },
     {
       "id": "ee3805ac-7646-4d49-a78d-02f3dcadf384",
       "date": "2026-06-11T23:25:06.867+00:00",
@@ -551,7 +496,7 @@
       "id": "188e54ae-190f-4464-8883-95278344d47e",
       "date": "2026-06-11T23:07:59.51+00:00",
       "document_type": "privacy_policy",
-      "points": -20,
+      "points": 10,
       "summary": "GitHub's privacy policy allows sharing of personal data with various parties, often without consent, which could lead to user data being used for purposes they may not agree with. The policy also uses various tracking technologies, such as cookies and web beacons, to collect data for advertising and analytics. However, users have some control over their data, as they can disable non-essential cookies and request access, deletion, or correction of their personal information. Additionally, GitHub provides notice of changes to the policy at least 30 days in advance.",
       "added": 52,
       "modified": 0,
@@ -561,7 +506,7 @@
       "id": "ffa53888-875e-4e39-ac40-804708212f3e",
       "date": "2026-06-11T22:08:06.412+00:00",
       "document_type": "terms_of_service",
-      "points": -75,
+      "points": -50,
       "summary": "Taxonomy update: 79 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
       "added": 0,
       "modified": 79,
@@ -571,7 +516,7 @@
       "id": "b8a10d63-9ff5-4951-92b2-0ece6200f5be",
       "date": "2026-06-11T16:49:23.427+00:00",
       "document_type": "terms_of_service",
-      "points": -75,
+      "points": -50,
       "summary": "The company can change terms with at least 30 days' notice. Users give the service a broad license to use, display, and share their posted content. The service and users can use public repository content without payment. GitHub can use private repository content for AI features unless users opt out. No user-hostile changes were found beyond standard terms.",
       "added": 79,
       "modified": 0,
