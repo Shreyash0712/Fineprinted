@@ -120,6 +120,7 @@ export async function approveRequest(requestId: string): Promise<void> {
 
   await db.from("service_requests").update({ status: "approved" }).eq("id", requestId);
   revalidatePath("/admin");
+  revalidatePath("/admin/requests");
   redirect(`/admin/services/${serviceId}`);
 }
 
@@ -132,6 +133,7 @@ export async function rejectRequest(requestId: string): Promise<void> {
     .eq("id", requestId);
   if (error) throw new Error(error.message);
   revalidatePath("/admin");
+  revalidatePath("/admin/requests");
 }
 
 // ---------------------------------------------------------------------------

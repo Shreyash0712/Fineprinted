@@ -4,15 +4,62 @@
    <html> before paint; ThemeToggle flips it. */
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-outfit), sans-serif;
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+}
+
+:root {
+  --accent: #8b6e44;
+  --accent-hover: #765c37;
+  --accent-light: #f7f3eb;
+}
+
+.dark {
+  --accent: #d7b88f;
+  --accent-hover: #c4a277;
+  --accent-light: #1c1813;
 }
 
 body {
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit), sans-serif;
 }
 
 ::selection {
-  background: rgb(99 102 241 / 0.3);
+  background: rgba(197, 168, 128, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
 }

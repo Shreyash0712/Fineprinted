@@ -1,21 +1,42 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Fineprint — Know what you're agreeing to",
+  title: "Fineprinted: Know what you're agreeing to",
   description:
     "AI-powered monitoring of Terms of Service and Privacy Policies. Letter grades, plain-English flags, and alerts when the rules quietly change.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://fineprinted.vercel.app"),
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Fineprinted",
+    statusBarStyle: "default",
+  },
+  openGraph: {
+    title: "Fineprinted: Know what you're agreeing to",
+    description: "AI-powered monitoring of Terms of Service and Privacy Policies. Letter grades, plain-English flags, and alerts when the rules quietly change.",
+    url: "https://fineprinted.vercel.app",
+    siteName: "Fineprinted",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fineprinted: Know what you're agreeing to",
+    description: "AI-powered monitoring of Terms of Service and Privacy Policies. Letter grades, plain-English flags, and alerts when the rules quietly change.",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +48,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
       <head>
         {/* Set theme class before paint to avoid a flash of wrong theme */}
@@ -37,7 +58,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 transition-colors dark:bg-zinc-950 dark:text-zinc-100">
+      <body className="min-h-full flex flex-col bg-[#FAF9F5] text-[#1C1C1E] transition-colors dark:bg-[#0B0B0C] dark:text-[#E5E5E7]">
         {children}
       </body>
     </html>

@@ -21,7 +21,7 @@ export function SyncButton() {
       setMessage(error);
     } else {
       setState("done");
-      setMessage("Export dispatched — the site redeploys once data changes are committed.");
+      setMessage("Export dispatched, and the site redeploys once data changes are committed.");
     }
   }
 

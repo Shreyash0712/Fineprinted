@@ -65,7 +65,7 @@ export function ServiceExplorer({ services }: { services: Service[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search services… (e.g. spotify.com)"
-          className="w-full rounded-2xl border border-zinc-200 bg-white py-4 pl-12 pr-4 text-base shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-600 dark:focus:border-indigo-500/60 dark:focus:bg-zinc-900"
+          className="w-full rounded-2xl border border-zinc-200 bg-white py-4 pl-12 pr-4 text-base shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-650 dark:focus:border-accent/60 dark:focus:bg-zinc-900"
         />
       </div>
 
@@ -78,7 +78,7 @@ export function ServiceExplorer({ services }: { services: Service[] }) {
           </p>
           <Link
             href="/request"
-            className="mt-4 inline-block rounded-xl bg-indigo-500 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-indigo-400"
+            className="mt-4 inline-block rounded-xl bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-hover"
           >
             Request it →
           </Link>
@@ -89,7 +89,7 @@ export function ServiceExplorer({ services }: { services: Service[] }) {
             <li key={s.id} className="group relative">
               <Link
                 href={`/s/${s.root_domain}`}
-                className="block rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:shadow-none dark:hover:border-indigo-500/40 dark:hover:bg-zinc-900"
+                className="block rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:shadow-none dark:hover:border-accent/30 dark:hover:bg-zinc-900"
               >
                 <div className="flex items-start gap-4">
                   <GradeBadge grade={s.current_grade} size="lg" />
@@ -113,15 +113,18 @@ export function ServiceExplorer({ services }: { services: Service[] }) {
                 </p>
               </Link>
               <button
-                onClick={() => onToggle(s.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggle(s.id);
+                }}
                 title={watched.has(s.id) ? "Remove from saved" : "Save to watchlist"}
-                className={`absolute right-4 top-4 rounded-lg p-2 transition ${
+                className={`absolute right-4 top-4 rounded-full p-2 transition-all border shadow-sm cursor-pointer z-10 ${
                   watched.has(s.id)
-                    ? "text-indigo-500 hover:text-indigo-400 dark:text-indigo-400"
-                    : "text-zinc-300 opacity-0 hover:text-zinc-500 group-hover:opacity-100 dark:text-zinc-600 dark:hover:text-zinc-300"
+                    ? "bg-accent-light border-accent/20 text-accent dark:bg-accent-dark dark:border-accent/30"
+                    : "bg-zinc-50 border-zinc-200 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
                 }`}
               >
-                <BookmarkIcon className="h-5 w-5" filled={watched.has(s.id)} />
+                <BookmarkIcon className="h-4.5 w-4.5" filled={watched.has(s.id)} />
               </button>
             </li>
           ))}

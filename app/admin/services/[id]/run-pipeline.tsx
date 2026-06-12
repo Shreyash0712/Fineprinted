@@ -23,10 +23,10 @@ const levelColor: Record<PipelineRunEvent["level"], string> = {
 };
 
 const STATUS_BADGE: Record<PipelineRun["status"], string> = {
-  queued: "bg-yellow-600/20 text-yellow-300",
-  running: "bg-indigo-600/20 text-indigo-300",
-  succeeded: "bg-emerald-600/15 text-emerald-300",
-  failed: "bg-red-600/20 text-red-300",
+  queued: "bg-yellow-500/10 text-yellow-405 border border-yellow-500/20 rounded-full px-2 py-0.5 text-xs font-semibold",
+  running: "bg-accent/10 text-accent border border-accent/20 rounded-full px-2 py-0.5 text-xs font-semibold animate-pulse",
+  succeeded: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full px-2 py-0.5 text-xs font-semibold",
+  failed: "bg-red-500/10 text-red-400 border border-red-500/20 rounded-full px-2 py-0.5 text-xs font-semibold",
 };
 
 function isActive(run: PipelineRun | null): boolean {
@@ -89,7 +89,7 @@ export function RunPipeline({
         setActionError(result.error);
       } else if (result.runId) {
         if (result.resumed) {
-          setActionError("A run is already in progress — re-attached to it.");
+          setActionError("A run is already in progress, re-attached to it.");
         }
         setRun({
           id: result.runId,
@@ -109,29 +109,29 @@ export function RunPipeline({
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
         <button
           onClick={start}
           disabled={pending || isActive(run)}
-          className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-400 disabled:opacity-50"
+          className="rounded-xl bg-accent hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/10 px-5 py-2.5 text-sm font-semibold text-white transition disabled:opacity-50 cursor-pointer"
         >
           {isActive(run) ? "Running…" : pending ? "Starting…" : "Run pipeline"}
         </button>
         {run && (
-          <span className={`rounded px-2 py-0.5 text-xs ${STATUS_BADGE[run.status]}`}>
+          <span className={STATUS_BADGE[run.status]}>
             {run.status}
           </span>
         )}
         {run && (
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-zinc-500 font-medium">
             started {new Date(run.created_at).toLocaleString()}
           </span>
         )}
       </div>
 
       {actionError && (
-        <p className="rounded-md border border-yellow-600/30 bg-yellow-600/10 px-3 py-2 text-xs text-yellow-300">
+        <p className="rounded-xl border border-yellow-600/30 bg-yellow-600/10 px-4 py-3 text-xs text-yellow-300">
           {actionError}
         </p>
       )}
@@ -140,9 +140,9 @@ export function RunPipeline({
         <p className="text-xs text-zinc-500">
           Waiting for a GitHub Actions runner to pick the job up…
           {queuedLong && (
-            <span className="text-yellow-400">
+            <span className="text-yellow-405">
               {" "}
-              This is taking long — check the repository&apos;s Actions tab and that the
+              This is taking long, check the repository&apos;s Actions tab and that the
               workflow secrets are configured.
             </span>
           )}
@@ -152,19 +152,19 @@ export function RunPipeline({
       {run && run.events.length > 0 && (
         <div
           ref={logRef}
-          className="max-h-72 overflow-y-auto rounded-lg border border-zinc-800 bg-black p-3 font-mono text-xs leading-relaxed"
+          className="max-h-72 overflow-y-auto rounded-xl border border-zinc-900 bg-black p-4 font-mono text-xs leading-relaxed text-zinc-300"
         >
           {run.events.map((line, i) => (
             <div key={i} className={levelColor[line.level]}>
-              <span className="text-zinc-600">[{line.step}]</span> {line.message}
+              <span className="text-zinc-650">[{line.step}]</span> {line.message}
             </div>
           ))}
-          {isActive(run) && <div className="animate-pulse text-zinc-500">▍</div>}
+          {isActive(run) && <div className="animate-pulse text-zinc-500 inline-block">▍</div>}
         </div>
       )}
 
       {run?.status === "failed" && run.error && (
-        <p className="rounded-md border border-red-600/30 bg-red-600/10 px-3 py-2 text-xs text-red-300">
+        <p className="rounded-xl border border-red-650/30 bg-red-650/10 px-4 py-3 text-xs text-red-300">
           {run.error}
         </p>
       )}

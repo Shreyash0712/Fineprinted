@@ -40,11 +40,11 @@ const TYPE_LABELS: Record<DocumentType, string> = {
 };
 
 const severityBadge: Record<string, string> = {
-  critical: "bg-red-600/20 text-red-300",
-  major: "bg-orange-600/20 text-orange-300",
-  minor: "bg-yellow-600/20 text-yellow-300",
-  positive: "bg-emerald-600/20 text-emerald-300",
-  neutral: "bg-zinc-800 text-zinc-400",
+  critical: "bg-red-650/10 text-red-700 dark:bg-red-600/20 dark:text-red-300",
+  major: "bg-orange-500/10 text-orange-700 dark:bg-orange-600/20 dark:text-orange-300",
+  minor: "bg-yellow-500/10 text-yellow-700 dark:bg-yellow-600/20 dark:text-yellow-300",
+  positive: "bg-emerald-500/10 text-emerald-700 dark:bg-emerald-600/20 dark:text-emerald-300",
+  neutral: "bg-zinc-150 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400",
 };
 
 export default async function ServicePage({
@@ -116,76 +116,78 @@ export default async function ServicePage({
   return (
     <main className="space-y-10">
       {/* Header */}
-      <section className="flex items-center gap-4">
-        <div className="flex-1">
-          <form action={updateServiceName} className="flex items-center gap-2">
+      <section className="flex flex-wrap items-center gap-6 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-900 dark:bg-zinc-950">
+        <div className="flex-1 min-w-[200px]">
+          <form action={updateServiceName} className="flex items-center gap-3">
             <input type="hidden" name="serviceId" value={svc.id} />
             <input
               name="name"
               defaultValue={svc.name}
               required
-              className="rounded-md border border-transparent bg-transparent px-1 py-0.5 text-xl font-semibold outline-none transition hover:border-zinc-700 focus:border-zinc-500 focus:bg-zinc-900"
+              className="rounded-xl border border-zinc-200 bg-zinc-50/50 px-3 py-1.5 text-xl font-bold text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 outline-none transition focus:border-accent font-heading"
             />
-            <button className="rounded bg-zinc-800 px-2 py-1 text-xs text-zinc-300 hover:bg-zinc-700">
+            <button className="rounded-xl bg-zinc-100 dark:bg-zinc-800 px-3 py-2 text-xs font-semibold text-zinc-600 dark:text-zinc-350 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition cursor-pointer border border-zinc-200/50 dark:border-zinc-700/50">
               Rename
             </button>
           </form>
-          <p className="text-sm text-zinc-500">{svc.root_domain}</p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-550 mt-1">{svc.root_domain}</p>
         </div>
         {svc.current_grade && (
           <div className="text-right">
-            <div className="text-3xl font-bold">{svc.current_grade}</div>
-            <div className="text-xs text-zinc-500">{svc.current_score}/100</div>
+            <div className="text-3xl font-black text-accent font-heading">{svc.current_grade}</div>
+            <div className="text-xs text-zinc-500 font-semibold">{svc.current_score}/100</div>
           </div>
         )}
-        <span className="rounded bg-zinc-800 px-2 py-1 text-xs text-zinc-300">
+        <span className="rounded-full bg-zinc-100 dark:bg-zinc-850 px-3 py-1 text-xs font-semibold border border-zinc-200 dark:border-zinc-800/80 text-zinc-650 dark:text-zinc-355">
           {svc.status}
         </span>
       </section>
 
       {/* Run */}
-      <section>
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-400">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-955 shadow-sm">
+        <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-550 dark:text-zinc-400 font-heading">
           Pipeline
         </h2>
         <RunPipeline serviceId={svc.id} initialRun={(latestRun as PipelineRun) ?? null} />
-        <p className="mt-2 text-xs text-zinc-500">
+        <p className="text-xs leading-relaxed text-zinc-550">
           Dispatches a GitHub Actions job that runs discovery (if no URLs are set
-          below), extraction, hashing, diffing and classification, then{" "}
-          <strong className="text-zinc-400">
+          below), extraction, hashing, diffing and classification, and then{" "}
+          <strong className="text-zinc-800 dark:text-zinc-300">
             publishes the results and updates the public site automatically
-          </strong>{" "}
-          — there is no review step. Low-confidence findings are excluded from the
-          grade unless approved below. Long waits are normal — the job sleeps
+          </strong>,
+          without a manual review step. Low-confidence findings are excluded from the
+          grade unless approved below. Long waits are normal, as the job sleeps
           through free-tier LLM rate limits.
         </p>
       </section>
 
       {/* Documents / manual override */}
-      <section>
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-400">
-          Documents
-        </h2>
-        <p className="mb-3 text-xs text-zinc-500">
-          One URL per line; multiple URLs are merged into one document in order
-          (for multi-page terms). Save an empty box to remove a document. Leave
-          everything empty to let discovery find them automatically.
-        </p>
-        <div className="grid gap-3 sm:grid-cols-2">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-955 shadow-sm">
+        <div>
+          <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-550 dark:text-zinc-400 font-heading">
+            Documents
+          </h2>
+          <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
+            One URL per line; multiple URLs are merged into one document in order
+            (for multi-page terms). Save an empty box to remove a document. Leave
+            everything empty to let discovery find them automatically.
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
           {DOCUMENT_TYPES.map((type) => {
             const doc = docByType.get(type);
             return (
               <form
                 key={type}
                 action={saveDocumentUrls}
-                className="rounded-lg border border-zinc-800 p-3"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:border-zinc-850 dark:bg-zinc-900/10 p-4 space-y-3"
               >
                 <input type="hidden" name="serviceId" value={svc.id} />
                 <input type="hidden" name="type" value={type} />
-                <div className="mb-2 flex items-center justify-between">
-                  <span className="text-sm font-medium">{TYPE_LABELS[type]}</span>
-                  <button className="rounded bg-zinc-800 px-2 py-1 text-xs text-zinc-300 hover:bg-zinc-700">
-                    Save
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-450 font-heading">{TYPE_LABELS[type]}</span>
+                  <button className="rounded-lg bg-accent hover:bg-accent-hover text-white shadow-sm px-2.5 py-1 text-xs font-semibold transition cursor-pointer">
+                    Save Urls
                   </button>
                 </div>
                 <textarea
@@ -193,7 +195,7 @@ export default async function ServicePage({
                   rows={2}
                   defaultValue={doc?.source_urls.join("\n") ?? ""}
                   placeholder="https://…"
-                  className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-2 py-1.5 font-mono text-xs outline-none focus:border-zinc-500"
+                  className="w-full rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 px-3 py-2 font-mono text-xs text-zinc-900 dark:text-zinc-150 placeholder:text-zinc-400 dark:placeholder:text-zinc-650 outline-none focus:border-accent transition"
                 />
               </form>
             );
@@ -202,8 +204,8 @@ export default async function ServicePage({
       </section>
 
       {/* Published change events */}
-      <section>
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-400">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-955 shadow-sm">
+        <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-555 dark:text-zinc-400 font-heading">
           Change events {history.length > 0 && `(${history.length})`}
         </h2>
         {history.length === 0 ? (
@@ -249,31 +251,31 @@ function EventCard({
     );
 
   return (
-    <div className="rounded-lg border border-zinc-800 p-4">
-      <div className="mb-2 flex flex-wrap items-center gap-2">
-        <span className="text-sm font-medium">
+    <div className="rounded-xl border border-zinc-200 bg-zinc-50/30 dark:border-zinc-900 dark:bg-zinc-900/10 p-5 space-y-4">
+      <div className="flex flex-wrap items-center gap-2 border-b border-zinc-150 dark:border-zinc-900 pb-3">
+        <span className="text-sm font-bold font-heading text-zinc-800 dark:text-zinc-200">
           {document ? TYPE_LABELS[document.type] : "Unknown document"}
         </span>
-        <span className="text-xs text-zinc-500">
+        <span className="text-xs text-zinc-500 font-medium ml-1">
           {new Date(event.created_at).toLocaleString()}
         </span>
         <span
-          className={`rounded px-2 py-0.5 text-xs ${
+          className={`rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide ${
             event.status === "draft"
-              ? "bg-yellow-600/20 text-yellow-300"
+              ? "bg-yellow-500/10 text-yellow-705 dark:text-yellow-300 border border-yellow-500/20"
               : event.status === "published"
-                ? "bg-emerald-600/15 text-emerald-300"
-                : "bg-zinc-800 text-zinc-400"
+                ? "bg-emerald-500/10 text-emerald-700 dark:bg-emerald-600/15 dark:text-emerald-300 border border-emerald-500/20"
+                : "bg-zinc-150 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
           }`}
         >
           {event.status}
         </span>
         {event.severity_score !== null && event.severity_score !== 0 && (
           <span
-            className={`rounded px-2 py-0.5 text-xs tabular-nums ${
+            className={`rounded-full px-2.5 py-0.5 text-xs font-semibold tabular-nums border ${
               event.severity_score < 0
-                ? "bg-red-600/20 text-red-300"
-                : "bg-emerald-600/15 text-emerald-300"
+                ? "bg-red-500/10 text-red-700 border-red-500/20"
+                : "bg-emerald-500/10 text-emerald-700 border-emerald-500/20"
             }`}
           >
             {event.severity_score > 0 ? "+" : ""}
@@ -282,10 +284,10 @@ function EventCard({
         )}
       </div>
 
-      {event.ai_summary && <p className="mb-3 text-sm text-zinc-300">{event.ai_summary}</p>}
+      {event.ai_summary && <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{event.ai_summary}</p>}
 
       {diff && (
-        <p className="mb-3 text-xs text-zinc-500">
+        <p className="text-xs text-zinc-500 font-mono">
           {diff.added.length} added · {diff.modified.length} modified ·{" "}
           {diff.removed.length} removed · {diff.cosmetic_count} cosmetic ·{" "}
           {diff.unchanged_count} unchanged · {diff.llm_calls} LLM calls
@@ -293,41 +295,41 @@ function EventCard({
       )}
 
       {flagged.length > 0 && (
-        <ul className="mb-3 space-y-2">
+        <ul className="space-y-3">
           {flagged.map(({ excerpt, classification: c }) => (
-            <li key={c.clause_hash} className="rounded-md bg-zinc-900 p-3">
-              <div className="mb-1 flex flex-wrap items-center gap-2">
-                <span className={`rounded px-2 py-0.5 text-xs ${severityBadge[c.severity]}`}>
+            <li key={c.clause_hash} className="rounded-xl bg-white border border-zinc-200 dark:bg-zinc-955 dark:border-zinc-900 p-4 space-y-3 shadow-2xs">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className={`rounded-lg px-2 py-0.5 text-xs font-semibold ${severityBadge[c.severity]}`}>
                   {classificationLabel(c)}
                 </span>
-                <span className="text-xs tabular-nums text-zinc-500">
+                <span className="text-xs tabular-nums text-zinc-500 font-medium">
                   {SEVERITY_POINTS[c.severity] > 0 ? "+" : ""}
-                  {SEVERITY_POINTS[c.severity]} pts · confidence {c.confidence_score}
+                  {SEVERITY_POINTS[c.severity]} pts, confidence {c.confidence_score}
                 </span>
                 {c.confidence_score < CONFIDENCE_REVIEW_THRESHOLD &&
                   (c.admin_approved ? (
-                    <span className="text-xs text-emerald-400">approved</span>
+                    <span className="text-xs text-emerald-650 dark:text-emerald-400 font-semibold">approved</span>
                   ) : (
-                    <>
-                      <span className="text-xs text-yellow-400">
-                        low confidence — not counted until approved
+                    <div className="flex items-center gap-2 ml-1">
+                      <span className="text-xs text-yellow-600 dark:text-yellow-400 font-medium">
+                        low confidence, not counted until approved
                       </span>
                       <form
                         action={approveClassification.bind(null, c.clause_hash, serviceId)}
                       >
-                        <button className="rounded bg-emerald-600/20 px-2 py-0.5 text-xs text-emerald-300 hover:bg-emerald-600/30">
+                        <button className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-2 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-350 hover:bg-emerald-500/20 transition cursor-pointer">
                           Approve
                         </button>
                       </form>
-                    </>
+                    </div>
                   ))}
               </div>
-              <p className="text-sm text-zinc-300">{c.plain_english_summary}</p>
-              <details className="mt-1">
-                <summary className="cursor-pointer text-xs text-zinc-500">
-                  Clause text
+              <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 font-medium">{c.plain_english_summary}</p>
+              <details className="group mt-1">
+                <summary className="cursor-pointer text-xs text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 select-none font-semibold">
+                  Show Clause text
                 </summary>
-                <pre className="mt-1 whitespace-pre-wrap font-mono text-xs text-zinc-400">
+                <pre className="mt-2 whitespace-pre-wrap font-mono text-xs text-zinc-600 dark:text-zinc-455 border-l border-zinc-200 dark:border-zinc-800 pl-3 leading-relaxed bg-zinc-100/50 dark:bg-zinc-900/30 p-2.5 rounded-lg">
                   {excerpt}
                 </pre>
               </details>
@@ -337,26 +339,32 @@ function EventCard({
       )}
 
       {diff && (diff.modified.length > 0 || diff.removed.length > 0) && (
-        <details>
-          <summary className="cursor-pointer text-xs text-zinc-500">Full diff detail</summary>
-          <div className="mt-2 space-y-2">
+        <details className="group">
+          <summary className="cursor-pointer text-xs text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 select-none font-semibold">Full diff detail</summary>
+          <div className="mt-3 space-y-3">
             {diff.modified.map((m) => (
-              <div key={m.hash} className="grid gap-2 rounded-md bg-zinc-900 p-3 sm:grid-cols-2">
-                <pre className="whitespace-pre-wrap font-mono text-xs text-red-300/80">
-                  {m.old_excerpt}
-                </pre>
-                <pre className="whitespace-pre-wrap font-mono text-xs text-emerald-300/80">
-                  {m.excerpt}
-                </pre>
+              <div key={m.hash} className="grid gap-3 rounded-lg bg-white border border-zinc-200 p-4 sm:grid-cols-2 dark:bg-zinc-950 dark:border-zinc-900">
+                <div>
+                  <div className="text-[10px] uppercase font-bold text-red-600 dark:text-red-500 mb-1">Old Excerpt</div>
+                  <pre className="whitespace-pre-wrap font-mono text-xs text-red-700 dark:text-red-400/80 leading-relaxed">
+                    {m.old_excerpt}
+                  </pre>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-500 mb-1">New Excerpt</div>
+                  <pre className="whitespace-pre-wrap font-mono text-xs text-emerald-700 dark:text-emerald-400/80 leading-relaxed">
+                    {m.excerpt}
+                  </pre>
+                </div>
               </div>
             ))}
             {diff.removed.map((r) => (
-              <pre
-                key={r.hash}
-                className="whitespace-pre-wrap rounded-md bg-zinc-900 p-3 font-mono text-xs text-red-300/80 line-through"
-              >
-                {r.excerpt}
-              </pre>
+              <div key={r.hash} className="rounded-lg bg-white border border-zinc-200 p-4 dark:bg-zinc-955 dark:border-zinc-900">
+                <div className="text-[10px] uppercase font-bold text-red-650 dark:text-red-500 mb-1">Removed Excerpt</div>
+                <pre className="whitespace-pre-wrap font-mono text-xs text-red-700 dark:text-red-400/70 line-through leading-relaxed">
+                  {r.excerpt}
+                </pre>
+              </div>
             ))}
           </div>
         </details>

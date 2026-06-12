@@ -100,7 +100,7 @@ export async function requestService(
     if (voteError.code === "23505") {
       return {
         ok: true,
-        message: `You've already requested ${domain} — it's waiting in the review queue.`,
+        message: `You've already requested ${domain}, and it's waiting in the processing queue.`,
       };
     }
     console.error("request vote insert failed:", voteError.code, voteError.message);
@@ -110,8 +110,8 @@ export async function requestService(
   return {
     ok: true,
     message: created
-      ? `Request for ${domain} submitted! It'll appear once an admin reviews it.`
-      : `Vote added — ${domain} moved up the review queue.`,
+      ? `Request for ${domain} submitted! It'll appear once the automated pipeline processes it.`
+      : `Vote added: ${domain} moved up the queue.`,
   };
 }
 

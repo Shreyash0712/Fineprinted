@@ -41,10 +41,10 @@ export function RequestForm() {
           onChange={(e) => setDomain(e.target.value)}
           placeholder="netflix.com"
           required
-          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-600 dark:focus:border-indigo-500/60"
+          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-650 dark:focus:border-accent/60"
         />
         <p className="mt-1.5 text-xs text-zinc-500 dark:text-zinc-400">
-          Paste anything — a full URL works. We reduce it to the root domain.
+          Paste anything, as even a full URL works. We reduce it to the root domain.
         </p>
       </div>
       <div>
@@ -57,7 +57,7 @@ export function RequestForm() {
           onChange={(e) => setName(e.target.value)}
           placeholder="Netflix"
           maxLength={80}
-          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-600 dark:focus:border-indigo-500/60"
+          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-650 dark:focus:border-accent/60"
         />
         <p className="mt-1.5 text-xs text-zinc-500 dark:text-zinc-400">
           How the service should be displayed once it&apos;s tracked.
@@ -66,7 +66,7 @@ export function RequestForm() {
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-xl bg-indigo-500 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-indigo-400 disabled:opacity-50"
+        className="w-full rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-hover disabled:opacity-50 cursor-pointer"
       >
         {pending ? "Submitting…" : "Submit request"}
       </button>
