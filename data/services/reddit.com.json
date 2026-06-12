@@ -2,14 +2,22 @@
   "id": "8737a4a3-d46e-4eee-8eeb-060375c6442c",
   "name": "Reddit",
   "root_domain": "reddit.com",
-  "grade": "C",
-  "score": 50,
-  "generated_at": "2026-06-12T19:03:25.500Z",
-  "last_published_at": "2026-06-12T19:02:38.115+00:00",
+  "grade": "D",
+  "score": 25,
+  "generated_at": "2026-06-12T22:22:58.251Z",
+  "last_published_at": "2026-06-12T22:22:31.775+00:00",
   "summary": {
     "good": [
       {
         "text": "Says it does not sell your personal data.",
+        "points": 5
+      },
+      {
+        "text": "Fair process before your account is closed.",
+        "points": 5
+      },
+      {
+        "text": "Tracking is limited or can be opted out of.",
         "points": 5
       },
       {
@@ -18,6 +26,10 @@
       }
     ],
     "bad": [
+      {
+        "text": "You give up your right to sue or join a class action.",
+        "points": -30
+      },
       {
         "text": "The rules can change without telling you.",
         "points": -30
@@ -29,6 +41,10 @@
       {
         "text": "Your account can be closed at any time, for any reason.",
         "points": -15
+      },
+      {
+        "text": "You are tracked for third-party advertising.",
+        "points": -5
       }
     ]
   },
@@ -48,6 +64,17 @@
   ],
   "clauses": [
     {
+      "document_type": "privacy_policy",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Forced Arbitration",
+      "summary": "The clause provides that disputes under the DPF can be resolved through binding arbitration with JAMS, limiting users to this arbitration process.",
+      "excerpt": "## EU-U.S., UK Extension, and Swiss-U.S. Data Privacy Frameworks Disclosure\n\nIn some situations, the DPF Framework gives you the right to invoke binding arbitration. You can do this to resolve complaints not resolved by other means, as described in Annex I to the [DPF framework](https://www.dataprivacyframework.gov/s/framework-text). In compliance with the EU-U.S. DPF and the UK Extension to the EU-U.S. DPF and the Swiss-U.S. DPF, Reddit, Inc., commits to refer unresolved complaints concerning our handling of personal data received in reliance on the EU-U.S. DPF and the UK Extension to the EU-",
+      "confidence": 93
+    },
+    {
       "document_type": "other",
       "category": "UNILATERAL_CHANGE",
       "stance": "hostile",
@@ -66,7 +93,7 @@
       "points": -30,
       "label": "Unilateral Changes",
       "summary": "The company can change the terms at its discretion, posting the new version and possibly emailing you, and you’re bound by them if you keep using the service.",
-      "excerpt": "## 15\\. Changes to these Terms\n\nWe may make changes to these Terms from time to time. If we make changes, we will post the revised Terms and update the Effective Date above. If the changes, in our sole discretion, are material, we may also notify you by sending an email to the address associated with your Account or by otherwise providing you with notice through our Services. By continuing to access or use the Services on or after the Effective Date of the revised Terms, you agree to be bound by the revised Terms. If you do not agree to the revised Terms, you must stop accessing and using our ",
+      "excerpt": "## 15\\. Changes to these Terms\n\nWe may make changes to these Terms from time to time. If we make changes, we will post the revised Terms and update the Effective Date above. If the changes, in our sole discretion, are material, we may also notify you by sending an email to the address associated with your Account or by otherwise providing you with notice through our Services. By continuing to access or use the Services on or after the Effective Date of the revised Terms, you agree to be bound by the revised Terms. If you do not agree to the revised Terms, you must stop accessing and using our ",
       "confidence": 95
     },
     {
@@ -110,7 +137,7 @@
       "points": -15,
       "label": "Broad Content License",
       "summary": "Any ideas or feedback you provide can be used by Reddit without compensation, and Reddit may delete or disable your content at any time for any reason.",
-      "excerpt": "## 5\\. Your Content\n\nAny ideas, suggestions, and feedback about Reddit or our Services that you provide to us are entirely voluntary, and you agree that Reddit may use such ideas, suggestions, and feedback without compensation or obligation to you.\n\nAlthough we have no obligation to screen, edit, or monitor Your Content, we may, in our sole discretion, delete, deem your content ineligible for monetization, or remove Your Content, at any time and for any reason, including for violating these Terms, our [Reddit Rules](/policies/reddit-rules?hsLang=en), or our [other terms and policies](https://w",
+      "excerpt": "## 5\\. Your Content\n\nAny ideas, suggestions, and feedback about Reddit or our Services that you provide to us are entirely voluntary, and you agree that Reddit may use such ideas, suggestions, and feedback without compensation or obligation to you.\n\nAlthough we have no obligation to screen, edit, or monitor Your Content, we may, in our sole discretion, delete, deem your content ineligible for monetization, or remove Your Content, at any time and for any reason, including for violating these Terms, our [Reddit Rules](/policies/reddit-rules?hsLang=en), or our [other terms and policies](https://w",
       "confidence": 90
     },
     {
@@ -121,7 +148,7 @@
       "points": -15,
       "label": "Arbitrary Account Termination",
       "summary": "Reddit can remove or limit your ability to moderate a subreddit at any time for any reason, even without breaching the terms.",
-      "excerpt": "## 8\\. Moderators\n\nModerating a subreddit is an unofficial, voluntary position that may be available to users of the Services. We are not responsible for actions taken by the moderators. We reserve the right to revoke or limit a user’s ability to moderate at any time and for any reason or no reason, including for a breach of these Terms.\n\nIf you choose to moderate a subreddit:\n\n-   You agree to follow the [Moderator Code of Conduct](https://www.redditinc.com/policies/moderator-code-of-conduct?hsLang=en);\n\n-   You agree that when you receive reports related to a subreddit you moderate, you will",
+      "excerpt": "## 8\\. Moderators\n\nModerating a subreddit is an unofficial, voluntary position that may be available to users of the Services. We are not responsible for actions taken by the moderators. We reserve the right to revoke or limit a user’s ability to moderate at any time and for any reason or no reason, including for a breach of these Terms.\n\nIf you choose to moderate a subreddit:\n\n-   You agree to follow the [Moderator Code of Conduct](https://www.redditinc.com/policies/moderator-code-of-conduct?hsLang=en);\n\n-   You agree that when you receive reports related to a subreddit you moderate, you will",
       "confidence": 95
     },
     {
@@ -132,7 +159,7 @@
       "points": -15,
       "label": "Arbitrary Account Termination",
       "summary": "Reddit may overturn any moderator decision it deems not in the platform's interest, even though it has no obligation to do so.",
-      "excerpt": "## 8\\. Moderators\n\n-   If you have access to non-public information as a result of moderating a subreddit, you will use such information only in connection with your performance as a moderator; and\n\n-   You may create and enforce rules for the subreddits you moderate, provided that such rules do not conflict with these Terms, the [Reddit Rules](/policies/reddit-rules?hsLang=en), or the [Moderator Code of Conduct](https://www.redditinc.com/policies/moderator-code-of-conduct?hsLang=en).\n\nReddit reserves the right, but has no obligation, to overturn any action or decision of a moderator if Reddit",
+      "excerpt": "## 8\\. Moderators\n\n-   If you have access to non-public information as a result of moderating a subreddit, you will use such information only in connection with your performance as a moderator; and\n\n-   You may create and enforce rules for the subreddits you moderate, provided that such rules do not conflict with these Terms, the [Reddit Rules](/policies/reddit-rules?hsLang=en), or the [Moderator Code of Conduct](https://www.redditinc.com/policies/moderator-code-of-conduct?hsLang=en).\n\nReddit reserves the right, but has no obligation, to overturn any action or decision of a moderator if Reddit",
       "confidence": 93
     },
     {
@@ -181,13 +208,101 @@
     },
     {
       "document_type": "privacy_policy",
-      "category": "DATA_SALE",
-      "stance": "protective",
-      "severity": "positive",
-      "points": 5,
-      "label": "No Data Sale",
-      "summary": "Reddit states it does not sell your personal information and only collects data that is necessary.",
-      "excerpt": "## Privacy is your right\n\nAt Reddit, we don’t collect more user data than necessary, and we never sell your personal information. Because [privacy](https://www.un.org/en/about-us/universal-declaration-of-human-rights#:~:text=Article%2012,against%20such%20interference%20or%20attacks.) is your right.",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Reddit states it uses cookies and similar technologies to track your activity for personalized content and advertising, which imposes third‑party tracking on users.",
+      "excerpt": "## What Information We Collect\n\nWe may receive information from cookies, which are pieces of data your browser stores and sends back to us when making requests, and similar technologies. We use this information to deliver and maintain our Services, improve your experience, understand user activity, personalize content and advertisements, measure the effectiveness of advertising on and off Reddit, and improve the quality of our Services. For example, we store and retrieve information about your preferred language and other settings. See our [Cookie Notice](https://www.redditinc.com/policies/coo",
+      "confidence": 92
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Reddit collects a wide range of personal data—including account info, content, actions, location, and cookies—and uses it for service improvement and research, without giving users control.",
+      "excerpt": "## Additional Information for EEA, Swiss, and UK Users\n\n_Provide, maintain, and improve the Services Legitimate Interest relied on: To provide Reddit services: to support, maintain and improve the Reddit services for users, to foster innovation that benefits our user community The users interest in accessing the Reddit services: to provide new features and/or products for users and customers, and advance research-driven product enhancements._\n\n_Information You Provide Us_\n\n-   Account Information\n-   Public Content You Submit\n-   Non-Public Content You Submit\n-   Actions You Take\n-   Transacti",
+      "confidence": 92
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Reddit gathers personal data such as account details, actions, and location, and uses it to personalize services and deliver targeted advertising.",
+      "excerpt": "## Additional Information for EEA, Swiss, and UK Users\n\n_Provide you personalized, age-appropriate, services, content, and features Legitimate Interest relied on: to provide age-appropriate services, this measure supports Reddit’s legitimate interest in enforcing content policies, mitigating regulatory risk, and ensuring an appropriate user experience. to enhance user experience by tailoring services to individual preferences_\n\n_Information You Provide Us_\n\n-   Account Information\n-   Public Content You Submit\n-   Non-Public Content You Submit\n-   Actions You Take\n-   Other Information\n\n_Infor",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Reddit collects usage, cookie, and location data, plus account and activity information, to measure ad effectiveness and improve marketing.",
+      "excerpt": "## Additional Information for EEA, Swiss, and UK Users\n\n-   Log Data\n-   Usage information\n-   Information collected from cookies and similar technologies\n-   Location Information (IP based only)\n\n_Optimize and measure the effectiveness of ads shown on our Services, and our ads on other sites and apps Legitimate Interest relied on: to evaluate the performance of advertising campaigns and improve the relevance and quality of ads shown to users. to promote our services and evaluate the success of our marketing campaigns_\n\n_Information You Provide Us_\n\n-   Account Information\n-   Actions You Take",
+      "confidence": 91
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "Reddit gathers extensive personal data—including content, actions, and location—to protect safety, enforce policies, and develop new services.",
+      "excerpt": "## Additional Information for EEA, Swiss, and UK Users\n\n_Help protect the safety of Reddit and our users, which includes blocking suspected spammers, addressing abuse, age restricting certain content and enforcing our rights, the Reddit User Agreement and our other terms and policies, as well as comply with applicable law Legitimate Interest relied on: to maintain a safe and trustworthy site for our users and to protect our services, rights and legal interests_\n\n_Information You Provide Us_\n\n-   Account Information\n-   Public Content You Submit\n-   Non-Public Content You Submit\n-   Actions You",
+      "confidence": 93
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause lists the personal data the service collects and says it will use that information for communications, promotions, and other interests based on legitimate interest, implying ongoing tracking of users.",
+      "excerpt": "## Additional Information for EEA, Swiss, and UK Users\n\n-   Logs Data\n-   Usage Information\n-   Information collected from cookies and similar technologies\n-   Location Information (IP based only)\n\n_Information Collected from Other Sources_\n\n-   Information collected from Integrations\n\n_Information Collected by Third Parties_\n\n-   Embedded Content\n-   Audience Measurement\n\n_Communicate with you about products, services, offers, promotions, events, and programs, and provide other news and information we think will be of interest to you Legitimate Interest relied on: e.g., for user communication",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause details the types of data collected and states it will be used for safety, abuse prevention, and compliance, indicating the service tracks user activity for these purposes.",
+      "excerpt": "## Additional Information for EEA, Swiss, and UK Users\n\n-   Account Information\n-   Public Content You Submit\n-   Non-Public Content You Submit\n-   Actions You Take\n-   Transactional Information\n-   Other Information\n\n_Information We Collect As You Use Our Services_\n\n-   Logs Data\n-   Usage Information\n-   Information collected from cookies and similar technologies\n-   Location Information (IP based only)\n\n_Information Collected from Other Sources_\n\n-   Linked Services\n-   Information collected from Integrations\n\n_Information Collected by Third Parties_\n\n-   Embedded Content\n-   Audience measu",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause describes collecting various personal data and using it to provide personalized content, features, and targeted advertising, showing the service tracks and profiles users.",
+      "excerpt": "## Additional Information for EEA, Swiss, and UK Users\n\n-   Public Information Related to You\n-   Logs Data\n-   Usage Information\n-   Information collected from cookies and similar technologies\n-   Location Information (IP based only)\n\n**Consent**\n\nHow We Use Your Information\n\nInformation Categories Used\n\n_Provide you personalized, age-appropriate, services, content, and features_\n\n_Information You Provide Us_\n\n-   Account Information\n-   Public Content You Submit\n-   Non-Public Content You Submit\n-   Actions You Take\n-   Other Information\n\n_Information We Collect As You Use Our Services_\n\n-  ",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause enumerates data collected and indicates it will be used for research, surveys, communications, and other services, meaning the service engages in ongoing user tracking.",
+      "excerpt": "## Additional Information for EEA, Swiss, and UK Users\n\n-   Logs Data\n-   Usage information\n-   Information collected from cookies and similar technologies\n-   Location Information (IP based only)\n\n_Research and develop new services_\n\n-   _Consent for user surveys._\n\n_Information You Provide Us_\n\n-   Account Information\n-   Non-Public Content You Submit\n-   Actions You Take\n-   Transactional Information\n-   Other Information\n\n_Information We Collect As You Use Our Services_\n\n-   Logs Data\n-   Usage Information\n-   Information collected from cookies and similar technologies\n-   Location Informa",
       "confidence": 95
     },
     {
@@ -197,9 +312,64 @@
       "severity": "positive",
       "points": 5,
       "label": "No Data Sale",
-      "summary": "Reddit states it does not sell personal data or work with data brokers, assuring users their private information isn’t commercially traded.",
-      "excerpt": "## Our policies\n\nAll of our users get [privacy rights](https://www.reddit.com/policies/privacy-policy) – not just those in select countries\n\nWe’re open with our community about how and [why we collect data](https://www.reddit.com/policies/privacy-policy)\n\nWe prioritize transparency and openly share about what we do on the platform and why in our recurring [transparency reports](/transparency?hsLang=en) and quarterly [r/redditsafety](https://www.reddit.com/r/RedditSafety/) [](https://www.reddit.com/r/RedditSafety/)posts\n\nWe build our business in a way that respects redditors and their privacy²\n",
-      "confidence": 95
+      "summary": "The clause states Reddit does not sell your personal data to third parties or data brokers, and it emphasizes user privacy rights and minimal data collection.",
+      "excerpt": "## Introduction\n\nWe collect minimal information that can be used to identify you by default. If you want to just browse, you don’t need an account. If you want to create an account to participate in a subreddit, we don’t require you to give us your real name. We don’t track your precise location. You can even browse [anonymously](https://support.reddithelp.com/hc/en-us/articles/360045622611-What-is-Anonymous-Browsing-and-how-does-it-work-). You can share as much or as little about yourself as you want when using Reddit, though you may have different feature experiences if you choose to share l",
+      "confidence": 96
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Fair Account Termination",
+      "summary": "Users can delete their account at any time, though some data may be retained in anonymized form for legal or business reasons.",
+      "excerpt": "## Your Rights and Choices\n\nYou may delete your account at any time from the settings page in your account. For more information, please visit our [Help Center](https://support.reddithelp.com/hc/en-us/articles/204579509-How-do-I-delete-my-account). When you delete your account, your profile is no longer visible to other users and disassociated from content you posted under that account. Please note, however, that the posts, comments, and messages you submitted prior to deleting your account will still be visible to others unless you first delete the specific content. After you submit a request",
+      "confidence": 93
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Limited Tracking",
+      "summary": "Users can revoke third‑party app access and opt out of personalized advertising that uses data from advertising partners.",
+      "excerpt": "## Your Rights and Choices\n\nYou can review the services you have permitted to access your account and revoke access to individual services by visiting your account’s [Apps page](https://www.reddit.com/prefs/apps) (for third-party app authorizations), the Connected Accounts section of your [Account Settings](https://www.reddit.com/settings) (for Google Sign-In, Sign in with Apple, and connected X accounts), and the Social links section of your [Profile Settings](https://www.reddit.com/settings/profile).\n\n_Controlling Personalized Advertising_\n\nYou may opt out of us using information we collect ",
+      "confidence": 94
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Limited Tracking",
+      "summary": "Users can adjust or reject first‑ and third‑party cookies, though doing so may affect service functionality.",
+      "excerpt": "## Your Rights and Choices\n\nMost web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject first- and third-party cookies. In some jurisdictions, you may update your cookie preferences at any time by visiting your Account Settings. Users without an account may update by visiting “Cookie Preferences” at the top right corner of [reddit.com](http://reddit.com). Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services. For more information on controlling ho",
+      "confidence": 94
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Limited Tracking",
+      "summary": "The clause tells users how to opt out of analytics and tracking tools like Google Analytics, Nielsen, and Quantcast, and says the service will honor opt‑out signals such as Global Privacy Control.",
+      "excerpt": "## Your Rights and Choices\n\nSome analytics providers we partner with may provide specific opt-out mechanisms and we may provide, as needed and as available, additional tools and third-party services that allow you to better understand tracking technologies and how you can opt out. For example, you may manage the use and collection of certain information by [Google Analytics](http://www.google.com/policies/privacy/partners/) via the [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout). You can opt out of the Audience Measurement services provided by [Nielsen](http",
+      "confidence": 92
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "No Data Sale",
+      "summary": "The clause tells users they can opt out of sales or sharing of their data, states that the company does not sell personal information, and notes limits on profiling and use of data from minors.",
+      "excerpt": "## Additional Information for California & Other US State Users\n\nDepending on your jurisdiction, and subject to exceptions and limitations provided by local law, in addition to the rights listed in “[Your Rights and Choices](#rights-and-choices)” above, you may have: the right to opt out of any sales or sharing of your personal information, to request access to and information about our data practices, and to request deletion or correction of your personal information, as well as the right not to be discriminated against for exercising your privacy rights. For users in states with applicable p",
+      "confidence": 93
     },
     {
       "document_type": "other",
@@ -209,11 +379,31 @@
       "points": 5,
       "label": "Notice Before Changes",
       "summary": "Reddit will post any term changes, notify you by email or in‑service notice at least 30 days before they take effect, and you can stop using the service if you disagree.",
-      "excerpt": "## 14\\. Changes to these Terms\n\nWe may make changes to these Terms from time to time. If we make changes, we will post the revised Terms and update the Effective Date above. If the changes, in our reasonable discretion, are material, we will notify you by sending an email to the address associated with your Account or by otherwise providing you with notice through our Services at least 30 days before the date they become effective. By continuing to access or use the Services on or after the Effective Date of the revised Terms, you agree to be bound by the revised Terms. If you do not agree to ",
+      "excerpt": "## 14\\. Changes to these Terms\n\nWe may make changes to these Terms from time to time. If we make changes, we will post the revised Terms and update the Effective Date above. If the changes, in our reasonable discretion, are material, we will notify you by sending an email to the address associated with your Account or by otherwise providing you with notice through our Services at least 30 days before the date they become effective. By continuing to access or use the Services on or after the Effective Date of the revised Terms, you agree to be bound by the revised Terms. If you do not agree to ",
       "confidence": 93
     }
   ],
   "history": [
+    {
+      "id": "f4d1ce7d-2896-425e-906f-a6e5494d0a63",
+      "date": "2026-06-12T22:22:31.775+00:00",
+      "document_type": "other",
+      "points": -30,
+      "summary": "Reddit now has a broader, perpetual license to use user-submitted content in various ways, including for AI training, without users receiving any ownership rights to service materials. This change allows Reddit to use, modify, and distribute user content worldwide, royalty-free, and at any time. Additionally, Reddit gained more control over user accounts, as it can now remove or limit a user's ability to moderate a subreddit at any time, for any reason. These changes generally favor Reddit's interests over those of its users.",
+      "added": 14,
+      "modified": 0,
+      "removed": 53
+    },
+    {
+      "id": "101d1f30-eeab-4160-802e-5387ff69f81c",
+      "date": "2026-06-12T22:22:25.89+00:00",
+      "document_type": "privacy_policy",
+      "points": -20,
+      "summary": "The policy now has more details on what personal data Reddit collects and how it uses that data, including for tracking and targeted advertising. Users can still opt out of some data sharing and tracking, and can delete their account, though some data may still be retained. The changes also introduce binding arbitration for certain disputes, which may limit users' options for resolving issues. Overall, no major user-friendly changes were found, but several protective clauses remain in place.",
+      "added": 60,
+      "modified": 1,
+      "removed": 15
+    },
     {
       "id": "dfb5a88e-83f2-41b5-a1e1-03c27bc30095",
       "date": "2026-06-12T19:02:38.115+00:00",
