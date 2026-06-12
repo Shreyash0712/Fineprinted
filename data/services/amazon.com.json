@@ -1,0 +1,66 @@
+{
+  "id": "096c9cc4-a970-4a57-b135-d6d05247fa78",
+  "name": "Amazon",
+  "root_domain": "amazon.com",
+  "grade": "A",
+  "score": 100,
+  "generated_at": "2026-06-12T22:32:40.894Z",
+  "last_published_at": "2026-06-12T22:32:23.789+00:00",
+  "summary": {
+    "good": [],
+    "bad": []
+  },
+  "documents": [
+    {
+      "type": "privacy_policy",
+      "urls": [
+        "https://www.amazon.in/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ&ref_=footer_privacy"
+      ]
+    },
+    {
+      "type": "terms_of_service",
+      "urls": [
+        "https://www.amazon.in/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM&ref_=footer_cou"
+      ]
+    },
+    {
+      "type": "cookie_policy",
+      "urls": [
+        "https://www.amazon.in/gp/help/customer/display.html?ref_=hp_left_v4_sib&nodeId=G201890250"
+      ]
+    }
+  ],
+  "clauses": [],
+  "history": [
+    {
+      "id": "d7d839d7-5705-47af-974c-dfd5637e2b12",
+      "date": "2026-06-12T22:32:23.789+00:00",
+      "document_type": "cookie_policy",
+      "points": 0,
+      "summary": "No changes were found that negatively impact users. The analysis did not reveal any user-hostile clauses. The cookie policy remains unchanged. Users are not affected by any modifications.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "c9d41569-559f-41ba-ae6c-230b81366aad",
+      "date": "2026-06-12T22:32:06.06+00:00",
+      "document_type": "terms_of_service",
+      "points": 0,
+      "summary": "No changes were found in the terms of service document that affect users. The extracted clause does not indicate any updates that would impact users' rights or obligations. Everything appears to remain the same. No user-hostile provisions were identified.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "b3496de0-3ae0-4f74-a35f-9b67229eb242",
+      "date": "2026-06-12T22:31:48.164+00:00",
+      "document_type": "privacy_policy",
+      "points": 0,
+      "summary": "No changes were found that negatively impact users. The analysis did not reveal any user-hostile updates to the privacy policy.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}
