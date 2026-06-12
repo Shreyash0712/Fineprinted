@@ -6,38 +6,22 @@ import {
   SEVERITY_POINTS,
 } from "@/lib/grading";
 import { createAdminClient } from "@/lib/supabase/admin";
-import type {
-  ChangeEvent,
-  Classification,
-  Document,
-  DocumentType,
-  PipelineRun,
-  Service,
-} from "@/lib/types";
 import {
-  approveClassification,
-  saveDocumentUrls,
-  updateServiceName,
-} from "../../actions";
+  DOCUMENT_TYPE_LABELS as TYPE_LABELS,
+  type ChangeEvent,
+  type Classification,
+  type Document,
+  type PipelineRun,
+  type Service,
+} from "@/lib/types";
+import { approveClassification, updateServiceName } from "../../actions";
+import { DocumentsEditor } from "./documents-editor";
 import { RunPipeline } from "./run-pipeline";
 
 export const dynamic = "force-dynamic";
-
-const DOCUMENT_TYPES: DocumentType[] = [
-  "terms_of_service",
-  "privacy_policy",
-  "cookie_policy",
-  "acceptable_use",
-  "other",
-];
-
-const TYPE_LABELS: Record<DocumentType, string> = {
-  terms_of_service: "Terms of Service",
-  privacy_policy: "Privacy Policy",
-  cookie_policy: "Cookie Policy",
-  acceptable_use: "Acceptable Use",
-  other: "Other",
-};
+// "Test fetch" / "Suggest URLs" server actions do real network fetches
+// (with retries) and inherit this page's duration budget.
+export const maxDuration = 60;
 
 const severityBadge: Record<string, string> = {
   critical: "bg-red-650/10 text-red-700 dark:bg-red-600/20 dark:text-red-300",
@@ -69,7 +53,6 @@ export default async function ServicePage({
     .select("*")
     .eq("service_id", id);
   const documents = (documentRows ?? []) as Document[];
-  const docByType = new Map(documents.map((d) => [d.type, d]));
   const docById = new Map(documents.map((d) => [d.id, d]));
 
   let events: ChangeEvent[] = [];
@@ -148,10 +131,14 @@ export default async function ServicePage({
         <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-550 dark:text-zinc-400 font-heading">
           Pipeline
         </h2>
-        <RunPipeline serviceId={svc.id} initialRun={(latestRun as PipelineRun) ?? null} />
+        <RunPipeline
+          serviceId={svc.id}
+          initialRun={(latestRun as PipelineRun) ?? null}
+          hasDocumentUrls={documents.some((d) => d.source_urls.length > 0)}
+        />
         <p className="text-xs leading-relaxed text-zinc-550">
-          Dispatches a GitHub Actions job that runs discovery (if no URLs are set
-          below), extraction, hashing, diffing and classification, and then{" "}
+          Dispatches a GitHub Actions job that runs extraction (of the URLs saved
+          below — nothing else), hashing, diffing and classification, and then{" "}
           <strong className="text-zinc-800 dark:text-zinc-300">
             publishes the results and updates the public site automatically
           </strong>,
@@ -161,46 +148,24 @@ export default async function ServicePage({
         </p>
       </section>
 
-      {/* Documents / manual override */}
+      {/* Documents — admin-curated URLs (mandatory) */}
       <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-955 shadow-sm">
         <div>
           <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-550 dark:text-zinc-400 font-heading">
             Documents
           </h2>
           <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
-            One URL per line; multiple URLs are merged into one document in order
-            (for multi-page terms). Save an empty box to remove a document. Leave
-            everything empty to let discovery find them automatically.
+            The pipeline analyzes exactly the URLs saved here — it never guesses
+            pages on its own. One URL per line; multiple URLs are merged into one
+            document in order (for policies split across pages). Save an empty box
+            to remove a document. Use <strong>Test fetch</strong> to confirm a URL
+            extracts cleanly before running the pipeline.
           </p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {DOCUMENT_TYPES.map((type) => {
-            const doc = docByType.get(type);
-            return (
-              <form
-                key={type}
-                action={saveDocumentUrls}
-                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:border-zinc-850 dark:bg-zinc-900/10 p-4 space-y-3"
-              >
-                <input type="hidden" name="serviceId" value={svc.id} />
-                <input type="hidden" name="type" value={type} />
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-450 font-heading">{TYPE_LABELS[type]}</span>
-                  <button className="rounded-lg bg-accent hover:bg-accent-hover text-white shadow-sm px-2.5 py-1 text-xs font-semibold transition cursor-pointer">
-                    Save Urls
-                  </button>
-                </div>
-                <textarea
-                  name="urls"
-                  rows={2}
-                  defaultValue={doc?.source_urls.join("\n") ?? ""}
-                  placeholder="https://…"
-                  className="w-full rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 px-3 py-2 font-mono text-xs text-zinc-900 dark:text-zinc-150 placeholder:text-zinc-400 dark:placeholder:text-zinc-650 outline-none focus:border-accent transition"
-                />
-              </form>
-            );
-          })}
-        </div>
+        <DocumentsEditor
+          serviceId={svc.id}
+          initialUrls={Object.fromEntries(documents.map((d) => [d.type, d.source_urls]))}
+        />
       </section>
 
       {/* Published change events */}

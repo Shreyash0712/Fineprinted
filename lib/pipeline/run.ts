@@ -7,7 +7,6 @@ import { createAdminClient } from "../supabase/admin";
 import type { Classification, Document, Service } from "../types";
 import { classifyClauses, copyClassifications } from "./classify";
 import { diffClauses, type ClauseDiff, type OldClause } from "./diff";
-import { discoverDocuments } from "./discovery";
 import { extractDocument } from "./extract";
 import { recomputeServiceGrade } from "./grade";
 import { segmentMarkdown } from "./segment";
@@ -269,7 +268,16 @@ async function processDocument(
 
   // --- Extraction ---
   emit({ level: "info", step, message: `Extracting ${document.source_urls.join(", ")}` });
-  const markdown = await extractDocument(document.source_urls);
+  const { markdown, parts } = await extractDocument(document.source_urls);
+  for (const part of parts) {
+    if (part.via === "browser") {
+      emit({
+        level: "info",
+        step,
+        message: `${part.url} needed the headless-browser fallback (${part.chars.toLocaleString()} chars)`,
+      });
+    }
+  }
   const contentHash = sha256(markdown);
   emit({
     level: "info",
@@ -455,45 +463,22 @@ export async function runServicePipeline(serviceId: string, emit: Emit): Promise
 
   emit({ level: "info", step: "start", message: `Pipeline started for ${service.root_domain}` });
 
-  // --- Discovery (only for document types without manual/known URLs) ---
+  // --- Document sources (admin-curated, mandatory) ---
+  // The pipeline never guesses URLs. Automatic discovery was removed after
+  // it kept scraping look-alike pages (e.g. a GitHub user profile named
+  // "cookie-policy"); the admin saves the exact URLs on the service page.
   const { data: documents, error: docsError } = await db
     .from("documents")
     .select("*")
     .eq("service_id", serviceId);
   if (docsError) throw new Error(`documents lookup failed: ${docsError.message}`);
 
-  let docs = (documents ?? []) as Document[];
-  const needsDiscovery = docs.length === 0 || docs.every((d) => d.source_urls.length === 0);
-
-  if (needsDiscovery) {
-    emit({ level: "info", step: "discovery", message: `Probing ${service.root_domain} for legal documents…` });
-    const discovered = await discoverDocuments(service.root_domain, (message) =>
-      emit({ level: "info", step: "discovery", message })
+  const docs = (documents ?? []) as Document[];
+  if (docs.every((d) => d.source_urls.length === 0)) {
+    throw new Error(
+      "No document URLs are configured for this service. Open it in the admin panel and " +
+        "add the exact policy URLs under Documents — the pipeline does not auto-discover pages."
     );
-    if (discovered.length === 0) {
-      throw new Error(
-        "Discovery found no legal documents. Add document URLs manually on the service page."
-      );
-    }
-    for (const { type, url } of discovered) {
-      const { error: upsertError } = await db
-        .from("documents")
-        .upsert(
-          { service_id: serviceId, type, source_urls: [url] },
-          { onConflict: "service_id,type" }
-        );
-      if (upsertError) throw new Error(`document upsert failed: ${upsertError.message}`);
-    }
-    emit({
-      level: "success",
-      step: "discovery",
-      message: `Discovered: ${discovered.map((d) => `${d.type} (${d.url})`).join("; ")}`,
-    });
-    const { data: refreshed } = await db
-      .from("documents")
-      .select("*")
-      .eq("service_id", serviceId);
-    docs = (refreshed ?? []) as Document[];
   }
 
   // --- Per-document pipeline; one failure doesn't kill the others ---

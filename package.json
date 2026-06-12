@@ -10,6 +10,7 @@
     "pipeline": "tsx scripts/run-pipeline.ts",
     "export:static": "tsx scripts/export-static.ts",
     "snapshots:backfill": "tsx scripts/backfill-snapshots.ts",
+    "extract:test": "tsx scripts/test-extract.ts",
     "status": "tsx scripts/status.ts"
   },
   "dependencies": {
@@ -17,6 +18,7 @@
     "@supabase/supabase-js": "^2.108.1",
     "cheerio": "^1.2.0",
     "next": "16.2.9",
+    "playwright-core": "^1.60.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "tldts": "^7.4.2",

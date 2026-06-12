@@ -10,8 +10,10 @@ import {
   requireAdmin,
   verifyPassword,
 } from "@/lib/admin/auth";
+import { suggestDocumentUrls, type SuggestResult } from "@/lib/admin/suggest-urls";
 import { sanitizeToRootDomain } from "@/lib/domain";
 import { dispatchWorkflow, githubConfigured } from "@/lib/github";
+import { verifyUrl, type UrlCheck } from "@/lib/pipeline/extract";
 import { recomputeServiceGrade } from "@/lib/pipeline/grade";
 import { createRun, failRun, isRunActive } from "@/lib/pipeline/run-store";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -137,7 +139,7 @@ export async function rejectRequest(requestId: string): Promise<void> {
 }
 
 // ---------------------------------------------------------------------------
-// Documents (manual override — spec section 7)
+// Documents (admin-curated URLs — mandatory; the pipeline never guesses)
 // ---------------------------------------------------------------------------
 
 const DOCUMENT_TYPES: DocumentType[] = [
@@ -148,16 +150,52 @@ const DOCUMENT_TYPES: DocumentType[] = [
   "other",
 ];
 
-export async function saveDocumentUrls(formData: FormData): Promise<void> {
-  await requireAdmin();
-  const serviceId = String(formData.get("serviceId") ?? "");
-  const type = String(formData.get("type") ?? "") as DocumentType;
-  if (!serviceId || !DOCUMENT_TYPES.includes(type)) throw new Error("Invalid input");
+const MAX_URLS_PER_DOCUMENT = 10;
 
-  const urls = String(formData.get("urls") ?? "")
-    .split(/\r?\n/)
-    .map((u) => u.trim())
-    .filter((u) => /^https?:\/\//i.test(u));
+/** Parse one-URL-per-line input; reports lines that aren't http(s) URLs. */
+function parseUrlLines(text: string): { urls: string[]; rejected: string[] } {
+  const urls: string[] = [];
+  const rejected: string[] = [];
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line) continue;
+    try {
+      const url = new URL(line);
+      if (url.protocol !== "https:" && url.protocol !== "http:") throw new Error();
+      if (!urls.includes(url.toString())) urls.push(url.toString());
+    } catch {
+      rejected.push(line);
+    }
+  }
+  return { urls, rejected };
+}
+
+export interface SaveUrlsResult {
+  error: string | null;
+  /** The normalized URL list that was actually saved. */
+  urls: string[];
+}
+
+export async function saveDocumentUrls(
+  serviceId: string,
+  type: DocumentType,
+  urlsText: string
+): Promise<SaveUrlsResult> {
+  await requireAdmin();
+  if (!serviceId || !DOCUMENT_TYPES.includes(type)) {
+    return { error: "Invalid input", urls: [] };
+  }
+
+  const { urls, rejected } = parseUrlLines(urlsText);
+  if (rejected.length > 0) {
+    return {
+      error: `Not a valid http(s) URL: ${rejected.join(", ")}`,
+      urls,
+    };
+  }
+  if (urls.length > MAX_URLS_PER_DOCUMENT) {
+    return { error: `At most ${MAX_URLS_PER_DOCUMENT} URLs per document`, urls };
+  }
 
   const db = createAdminClient();
   if (urls.length === 0) {
@@ -166,7 +204,7 @@ export async function saveDocumentUrls(formData: FormData): Promise<void> {
       .delete()
       .eq("service_id", serviceId)
       .eq("type", type);
-    if (error) throw new Error(error.message);
+    if (error) return { error: error.message, urls };
   } else {
     const { error } = await db
       .from("documents")
@@ -174,9 +212,58 @@ export async function saveDocumentUrls(formData: FormData): Promise<void> {
         { service_id: serviceId, type, source_urls: urls },
         { onConflict: "service_id,type" }
       );
-    if (error) throw new Error(error.message);
+    if (error) return { error: error.message, urls };
   }
   revalidatePath(`/admin/services/${serviceId}`);
+  return { error: null, urls };
+}
+
+/**
+ * Dry-run extraction for the admin "Test fetch" button: fetches each URL
+ * through the exact pipeline code path (browser fallback included, where
+ * one is available) and reports what extracted — without writing anything
+ * or burning a pipeline run.
+ */
+export async function verifyDocumentUrls(urlsText: string): Promise<{
+  error: string | null;
+  checks: UrlCheck[];
+}> {
+  await requireAdmin();
+  const { urls, rejected } = parseUrlLines(urlsText);
+  if (rejected.length > 0) {
+    return { error: `Not a valid http(s) URL: ${rejected.join(", ")}`, checks: [] };
+  }
+  if (urls.length === 0) {
+    return { error: "No URLs to test", checks: [] };
+  }
+  if (urls.length > MAX_URLS_PER_DOCUMENT) {
+    return { error: `At most ${MAX_URLS_PER_DOCUMENT} URLs per document`, checks: [] };
+  }
+  const checks = await Promise.all(urls.map((url) => verifyUrl(url)));
+  return { error: null, checks };
+}
+
+/**
+ * Scan the service's homepage (plus well-known paths) for candidate policy
+ * URLs. Suggestions only pre-fill the form — nothing is saved until the
+ * admin reviews and clicks Save.
+ */
+export async function suggestServiceUrls(serviceId: string): Promise<{
+  error: string | null;
+  result: SuggestResult | null;
+}> {
+  await requireAdmin();
+  const db = createAdminClient();
+  const { data: service, error } = await db
+    .from("services")
+    .select("root_domain")
+    .eq("id", serviceId)
+    .maybeSingle();
+  if (error || !service) {
+    return { error: error?.message ?? "Service not found", result: null };
+  }
+  const result = await suggestDocumentUrls(service.root_domain);
+  return { error: null, result };
 }
 
 // ---------------------------------------------------------------------------

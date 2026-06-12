@@ -83,11 +83,16 @@ database. Only user-specific features (requests, watchlist) hit Supabase.
   **Sync site data** button (re-dispatches the static export if an
   automatic one ever fails).
 - `/admin/services/[id]` — per-service control room:
-  - **Documents**: leave empty for automatic discovery, or paste URLs
-    manually (one per line; multiple URLs merge into one document) when a
-    site's structure breaks discovery.
-  - **Run pipeline**: dispatches the GitHub Actions job — discovery →
-    extraction → hash check (unchanged docs stop at $0) → segmentation →
+  - **Documents**: paste the exact policy URLs — **required**, the pipeline
+    never guesses pages on its own (heuristic discovery was removed after it
+    scraped look-alikes, e.g. the GitHub *user profile* `/cookie-policy`).
+    One per line; multiple URLs merge into one document, in order, for
+    policies split across pages. **Suggest URLs** scans the homepage for
+    candidates (with page title + extracted size, for review only) and
+    **Test fetch** dry-runs the pipeline's exact extraction so you can
+    confirm a URL scrapes cleanly before dispatching a run.
+  - **Run pipeline**: dispatches the GitHub Actions job — extraction →
+    hash check (unchanged docs stop at $0) → segmentation →
     embedding diff → cached LLM classification → **automatic publish,
     grade update, and site sync**. The panel polls `pipeline_runs` for
     live progress and survives page refreshes.
@@ -120,6 +125,24 @@ publishes a "taxonomy update" change event even if the document didn't change.
   the grade at the end). Entry points: `scripts/run-pipeline.ts` (GitHub
   Actions / CLI) and the dev-only inline fallback in the `triggerPipeline`
   server action.
+- Document fetching (`lib/pipeline/extract.ts`) sends realistic
+  desktop-Chrome headers (bot UAs get blanket 403s even for public legal
+  pages) and retries transient failures. If a site is bot-walled
+  (Cloudflare interstitials etc.) or renders only with JavaScript, it
+  falls back to real headless Chrome via `playwright-core` — no browser
+  download: it launches the system Chrome/Edge, preinstalled on GitHub
+  Actions runners and most dev machines (override with
+  `FINEPRINT_CHROME_PATH`). On Vercel there is no browser; the admin
+  "Test fetch" reports such URLs as unverified instead of failing.
+  - The browser path does **not** block image/font/media requests:
+    aborting them is a bot signal that bot-walls (e.g. Reddit's "network
+    security") use to fail verification and serve a block page instead of
+    the document. It then **waits for the page to settle** — bot-check
+    interstitials ("Please wait for verification") navigate to the real
+    document a second or two later — so it captures the policy, not the
+    waiting room. Blocks/interstitials are detected from the page's
+    *visible* title and text (never background scripts, which ride along
+    on normal pages too).
 - Clause embeddings are Gemini (`gemini-embedding-2`) at 1536 dims to fit
   pgvector's HNSW index limit (the model auto-renormalizes reduced dims).
 - LLM calls go to Groq: `openai/gpt-oss-120b` for taxonomy classification

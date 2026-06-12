@@ -36,9 +36,12 @@ function isActive(run: PipelineRun | null): boolean {
 export function RunPipeline({
   serviceId,
   initialRun,
+  hasDocumentUrls,
 }: {
   serviceId: string;
   initialRun: PipelineRun | null;
+  /** Runs are pointless without admin-saved URLs — the button stays off. */
+  hasDocumentUrls: boolean;
 }) {
   const [run, setRun] = useState<PipelineRun | null>(initialRun);
   const [actionError, setActionError] = useState<string | null>(null);
@@ -113,11 +116,17 @@ export function RunPipeline({
       <div className="flex flex-wrap items-center gap-3">
         <button
           onClick={start}
-          disabled={pending || isActive(run)}
+          disabled={pending || isActive(run) || !hasDocumentUrls}
           className="rounded-xl bg-accent hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/10 px-5 py-2.5 text-sm font-semibold text-white transition disabled:opacity-50 cursor-pointer"
         >
           {isActive(run) ? "Running…" : pending ? "Starting…" : "Run pipeline"}
         </button>
+        {!hasDocumentUrls && !isActive(run) && (
+          <span className="text-xs text-yellow-600 dark:text-yellow-400 font-medium">
+            Save at least one document URL below first — the pipeline only analyzes
+            admin-curated URLs.
+          </span>
+        )}
         {run && (
           <span className={STATUS_BADGE[run.status]}>
             {run.status}

@@ -13,6 +13,14 @@ export type DocumentType =
   | "acceptable_use"
   | "other";
 
+export const DOCUMENT_TYPE_LABELS: Record<DocumentType, string> = {
+  terms_of_service: "Terms of Service",
+  privacy_policy: "Privacy Policy",
+  cookie_policy: "Cookie Policy",
+  acceptable_use: "Acceptable Use",
+  other: "Other",
+};
+
 export type ClauseCategory =
   | "FORCED_ARBITRATION"
   | "UNILATERAL_CHANGE"
