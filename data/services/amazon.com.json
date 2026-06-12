@@ -4,7 +4,7 @@
   "root_domain": "amazon.com",
   "grade": "A",
   "score": 100,
-  "generated_at": "2026-06-12T22:32:40.894Z",
+  "generated_at": "2026-06-12T22:40:11.511Z",
   "last_published_at": "2026-06-12T22:32:23.789+00:00",
   "summary": {
     "good": [],
@@ -14,19 +14,19 @@
     {
       "type": "privacy_policy",
       "urls": [
-        "https://www.amazon.in/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ&ref_=footer_privacy"
+        "https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ"
       ]
     },
     {
       "type": "terms_of_service",
       "urls": [
-        "https://www.amazon.in/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM&ref_=footer_cou"
+        "https://www.amazon.com/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM"
       ]
     },
     {
       "type": "cookie_policy",
       "urls": [
-        "https://www.amazon.in/gp/help/customer/display.html?ref_=hp_left_v4_sib&nodeId=G201890250"
+        "https://www.amazon.com/gp/help/customer/display.html?nodeId=GVASXV5UZ64R4Y25"
       ]
     }
   ],
