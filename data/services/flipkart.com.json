@@ -4,8 +4,8 @@
   "root_domain": "flipkart.com",
   "grade": "F",
   "score": 5,
-  "generated_at": "2026-06-12T18:11:35.304Z",
-  "last_published_at": "2026-06-12T18:11:00.141+00:00",
+  "generated_at": "2026-06-12T20:49:58.672Z",
+  "last_published_at": "2026-06-12T20:49:26.998+00:00",
   "summary": {
     "good": [],
     "bad": [
@@ -36,6 +36,12 @@
       "type": "terms_of_service",
       "urls": [
         "https://www.flipkart.com/pages/terms"
+      ]
+    },
+    {
+      "type": "privacy_policy",
+      "urls": [
+        "https://www.flipkart.com/pages/privacypolicy"
       ]
     }
   ],
@@ -93,6 +99,28 @@
       "label": "Unilateral Changes",
       "summary": "Flipkart can modify or discontinue the Buyer Protection Program at any time without notice and may suspend or block users for false claims.",
       "excerpt": "Flipkart reserves its right to initiate civil and/or criminal proceedings against a User who, files an invalid and/or false claims or provides false, incomplete, or misleading information. In addition to the legal proceedings as aforesaid, Flipkart may at its sole discretion suspend, block, restrict, cancel the Display Name \\[and its related Display Names\\] of such User and/or disqualify that user and any related users from availing protection through this program.\n\nDecisions made by Flipkart under the Buyer Protection Program shall be final and binding on its Users.\n\nFlipkart reserves the rig",
+      "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "DATA_SALE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Data Sale",
+      "summary": "The clause says Flipkart will share your personal data and derived insights with affiliates, business partners and third parties who may use it for their own marketing and commercial purposes.",
+      "excerpt": "_We collect and analyse your personal data relating to your buying behavior, browsing patterns, preferences, and other information that you choose to provide while interacting with our Platform. We use this information to do internal research on our users' demographics, interests, usage trends, and behavior to better understand your needs and provide you with an enhanced user experience, protect and serve our users. Additionally, this information may also be compiled and analyzed on an aggregated basis. This information may include the URL that you just came from (whether this URL is on our Pl",
+      "confidence": 92
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "DATA_SALE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -30,
+      "label": "Data Sale",
+      "summary": "The clause states that in a merger or acquisition the company may share or sell your personal data to the acquiring business, allowing the new entity to use it under its own privacy policy.",
+      "excerpt": "_We may disclose personal data if required to do so by law or in the good faith belief that such disclosure is reasonably necessary to respond to subpoenas, court orders, or other legal process. We may disclose personal data to law enforcement agencies, third party rights owners, or others in the good faith belief that such disclosure is reasonably necessary to enforce our Terms of Use or Privacy Policy; respond to claims that an advertisement, posting or other content violates the rights of a third party; or protect the rights, property or personal safety of our users or the general public._\n",
       "confidence": 90
     },
     {
@@ -292,9 +320,52 @@
       "summary": "The clause says the company may share personal information with affiliates who may market to you unless you opt out, and may disclose information for service provision, legal compliance, and fraud prevention, but not for third‑party marketing without consent.",
       "excerpt": "We may share personal information with our other corporate entities and affiliates. These entities and affiliates may market to you as a result of such sharing unless you explicitly opt-out.\n\nWe may disclose personal information to third parties. This disclosure may be required for us to provide you access to our Services, to comply with our legal obligations, to enforce our User Agreement, to facilitate our marketing and advertising activities, or to prevent, detect, mitigate, and investigate fraudulent or illegal activities related to our Services. We do not disclose your personal informatio",
       "confidence": 90
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause says the company can share your personal data with many third parties for purposes like fulfillment, marketing, personalization, and advertising, without requiring your consent.",
+      "excerpt": "_Additionally, we may also disclose your personal data to third parties, such as our sellers, business partners. This disclosure may be required for us to provide you access to our products and services; for fulfillment of your orders; for enhancing your experience; for providing feedback on products; to collect payments from you; to comply with our legal obligations; to conduct market research or surveys; to enforce our Terms of Use; to facilitate our marketing and advertising activities; to analyze data; for customer service assistance; to prevent, detect, mitigate, and investigate fraudulen",
+      "confidence": 93
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "The clause explains that for Plus member benefits the company will share your name, email, and phone number with partner services to activate accounts and send outreach messages.",
+      "excerpt": "_To provide our Plus members with bundled third-party benefits (such as streaming subscriptions, including Netflix), we may share your personal information (including name, email address, and mobile number) with our service partners. This data is shared to (a) facilitate seamless account activation on the partner platform, and (b) enable customer outreach and support via SMS, Email, and WhatsApp to help you activate and manage your benefits_\n\n**_Links to Other Sites_**\n\n_Our Platform may provide links to other websites or applications that may collect personal data about you and you will be go",
+      "confidence": 92
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "You agree that the company and its partners can contact you via SMS, messaging apps, calls, or email for purposes described in the privacy policy, and they will inform you of significant policy changes through notices or email.",
+      "excerpt": "_You, while providing your personal data over the Platform or any partner platforms or establishments, consent to us (including our other corporate entities, affiliates, lending partners, technology partners, marketing channels, business partners and other third parties like credit bureaus ) to contact you through SMS, instant messaging apps, call and/or e-mail for the purposes specified in this Privacy Policy._\n\n**_Changes to this Privacy Policy_**\n\n_Please check our Privacy Policy periodically for changes. We may update this Privacy Policy to reflect changes to our information practices. We ",
+      "confidence": 92
     }
   ],
   "history": [
+    {
+      "id": "84848af9-754f-4723-ade3-5fa4bae82fbb",
+      "date": "2026-06-12T20:49:26.998+00:00",
+      "document_type": "privacy_policy",
+      "points": -35,
+      "summary": "Flipkart's privacy policy allows sharing of personal data with affiliates, business partners, and third parties for their own marketing and commercial purposes. This means that users' data may be used for targeted advertising and marketing by other companies. Additionally, users' data may be shared or sold in the event of a merger or acquisition, and with partner services to activate accounts and send outreach messages. No protective clauses for users were identified in the flagged sections.",
+      "added": 22,
+      "modified": 0,
+      "removed": 0
+    },
     {
       "id": "4fa2a0bb-3000-4ba3-a746-d367e2cd0438",
       "date": "2026-06-12T18:11:00.141+00:00",
