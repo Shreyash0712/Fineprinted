@@ -71,22 +71,33 @@ jobs:
           PIPELINE_RUN_ID: ${{ inputs.run_id }}
         run: pnpm pipeline
 
-      # Export even if the pipeline step failed — it only reflects already-
-      # published data, and keeping the site in sync is always safe.
-      - name: Export static data
-        if: ${{ !cancelled() }}
-        run: pnpm export:static
-
-      - name: Commit & push static data
+      # Sync the repo's data/ to the database — even if the pipeline step
+      # failed, since it only reflects already-published state.
+      #
+      # data/ is derived from the DB, so it is NEVER merged textually:
+      # every attempt fetches the remote tip, hard-resets onto it, and
+      # regenerates — missing snapshot files are restored from the DB and
+      # the JSON export is rebuilt. Human pushes landing mid-run therefore
+      # can't cause rebase conflicts; a push race just retries the whole
+      # regeneration. (Exact markdown written by this run's pipeline step
+      # is untracked on the first attempt and survives the reset; if a
+      # retry discards it, the backfill restores a reconstruction.)
+      - name: Sync & push data
         if: ${{ !cancelled() }}
         run: |
           git config user.name "fineprint-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
-          if git diff --cached --quiet; then
-            echo "No static data changes."
-          else
-            git commit -m "chore(data): sync static service data"
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push
-          fi
+          sync_and_push() {
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            pnpm snapshots:backfill
+            pnpm export:static
+            git add data
+            if git diff --cached --quiet; then
+              echo "No data changes."
+              return 0
+            fi
+            git commit -m "chore(data): sync service data"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          }
+          sync_and_push || sync_and_push || sync_and_push

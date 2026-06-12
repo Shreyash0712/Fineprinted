@@ -9,6 +9,7 @@
     "lint": "eslint",
     "pipeline": "tsx scripts/run-pipeline.ts",
     "export:static": "tsx scripts/export-static.ts",
+    "snapshots:backfill": "tsx scripts/backfill-snapshots.ts",
     "status": "tsx scripts/status.ts"
   },
   "dependencies": {
