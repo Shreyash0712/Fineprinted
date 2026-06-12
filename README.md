@@ -29,7 +29,7 @@ Setup:
 
 1. **Repo secrets** (Settings → Secrets and variables → Actions):
    `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `GROQ_API_KEY`,
-   `GEMINI_API_KEY`, and the `R2_*` keys.
+   `GEMINI_API_KEY`.
 2. **Vercel env vars**: everything in `.env.example`, including
    `GITHUB_REPO` and `GITHUB_PAT` (fine-grained token with **Actions
    read/write** on this repo) so admin actions can dispatch workflows.
@@ -52,8 +52,14 @@ Supabase SQL Editor (or `supabase db push` with the CLI linked).
 
 Copy `.env.example` to `.env` and fill in the keys. `ADMIN_PASSWORD` gates
 the admin panel; `GROQ_API_KEY` and `GEMINI_API_KEY` are required by the
-pipeline; R2 keys are optional (snapshot markdown archival is skipped with a
-warning when unset).
+pipeline.
+
+The database stays lean by design: clauses (with their embeddings — the bulk
+of storage) are kept only for each document's **latest** snapshot, which is
+all diffing and exporting need. The full markdown of every version lives in
+the repo under `data/snapshots/<domain>/<type>/<hash>.md`, written and
+committed by the pipeline. `scripts/backfill-snapshots.ts` migrates/repairs
+old data into that layout (idempotent).
 
 ## Public portal (fully static)
 

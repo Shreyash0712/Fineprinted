@@ -1,6 +1,7 @@
 import { createAdminClient } from "../supabase/admin";
 import type { PipelineRunEvent } from "../types";
 import { runServicePipeline } from "./run";
+import { pruneOldRuns } from "./run-store";
 
 export { createRun, failRun, isRunActive, RUN_STALE_MS } from "./run-store";
 
@@ -57,6 +58,8 @@ export async function executePipelineRun(runId: string): Promise<void> {
       .from("pipeline_runs")
       .update({ status: "succeeded", finished_at: new Date().toISOString(), events })
       .eq("id", runId);
+    // Housekeeping: old finished run logs have no value. Best-effort.
+    await pruneOldRuns(db).catch(() => {});
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     await chain.catch(() => {});

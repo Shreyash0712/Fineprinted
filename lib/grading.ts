@@ -24,8 +24,11 @@ import type {
  *
  * v2: added stance (polarity) — v1 scored protective clauses like
  * "we do not sell your data" as if they imposed the practice.
+ * v3: narrowed DATA_SALE to actual selling/brokering — v2 scored routine
+ * disclosure to service providers/affiliates (universal boilerplate) as
+ * a critical data sale.
  */
-export const TAXONOMY_VERSION = 2;
+export const TAXONOMY_VERSION = 3;
 
 export const SEVERITY_POINTS: Record<ClauseSeverity, number> = {
   critical: -30,

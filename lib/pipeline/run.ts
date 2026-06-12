@@ -2,7 +2,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { BULK_MODEL, groqText } from "../ai/groq";
 import { isFlagged, signedPoints, TAXONOMY_VERSION } from "../grading";
 import { sha256 } from "../hash";
-import { putSnapshot, r2Configured } from "../r2";
+import { snapshotKey, writeSnapshot } from "../snapshots";
 import { createAdminClient } from "../supabase/admin";
 import type { Classification, Document, Service } from "../types";
 import { classifyClauses, copyClassifications } from "./classify";
@@ -292,25 +292,20 @@ async function processDocument(
     return;
   }
 
-  // --- Store snapshot (R2 + DB) ---
-  const storageKey = `snapshots/${service.id}/${document.id}/${contentHash}.md`;
-  if (r2Configured()) {
-    await putSnapshot(storageKey, markdown);
-    emit({ level: "info", step, message: `Archived markdown to R2 (${storageKey})` });
-  } else {
-    emit({
-      level: "warn",
-      step,
-      message: "R2 not configured — snapshot markdown not archived (clause text is still stored in DB)",
-    });
-  }
+  // --- Archive snapshot (repo file + DB row) ---
+  // The file is committed by the workflow's "commit & push" step alongside
+  // the static export, so every fetched version stays retrievable even
+  // after its clauses are pruned from the database.
+  const storageKey = snapshotKey(service.root_domain, document.type, contentHash);
+  await writeSnapshot(storageKey, markdown);
+  emit({ level: "info", step, message: `Archived markdown to ${storageKey}` });
 
   const { data: snapshot, error: snapError } = await db
     .from("snapshots")
     .insert({
       document_id: document.id,
       content_hash: contentHash,
-      storage_key: r2Configured() ? storageKey : `unstored/${contentHash}`,
+      storage_key: storageKey,
     })
     .select("id")
     .single();
@@ -419,6 +414,33 @@ async function processDocument(
     step,
     message: `Change event published (${event.id})`,
   });
+
+  // --- Prune superseded clauses ---
+  // The new snapshot is now the diff baseline; older snapshots' clauses
+  // (with their bulky embeddings) are dead weight in Postgres. Their full
+  // markdown lives in the repo archive, and change events carry their own
+  // excerpt copies, so nothing user-visible references them.
+  const { data: oldSnapshots, error: oldSnapError } = await db
+    .from("snapshots")
+    .select("id")
+    .eq("document_id", document.id)
+    .neq("id", snapshot.id);
+  if (oldSnapError) throw new Error(`old snapshot lookup failed: ${oldSnapError.message}`);
+  const oldIds = (oldSnapshots ?? []).map((s) => s.id);
+  if (oldIds.length > 0) {
+    const { error: pruneError, count } = await db
+      .from("clauses")
+      .delete({ count: "exact" })
+      .in("snapshot_id", oldIds);
+    if (pruneError) throw new Error(`clause pruning failed: ${pruneError.message}`);
+    if ((count ?? 0) > 0) {
+      emit({
+        level: "info",
+        step,
+        message: `Pruned ${count} clauses from ${oldIds.length} superseded snapshot(s)`,
+      });
+    }
+  }
 }
 
 export async function runServicePipeline(serviceId: string, emit: Emit): Promise<void> {

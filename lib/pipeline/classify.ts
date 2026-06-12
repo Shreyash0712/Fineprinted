@@ -42,7 +42,7 @@ const SYSTEM_PROMPT = `You are a legal analyst classifying clauses from Terms of
 Question 1 — category. The TOPIC the clause is about (pick exactly one):
 - FORCED_ARBITRATION: arbitration, jury trial waiver, class-action waiver.
 - UNILATERAL_CHANGE: how/whether the terms themselves can change.
-- DATA_SALE: selling or sharing personal data with third parties/brokers.
+- DATA_SALE: SELLING personal data, or giving it to data brokers / third parties for THOSE parties' own commercial use. NOT this category: routine disclosure to service providers/processors, affiliates, legal authorities, or transfers in a merger/acquisition — that is ordinary operation (OTHER), not a sale.
 - CONTENT_LICENSE_BROAD: licenses to user-generated content.
 - ACCOUNT_TERMINATION: account suspension or termination.
 - TRACKING_THIRD_PARTY: tracking, profiling, targeted advertising.
@@ -62,6 +62,7 @@ Other rules:
 
 Examples:
 - "We do not sell your personal information to third parties. You can manage your privacy choices in settings." → {"category":"DATA_SALE","stance":"protective","confidence":95}
+- "We share personal data with our affiliates and the service providers that host our infrastructure, and may disclose it when required by law." → {"category":"OTHER","stance":"neutral","confidence":90} (processor/affiliate/legal disclosure is not a sale)
 - "Any dispute shall be resolved by binding arbitration. You waive your right to participate in a class action." → {"category":"FORCED_ARBITRATION","stance":"hostile","confidence":98}
 - "We may revise these Terms at any time without notice to you." → {"category":"UNILATERAL_CHANGE","stance":"hostile","confidence":95}
 - "In this agreement, 'Service' refers to the website and apps." → {"category":"OTHER","stance":"neutral","confidence":99}

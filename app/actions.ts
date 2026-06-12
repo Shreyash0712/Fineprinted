@@ -70,6 +70,9 @@ export async function requestService(
       .single();
     if (error) {
       if (error.code !== "23505") {
+        // Surfaces schema drift etc. in the server logs — the user-facing
+        // message stays generic.
+        console.error("service request insert failed:", error.code, error.message);
         return { ok: false, message: "Something went wrong. Try again later." };
       }
       // Lost a race with another submitter — use their request
@@ -100,6 +103,7 @@ export async function requestService(
         message: `You've already requested ${domain} — it's waiting in the review queue.`,
       };
     }
+    console.error("request vote insert failed:", voteError.code, voteError.message);
     return { ok: false, message: "Something went wrong. Try again later." };
   }
 

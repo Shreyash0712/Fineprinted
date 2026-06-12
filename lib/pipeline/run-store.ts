@@ -41,3 +41,17 @@ export async function failRun(
     .eq("id", runId)
     .in("status", ["queued", "running"]);
 }
+
+/** Progress logs are debugging aids, not history — keep only recent ones. */
+const RUN_RETENTION_DAYS = 30;
+
+export async function pruneOldRuns(db: SupabaseClient): Promise<number> {
+  const cutoff = new Date(Date.now() - RUN_RETENTION_DAYS * 24 * 60 * 60 * 1000);
+  const { error, count } = await db
+    .from("pipeline_runs")
+    .delete({ count: "exact" })
+    .in("status", ["succeeded", "failed"])
+    .lt("created_at", cutoff.toISOString());
+  if (error) throw new Error(`pipeline run pruning failed: ${error.message}`);
+  return count ?? 0;
+}

@@ -75,7 +75,7 @@ Cached classifications carry a `taxonomy_version`; bumping the version in `lib/g
 * **Frontend, Backend & API:** Next.js (App Router, Server Actions, API Routes) deployed on Vercel; public pages are statically generated from repo-committed JSON (`data/`)
 * **Pipeline Execution:** GitHub Actions (`.github/workflows/pipeline.yml`) — dispatched by the admin panel, free of serverless time limits, commits the static data export
 * **Database & Auth:** PostgreSQL + pgvector (via Supabase)
-* **Document Storage:** Cloudflare R2 (for permanent, cheap Markdown snapshot storage)
+* **Document Storage:** the repo itself (`data/snapshots/<domain>/<type>/<hash>.md`) — every fetched version is committed by the pipeline workflow; git delta-compresses near-identical revisions, so the archive stays tiny and versioned for free
 * **Embeddings:** `google-embedding-2` (for vectorizing segmented document clauses)
 * **LLM (Deep Thinking & Classification):** `openai/gpt-oss-120b` (dedicated strictly to complex clause taxonomy classification, severity grading, and high-reasoning tasks)
 * **LLM (Bulk Processing & Extraction):** `meta-llama/llama-4-scout-17b-16e-instruct` (leveraged for high-limit, cheap tasks such as initial markdown cleanup, plain-english summarization, and text formatting)
