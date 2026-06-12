@@ -4,8 +4,8 @@
   "root_domain": "anthropic.com",
   "grade": "F",
   "score": 0,
-  "generated_at": "2026-06-12T00:59:26.142Z",
-  "last_published_at": "2026-06-12T00:59:17.48+00:00",
+  "generated_at": "2026-06-12T03:05:36.312Z",
+  "last_published_at": "2026-06-12T03:05:25.878+00:00",
   "summary": {
     "good": [
       {
@@ -98,9 +98,9 @@
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
-      "summary": "Anthropic can change its service fees, and the new rates become effective either 30 days after they are posted or when you are notified.",
+      "summary": "Anthropic can change the published fee rates at any time, with the new rates becoming effective 30 days after posting or when the customer receives notice.",
       "excerpt": "## H. Fees\n\nH.1. **Payment of Fees.** Customer is responsible for fees incurred by its account, at the rates specified on the [Model Pricing Page](https://www.anthropic.com/pricing), unless otherwise agreed by the parties. Anthropic may require prepayment for the Services in the form of credits or offer other types of credits, all of which are subject to Anthropic’s [Supplemental Credits Terms](https://www.anthropic.com/legal/credit-terms). Anthropic may update the published rates, to be effective the earlier of 30 days after the updates are posted by Anthropic or Customer otherwise receives N",
-      "confidence": 95
+      "confidence": 90
     },
     {
       "document_type": "terms_of_service",
@@ -109,9 +109,9 @@
       "severity": "critical",
       "points": -30,
       "label": "Forced Arbitration",
-      "summary": "Disputes must first go through a 45‑day informal process, after which either party can force arbitration and waive the right to a jury trial or class action.",
+      "summary": "Disputes must first go through a 45‑day informal process, then be resolved by binding arbitration, with both parties waiving jury trials and class actions.",
       "excerpt": "## J. Disputes\n\nJ.1. **Disputes.** In the event of a dispute, claim or controversy relating to these Terms (“**Dispute**”), the parties will first attempt in good faith to informally resolve the matter. The party raising the Dispute must notify the other party (“**Dispute Notice**”). The other party will respond to the Dispute Notice in a timely manner. If the parties have not resolved the dispute within 45 days of delivery of the Dispute Notice, either party may seek to resolve the dispute through arbitration as stated in Section J.2 (Arbitration).\n\nJ.2. **Arbitration.** Any Dispute will be d",
-      "confidence": 98
+      "confidence": 96
     },
     {
       "document_type": "terms_of_service",
@@ -120,9 +120,9 @@
       "severity": "critical",
       "points": -30,
       "label": "Forced Arbitration",
-      "summary": "The agreement specifies mandatory arbitration locations and rules for EEA/UK customers and others, while still allowing parties to seek equitable relief.",
+      "summary": "Disputes are assigned to a sole arbitrator in Dublin for EEA/UK users or San Francisco for others, and the arbitration clause does not prevent seeking equitable relief.",
       "excerpt": "## J. Disputes\n\nJ.2.a. For Customers residing in the EEA, Switzerland or UK, Disputes will be determined by a sole arbitrator in Dublin, Ireland pursuant the UNCITRAL Arbitration Rules as at present in force. The appointing authority shall be the President for the time being of the Law Society of Ireland.\n\nJ.2.b. For Customers residing anywhere else, Disputes will be determined by a sole arbitrator in San Francisco, CA pursuant to the Comprehensive Arbitration Rules and Procedures of Judicial Arbitration and Mediation Services, Inc.\n\nJ.3. **Equitable Relief.** This Section J (Disputes) does no",
-      "confidence": 97
+      "confidence": 95
     },
     {
       "document_type": "terms_of_service",
@@ -131,9 +131,9 @@
       "severity": "critical",
       "points": -30,
       "label": "Unilateral Changes",
-      "summary": "Anthropic can change the terms at any time, with a 30‑day notice (or immediately for legal changes), and only written agreements signed by both parties are valid amendments.",
+      "summary": "Anthropic can modify the terms at any time, with changes taking effect 30 days after posting (or immediately for legal changes), without needing the user's agreement.",
       "excerpt": "## M. Miscellaneous\n\nM.3. **Amendment and Modification.** Anthropic may update these Terms at any time, to be effective 30 days after the updates are posted by Anthropic or Customer otherwise receives Notice, except that updates made in response to changes to law or regulation take effect immediately upon posting or Notice. Changes will not apply retroactively. No other amendment to or modification of these Terms is effective unless it is in writing and signed by both parties. Failure to exercise or delay in exercising any rights or remedies arising from these Terms does not and will not be co",
-      "confidence": 93
+      "confidence": 92
     },
     {
       "document_type": "terms_of_service",
@@ -142,9 +142,9 @@
       "severity": "major",
       "points": -15,
       "label": "Broad Content License",
-      "summary": "You may not use the service to build competing products, train rival AI models, or reverse‑engineer the service, and you must ensure your users understand the limits of the outputs.",
-      "excerpt": "## D. Trust and Safety; Restrictions\n\nD.3. **Limitations of Outputs; Notice to Users.** It is Customer’s responsibility to evaluate whether Outputs are appropriate for Customer’s use case, including where human review is appropriate, before using or sharing Outputs. Customer acknowledges, and must notify its Users, that factual assertions in Outputs should not be relied upon without independently checking their accuracy, as they may be false, incomplete, misleading or not reflective of recent events or information. Customer further acknowledges that Outputs may contain content inconsistent wit",
-      "confidence": 80
+      "summary": "The clause lets Anthropic use any feedback you provide without obligation, effectively granting them a broad license to your submitted content.",
+      "excerpt": "## A. Services\n\nA.1. **Overview.** Subject to these Terms, Anthropic gives Customer permission to use the Services, including to power products and services Customer makes available to its own customers and end users (“**Users**”).\n\nA.2. **Third Party Features.** Customer may elect (in its sole discretion) to use features, services or other content made available by third parties to Customer through the Services (“**Third Party Features**”). Customer acknowledges and agrees that Third Party Features are not Services and, accordingly, Anthropic is not responsible for them.\n\nA.3. **Feedback.** I",
+      "confidence": 85
     },
     {
       "document_type": "terms_of_service",
@@ -153,9 +153,9 @@
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
-      "summary": "If you don’t pay the fees when due, Anthropic can suspend or terminate your access to the services and may pursue collection actions.",
+      "summary": "If the customer fails to pay, Anthropic can suspend or terminate access to the services and may pursue other collection actions.",
       "excerpt": "## H. Fees\n\nH.2. **Taxes.** Fees do not include any taxes, duties, or assessments that may be owed by Customer for use of the Services (\"**Taxes**\"), unless otherwise specified in the applicable invoice. Customer is responsible for remitting any necessary withholding Taxes to the relevant authority on a timely basis and providing Anthropic with evidence of the same upon request. Where law provides for the reduction or elimination of withholding taxes, including via tax treaty, the parties will collaborate in good faith to do so. For clarity, Customer must pay Anthropic the amount (\"**Gross-up ",
-      "confidence": 95
+      "confidence": 90
     },
     {
       "document_type": "terms_of_service",
@@ -164,9 +164,9 @@
       "severity": "major",
       "points": -15,
       "label": "Arbitrary Account Termination",
-      "summary": "Anthropic may suspend your access to all or part of the services for security, policy violations, legal reasons, or third‑party issues, and it isn’t liable for any resulting losses.",
+      "summary": "Anthropic can suspend a customer's access to the services for various reasons, such as security risks or policy violations, and provides limited notice and liability.",
       "excerpt": "## I. Termination and Suspension\n\nI.3.a. Anthropic may suspend Customer’s access to any portion or all of the Services if: (a) Anthropic reasonably believes or determines that (i) there is a risk to or attack on any of the Services; (ii) Customer or any User is using the Services in violation of Sections D.1 (Compliance), D.2 (Policies and Service Terms) or D.4 (Use Restrictions); or (iii) Anthropic’s provision of the Services to Customer is prohibited by applicable law or would result in a material increase in the cost of providing the Services; or (b) any vendor suspends or terminates Anthro",
-      "confidence": 95
+      "confidence": 90
     },
     {
       "document_type": "cookie_policy",
@@ -175,9 +175,9 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "The clause states that Anthropic uses cookies to collect information about users, personalize experiences, and market products, including sharing data with service providers.",
+      "summary": "Anthropic states it uses cookies for necessary functions, analytics, and to collect data about users, including demographic and statistical information, which it shares with service providers.",
       "excerpt": "## How Anthropic Uses Cookies\n\nWe use cookies to manage the Services and to collect information about you and your use of the Services. Cookies help us to recognize you, customize or personalize your experience, market additional products or services to you, and analyze the use of our Services to make it more useful to you. Cookies may also allow us to collect demographic and statistical data and provide this information to our service providers to help deliver their services.\n\nWe use cookies for the following purposes. You can also visit our [cookies table](https://support.anthropic.com/en/ar",
-      "confidence": 92
+      "confidence": 96
     },
     {
       "document_type": "cookie_policy",
@@ -186,9 +186,20 @@
       "severity": "minor",
       "points": -5,
       "label": "Third-Party Tracking",
-      "summary": "The clause explains that marketing cookies are used to target users and provide aggregated reporting, indicating data is used for advertising purposes.",
+      "summary": "The clause explains that marketing cookies are used to target users, provide aggregated reports, and track when marketing content is shown.",
       "excerpt": "## How Anthropic Uses Cookies\n\nMarketing\n\nCookies help us market our Services more effectively to users that we, our service providers, and our business partners believe may be interested in using our Services. They also help provide us with aggregated reporting and help us know when marketing content has been shown to you.\n\nCookie Purpose and Description",
-      "confidence": 92
+      "confidence": 96
+    },
+    {
+      "document_type": "cookie_policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Third-Party Tracking",
+      "summary": "It tells users they can manage cookies in their browsers but notes disabling them may limit service use and that Anthropic does not honor Do Not Track signals.",
+      "excerpt": "## Managing Your Cookie Settings\n\nMost browsers allow you to remove or manage cookie functions and adjust your privacy and security preferences. For information on how to do this, access the “help” menu on your browser, or access [http://www.aboutcookies.org/how-to-control-cookies](http://www.aboutcookies.org/how-to-control-cookies). Due to differences between websites and other technologies, you may need to take additional steps to opt out. Please check your settings for additional information. Please note, however, that disabling all cookies may mean that you may not be able to take full adv",
+      "confidence": 88
     },
     {
       "document_type": "cookie_policy",
@@ -197,9 +208,9 @@
       "severity": "positive",
       "points": 5,
       "label": "Notice Before Changes",
-      "summary": "The company says it may update its cookie policy and will inform users of any material changes, encouraging them to review updates when they use the service.",
+      "summary": "The company will inform you of any significant updates to its cookie policy and encourages you to check for changes when using the service.",
       "excerpt": "## Changes to Our Cookie Policy\n\nAnthropic may update this Cookie Policy from time to time. We will notify you of any material changes to this Cookie Policy, as appropriate, and update the Effective Date at the top of this page. We encourage you to review this page for updates when you access the Services.",
-      "confidence": 90
+      "confidence": 95
     },
     {
       "document_type": "privacy_policy",
@@ -208,7 +219,7 @@
       "severity": "positive",
       "points": 5,
       "label": "No Data Sale",
-      "summary": "Anthropic states it does not sell your personal data and lets you opt out of sharing data for targeted advertising, giving you control over that use.",
+      "summary": "The clause outlines various data‑privacy rights and explicitly states that Anthropic does not sell personal data, offering opt‑out options for targeted advertising.",
       "excerpt": "## 4\\. Rights and Choices\n\n-   Right to know: the right to know what personal data Anthropic processes about you, including the categories of personal data, the categories of sources from which it is collected, the business or commercial purposes for collection, and the categories of third parties to whom we disclose it.\n-   Access & data portability: the right to request a copy of the personal data Anthropic processes about you, subject to certain exceptions and conditions. In certain cases and subject to applicable law, you have the right to port your information.\n-   Deletion: the right to ",
       "confidence": 97
     },
@@ -230,9 +241,9 @@
       "severity": "positive",
       "points": 5,
       "label": "You Keep Your Content",
-      "summary": "The clause says the customer keeps all rights to its inputs and owns the outputs, and the provider cannot use the content to train models.",
+      "summary": "The clause states that customers retain all rights to their inputs and own the outputs, and Anthropic assigns any rights in the outputs back to the customer and cannot train models on that content.",
       "excerpt": "## B. Customer Content\n\nAs between the parties and to the extent permitted by applicable law, Anthropic agrees that Customer (a) retains all rights to its Inputs, and (b) owns its Outputs. Anthropic disclaims any rights it receives to the Customer Content under these Terms. Subject to Customer’s compliance with these Terms, Anthropic hereby assigns to Customer its right, title and interest (if any) in and to Outputs. Anthropic may not train models on Customer Content from Services. “**Inputs**” means submissions to the Services by Customer or its Users and “**Outputs**” means responses generat",
-      "confidence": 96
+      "confidence": 92
     },
     {
       "document_type": "terms_of_service",
@@ -241,12 +252,42 @@
       "severity": "positive",
       "points": 5,
       "label": "You Keep Your Content",
-      "summary": "The clause states that, unless explicitly mentioned, neither party receives any rights to the other’s content or intellectual property, limiting any implied license.",
+      "summary": "It states that neither party receives any rights to the other’s content or intellectual property beyond what is explicitly granted.",
       "excerpt": "## F. Intellectual Property\n\nExcept as expressly stated in these Terms, these Terms do not grant either party any rights to the other’s content or intellectual property, by implication or otherwise.",
-      "confidence": 90
+      "confidence": 95
     }
   ],
   "history": [
+    {
+      "id": "0a914259-da83-46f9-bace-d1e3c4efdc60",
+      "date": "2026-06-12T03:05:25.878+00:00",
+      "document_type": "terms_of_service",
+      "points": -85,
+      "summary": "Taxonomy update: 34 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
+      "added": 0,
+      "modified": 34,
+      "removed": 0
+    },
+    {
+      "id": "61681485-5e65-4185-9249-5825536a9fd2",
+      "date": "2026-06-12T03:00:38.089+00:00",
+      "document_type": "privacy_policy",
+      "points": 0,
+      "summary": "The policy's clause on data sharing with third-party vendors was updated to remove the list of specific countries that data may be shared with. This change means that the company can now share user data with vendors in any country without specifying which ones. The change may make it harder for users to know where their data is being sent.",
+      "added": 0,
+      "modified": 1,
+      "removed": 0
+    },
+    {
+      "id": "4884d889-dd8e-4fd6-bcf8-d22f92fb0055",
+      "date": "2026-06-12T03:00:26.86+00:00",
+      "document_type": "cookie_policy",
+      "points": 0,
+      "summary": "Taxonomy update: 6 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
+      "added": 0,
+      "modified": 6,
+      "removed": 0
+    },
     {
       "id": "43ad7563-78c3-4366-a343-fb7547aaac6f",
       "date": "2026-06-12T00:59:17.48+00:00",
