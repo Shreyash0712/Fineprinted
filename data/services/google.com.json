@@ -4,8 +4,8 @@
   "root_domain": "google.com",
   "grade": "A",
   "score": 100,
-  "generated_at": "2026-06-11T21:57:21.560Z",
-  "last_published_at": "2026-06-11T21:57:07.717+00:00",
+  "generated_at": "2026-06-12T02:59:21.703Z",
+  "last_published_at": "2026-06-12T02:59:12.679+00:00",
   "summary": {
     "good": [
       {
@@ -31,12 +31,22 @@
       "severity": "positive",
       "points": 5,
       "label": "No Data Sale",
-      "summary": "The clause says the company never sells personal information to anyone, protecting users from data sales.",
+      "summary": "The clause explicitly says the company never sells personal information to anyone, assuring users that their data will not be sold.",
       "excerpt": "## Designed to keep you\n\nprivate, safe, and secure\n\n[See how we build for safety](./../../../intl/en_us/safety/)\n\n-\n\nPlay silent looping video Pause silent looping video\n\nPrivacy isn’t a feature, it’s a foundation. That’s why we uphold responsible data practices in everything we build — like never selling your personal information, to anyone. And with easy-to-use tools, you can choose the privacy settings that are right for you.\n\n[Learn more](./../../../intl/en_us/safety/)\n\n-   All Google products are secure by default. Whether you’re sending an email in Gmail or planning your next vacation wi",
       "confidence": 98
     }
   ],
   "history": [
+    {
+      "id": "a98f844f-478e-4a59-9eab-1eb8858904dd",
+      "date": "2026-06-12T02:59:12.679+00:00",
+      "document_type": "privacy_policy",
+      "points": 5,
+      "summary": "Taxonomy update: 3 clause(s) re-evaluated under the current scoring rules. The document text did not change.",
+      "added": 0,
+      "modified": 3,
+      "removed": 0
+    },
     {
       "id": "eb71bfae-04cd-4583-add6-07a6ecb31c27",
       "date": "2026-06-11T21:57:07.717+00:00",
