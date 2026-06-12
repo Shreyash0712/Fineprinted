@@ -1,0 +1,62 @@
+{
+  "id": "8737a4a3-d46e-4eee-8eeb-060375c6442c",
+  "name": "Reddit",
+  "root_domain": "reddit.com",
+  "grade": "A",
+  "score": 100,
+  "generated_at": "2026-06-12T18:39:18.195Z",
+  "last_published_at": "2026-06-12T18:38:29.815+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "Says it does not sell your personal data.",
+        "points": 5
+      }
+    ],
+    "bad": []
+  },
+  "documents": [
+    {
+      "type": "privacy_policy",
+      "urls": [
+        "https://reddit.com/privacy"
+      ]
+    }
+  ],
+  "clauses": [
+    {
+      "document_type": "privacy_policy",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "No Data Sale",
+      "summary": "Reddit states it does not sell your personal information and only collects data that is necessary.",
+      "excerpt": "## Privacy is your right\n\nAt Reddit, we don’t collect more user data than necessary, and we never sell your personal information. Because [privacy](https://www.un.org/en/about-us/universal-declaration-of-human-rights#:~:text=Article%2012,against%20such%20interference%20or%20attacks.) is your right.",
+      "confidence": 95
+    },
+    {
+      "document_type": "privacy_policy",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "No Data Sale",
+      "summary": "Reddit states it does not sell personal data or work with data brokers, assuring users their private information isn’t commercially traded.",
+      "excerpt": "## Our policies\n\nAll of our users get [privacy rights](https://www.reddit.com/policies/privacy-policy) – not just those in select countries\n\nWe’re open with our community about how and [why we collect data](https://www.reddit.com/policies/privacy-policy)\n\nWe prioritize transparency and openly share about what we do on the platform and why in our recurring [transparency reports](/transparency?hsLang=en) and quarterly [r/redditsafety](https://www.reddit.com/r/RedditSafety/) [](https://www.reddit.com/r/RedditSafety/)posts\n\nWe build our business in a way that respects redditors and their privacy²\n",
+      "confidence": 95
+    }
+  ],
+  "history": [
+    {
+      "id": "995f8163-c838-4e2e-ba09-06aac16c4a86",
+      "date": "2026-06-12T18:38:29.815+00:00",
+      "document_type": "privacy_policy",
+      "points": 5,
+      "summary": "No changes were found in the provided document analysis that would negatively impact users. The analysis confirms Reddit's commitment to not selling personal data, working with data brokers, or commercially trading private information, which is protective of users' privacy.",
+      "added": 16,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}

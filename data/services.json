@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-12T18:11:49.967Z",
+  "generated_at": "2026-06-12T18:39:18.197Z",
   "stats": {
-    "services": 5,
-    "flagged_clauses": 150,
-    "changes_published": 29
+    "services": 6,
+    "flagged_clauses": 152,
+    "changes_published": 30
   },
   "services": [
     {
@@ -55,6 +55,16 @@
       "current_grade": "F",
       "created_at": "2026-06-11T16:06:29.693676+00:00",
       "updated_at": "2026-06-12T03:50:31.351+00:00"
+    },
+    {
+      "id": "8737a4a3-d46e-4eee-8eeb-060375c6442c",
+      "name": "Reddit",
+      "root_domain": "reddit.com",
+      "status": "active",
+      "current_score": 100,
+      "current_grade": "A",
+      "created_at": "2026-06-12T18:36:53.301821+00:00",
+      "updated_at": "2026-06-12T18:38:29.815+00:00"
     }
   ]
 }
