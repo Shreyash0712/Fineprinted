@@ -20,12 +20,11 @@ async function main(): Promise<void> {
   const {
     affectsGrade,
     classificationLabel,
+    classificationSummary,
     computeScore,
-    HOSTILE_SUMMARY_LINES,
     isFlagged,
-    PROTECTIVE_SUMMARY_LINES,
+    pointsFor,
     scoreToGrade,
-    SEVERITY_POINTS,
     signedPoints,
   } = await import("../lib/grading");
   type ServiceDetail = import("../lib/static-data").ServiceDetail;
@@ -88,7 +87,7 @@ async function main(): Promise<void> {
           category: c.category,
           stance: c.stance,
           severity: c.severity,
-          points: SEVERITY_POINTS[c.severity],
+          points: pointsFor(c),
           label: classificationLabel(c),
           summary: c.plain_english_summary,
           excerpt: clause.content.slice(0, EXCERPT_CHARS),
@@ -99,24 +98,18 @@ async function main(): Promise<void> {
     clauses.sort((a, b) => a.points - b.points);
     totalFlagged += clauses.length;
 
-    // At-a-glance lines: one per distinct (category, severity).
+    // At-a-glance lines: one per distinct category (each counts once).
     const good: SummaryLine[] = [];
     const bad: SummaryLine[] = [];
     const seenLines = new Set<string>();
     for (const clause of clauses) {
-      const key = `${clause.category}:${clause.severity}`;
-      if (seenLines.has(key)) continue;
-      seenLines.add(key);
+      if (seenLines.has(clause.category)) continue;
+      seenLines.add(clause.category);
+      const text = classificationSummary(clause) || clause.label;
       if (clause.points > 0) {
-        good.push({
-          text: PROTECTIVE_SUMMARY_LINES[clause.category] ?? clause.label,
-          points: clause.points,
-        });
+        good.push({ text, points: clause.points });
       } else if (clause.points < 0) {
-        bad.push({
-          text: HOSTILE_SUMMARY_LINES[clause.category] ?? clause.label,
-          points: clause.points,
-        });
+        bad.push({ text, points: clause.points });
       }
     }
 

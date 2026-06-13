@@ -15,7 +15,7 @@ export default function RequestPage() {
       <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-14">
         <div className="mx-auto max-w-xl">
           <h1 className="text-3xl font-bold tracking-tight font-heading">Request a service</h1>
-          <p className="mt-3 leading-relaxed text-zinc-650 dark:text-zinc-400">
+          <p className="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-400">
             Want to know what a service&apos;s fine print really says? Submit it
             here. If someone already requested it, your submission counts as a
             vote, and the most-wanted services get queued and analyzed first.
@@ -25,7 +25,7 @@ export default function RequestPage() {
             <RequestForm />
           </div>
 
-          <div className="mt-8 space-y-3 text-sm text-zinc-550 dark:text-zinc-400">
+          <div className="mt-8 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
             <h2 className="text-sm font-bold text-zinc-700 dark:text-zinc-300 font-heading">
               What happens next?
             </h2>

@@ -47,7 +47,7 @@ export function SaveButton({ serviceId }: { serviceId: string }) {
       className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition disabled:opacity-60 ${
         saved
           ? "bg-accent-light text-accent ring-1 ring-accent/30 hover:bg-accent/20"
-          : "bg-zinc-100 text-zinc-900 hover:bg-white dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-850"
+          : "bg-zinc-100 text-zinc-900 hover:bg-white dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-900"
       }`}
     >
       <BookmarkIcon className="h-4 w-4" filled={!!saved} />

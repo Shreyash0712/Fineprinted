@@ -1,6 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { BULK_MODEL, groqText } from "../ai/groq";
-import { isFlagged, signedPoints, TAXONOMY_VERSION } from "../grading";
+import { isFlagged, signedPoints } from "../grading";
 import { sha256 } from "../hash";
 import { snapshotKey, writeSnapshot } from "../snapshots";
 import { createAdminClient } from "../supabase/admin";
@@ -24,12 +24,6 @@ export interface PipelineEvent {
   level: "info" | "success" | "warn" | "error";
   step: string;
   message: string;
-}
-
-/** Minimal shape read back from change_events.diff (jsonb). */
-interface ChangeEventLikeDiff {
-  added?: { hash: string }[];
-  modified?: { hash: string }[];
 }
 
 type Emit = (event: PipelineEvent) => void;
@@ -106,132 +100,6 @@ async function summarizeChanges(
   }
 }
 
-/**
- * Document text is unchanged, but if any of its clauses were classified
- * under an older taxonomy version, re-evaluate them and draft a
- * "taxonomy update" change event so the admin can review and publish the
- * corrected grade. Hashes referenced by published change events are swept
- * too (even if the clause has since left the document) so historical
- * point deltas shown on the public site get corrected as well. With no
- * stale rows this stays the $0 skip.
- */
-async function reclassifyIfStale(
-  db: SupabaseClient,
-  document: Document,
-  snapshotId: string,
-  emit: Emit
-): Promise<void> {
-  const step = document.name || "Document";
-
-  const { data: clauses, error } = await db
-    .from("clauses")
-    .select("clause_hash, content")
-    .eq("snapshot_id", snapshotId)
-    .order("position");
-  if (error) throw new Error(`clauses lookup failed: ${error.message}`);
-
-  const unique = new Map((clauses ?? []).map((c) => [c.clause_hash, c.content]));
-  const currentHashes = new Set(unique.keys());
-
-  // Historical hashes from published events of this document.
-  const { data: pastEvents, error: pastError } = await db
-    .from("change_events")
-    .select("diff")
-    .eq("document_id", document.id)
-    .eq("status", "published");
-  if (pastError) throw new Error(`change_events lookup failed: ${pastError.message}`);
-  const historical = new Set<string>();
-  for (const event of pastEvents ?? []) {
-    const diff = event.diff as ChangeEventLikeDiff | null;
-    for (const c of diff?.added ?? []) historical.add(c.hash);
-    for (const c of diff?.modified ?? []) historical.add(c.hash);
-  }
-  for (const hash of unique.keys()) historical.delete(hash);
-
-  const hashes = [...unique.keys(), ...historical];
-  const stale = new Set<string>();
-  for (let i = 0; i < hashes.length; i += 200) {
-    const { data: rows, error: clsError } = await db
-      .from("classifications")
-      .select("clause_hash, taxonomy_version")
-      .in("clause_hash", hashes.slice(i, i + 200));
-    if (clsError) throw new Error(`classifications lookup failed: ${clsError.message}`);
-    for (const row of rows ?? []) {
-      if ((row.taxonomy_version ?? 1) < TAXONOMY_VERSION) stale.add(row.clause_hash);
-    }
-  }
-
-  if (stale.size === 0) {
-    emit({ level: "success", step, message: "Content hash unchanged — skipping ($0)" });
-    return;
-  }
-
-  // Clause hashes are content-addressed, so any clauses row with the hash
-  // (from any snapshot) carries the text for historical ones.
-  const missingContent = [...stale].filter((h) => !unique.has(h));
-  for (let i = 0; i < missingContent.length; i += 100) {
-    const { data: rows, error: contentError } = await db
-      .from("clauses")
-      .select("clause_hash, content")
-      .in("clause_hash", missingContent.slice(i, i + 100));
-    if (contentError) throw new Error(`historical clause lookup failed: ${contentError.message}`);
-    for (const row of rows ?? []) {
-      if (!unique.has(row.clause_hash)) unique.set(row.clause_hash, row.content);
-    }
-  }
-  // Hashes whose text is gone entirely can't be re-evaluated — leave them.
-  for (const hash of [...stale]) {
-    if (!unique.has(hash)) stale.delete(hash);
-  }
-  if (stale.size === 0) {
-    emit({ level: "success", step, message: "Content hash unchanged — skipping ($0)" });
-    return;
-  }
-
-  emit({
-    level: "info",
-    step,
-    message: `Content unchanged, but ${stale.size} clause(s) were classified under an older taxonomy — re-evaluating`,
-  });
-
-  const toClassify = [...stale].map((hash) => ({ hash, content: unique.get(hash) ?? "" }));
-  const { byHash, llmCalls } = await classifyClauses(db, toClassify, (message) =>
-    emit({ level: "info", step, message })
-  );
-
-  const reclassified = [...byHash.values()];
-  const { error: eventError } = await db.from("change_events").insert({
-    document_id: document.id,
-    previous_snapshot_id: snapshotId,
-    new_snapshot_id: snapshotId,
-    severity_score: signedPoints(reclassified),
-    ai_summary: `Taxonomy update: ${stale.size} clause(s) re-evaluated under the current scoring rules. The document text did not change.`,
-    status: "published",
-    published_at: new Date().toISOString(),
-    diff: {
-      added: [],
-      modified: toClassify.map((c) => ({
-        hash: c.hash,
-        old_hash: c.hash,
-        excerpt: excerpt(c.content),
-        old_excerpt: excerpt(c.content),
-        similarity: 1,
-      })),
-      removed: [],
-      cosmetic_count: 0,
-      unchanged_count: [...currentHashes].filter((h) => !stale.has(h)).length,
-      llm_calls: llmCalls,
-    },
-  });
-  if (eventError) throw new Error(`change_event insert failed: ${eventError.message}`);
-
-  emit({
-    level: "success",
-    step,
-    message: `Taxonomy-update event published (${stale.size} clauses re-scored)`,
-  });
-}
-
 async function processDocument(
   db: SupabaseClient,
   service: Service,
@@ -289,7 +157,7 @@ async function processDocument(
   if (prevError) throw new Error(`previous snapshot lookup failed: ${prevError.message}`);
 
   if (prevSnapshot && prevSnapshot.content_hash === contentHash) {
-    await reclassifyIfStale(db, document, prevSnapshot.id, emit);
+    emit({ level: "success", step, message: "Content unchanged — skipping ($0)" });
     return;
   }
 
@@ -352,8 +220,8 @@ async function processDocument(
     emit({ level: "info", step, message: `Copied ${copied.size} classifications for cosmetic changes ($0)` });
   }
 
-  // Cosmetic clauses whose old classification was stale (older taxonomy)
-  // are not copied — classify them fresh alongside the real changes.
+  // Cosmetic clauses whose old hash had no cached classification get
+  // classified fresh alongside the real changes.
   const uncopiedCosmetic = diff.cosmetic
     .filter((c) => !copied.has(c.clause.hash))
     .map((c) => c.clause);
@@ -456,10 +324,9 @@ export async function runServicePipeline(serviceId: string, emit: Emit): Promise
 
   emit({ level: "info", step: "start", message: `Pipeline started for ${service.root_domain}` });
 
-  // --- Document sources (admin-curated, mandatory) ---
-  // The pipeline never guesses URLs. Automatic discovery was removed after
-  // it kept scraping look-alike pages (e.g. a GitHub user profile named
-  // "cookie-policy"); the admin saves the exact URLs on the service page.
+  // --- Document sources (admin-pasted, mandatory) ---
+  // The pipeline analyzes exactly the text an admin pasted for each document
+  // on the service page — there is no scraping, fetching, or discovery.
   const { data: documents, error: docsError } = await db
     .from("documents")
     .select("*")

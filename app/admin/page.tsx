@@ -8,11 +8,11 @@ import { SyncButton } from "./sync-button";
 export const dynamic = "force-dynamic";
 
 const gradeColor: Record<string, string> = {
-  A: "text-emerald-505 dark:text-emerald-400",
-  B: "text-lime-605 dark:text-lime-400",
-  C: "text-yellow-605 dark:text-yellow-400",
-  D: "text-orange-650 dark:text-orange-400",
-  F: "text-red-655 dark:text-red-400",
+  A: "text-emerald-500 dark:text-emerald-400",
+  B: "text-lime-600 dark:text-lime-400",
+  C: "text-yellow-600 dark:text-yellow-400",
+  D: "text-orange-700 dark:text-orange-400",
+  F: "text-red-700 dark:text-red-400",
 };
 
 export default async function AdminDashboard() {
@@ -38,7 +38,7 @@ export default async function AdminDashboard() {
         <Link href="/admin/requests" className="rounded-2xl border border-zinc-200 bg-white p-5 relative overflow-hidden dark:border-zinc-900 dark:bg-zinc-900/40 shadow-sm block group hover:border-amber-500/40 dark:hover:border-amber-500/30 transition">
           <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-amber-500/5 blur-2xl" />
           <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition font-heading">Pending Requests</dt>
-          <dd className="mt-2 text-3xl font-bold tracking-tight text-amber-500 dark:text-amber-405 font-heading">{pendingCount ?? 0}</dd>
+          <dd className="mt-2 text-3xl font-bold tracking-tight text-amber-500 dark:text-amber-400 font-heading">{pendingCount ?? 0}</dd>
         </Link>
         <div className="rounded-2xl border border-zinc-200 bg-white p-5 relative overflow-hidden dark:border-zinc-900 dark:bg-zinc-900/40 shadow-sm">
           <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-accent/10 blur-2xl" />
@@ -81,16 +81,16 @@ export default async function AdminDashboard() {
 
       {/* Services */}
       <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-950 shadow-sm animate-fade-in-up animation-delay-200">
-        <div className="flex items-center justify-between gap-4 border-b border-zinc-150 dark:border-zinc-900 pb-3">
+        <div className="flex items-center justify-between gap-4 border-b border-zinc-200 dark:border-zinc-900 pb-3">
           <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-heading">
             Services
           </h2>
           <SyncButton />
         </div>
         {totalCount === 0 ? (
-          <p className="text-sm text-zinc-500 dark:text-zinc-650">No services yet, add one above.</p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-700">No services yet, add one above.</p>
         ) : (
-          <ul className="divide-y divide-zinc-150 rounded-xl border border-zinc-200 bg-zinc-50/50 dark:divide-zinc-900 dark:border-zinc-900 dark:bg-zinc-900/10">
+          <ul className="divide-y divide-zinc-200 rounded-xl border border-zinc-200 bg-zinc-50/50 dark:divide-zinc-900 dark:border-zinc-900 dark:bg-zinc-900/10">
             {svcList.map((s) => (
               <li key={s.id}>
                 <Link
@@ -99,7 +99,7 @@ export default async function AdminDashboard() {
                 >
                   <span
                     className={`w-8 text-center text-lg font-black font-heading ${
-                      s.current_grade ? gradeColor[s.current_grade] : "text-zinc-400 dark:text-zinc-650"
+                      s.current_grade ? gradeColor[s.current_grade] : "text-zinc-400 dark:text-zinc-700"
                     }`}
                   >
                     {s.current_grade ?? "?"}
@@ -116,8 +116,8 @@ export default async function AdminDashboard() {
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide ${
                       s.status === "active"
-                        ? "bg-emerald-500/10 text-emerald-650 dark:text-emerald-400 border border-emerald-500/20"
-                        : "bg-zinc-150 dark:bg-zinc-800/80 text-zinc-550 dark:text-zinc-405 border border-zinc-200/50 dark:border-zinc-700/30"
+                        ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20"
+                        : "bg-zinc-200 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-700/30"
                     }`}
                   >
                     {s.status}

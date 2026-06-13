@@ -3,7 +3,7 @@ import { requireAdmin } from "@/lib/admin/auth";
 import {
   classificationLabel,
   CONFIDENCE_REVIEW_THRESHOLD,
-  SEVERITY_POINTS,
+  pointsFor,
 } from "@/lib/grading";
 import { createAdminClient } from "@/lib/supabase/admin";
 import {
@@ -18,16 +18,13 @@ import { DocumentsEditor } from "./documents-editor";
 import { RunPipeline } from "./run-pipeline";
 
 export const dynamic = "force-dynamic";
-// "Test fetch" / "Suggest URLs" server actions do real network fetches
-// (with retries) and inherit this page's duration budget.
-export const maxDuration = 60;
 
 const severityBadge: Record<string, string> = {
-  critical: "bg-red-650/10 text-red-700 dark:bg-red-600/20 dark:text-red-300",
+  critical: "bg-red-700/10 text-red-700 dark:bg-red-600/20 dark:text-red-300",
   major: "bg-orange-500/10 text-orange-700 dark:bg-orange-600/20 dark:text-orange-300",
   minor: "bg-yellow-500/10 text-yellow-700 dark:bg-yellow-600/20 dark:text-yellow-300",
   positive: "bg-emerald-500/10 text-emerald-700 dark:bg-emerald-600/20 dark:text-emerald-300",
-  neutral: "bg-zinc-150 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400",
+  neutral: "bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400",
 };
 
 export default async function ServicePage({
@@ -108,11 +105,11 @@ export default async function ServicePage({
               required
               className="rounded-xl border border-zinc-200 bg-zinc-50/50 px-3 py-1.5 text-xl font-bold text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 outline-none transition focus:border-accent font-heading"
             />
-            <button className="rounded-xl bg-zinc-100 dark:bg-zinc-800 px-3 py-2 text-xs font-semibold text-zinc-600 dark:text-zinc-350 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition cursor-pointer border border-zinc-200/50 dark:border-zinc-700/50">
+            <button className="rounded-xl bg-zinc-100 dark:bg-zinc-800 px-3 py-2 text-xs font-semibold text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition cursor-pointer border border-zinc-200/50 dark:border-zinc-700/50">
               Rename
             </button>
           </form>
-          <p className="text-sm text-zinc-500 dark:text-zinc-550 mt-1">{svc.root_domain}</p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-600 mt-1">{svc.root_domain}</p>
         </div>
         {svc.current_grade && (
           <div className="text-right">
@@ -120,37 +117,38 @@ export default async function ServicePage({
             <div className="text-xs text-zinc-500 font-semibold">{svc.current_score}/100</div>
           </div>
         )}
-        <span className="rounded-full bg-zinc-100 dark:bg-zinc-850 px-3 py-1 text-xs font-semibold border border-zinc-200 dark:border-zinc-800/80 text-zinc-650 dark:text-zinc-355">
+        <span className="rounded-full bg-zinc-100 dark:bg-zinc-900 px-3 py-1 text-xs font-semibold border border-zinc-200 dark:border-zinc-800/80 text-zinc-700 dark:text-zinc-400">
           {svc.status}
         </span>
       </section>
 
       {/* Run */}
-      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-955 shadow-sm">
-        <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-550 dark:text-zinc-400 font-heading">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-950 shadow-sm">
+        <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-heading">
           Pipeline
         </h2>
         <RunPipeline
           serviceId={svc.id}
           initialRun={(latestRun as PipelineRun) ?? null}
-          hasDocumentUrls={documents.some((d) => !!d.pasted_content && d.pasted_content.trim().length > 0)}
+          hasContent={documents.some((d) => !!d.pasted_content && d.pasted_content.trim().length > 0)}
         />
-        <p className="text-xs leading-relaxed text-zinc-550">
-          Dispatches a GitHub Actions job that runs extraction (of the URLs saved
-          below — nothing else), hashing, diffing and classification, and then{" "}
+        <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+          Dispatches a GitHub Actions job that segments the pasted documents,
+          diffs them against the last version, classifies the changed clauses,
+          and then{" "}
           <strong className="text-zinc-800 dark:text-zinc-300">
             publishes the results and updates the public site automatically
-          </strong>,
-          without a manual review step. Low-confidence findings are excluded from the
-          grade unless approved below. Long waits are normal, as the job sleeps
+          </strong>
+          , without a manual review step. Low-confidence findings are excluded from
+          the grade unless approved below. Long waits are normal, as the job sleeps
           through free-tier LLM rate limits.
         </p>
       </section>
 
       {/* Documents (Manual pasting) */}
-      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-955 shadow-sm">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-950 shadow-sm">
         <div>
-          <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-550 dark:text-zinc-400 font-heading">
+          <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-heading">
             Documents
           </h2>
           <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
@@ -165,8 +163,8 @@ export default async function ServicePage({
       </section>
 
       {/* Published change events */}
-      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-955 shadow-sm">
-        <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-555 dark:text-zinc-400 font-heading">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-950 shadow-sm">
+        <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-heading">
           Change events {history.length > 0 && `(${history.length})`}
         </h2>
         {history.length === 0 ? (
@@ -213,7 +211,7 @@ function EventCard({
 
   return (
     <div className="rounded-xl border border-zinc-200 bg-zinc-50/30 dark:border-zinc-900 dark:bg-zinc-900/10 p-5 space-y-4">
-      <div className="flex flex-wrap items-center gap-2 border-b border-zinc-150 dark:border-zinc-900 pb-3">
+      <div className="flex flex-wrap items-center gap-2 border-b border-zinc-200 dark:border-zinc-900 pb-3">
         <span className="text-sm font-bold font-heading text-zinc-800 dark:text-zinc-200">
           {document ? document.name || "Unknown document" : "Unknown document"}
         </span>
@@ -223,10 +221,10 @@ function EventCard({
         <span
           className={`rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide ${
             event.status === "draft"
-              ? "bg-yellow-500/10 text-yellow-705 dark:text-yellow-300 border border-yellow-500/20"
+              ? "bg-yellow-500/10 text-yellow-700 dark:text-yellow-300 border border-yellow-500/20"
               : event.status === "published"
                 ? "bg-emerald-500/10 text-emerald-700 dark:bg-emerald-600/15 dark:text-emerald-300 border border-emerald-500/20"
-                : "bg-zinc-150 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+                : "bg-zinc-200 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
           }`}
         >
           {event.status}
@@ -258,18 +256,18 @@ function EventCard({
       {flagged.length > 0 && (
         <ul className="space-y-3">
           {flagged.map(({ excerpt, classification: c }) => (
-            <li key={c.clause_hash} className="rounded-xl bg-white border border-zinc-200 dark:bg-zinc-955 dark:border-zinc-900 p-4 space-y-3 shadow-2xs">
+            <li key={c.clause_hash} className="rounded-xl bg-white border border-zinc-200 dark:bg-zinc-950 dark:border-zinc-900 p-4 space-y-3 shadow-2xs">
               <div className="flex flex-wrap items-center gap-2">
                 <span className={`rounded-lg px-2 py-0.5 text-xs font-semibold ${severityBadge[c.severity]}`}>
                   {classificationLabel(c)}
                 </span>
                 <span className="text-xs tabular-nums text-zinc-500 font-medium">
-                  {SEVERITY_POINTS[c.severity] > 0 ? "+" : ""}
-                  {SEVERITY_POINTS[c.severity]} pts, confidence {c.confidence_score}
+                  {pointsFor(c) > 0 ? "+" : ""}
+                  {pointsFor(c)} pts, confidence {c.confidence_score}
                 </span>
                 {c.confidence_score < CONFIDENCE_REVIEW_THRESHOLD &&
                   (c.admin_approved ? (
-                    <span className="text-xs text-emerald-650 dark:text-emerald-400 font-semibold">approved</span>
+                    <span className="text-xs text-emerald-700 dark:text-emerald-400 font-semibold">approved</span>
                   ) : (
                     <div className="flex items-center gap-2 ml-1">
                       <span className="text-xs text-yellow-600 dark:text-yellow-400 font-medium">
@@ -278,7 +276,7 @@ function EventCard({
                       <form
                         action={approveClassification.bind(null, c.clause_hash, serviceId)}
                       >
-                        <button className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-2 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-350 hover:bg-emerald-500/20 transition cursor-pointer">
+                        <button className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-2 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:bg-emerald-500/20 transition cursor-pointer">
                           Approve
                         </button>
                       </form>
@@ -290,7 +288,7 @@ function EventCard({
                 <summary className="cursor-pointer text-xs text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 select-none font-semibold">
                   Show Clause text
                 </summary>
-                <pre className="mt-2 whitespace-pre-wrap font-mono text-xs text-zinc-600 dark:text-zinc-455 border-l border-zinc-200 dark:border-zinc-800 pl-3 leading-relaxed bg-zinc-100/50 dark:bg-zinc-900/30 p-2.5 rounded-lg">
+                <pre className="mt-2 whitespace-pre-wrap font-mono text-xs text-zinc-600 dark:text-zinc-500 border-l border-zinc-200 dark:border-zinc-800 pl-3 leading-relaxed bg-zinc-100/50 dark:bg-zinc-900/30 p-2.5 rounded-lg">
                   {excerpt}
                 </pre>
               </details>
@@ -320,8 +318,8 @@ function EventCard({
               </div>
             ))}
             {diff.removed.map((r) => (
-              <div key={r.hash} className="rounded-lg bg-white border border-zinc-200 p-4 dark:bg-zinc-955 dark:border-zinc-900">
-                <div className="text-[10px] uppercase font-bold text-red-650 dark:text-red-500 mb-1">Removed Excerpt</div>
+              <div key={r.hash} className="rounded-lg bg-white border border-zinc-200 p-4 dark:bg-zinc-950 dark:border-zinc-900">
+                <div className="text-[10px] uppercase font-bold text-red-700 dark:text-red-500 mb-1">Removed Excerpt</div>
                 <pre className="whitespace-pre-wrap font-mono text-xs text-red-700 dark:text-red-400/70 line-through leading-relaxed">
                   {r.excerpt}
                 </pre>

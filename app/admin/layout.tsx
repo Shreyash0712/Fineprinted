@@ -13,7 +13,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <header className="sticky top-0 z-50 w-full bg-[#FAF9F5]/50 dark:bg-[#0B0B0C]/50 backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-900/50 py-4 transition-all">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6">
           <Link href="/admin" className="flex items-center gap-2.5 text-base font-bold tracking-tight sm:text-lg">
-            <span className="font-heading">Fine<span className="text-accent">printed</span> <span className="text-zinc-400 dark:text-zinc-550 font-normal text-xs sm:text-sm">/ admin</span></span>
+            <span className="font-heading">Fine<span className="text-accent">printed</span> <span className="text-zinc-400 dark:text-zinc-600 font-normal text-xs sm:text-sm">/ admin</span></span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -22,7 +22,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               Requests Queue
             </Link>
             <span className="h-3 w-px bg-zinc-200 dark:bg-zinc-800" />
-            <Link href="/" className="text-xs text-zinc-650 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 transition">
+            <Link href="/" className="text-xs text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 transition">
               Back to site
             </Link>
             <span className="h-3 w-px bg-zinc-200 dark:bg-zinc-800" />
@@ -40,7 +40,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center justify-center p-2 rounded-lg text-zinc-555 hover:bg-zinc-150/40 dark:text-zinc-450 dark:hover:bg-zinc-800/40 transition focus:outline-none cursor-pointer"
+              className="flex items-center justify-center p-2 rounded-lg text-zinc-600 hover:bg-zinc-200/40 dark:text-zinc-500 dark:hover:bg-zinc-800/40 transition focus:outline-none cursor-pointer"
               aria-label="Toggle admin menu"
             >
               {isOpen ? (
@@ -62,21 +62,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Link
               href="/admin/requests"
               onClick={() => setIsOpen(false)}
-              className="rounded-xl py-3 text-zinc-650 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
+              className="rounded-xl py-3 text-zinc-700 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
             >
               Requests Queue
             </Link>
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
-              className="rounded-xl py-3 text-zinc-650 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
+              className="rounded-xl py-3 text-zinc-700 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
             >
               Back to Site
             </Link>
             <form action={logout} onSubmit={() => setIsOpen(false)} className="w-full">
               <button
                 type="submit"
-                className="w-full rounded-xl py-3 text-zinc-650 dark:text-zinc-350 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm font-semibold text-red-500 cursor-pointer"
+                className="w-full rounded-xl py-3 text-zinc-700 dark:text-zinc-400 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm font-semibold text-red-500 cursor-pointer"
               >
                 Sign Out
               </button>

@@ -17,7 +17,7 @@ export default async function SitemapPage() {
       <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-14">
         <div className="animate-fade-in-up">
           <h1 className="text-3xl font-bold tracking-tight font-heading">Sitemap</h1>
-          <p className="mt-3 leading-relaxed text-zinc-650 dark:text-zinc-400">
+          <p className="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-400">
             A directory of all pages, features, and tracked service analysis dashboards on Fineprinted.
           </p>
 

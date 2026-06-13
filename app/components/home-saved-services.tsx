@@ -76,7 +76,7 @@ export function HomeSavedServices() {
                   <span className="block truncate font-semibold text-sm group-hover:text-accent dark:group-hover:text-accent transition duration-200">
                     {service.name}
                   </span>
-                  <span className="block truncate text-xs text-zinc-500 dark:text-zinc-450 mt-0.5">
+                  <span className="block truncate text-xs text-zinc-500 dark:text-zinc-500 mt-0.5">
                     {service.root_domain}
                   </span>
                 </div>
@@ -84,7 +84,7 @@ export function HomeSavedServices() {
 
               {service.current_score !== null && (
                 <div className="mt-3 flex items-center justify-between text-xs">
-                  <span className="text-zinc-450 dark:text-zinc-500">Grade Score:</span>
+                  <span className="text-zinc-500 dark:text-zinc-500">Grade Score:</span>
                   <span className="font-semibold tabular-nums text-zinc-800 dark:text-zinc-200">
                     {service.current_score}/100
                   </span>
@@ -92,11 +92,11 @@ export function HomeSavedServices() {
               )}
 
               {events.length > 0 && events[0].ai_summary && (
-                <div className="mt-3 border-t border-zinc-150/40 pt-2.5 dark:border-zinc-800/60">
+                <div className="mt-3 border-t border-zinc-200/40 pt-2.5 dark:border-zinc-800/60">
                   <p className="text-[10px] font-bold text-accent dark:text-[#D7B88F] uppercase tracking-wider">
                     Latest Update
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-zinc-655 dark:text-zinc-350 line-clamp-2">
+                  <p className="mt-1 text-xs leading-relaxed text-zinc-700 dark:text-zinc-400 line-clamp-2">
                     {events[0].ai_summary}
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export function HomeSavedServices() {
                 remove(service.id);
               }}
               title="Remove from watchlist"
-              className="absolute right-3.5 top-3.5 rounded-full p-1.5 text-zinc-450 hover:bg-red-500/10 hover:text-red-600 dark:text-zinc-500 dark:hover:bg-red-500/20 dark:hover:text-red-400 transition-all duration-250 z-10 cursor-pointer"
+              className="absolute right-3.5 top-3.5 rounded-full p-1.5 text-zinc-500 hover:bg-red-500/10 hover:text-red-600 dark:text-zinc-500 dark:hover:bg-red-500/20 dark:hover:text-red-400 transition-all duration-250 z-10 cursor-pointer"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

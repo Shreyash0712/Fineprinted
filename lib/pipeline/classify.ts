@@ -1,7 +1,14 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { GroqRateLimitError, groqJson, REASONING_MODEL } from "../ai/groq";
-import { deriveSeverity, TAXONOMY_VERSION } from "../grading";
-import type { Classification, ClauseCategory, ClauseStance } from "../types";
+import { deriveSeverity } from "../grading";
+import {
+  CATEGORY_DEFS,
+  CATEGORY_KEYS,
+  GROUP_DEFS,
+  type ClauseCategory,
+  type ClauseGroup,
+} from "../taxonomy";
+import type { Classification, ClauseStance } from "../types";
 
 /**
  * Stage 6 — Classification (spec 3.1.6, 4.1). Only clauses whose hash
@@ -9,7 +16,9 @@ import type { Classification, ClauseCategory, ClauseStance } from "../types";
  * version) reach the LLM.
  *
  * The model answers two separate questions per clause:
- *   1. category — what TOPIC the clause is about
+ *   1. category — what TOPIC the clause is about (the full taxonomy lives in
+ *      lib/taxonomy.ts; the reference list below is generated from it so the
+ *      prompt never drifts from the scoring values)
  *   2. stance — whose side it is on (imposes the practice vs. denies it)
  * Severity/points derive from (category, stance) in lib/grading.ts, never
  * from the model. This is what stops "we do NOT sell your data" from
@@ -20,55 +29,60 @@ import type { Classification, ClauseCategory, ClauseStance } from "../types";
  * TPM budget; fewer calls also means fewer repeats of the system prompt.
  */
 
-const CATEGORIES: ClauseCategory[] = [
-  "FORCED_ARBITRATION",
-  "UNILATERAL_CHANGE",
-  "DATA_SALE",
-  "CONTENT_LICENSE_BROAD",
-  "ACCOUNT_TERMINATION",
-  "TRACKING_THIRD_PARTY",
-  "NOTICE_OF_CHANGE",
-  "OTHER",
-];
-
+const CATEGORIES: ClauseCategory[] = CATEGORY_KEYS;
 const STANCES: ClauseStance[] = ["hostile", "protective", "neutral"];
 
 const BATCH_MAX_CLAUSES = 4;
 const BATCH_MAX_CHARS = 6_000;
 const CLAUSE_MAX_CHARS = 4_200;
 
+/** Build the category reference for the prompt, grouped by domain, from the taxonomy. */
+function categoryReference(): string {
+  const byGroup = new Map<ClauseGroup, string[]>();
+  for (const key of CATEGORY_KEYS) {
+    if (key === "OTHER") continue;
+    const def = CATEGORY_DEFS[key];
+    const lines = byGroup.get(def.group) ?? [];
+    lines.push(`- ${key}: ${def.definition}`);
+    byGroup.set(def.group, lines);
+  }
+  const sections = (Object.keys(GROUP_DEFS) as ClauseGroup[])
+    .filter((g) => g !== "NONE")
+    .sort((a, b) => GROUP_DEFS[a].order - GROUP_DEFS[b].order)
+    .map((g) => `${GROUP_DEFS[g].label}:\n${(byGroup.get(g) ?? []).join("\n")}`);
+  sections.push(`Catch-all:\n- OTHER: ${CATEGORY_DEFS.OTHER.definition}`);
+  return sections.join("\n\n");
+}
+
 const SYSTEM_PROMPT = `You are a legal analyst classifying clauses from Terms of Service and Privacy Policy documents. For EACH clause you answer two separate questions. Respond with JSON only.
 
-Question 1 — category. The TOPIC the clause is about (pick exactly one):
-- FORCED_ARBITRATION: arbitration, jury trial waiver, class-action waiver.
-- UNILATERAL_CHANGE: how/whether the terms themselves can change.
-- DATA_SALE: SELLING personal data, or giving it to data brokers / third parties for THOSE parties' own commercial use. NOT this category: routine disclosure to service providers/processors, affiliates, legal authorities, or transfers in a merger/acquisition — that is ordinary operation (OTHER), not a sale.
-- CONTENT_LICENSE_BROAD: licenses to user-generated content.
-- ACCOUNT_TERMINATION: account suspension or termination.
-- TRACKING_THIRD_PARTY: tracking, profiling, targeted advertising.
-- NOTICE_OF_CHANGE: advance notice before terms change.
-- OTHER: anything else, including benign boilerplate. When in doubt, OTHER.
+Question 1 — category. The single TOPIC the clause is mainly about. Pick exactly ONE key from this list (use OTHER if nothing fits well):
+
+${categoryReference()}
 
 Question 2 — stance. Whose side the clause is on:
-- "hostile": it IMPOSES the practice on users (forces arbitration, sells data, claims a perpetual license, allows termination for any reason, changes terms silently).
-- "protective": it DENIES or LIMITS the practice, or grants users a right or control ("we do NOT sell your data", "we will notify you 30 days before changes", "you can delete your data", "you keep ownership of your content").
+- "hostile": it IMPOSES the practice on users (forces arbitration, sells data, trains AI on your content, claims a broad license, terminates for any reason, makes cancelling hard, changes terms silently).
+- "protective": it DENIES or LIMITS the practice, or grants users a right or control ("we do NOT sell your data", "you can opt out of AI training", "we notify you 30 days before changes", "you can delete your data", "you keep ownership of your content", "cancel anytime in one click").
 - "neutral": it merely mentions or defines the topic without imposing or denying anything.
 
-CRITICAL: a clause being ABOUT a hostile topic does not make it hostile. Negations matter. "We do not sell your personal information" is category DATA_SALE with stance "protective" — it is GOOD for users. Classify what the clause explicitly says; do not infer hostility that is not in the text.
+CRITICAL: a clause being ABOUT a hostile topic does not make it hostile. Negations and user rights matter. "We do not sell your personal information" is DATA_SALE / protective — GOOD for users. Classify what the clause explicitly says; never infer hostility that is not in the text. Routine disclosure to service providers/processors, affiliates, or legal authorities is ordinary operation → OTHER, not DATA_SALE.
 
 Other rules:
+- Pick the most specific applicable category. If a clause genuinely covers two topics, choose the most user-significant one.
 - summary: 1–2 sentences a non-lawyer understands, stating what this clause means for the user. Neutral tone.
-- confidence: integer 0–100 for how certain you are about the category AND stance. Use below 70 when the clause only partially fits.
+- confidence: integer 0–100 for how certain you are about the category AND stance together. Use below 70 when the clause only partially fits.
 
 Examples:
-- "We do not sell your personal information to third parties. You can manage your privacy choices in settings." → {"category":"DATA_SALE","stance":"protective","confidence":95}
-- "We share personal data with our affiliates and the service providers that host our infrastructure, and may disclose it when required by law." → {"category":"OTHER","stance":"neutral","confidence":90} (processor/affiliate/legal disclosure is not a sale)
-- "Any dispute shall be resolved by binding arbitration. You waive your right to participate in a class action." → {"category":"FORCED_ARBITRATION","stance":"hostile","confidence":98}
-- "We may revise these Terms at any time without notice to you." → {"category":"UNILATERAL_CHANGE","stance":"hostile","confidence":95}
+- "We do not sell your personal information to third parties." → {"category":"DATA_SALE","stance":"protective","confidence":96}
+- "We share personal data with the service providers that host our infrastructure, and may disclose it when required by law." → {"category":"OTHER","stance":"neutral","confidence":90}
+- "Any dispute shall be resolved by binding arbitration; you waive any class action." → {"category":"FORCED_ARBITRATION","stance":"hostile","confidence":98}
+- "We may use content you submit to train and improve our machine learning models." → {"category":"AI_TRAINING","stance":"hostile","confidence":95}
+- "You can opt out of having your data used to train our models in Settings." → {"category":"AI_TRAINING","stance":"protective","confidence":92}
+- "To cancel you must call us during business hours and speak to a retention agent." → {"category":"HARD_TO_CANCEL","stance":"hostile","confidence":88}
 - "In this agreement, 'Service' refers to the website and apps." → {"category":"OTHER","stance":"neutral","confidence":99}
 
 Input: numbered clauses. Respond with JSON:
-{"results":[{"i":<clause number>,"category":"...","stance":"...","summary":"...","confidence":0-100}, ...]}
+{"results":[{"i":<clause number>,"category":"<KEY>","stance":"hostile|protective|neutral","summary":"...","confidence":0-100}, ...]}
 Return exactly one result per clause, in order.`;
 
 interface LlmVerdict {
@@ -87,11 +101,13 @@ interface ClassifiedClause {
 }
 
 function sanitizeVerdict(v: LlmVerdict): ClassifiedClause {
-  const category = CATEGORIES.includes(v.category as ClauseCategory)
-    ? (v.category as ClauseCategory)
+  const rawCategory = String(v.category ?? "").trim().toUpperCase();
+  const category = CATEGORIES.includes(rawCategory as ClauseCategory)
+    ? (rawCategory as ClauseCategory)
     : "OTHER";
-  const stance = STANCES.includes(v.stance as ClauseStance)
-    ? (v.stance as ClauseStance)
+  const rawStance = String(v.stance ?? "").trim().toLowerCase();
+  const stance = STANCES.includes(rawStance as ClauseStance)
+    ? (rawStance as ClauseStance)
     : "neutral";
   return {
     category,
@@ -167,7 +183,6 @@ function toRow(hash: string, verdict: ClassifiedClause): Classification {
     severity: deriveSeverity(verdict.category, verdict.stance),
     plain_english_summary: verdict.plain_english_summary,
     confidence_score: verdict.confidence_score,
-    taxonomy_version: TAXONOMY_VERSION,
     model: REASONING_MODEL,
     admin_approved: false,
     created_at: new Date().toISOString(),
@@ -191,29 +206,21 @@ export async function classifyClauses(
   }
   if (unique.size === 0) return { byHash, llmCalls: 0 };
 
-  // Cache lookup — rows from an older taxonomy version count as misses.
+  // Cache lookup — a clause is classified once and reused globally by hash.
   const { data: cached, error } = await db
     .from("classifications")
     .select("*")
     .in("clause_hash", [...unique.keys()]);
   if (error) throw new Error(`classifications lookup failed: ${error.message}`);
-  let stale = 0;
   for (const row of cached ?? []) {
-    if ((row.taxonomy_version ?? 1) >= TAXONOMY_VERSION) {
-      byHash.set(row.clause_hash, row as Classification);
-    } else {
-      stale++;
-    }
+    byHash.set(row.clause_hash, row as Classification);
   }
 
   const misses = [...unique]
     .filter(([hash]) => !byHash.has(hash))
     .map(([hash, content]) => ({ hash, content }));
   if (misses.length > 0) {
-    log(
-      `Classification cache: ${byHash.size} hits, ${misses.length} misses → LLM` +
-        (stale > 0 ? ` (${stale} from an older taxonomy)` : "")
-    );
+    log(`Classification cache: ${byHash.size} hits, ${misses.length} misses → LLM`);
   } else {
     log(`Classification cache: all ${byHash.size} clauses already classified ($0)`);
   }
@@ -260,9 +267,8 @@ export async function classifyClauses(
 
 /**
  * Formatting-only changes: carry the old hash's classification over to the
- * new hash so the grade is unaffected and the LLM is never called. Stale
- * taxonomy versions are not copied — the caller should send those clauses
- * through classifyClauses instead. Returns the new hashes that were copied.
+ * new hash so the grade is unaffected and the LLM is never called. Returns
+ * the new hashes that were copied.
  */
 export async function copyClassifications(
   db: SupabaseClient,
@@ -273,8 +279,7 @@ export async function copyClassifications(
   const { data: oldRows, error } = await db
     .from("classifications")
     .select("*")
-    .in("clause_hash", pairs.map((p) => p.oldHash))
-    .gte("taxonomy_version", TAXONOMY_VERSION);
+    .in("clause_hash", pairs.map((p) => p.oldHash));
   if (error) throw new Error(`classification copy lookup failed: ${error.message}`);
 
   const oldByHash = new Map((oldRows ?? []).map((r) => [r.clause_hash, r]));

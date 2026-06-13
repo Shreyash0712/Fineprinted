@@ -73,7 +73,7 @@ export function ServiceExplorer({ services }: { services: Service[] }) {
             setDisplayLimit(24);
           }}
           placeholder="Search services… (e.g. spotify.com)"
-          className="w-full rounded-2xl border border-zinc-200 bg-white py-4 pl-12 pr-4 text-base shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-650 dark:focus:border-accent/60 dark:focus:bg-zinc-900"
+          className="w-full rounded-2xl border border-zinc-200 bg-white py-4 pl-12 pr-4 text-base shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-700 dark:focus:border-accent/60 dark:focus:bg-zinc-900"
         />
       </div>
 
@@ -104,7 +104,7 @@ export function ServiceExplorer({ services }: { services: Service[] }) {
                     <GradeBadge grade={s.current_grade} size="lg" />
                     <div className="min-w-0 flex-1 pt-0.5">
                       <span className="block truncate text-lg font-semibold">{s.name}</span>
-                      <span className="block truncate text-sm text-zinc-550 dark:text-zinc-400">
+                      <span className="block truncate text-sm text-zinc-600 dark:text-zinc-400">
                         {s.root_domain}
                       </span>
                     </div>
@@ -142,7 +142,7 @@ export function ServiceExplorer({ services }: { services: Service[] }) {
             <div className="flex justify-center pt-2">
               <button
                 onClick={() => setDisplayLimit((prev) => prev + 24)}
-                className="rounded-xl border border-zinc-200 bg-white px-6 py-3 text-sm font-semibold text-zinc-700 shadow-sm transition hover:bg-zinc-50 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-305 dark:hover:bg-zinc-850 dark:hover:text-zinc-100 cursor-pointer"
+                className="rounded-xl border border-zinc-200 bg-white px-6 py-3 text-sm font-semibold text-zinc-700 shadow-sm transition hover:bg-zinc-50 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-zinc-100 cursor-pointer"
               >
                 Load more services
               </button>

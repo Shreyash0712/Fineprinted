@@ -28,7 +28,7 @@ export function SiteHeader() {
         {/* Mobile menu toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex sm:hidden items-center justify-center p-2 rounded-lg text-zinc-550 hover:bg-zinc-150/40 dark:text-zinc-450 dark:hover:bg-zinc-800/40 transition focus:outline-none cursor-pointer"
+          className="flex sm:hidden items-center justify-center p-2 rounded-lg text-zinc-600 hover:bg-zinc-200/40 dark:text-zinc-500 dark:hover:bg-zinc-800/40 transition focus:outline-none cursor-pointer"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -49,28 +49,28 @@ export function SiteHeader() {
           <Link
             href="/browse"
             onClick={() => setIsOpen(false)}
-            className="rounded-xl py-3 text-zinc-650 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
+            className="rounded-xl py-3 text-zinc-700 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
           >
             Browse
           </Link>
           <Link
             href="/request"
             onClick={() => setIsOpen(false)}
-            className="rounded-xl py-3 text-zinc-650 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
+            className="rounded-xl py-3 text-zinc-700 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
           >
             Request
           </Link>
           <Link
             href="/about"
             onClick={() => setIsOpen(false)}
-            className="rounded-xl py-3 text-zinc-650 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
+            className="rounded-xl py-3 text-zinc-700 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
           >
             About
           </Link>
           <Link
             href="/saved"
             onClick={() => setIsOpen(false)}
-            className="rounded-xl py-3 text-zinc-650 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
+            className="rounded-xl py-3 text-zinc-700 dark:text-zinc-300 hover:bg-accent-light dark:hover:bg-[#1E1A14] transition text-sm"
           >
             Saved
           </Link>

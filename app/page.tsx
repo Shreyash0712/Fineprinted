@@ -28,12 +28,12 @@ export default async function Home() {
               agreeing to
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-zinc-650 dark:text-zinc-400 leading-relaxed font-medium">
+          <p className="mx-auto mt-6 max-w-2xl text-base text-zinc-700 dark:text-zinc-400 leading-relaxed font-medium">
             &ldquo;I have read and agree to the Terms&rdquo; is the biggest lie on
             the internet. Fineprinted reads the legal fine print of the services
             you use, flags the clauses that work against you, and tells you,
             in plain English, when the rules quietly change.{" "}
-            <span className="text-zinc-550 dark:text-zinc-500 font-normal block mt-2">
+            <span className="text-zinc-600 dark:text-zinc-500 font-normal block mt-2">
               Note: This is a fully automated AI analysis. AI can make mistakes.
             </span>
           </p>
@@ -50,11 +50,11 @@ export default async function Home() {
             {/* Left Mockup Document */}
             <div className="flex-1 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 flex flex-col justify-between">
               <div>
-                <div className="flex items-center gap-2 border-b border-zinc-150 pb-3 dark:border-zinc-800">
+                <div className="flex items-center gap-2 border-b border-zinc-200 pb-3 dark:border-zinc-800">
                   <div className="h-2.5 w-2.5 rounded-full bg-red-500" />
                   <div className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
                   <div className="h-2.5 w-2.5 rounded-full bg-green-500" />
-                  <span className="ml-2 text-xs font-mono text-zinc-400 dark:text-zinc-550">terms_of_service.md</span>
+                  <span className="ml-2 text-xs font-mono text-zinc-400 dark:text-zinc-600">terms_of_service.md</span>
                 </div>
                 <div className="mt-4 space-y-3 font-mono text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500">
                   <p>1.1 OVERVIEW. This Agreement governs your use of the Service...</p>
@@ -76,17 +76,17 @@ export default async function Home() {
             {/* Right Plain English Card */}
             <div className="flex-1 rounded-2xl border border-accent/20 bg-accent-light p-6 shadow-md dark:border-accent/30 dark:bg-[#1E1A14] flex flex-col justify-between">
               <div>
-                <div className="inline-block rounded-full bg-red-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-red-650 dark:text-red-400">
-                  Critical deduction
+                <div className="inline-block rounded-full bg-orange-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-orange-700 dark:text-orange-400">
+                  Major deduction
                 </div>
                 <h4 className="mt-3 text-base font-bold font-heading">Silent rule changes</h4>
-                <p className="mt-2 text-xs leading-relaxed text-zinc-650 dark:text-zinc-400">
+                <p className="mt-2 text-xs leading-relaxed text-zinc-700 dark:text-zinc-400">
                   The service can rewrite the terms at any time without telling you. Continued use means automatic agreement.
                 </p>
               </div>
               <div className="mt-4 border-t border-accent/10 pt-3 flex items-center justify-between text-[10px] text-accent">
                 <span>Category: UNILATERAL_CHANGE</span>
-                <span className="font-bold">-30 Points</span>
+                <span className="font-bold">−10 points</span>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default async function Home() {
             <Step
               n={1}
               title="We watch the documents"
-              body="Every tracked service's Terms of Service and Privacy Policy is fetched, normalized, and compared against the last version, down to the individual clause."
+              body="Every tracked service's Terms of Service and Privacy Policy is collected, normalized, and compared against the last version, down to the individual clause."
             />
             <Step
               n={2}
@@ -163,7 +163,7 @@ export default async function Home() {
         {/* CTA */}
         <section className="mt-10 sm:mt-14 overflow-hidden rounded-3xl border border-accent/10 bg-gradient-to-br from-accent-light/40 via-[#FAF9F5]/40 to-accent-light/10 p-10 text-center dark:border-accent/15 dark:from-[#1C1813]/20 dark:via-[#0B0B0C] dark:to-accent-light/5">
           <h2 className="text-2xl font-bold tracking-tight font-heading">Missing a service you use?</h2>
-          <p className="mx-auto mt-2 max-w-xl text-zinc-550 dark:text-zinc-400">
+          <p className="mx-auto mt-2 max-w-xl text-zinc-600 dark:text-zinc-400">
             Tell us what to track. Requests are voted on by other users and the
             most-wanted services get analyzed first.
           </p>
@@ -196,7 +196,7 @@ function Step({ n, title, body }: { n: number; title: string; body: string }) {
         {n}
       </span>
       <h3 className="mt-4 font-semibold font-heading">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-zinc-655 dark:text-zinc-400">{body}</p>
+      <p className="mt-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-400">{body}</p>
     </div>
   );
 }
@@ -230,7 +230,7 @@ function FactCard({
       <h3 className="mt-2 font-semibold text-base font-heading">{title}</h3>
       <p
         className={`mt-2 text-xs leading-relaxed ${
-          highlight ? "text-zinc-150" : "text-zinc-500 dark:text-zinc-400"
+          highlight ? "text-zinc-200" : "text-zinc-500 dark:text-zinc-400"
         }`}
       >
         {description}

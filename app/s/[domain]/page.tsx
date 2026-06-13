@@ -28,13 +28,13 @@ export async function generateStaticParams(): Promise<{ domain: string }[]> {
 
 const severityBadge: Record<string, string> = {
   critical:
-    "bg-red-500/10 text-red-750 ring-red-650/25 dark:bg-red-500/15 dark:text-red-300 dark:ring-red-500/30",
+    "bg-red-500/10 text-red-800 ring-red-700/25 dark:bg-red-500/15 dark:text-red-300 dark:ring-red-500/30",
   major:
-    "bg-orange-500/10 text-orange-755 ring-orange-650/25 dark:bg-orange-500/15 dark:text-orange-300 dark:ring-orange-500/30",
+    "bg-orange-500/10 text-orange-800 ring-orange-700/25 dark:bg-orange-500/15 dark:text-orange-300 dark:ring-orange-500/30",
   minor:
-    "bg-yellow-500/10 text-yellow-755 ring-yellow-655/25 dark:bg-yellow-500/15 dark:text-yellow-300 dark:ring-yellow-500/30",
+    "bg-yellow-500/10 text-yellow-800 ring-yellow-700/25 dark:bg-yellow-500/15 dark:text-yellow-300 dark:ring-yellow-500/30",
   positive:
-    "bg-emerald-500/10 text-emerald-750 ring-emerald-650/25 dark:bg-emerald-500/15 dark:text-emerald-300 dark:ring-emerald-500/30",
+    "bg-emerald-500/10 text-emerald-800 ring-emerald-700/25 dark:bg-emerald-500/15 dark:text-emerald-300 dark:ring-emerald-500/30",
 };
 
 function formatDate(iso: string | null): string | null {
@@ -141,14 +141,14 @@ export default async function ServicePage({
                       <ul className="space-y-4 border-t border-zinc-100 p-4 dark:border-zinc-800">
                         {group.clauses.map((clause, i) => (
                           <li key={i}>
-                            <p className="text-sm leading-relaxed text-zinc-705 dark:text-zinc-300">
+                            <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
                               {clause.summary}
                             </p>
                             <details className="mt-2">
                               <summary className="cursor-pointer text-xs text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300">
                                 Show original clause · {clause.document_name}
                               </summary>
-                              <blockquote className="mt-2 whitespace-pre-wrap border-l-2 border-accent/30 pl-3 text-xs leading-relaxed text-zinc-650 dark:border-accent/20 dark:text-zinc-400">
+                              <blockquote className="mt-2 whitespace-pre-wrap border-l-2 border-accent/30 pl-3 text-xs leading-relaxed text-zinc-700 dark:border-accent/20 dark:text-zinc-400">
                                 {clause.excerpt}
                               </blockquote>
                             </details>
@@ -159,8 +159,9 @@ export default async function ServicePage({
                   ))}
                 </div>
                 <p className="mt-3 text-xs text-zinc-400 dark:text-zinc-500">
-                  Each category counts once toward the score, no matter how many clauses
-                  repeat it.
+                  Each category counts once toward the score, and extra issues of the
+                  same kind have diminishing impact — the grade reflects the breadth of
+                  problems, not repetition.
                 </p>
               </section>
             )}
@@ -191,7 +192,7 @@ export default async function ServicePage({
                         )}
                       </div>
                       {e.summary && (
-                        <p className="mt-1.5 text-sm leading-relaxed text-zinc-705 dark:text-zinc-300">
+                        <p className="mt-1.5 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
                           {e.summary}
                         </p>
                       )}

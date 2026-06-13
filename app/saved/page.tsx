@@ -49,7 +49,7 @@ export default function SavedPage() {
         <div className="max-w-3xl space-y-6">
           <div>
             <h1 className="text-2xl font-bold font-heading">Saved services</h1>
-            <p className="mt-1 text-sm text-zinc-550 dark:text-zinc-400">
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
               Your watchlist, tied to this browser, no account needed. Policy changes
               are monitored and explained automatically by AI. AI can make mistakes.
             </p>
@@ -114,8 +114,8 @@ export default function SavedPage() {
                               <span
                                 className={`ml-1.5 rounded px-1.5 py-0.5 tabular-nums text-xs font-semibold ${
                                   e.severity_score < 0
-                                    ? "bg-red-500/10 text-red-750 dark:bg-red-500/15 dark:text-red-305"
-                                    : "bg-emerald-500/10 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-305"
+                                    ? "bg-red-500/10 text-red-800 dark:bg-red-500/15 dark:text-red-300"
+                                    : "bg-emerald-500/10 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300"
                                 }`}
                               >
                                 {e.severity_score > 0 ? "+" : ""}
@@ -124,7 +124,7 @@ export default function SavedPage() {
                             )}
                           </span>
                           {e.ai_summary && (
-                            <p className="mt-0.5 leading-relaxed text-zinc-650 dark:text-zinc-300">{e.ai_summary}</p>
+                            <p className="mt-0.5 leading-relaxed text-zinc-700 dark:text-zinc-300">{e.ai_summary}</p>
                           )}
                         </li>
                       ))}

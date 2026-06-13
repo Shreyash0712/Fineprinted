@@ -12,53 +12,60 @@ export const metadata: Metadata = {
 
 const TAXONOMY: { tag: string; label: string; points: string; tone: string; desc: string }[] = [
   {
-    tag: "FORCED_ARBITRATION",
-    label: "Forced arbitration",
-    points: "−30",
-    tone: "text-red-600 dark:text-red-400",
-    desc: "You waive your right to a trial by jury or to join a class action. Disputes go to an arbitrator, who is often one the company picks.",
-  },
-  {
-    tag: "UNILATERAL_CHANGE",
-    label: "Silent rule changes",
-    points: "−30",
-    tone: "text-red-600 dark:text-red-400",
-    desc: "The service can rewrite the terms at any time without telling you. Continued use means automatic agreement.",
-  },
-  {
     tag: "DATA_SALE",
     label: "Data sale",
-    points: "−30",
+    points: "−15",
     tone: "text-red-600 dark:text-red-400",
-    desc: "Your personal data is explicitly sold or shared with data brokers.",
+    desc: "Your personal data is sold outright or handed to data brokers for their own use.",
   },
   {
-    tag: "CONTENT_LICENSE_BROAD",
-    label: "Broad content license",
-    points: "−15",
-    tone: "text-orange-600 dark:text-orange-400",
-    desc: "The service claims a perpetual, often irrevocable license to everything you upload or create.",
+    tag: "FORCED_ARBITRATION",
+    label: "Forced arbitration",
+    points: "−12",
+    tone: "text-red-600 dark:text-red-400",
+    desc: "You waive your right to sue in court or join a class action; disputes go to private arbitration.",
   },
   {
-    tag: "ACCOUNT_TERMINATION",
-    label: "Arbitrary termination",
-    points: "−15",
+    tag: "BIOMETRIC_DATA",
+    label: "Biometric collection",
+    points: "−10",
     tone: "text-orange-600 dark:text-orange-400",
-    desc: "Your account, and everything in it, can be terminated at any time, for any reason or none.",
+    desc: "They collect biometric identifiers like your face, voice, or fingerprints.",
+  },
+  {
+    tag: "CONTENT_OWNERSHIP",
+    label: "Content ownership grab",
+    points: "−10",
+    tone: "text-orange-600 dark:text-orange-400",
+    desc: "They claim ownership, or a broad perpetual license, over everything you create and upload.",
+  },
+  {
+    tag: "AI_TRAINING",
+    label: "AI training on your data",
+    points: "−8",
+    tone: "text-orange-600 dark:text-orange-400",
+    desc: "Your content and personal data are used to train their machine-learning models.",
+  },
+  {
+    tag: "HARD_TO_CANCEL",
+    label: "Hard to cancel",
+    points: "−8",
+    tone: "text-orange-600 dark:text-orange-400",
+    desc: "Cancelling is deliberately difficult: phone-only, buried, or guarded by retention hoops.",
   },
   {
     tag: "TRACKING_THIRD_PARTY",
     label: "Third-party tracking",
-    points: "−5",
+    points: "−6",
     tone: "text-yellow-600 dark:text-yellow-400",
-    desc: "Extensive tracking and sharing with third parties for targeted advertising.",
+    desc: "You're tracked across the web and profiled for targeted advertising.",
   },
   {
-    tag: "NOTICE_OF_CHANGE",
-    label: "Advance notice promise",
-    points: "+5",
+    tag: "DATA_DELETION",
+    label: "Right to delete your data",
+    points: "+6",
     tone: "text-emerald-600 dark:text-emerald-400",
-    desc: "A pro-user clause: the service guarantees 30+ days notice before terms change.",
+    desc: "A pro-user right: you can ask the service to delete your personal data.",
   },
 ];
 
@@ -83,7 +90,7 @@ export default function AboutPage() {
               <span className="text-accent dark:text-[#D7B88F]">So we built something that does.</span>
             </h1>
 
-            <div className="mt-8 space-y-5 leading-relaxed text-zinc-650 dark:text-zinc-350">
+            <div className="mt-8 space-y-5 leading-relaxed text-zinc-700 dark:text-zinc-400">
               <p>
                 Studies consistently show that fewer than 1% of users read terms of
                 service agreements, and the ones who try would need weeks per year
@@ -116,11 +123,14 @@ export default function AboutPage() {
           {/* Grading */}
           <section id="grading" className="scroll-mt-24">
             <h2 className="text-2xl font-bold tracking-tight font-heading">How grading works</h2>
-            <p className="mt-3 leading-relaxed text-zinc-655 dark:text-zinc-400">
+            <p className="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-400">
               Every service starts with <strong className="text-zinc-900 dark:text-zinc-100">100 points</strong>.
-              Each distinct hostile pattern found in its active documents deducts
-              points; genuinely pro-user clauses earn some back. The final score
-              maps to a letter grade:
+              Each kind of hostile clause deducts points, and genuinely pro-user
+              clauses earn some back. Piling on more of the same kind of problem
+              has diminishing effect, and a few of the most serious practices, like
+              forced arbitration or selling your data, cap the best grade a service
+              can earn no matter what else it does. The final score maps to a
+              letter grade:
             </p>
             <ul className="mt-6 space-y-3">
               {GRADES.map(({ grade, range, desc }) => (
@@ -141,10 +151,12 @@ export default function AboutPage() {
           {/* Taxonomy */}
           <section>
             <h2 className="text-2xl font-bold tracking-tight font-heading">What we look for</h2>
-            <p className="mt-3 leading-relaxed text-zinc-655 dark:text-zinc-400">
+            <p className="mt-3 leading-relaxed text-zinc-700 dark:text-zinc-400">
               The AI doesn&apos;t free-style its judgments. Every clause is
               classified against a fixed taxonomy with fixed point values, so
-              grades are consistent and comparable across services:
+              grades are consistent and comparable across services. These are
+              some of the most consequential patterns; the full taxonomy covers
+              dozens more, from biometrics to dark-pattern cancellations:
             </p>
             <ul className="mt-6 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white shadow-sm dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900/50">
               {TAXONOMY.map((t) => (
@@ -154,20 +166,20 @@ export default function AboutPage() {
                   </span>
                   <span>
                     <span className="block text-sm font-semibold font-heading">{t.label}</span>
-                    <span className="mt-0.5 block text-sm leading-relaxed text-zinc-650 dark:text-zinc-400">
+                    <span className="mt-0.5 block text-sm leading-relaxed text-zinc-700 dark:text-zinc-400">
                       {t.desc}
                     </span>
                   </span>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-zinc-650 dark:text-zinc-405">
+            <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-400">
               Direction matters: deductions only apply when a clause{" "}
               <em>imposes</em> a practice. A clause that explicitly rules one out,
               like &ldquo;we do <strong>not</strong> sell your personal
-              data&rdquo;, counts <span className="font-mono text-emerald-600 dark:text-emerald-400">+5</span>{" "}
-              in the service&apos;s favor instead. Each pattern counts once per
-              service, no matter how many clauses repeat it.
+              data&rdquo;, counts <span className="font-mono text-emerald-600 dark:text-emerald-400">in your favor</span>{" "}
+              instead. Each pattern counts once per service, no matter how many
+              clauses repeat it.
             </p>
           </section>
 
@@ -195,8 +207,8 @@ export default function AboutPage() {
             </ul>
           </section>
 
-          <section className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-relaxed text-zinc-505 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-400">
-            <strong className="text-zinc-700 dark:text-zinc-305">A note on limits:</strong>{" "}
+          <section className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-relaxed text-zinc-500 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-400">
+            <strong className="text-zinc-700 dark:text-zinc-300">A note on limits:</strong>{" "}
             Fineprinted is a fully automated AI analysis, which can make mistakes,
             and it is informational, not legal advice. Grades reflect the
             patterns detected in public documents at the time of analysis, and a

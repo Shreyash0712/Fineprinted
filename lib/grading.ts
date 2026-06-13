@@ -1,119 +1,54 @@
-import type {
+import {
+  BASE_SCORE,
+  categoryLabel,
+  categoryPoints,
+  categorySummary,
+  CONFIDENCE_REVIEW_THRESHOLD,
+  CRITICAL_GRADE_CEILINGS,
+  deriveSeverity,
+  getCategoryDef,
+  GRADE_SCALE,
+  GROUP_DEFS,
+  GROUP_WEIGHT_LADDER,
+  isCriticalCategory,
+  type ClauseGroup,
+  type ClauseStance,
+} from "./taxonomy";
+import type { Classification, Grade } from "./types";
+
+/**
+ * Grading engine (spec section 4). All the *values* live in lib/taxonomy.ts;
+ * this file is the *math* that combines them. GRADING.md explains it in prose.
+ *
+ * Pipeline, per service:
+ *   1. Start from BASE_SCORE (100).
+ *   2. Keep only classifications that affect the grade (confident or approved)
+ *      and actually take a side (category ≠ OTHER, stance ≠ neutral).
+ *   3. Dedupe by category — five arbitration clauses are one arbitration
+ *      problem; a category's most impactful clause wins (hostile beats
+ *      protective on the same topic).
+ *   4. Combine within each thematic GROUP with diminishing returns (the worst
+ *      issue in a domain counts full, extras count for less) and clamp the
+ *      group to its cap.
+ *   5. Sum the groups → adjust the score.
+ *   6. Critical practices (forced arbitration, data sale) cap the *best*
+ *      grade achievable, regardless of how many protections offset the points.
+ *   7. Clamp to 0–100; convert to a letter.
+ *
+ * Re-exported from taxonomy for convenience so callers import one module.
+ */
+export {
+  CONFIDENCE_REVIEW_THRESHOLD,
+  deriveSeverity,
+  getCategoryDef,
+  categoryPoints,
+  GROUP_DEFS,
+};
+
+type Scoreable = Pick<
   Classification,
-  ClauseCategory,
-  ClauseSeverity,
-  ClauseStance,
-  Grade,
-} from "./types";
-
-/**
- * Grading engine (spec section 4): every service starts at 100 points,
- * flagged clauses apply deductions, positive clauses add points (capped
- * at 100), and the final score converts to a letter grade.
- *
- * The category is the clause's *topic*; the stance decides the sign.
- * "We sell your data" (DATA_SALE, hostile) deducts points; "we do NOT
- * sell your data" (DATA_SALE, protective) adds them. Severity is always
- * derived here from (category, stance) — never trusted from the model.
- */
-
-/**
- * Bump when the taxonomy/prompt changes in a way that invalidates cached
- * classifications. Rows with an older version are treated as cache misses
- * and re-evaluated on the next pipeline run.
- *
- * v2: added stance (polarity) — v1 scored protective clauses like
- * "we do not sell your data" as if they imposed the practice.
- * v3: narrowed DATA_SALE to actual selling/brokering — v2 scored routine
- * disclosure to service providers/affiliates (universal boilerplate) as
- * a critical data sale.
- */
-export const TAXONOMY_VERSION = 3;
-
-export const SEVERITY_POINTS: Record<ClauseSeverity, number> = {
-  critical: -30,
-  major: -15,
-  minor: -5,
-  positive: 5,
-  neutral: 0,
-};
-
-/** Severity when the clause *imposes* the practice (hostile stance). */
-export const CATEGORY_SEVERITY: Record<ClauseCategory, ClauseSeverity> = {
-  FORCED_ARBITRATION: "critical",
-  UNILATERAL_CHANGE: "critical",
-  DATA_SALE: "critical",
-  CONTENT_LICENSE_BROAD: "major",
-  ACCOUNT_TERMINATION: "major",
-  TRACKING_THIRD_PARTY: "minor",
-  NOTICE_OF_CHANGE: "positive",
-  OTHER: "neutral",
-};
-
-export function deriveSeverity(
-  category: ClauseCategory,
-  stance: ClauseStance
-): ClauseSeverity {
-  if (category === "OTHER" || stance === "neutral") return "neutral";
-  // NOTICE_OF_CHANGE is inherently a user protection regardless of phrasing.
-  if (stance === "protective" || category === "NOTICE_OF_CHANGE") return "positive";
-  return CATEGORY_SEVERITY[category];
-}
-
-/** Labels when the clause imposes the practice. */
-export const CATEGORY_LABELS: Record<ClauseCategory, string> = {
-  FORCED_ARBITRATION: "Forced Arbitration",
-  UNILATERAL_CHANGE: "Unilateral Changes",
-  DATA_SALE: "Data Sale",
-  CONTENT_LICENSE_BROAD: "Broad Content License",
-  ACCOUNT_TERMINATION: "Arbitrary Account Termination",
-  TRACKING_THIRD_PARTY: "Third-Party Tracking",
-  NOTICE_OF_CHANGE: "Notice Before Changes",
-  OTHER: "Other",
-};
-
-/** Labels when the clause denies the practice or protects the user. */
-export const PROTECTIVE_LABELS: Record<ClauseCategory, string> = {
-  FORCED_ARBITRATION: "No Forced Arbitration",
-  UNILATERAL_CHANGE: "No Silent Rule Changes",
-  DATA_SALE: "No Data Sale",
-  CONTENT_LICENSE_BROAD: "You Keep Your Content",
-  ACCOUNT_TERMINATION: "Fair Account Termination",
-  TRACKING_THIRD_PARTY: "Limited Tracking",
-  NOTICE_OF_CHANGE: "Notice Before Changes",
-  OTHER: "Other",
-};
-
-export function classificationLabel(
-  c: Pick<Classification, "category" | "severity">
-): string {
-  return c.severity === "positive"
-    ? PROTECTIVE_LABELS[c.category]
-    : CATEGORY_LABELS[c.category];
-}
-
-/** One-line plain-English takeaways for the "at a glance" summary. */
-export const HOSTILE_SUMMARY_LINES: Partial<Record<ClauseCategory, string>> = {
-  FORCED_ARBITRATION: "You give up your right to sue or join a class action.",
-  UNILATERAL_CHANGE: "The rules can change without telling you.",
-  DATA_SALE: "Your personal data can be sold or shared with brokers.",
-  CONTENT_LICENSE_BROAD: "They keep a broad license to content you create.",
-  ACCOUNT_TERMINATION: "Your account can be closed at any time, for any reason.",
-  TRACKING_THIRD_PARTY: "You are tracked for third-party advertising.",
-};
-
-export const PROTECTIVE_SUMMARY_LINES: Partial<Record<ClauseCategory, string>> = {
-  FORCED_ARBITRATION: "You keep your right to go to court.",
-  UNILATERAL_CHANGE: "Terms won't change behind your back.",
-  DATA_SALE: "Says it does not sell your personal data.",
-  CONTENT_LICENSE_BROAD: "You keep ownership and control of your content.",
-  ACCOUNT_TERMINATION: "Fair process before your account is closed.",
-  TRACKING_THIRD_PARTY: "Tracking is limited or can be opted out of.",
-  NOTICE_OF_CHANGE: "Promises advance notice before terms change.",
-};
-
-/** Below this confidence, a classification needs admin approval to count. */
-export const CONFIDENCE_REVIEW_THRESHOLD = 70;
+  "category" | "stance" | "severity" | "confidence_score" | "admin_approved"
+>;
 
 /** A classification only affects the grade if confident or admin-approved. */
 export function affectsGrade(
@@ -123,68 +58,176 @@ export function affectsGrade(
 }
 
 /** True for clauses worth showing to users (not OTHER/neutral noise). */
-export function isFlagged(
-  c: Pick<Classification, "category" | "severity">
-): boolean {
+export function isFlagged(c: Pick<Classification, "category" | "severity">): boolean {
   return c.category !== "OTHER" && c.severity !== "neutral";
 }
 
-/**
- * Compute the 0–100 score for a set of active clause classifications.
- * Each distinct (category, severity) counts once — five arbitration
- * clauses are not five times worse than one, and a hostile clause and a
- * protective clause on the same topic each count.
- */
-export function computeScore(
-  classifications: Pick<
-    Classification,
-    "category" | "severity" | "confidence_score" | "admin_approved"
-  >[]
-): number {
-  let score = 100;
-  for (const points of dedupedPoints(classifications)) score += points;
-  return Math.max(0, Math.min(100, score));
+/** Stance of a classification, tolerating older rows that predate the field. */
+function stanceOf(c: Pick<Classification, "stance" | "severity">): ClauseStance {
+  if (c.stance) return c.stance;
+  return c.severity === "positive" ? "protective" : "hostile";
+}
+
+/** Card/group title for a classification. */
+export function classificationLabel(
+  c: Pick<Classification, "category" | "stance" | "severity">
+): string {
+  return categoryLabel(c.category, stanceOf(c));
+}
+
+/** One-line "at a glance" takeaway for a classification. */
+export function classificationSummary(
+  c: Pick<Classification, "category" | "stance" | "severity">
+): string {
+  return categorySummary(c.category, stanceOf(c));
+}
+
+/** Signed points a single classification is worth (before dedupe/weights). */
+export function pointsFor(c: Pick<Classification, "category" | "stance" | "severity">): number {
+  return categoryPoints(c.category, stanceOf(c));
+}
+
+// ---------------------------------------------------------------------------
+// Core combination
+// ---------------------------------------------------------------------------
+
+interface CategoryEntry {
+  category: string;
+  group: ClauseGroup;
+  points: number;
 }
 
 /**
- * Signed point total for a set of classifications with the same
- * (category, severity) dedupe rule as computeScore — used for change-event
- * deltas, where +5/−30 chips must agree with how the grade moves.
+ * One entry per category, keeping its most impactful clause: among clauses on
+ * the same topic, a hostile one outweighs a protective one; ties break to the
+ * larger magnitude.
  */
-export function signedPoints(
-  classifications: Pick<
-    Classification,
-    "category" | "severity" | "confidence_score" | "admin_approved"
-  >[]
-): number {
-  let total = 0;
-  for (const points of dedupedPoints(classifications)) total += points;
-  return total;
-}
-
-function dedupedPoints(
-  classifications: Pick<
-    Classification,
-    "category" | "severity" | "confidence_score" | "admin_approved"
-  >[]
-): number[] {
-  const seen = new Set<string>();
-  const out: number[] = [];
+function dedupeByCategory(classifications: Scoreable[]): CategoryEntry[] {
+  const best = new Map<string, CategoryEntry>();
   for (const c of classifications) {
     if (!affectsGrade(c)) continue;
-    if (c.category === "OTHER" || c.severity === "neutral") continue;
-    const key = `${c.category}:${c.severity}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(SEVERITY_POINTS[c.severity]);
+    if (c.category === "OTHER" || c.stance === "neutral") continue;
+    const points = categoryPoints(c.category, stanceOf(c));
+    if (points === 0) continue;
+    const prev = best.get(c.category);
+    if (!prev || moreImpactful(points, prev.points)) {
+      best.set(c.category, {
+        category: c.category,
+        group: getCategoryDef(c.category).group,
+        points,
+      });
+    }
   }
-  return out;
+  return [...best.values()];
+}
+
+/** Hostile (negative) beats protective; otherwise the larger magnitude wins. */
+function moreImpactful(candidate: number, current: number): boolean {
+  if (candidate < 0 || current < 0) return candidate < current; // most negative
+  return candidate > current; // both positive → most positive
+}
+
+/**
+ * Combine a group's clauses into a net contribution:
+ *   • Critical hostile clauses (forced arbitration, data sale) count in FULL
+ *     and bypass the cap — the worst practices are never discounted, no matter
+ *     what else is in the domain.
+ *   • Everything else gets diminishing returns (biggest impact at full weight,
+ *     each extra clause in the same domain weighted less) and is clamped to the
+ *     group's [negCap, posCap].
+ */
+function groupContribution(entries: CategoryEntry[], group: ClauseGroup): number {
+  let criticalSum = 0;
+  const rest: number[] = [];
+  for (const e of entries) {
+    if (e.points < 0 && isCriticalCategory(e.category)) criticalSum += e.points;
+    else rest.push(e.points);
+  }
+
+  rest.sort((a, b) => Math.abs(b) - Math.abs(a));
+  let restSum = 0;
+  for (let i = 0; i < rest.length; i++) {
+    const weight = GROUP_WEIGHT_LADDER[Math.min(i, GROUP_WEIGHT_LADDER.length - 1)];
+    restSum += rest[i] * weight;
+  }
+
+  const def = GROUP_DEFS[group];
+  const cappedRest = Math.max(def.negCap, Math.min(def.posCap, restSum));
+  return criticalSum + cappedRest;
+}
+
+export interface ScoreBreakdown {
+  score: number;
+  grade: Grade;
+  /** Net contribution of each group that had any scored clause. */
+  groups: { group: ClauseGroup; label: string; points: number }[];
+  /** Distinct critical-severity hostile categories present. */
+  criticalCount: number;
+  /** Grade ceiling those criticals imposed, or 100 if none. */
+  ceiling: number;
+}
+
+/** Full, inspectable breakdown — used by computeScore and for diagnostics/docs. */
+export function scoreBreakdown(classifications: Scoreable[]): ScoreBreakdown {
+  const entries = dedupeByCategory(classifications);
+
+  const byGroup = new Map<ClauseGroup, CategoryEntry[]>();
+  for (const e of entries) {
+    const arr = byGroup.get(e.group) ?? [];
+    arr.push(e);
+    byGroup.set(e.group, arr);
+  }
+
+  const groups: ScoreBreakdown["groups"] = [];
+  let delta = 0;
+  for (const [group, groupEntries] of byGroup) {
+    const contribution = groupContribution(groupEntries, group);
+    delta += contribution;
+    groups.push({ group, label: GROUP_DEFS[group].label, points: round(contribution) });
+  }
+  groups.sort((a, b) => GROUP_DEFS[a.group].order - GROUP_DEFS[b.group].order);
+
+  const criticalCount = new Set(
+    entries.filter((e) => e.points < 0 && isCriticalCategory(e.category)).map((e) => e.category)
+  ).size;
+
+  let ceiling = 100;
+  for (const rule of CRITICAL_GRADE_CEILINGS) {
+    if (criticalCount >= rule.atLeast) {
+      ceiling = rule.maxScore;
+      break;
+    }
+  }
+
+  const score = clamp(Math.min(BASE_SCORE + delta, ceiling));
+  return { score, grade: scoreToGrade(score), groups, criticalCount, ceiling };
+}
+
+/**
+ * The 0–100 score for a set of active clause classifications.
+ */
+export function computeScore(classifications: Scoreable[]): number {
+  return scoreBreakdown(classifications).score;
+}
+
+/**
+ * Signed point total with dedupe-by-category but WITHOUT group weighting,
+ * caps, or ceilings — a local indicator used for change-event deltas, where
+ * the ± chip just needs to agree in sign/rough size with the categories a
+ * change introduced.
+ */
+export function signedPoints(classifications: Scoreable[]): number {
+  let total = 0;
+  for (const entry of dedupeByCategory(classifications)) total += entry.points;
+  return Math.round(total);
 }
 
 export function scoreToGrade(score: number): Grade {
-  if (score >= 90) return "A";
-  if (score >= 75) return "B";
-  if (score >= 50) return "C";
-  if (score >= 25) return "D";
+  for (const band of GRADE_SCALE) {
+    if (score >= band.min) return band.grade as Grade;
+  }
   return "F";
 }
+
+const round = (n: number): number => Math.round(n);
+const clamp = (n: number): number => Math.max(0, Math.min(100, Math.round(n)));

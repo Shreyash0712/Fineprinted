@@ -5,7 +5,7 @@ import { type Document } from "@/lib/types";
 import { saveDocument, deleteDocument } from "../../actions";
 
 const inputClass =
-  "w-full rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 px-3 py-2 font-mono text-xs text-zinc-900 dark:text-zinc-150 placeholder:text-zinc-400 dark:placeholder:text-zinc-650 outline-none focus:border-accent transition";
+  "w-full rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 px-3 py-2 font-mono text-xs text-zinc-900 dark:text-zinc-200 placeholder:text-zinc-400 dark:placeholder:text-zinc-700 outline-none focus:border-accent transition";
 const smallButtonClass =
   "rounded-lg px-2.5 py-1 text-xs font-semibold transition cursor-pointer disabled:opacity-50 disabled:cursor-default";
 
@@ -26,7 +26,7 @@ export function DocumentsEditor({
     }));
   });
 
-  function patch(localId: string, partial: any) {
+  function patch(localId: string, partial: Partial<(typeof docs)[number]>) {
     setDocs((prev) => prev.map((d) => (d.localId === localId ? { ...d, ...partial } : d)));
   }
 
@@ -68,7 +68,7 @@ export function DocumentsEditor({
       } else {
         patch(localId, {
           busy: null,
-          id: result.documentId,
+          id: result.documentId ?? undefined,
           saved: true,
           error: null,
         });
@@ -108,15 +108,15 @@ export function DocumentsEditor({
         {docs.map((doc) => (
           <div
             key={doc.localId}
-            className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:border-zinc-850 dark:bg-zinc-900/10 p-4 space-y-3"
+            className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:border-zinc-900 dark:bg-zinc-900/10 p-4 space-y-3"
           >
             <div className="flex items-center justify-between gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-450 font-heading">
+              <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-500 font-heading">
                 Document {doc.name ? `- ${doc.name}` : ""}
               </span>
               <div className="flex items-center gap-2">
                 {doc.saved && !doc.busy && (
-                  <span className="text-xs font-semibold text-emerald-650 dark:text-emerald-400">
+                  <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">
                     saved
                   </span>
                 )}

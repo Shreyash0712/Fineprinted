@@ -46,9 +46,6 @@ permissions:
 
 jobs:
   run:
-    # ubuntu-latest ships Google Chrome, which the extraction stage launches
-    # headlessly (via playwright-core, no browser download) when a site
-    # blocks plain fetches or renders only with JavaScript.
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:

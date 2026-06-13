@@ -9,25 +9,16 @@ create extension if not exists vector;
 -- Enums
 -- -----------------------------------------------------------------------------
 
-// removed document_type
-
-create type clause_category as enum (
-  'FORCED_ARBITRATION',
-  'UNILATERAL_CHANGE',
-  'DATA_SALE',
-  'CONTENT_LICENSE_BROAD',
-  'ACCOUNT_TERMINATION',
-  'TRACKING_THIRD_PARTY',
-  'NOTICE_OF_CHANGE',
-  'OTHER'
-);
+-- The clause category vocabulary lives in application code (lib/taxonomy.ts),
+-- the single source of truth, and grows over time. So classifications.category
+-- is plain text (validated in app code), not a rigid enum.
 
 create type clause_severity as enum (
-  'critical',   -- -30 pts
-  'major',      -- -15 pts
-  'minor',      --  -5 pts
-  'positive',   --  +5 pts
-  'neutral'     --   0 pts
+  'critical',   -- display bucket only; per-category points live in lib/taxonomy.ts
+  'major',
+  'minor',
+  'positive',
+  'neutral'
 );
 
 create type service_status as enum (
@@ -139,12 +130,11 @@ create index clauses_embedding_idx
 -- classifications
 create table classifications (
   clause_hash           text primary key,
-  category              clause_category not null,
+  category              text not null,
   stance                clause_stance not null default 'hostile',
   severity              clause_severity not null,
   plain_english_summary text not null,
   confidence_score      integer not null check (confidence_score between 0 and 100),
-  taxonomy_version      integer not null default 1,
   model                 text,
   admin_approved        boolean not null default false,
   created_at            timestamptz not null default now()

@@ -6,31 +6,17 @@
  * types: `supabase gen types typescript --linked > lib/database.types.ts`
  */
 
-// Removed DocumentType
+// The clause taxonomy (categories), the stance/severity vocabularies, and
+// every point value live in lib/taxonomy.ts — the single source of truth.
+// Re-exported here so existing imports from "@/lib/types" keep working.
+export type {
+  ClauseCategory,
+  ClauseSeverity,
+  ClauseStance,
+  ClauseGroup,
+} from "./taxonomy";
 
-export type ClauseCategory =
-  | "FORCED_ARBITRATION"
-  | "UNILATERAL_CHANGE"
-  | "DATA_SALE"
-  | "CONTENT_LICENSE_BROAD"
-  | "ACCOUNT_TERMINATION"
-  | "TRACKING_THIRD_PARTY"
-  | "NOTICE_OF_CHANGE"
-  | "OTHER";
-
-export type ClauseSeverity =
-  | "critical"
-  | "major"
-  | "minor"
-  | "positive"
-  | "neutral";
-
-/**
- * Whose side a clause is on. The category is the *topic* (e.g. DATA_SALE);
- * the stance decides the sign: "we sell your data" is hostile, "we do NOT
- * sell your data" is protective. Severity derives from (category, stance).
- */
-export type ClauseStance = "hostile" | "protective" | "neutral";
+import type { ClauseCategory, ClauseSeverity, ClauseStance } from "./taxonomy";
 
 export type ServiceStatus = "pending" | "active" | "archived";
 
@@ -92,8 +78,6 @@ export interface Classification {
   severity: ClauseSeverity;
   plain_english_summary: string;
   confidence_score: number;
-  /** Rows below grading.TAXONOMY_VERSION are treated as cache misses. */
-  taxonomy_version: number;
   model: string | null;
   admin_approved: boolean;
   created_at: string;

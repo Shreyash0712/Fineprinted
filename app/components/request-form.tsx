@@ -41,7 +41,7 @@ export function RequestForm() {
           onChange={(e) => setDomain(e.target.value)}
           placeholder="netflix.com"
           required
-          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-650 dark:focus:border-accent/60"
+          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-700 dark:focus:border-accent/60"
         />
         <p className="mt-1.5 text-xs text-zinc-500 dark:text-zinc-400">
           Paste anything, as even a full URL works. We reduce it to the root domain.
@@ -57,7 +57,7 @@ export function RequestForm() {
           onChange={(e) => setName(e.target.value)}
           placeholder="Netflix"
           maxLength={80}
-          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-650 dark:focus:border-accent/60"
+          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-accent focus:ring-4 focus:ring-accent/10 dark:border-zinc-800 dark:bg-zinc-900/60 dark:placeholder:text-zinc-700 dark:focus:border-accent/60"
         />
         <p className="mt-1.5 text-xs text-zinc-500 dark:text-zinc-400">
           How the service should be displayed once it&apos;s tracked.

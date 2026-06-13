@@ -8,7 +8,7 @@ export function SiteFooter() {
           <Link href="/" className="flex items-center gap-2.5 text-lg font-bold tracking-tight">
             <span>Fine<span className="text-accent">printed</span></span>
           </Link>
-          <p className="mt-3 max-w-sm text-sm leading-relaxed text-zinc-550 dark:text-zinc-400 font-medium">
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 font-medium">
             The terms you never read, read for you. We monitor Terms of Service
             and Privacy Policies, flag user-hostile clauses in plain English,
             and grade every service from A to F.
@@ -16,7 +16,7 @@ export function SiteFooter() {
         </div>
         <div>
           <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-heading">Explore</h3>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-550 dark:text-zinc-405">
+          <ul className="mt-3 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
             <li><FooterLink href="/browse">Browse services</FooterLink></li>
             <li><FooterLink href="/saved">Your watchlist</FooterLink></li>
             <li><FooterLink href="/request">Request a service</FooterLink></li>
@@ -24,14 +24,14 @@ export function SiteFooter() {
         </div>
         <div>
           <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-heading">Project</h3>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-550 dark:text-zinc-405">
+          <ul className="mt-3 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
             <li><FooterLink href="/about">About Fineprinted</FooterLink></li>
             <li><FooterLink href="/about#grading">How grading works</FooterLink></li>
             <li><FooterLink href="/sitemap">Sitemap</FooterLink></li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-zinc-200/50 py-5 text-center text-xs text-zinc-500 dark:border-zinc-900/50 dark:text-zinc-650">
+      <div className="border-t border-zinc-200/50 py-5 text-center text-xs text-zinc-500 dark:border-zinc-900/50 dark:text-zinc-700">
         Grades are automated AI analyses, informational only, and not legal advice. AI can make mistakes.
       </div>
     </footer>

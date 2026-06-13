@@ -3,8 +3,8 @@ import type { PipelineRun } from "../types";
 
 /**
  * Lightweight pipeline_runs helpers — safe to import from server actions
- * without dragging the whole pipeline (cheerio, turndown, …) into the
- * bundle. The executor lives in ./runs.ts.
+ * without dragging the whole pipeline (embeddings, LLM clients, …) into
+ * the bundle. The executor lives in ./runs.ts.
  */
 
 /** A queued/running run younger than this blocks a new trigger. */
