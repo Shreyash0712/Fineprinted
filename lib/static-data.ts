@@ -4,7 +4,6 @@ import type {
   ClauseCategory,
   ClauseSeverity,
   ClauseStance,
-  DocumentType,
   Grade,
 } from "./types";
 
@@ -40,7 +39,7 @@ export interface ServicesIndex {
 }
 
 export interface StaticClause {
-  document_type: DocumentType;
+  document_name: string;
   category: ClauseCategory;
   stance: ClauseStance;
   severity: ClauseSeverity;
@@ -54,7 +53,7 @@ export interface StaticClause {
 export interface StaticHistoryEvent {
   id: string;
   date: string;
-  document_type: DocumentType;
+  document_name: string;
   points: number;
   summary: string | null;
   added: number;
@@ -63,8 +62,8 @@ export interface StaticHistoryEvent {
 }
 
 export interface StaticDocument {
-  type: DocumentType;
-  urls: string[];
+  name: string | null;
+  url: string | null;
 }
 
 /** One “at a glance” takeaway, e.g. “You give up your right to sue.” (−30) */

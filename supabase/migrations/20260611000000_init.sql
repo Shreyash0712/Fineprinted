@@ -9,13 +9,7 @@ create extension if not exists vector;
 -- Enums
 -- -----------------------------------------------------------------------------
 
-create type document_type as enum (
-  'terms_of_service',
-  'privacy_policy',
-  'cookie_policy',
-  'acceptable_use',
-  'other'
-);
+// removed document_type
 
 create type clause_category as enum (
   'FORCED_ARBITRATION',
@@ -102,12 +96,12 @@ create trigger services_updated_at
 
 -- documents
 create table documents (
-  id          uuid primary key default gen_random_uuid(),
-  service_id  uuid not null references services (id) on delete cascade,
-  type        document_type not null,
-  source_urls text[] not null default '{}',
-  created_at  timestamptz not null default now(),
-  unique (service_id, type)
+  id             uuid primary key default gen_random_uuid(),
+  service_id     uuid not null references services (id) on delete cascade,
+  name           text,
+  source_url     text,
+  pasted_content text,
+  created_at     timestamptz not null default now()
 );
 
 create index documents_service_id_idx on documents (service_id);
@@ -116,14 +110,13 @@ create index documents_service_id_idx on documents (service_id);
 create table snapshots (
   id           uuid primary key default gen_random_uuid(),
   document_id  uuid not null references documents (id) on delete cascade,
-  fetched_at   timestamptz not null default now(),
   content_hash text not null,
   storage_key  text not null,
   created_at   timestamptz not null default now()
 );
 
-create index snapshots_document_id_fetched_at_idx
-  on snapshots (document_id, fetched_at desc);
+create index snapshots_document_id_created_at_idx
+  on snapshots (document_id, created_at desc);
 create index snapshots_content_hash_idx on snapshots (content_hash);
 
 -- clauses

@@ -7,7 +7,6 @@ import {
 } from "@/lib/grading";
 import { createAdminClient } from "@/lib/supabase/admin";
 import {
-  DOCUMENT_TYPE_LABELS as TYPE_LABELS,
   type ChangeEvent,
   type Classification,
   type Document,
@@ -134,7 +133,7 @@ export default async function ServicePage({
         <RunPipeline
           serviceId={svc.id}
           initialRun={(latestRun as PipelineRun) ?? null}
-          hasDocumentUrls={documents.some((d) => d.source_urls.length > 0)}
+          hasDocumentUrls={documents.some((d) => !!d.pasted_content && d.pasted_content.trim().length > 0)}
         />
         <p className="text-xs leading-relaxed text-zinc-550">
           Dispatches a GitHub Actions job that runs extraction (of the URLs saved
@@ -148,23 +147,20 @@ export default async function ServicePage({
         </p>
       </section>
 
-      {/* Documents — admin-curated URLs (mandatory) */}
+      {/* Documents (Manual pasting) */}
       <section className="rounded-2xl border border-zinc-200 bg-white p-6 space-y-4 dark:border-zinc-900 dark:bg-zinc-955 shadow-sm">
         <div>
           <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-550 dark:text-zinc-400 font-heading">
             Documents
           </h2>
           <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
-            The pipeline analyzes exactly the URLs saved here — it never guesses
-            pages on its own. One URL per line; multiple URLs are merged into one
-            document in order (for policies split across pages). Save an empty box
-            to remove a document. Use <strong>Test fetch</strong> to confirm a URL
-            extracts cleanly before running the pipeline.
+            Paste the raw text or markdown of the documents here. The pipeline uses this exact text for analysis.
+            Optionally provide a name and URL for reference.
           </p>
         </div>
         <DocumentsEditor
           serviceId={svc.id}
-          initialUrls={Object.fromEntries(documents.map((d) => [d.type, d.source_urls]))}
+          initialDocuments={documents}
         />
       </section>
 
@@ -219,7 +215,7 @@ function EventCard({
     <div className="rounded-xl border border-zinc-200 bg-zinc-50/30 dark:border-zinc-900 dark:bg-zinc-900/10 p-5 space-y-4">
       <div className="flex flex-wrap items-center gap-2 border-b border-zinc-150 dark:border-zinc-900 pb-3">
         <span className="text-sm font-bold font-heading text-zinc-800 dark:text-zinc-200">
-          {document ? TYPE_LABELS[document.type] : "Unknown document"}
+          {document ? document.name || "Unknown document" : "Unknown document"}
         </span>
         <span className="text-xs text-zinc-500 font-medium ml-1">
           {new Date(event.created_at).toLocaleString()}

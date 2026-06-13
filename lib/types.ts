@@ -6,20 +6,7 @@
  * types: `supabase gen types typescript --linked > lib/database.types.ts`
  */
 
-export type DocumentType =
-  | "terms_of_service"
-  | "privacy_policy"
-  | "cookie_policy"
-  | "acceptable_use"
-  | "other";
-
-export const DOCUMENT_TYPE_LABELS: Record<DocumentType, string> = {
-  terms_of_service: "Terms of Service",
-  privacy_policy: "Privacy Policy",
-  cookie_policy: "Cookie Policy",
-  acceptable_use: "Acceptable Use",
-  other: "Other",
-};
+// Removed DocumentType
 
 export type ClauseCategory =
   | "FORCED_ARBITRATION"
@@ -74,15 +61,15 @@ export interface Service {
 export interface Document {
   id: string;
   service_id: string;
-  type: DocumentType;
-  source_urls: string[];
+  name: string | null;
+  source_url: string | null;
+  pasted_content: string | null;
   created_at: string;
 }
 
 export interface Snapshot {
   id: string;
   document_id: string;
-  fetched_at: string;
   content_hash: string;
   storage_key: string;
   created_at: string;

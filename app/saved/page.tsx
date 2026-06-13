@@ -9,13 +9,7 @@ import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
 
 
-const TYPE_LABELS: Record<string, string> = {
-  terms_of_service: "Terms of Service",
-  privacy_policy: "Privacy Policy",
-  cookie_policy: "Cookie Policy",
-  acceptable_use: "Acceptable Use",
-  other: "Other",
-};
+// Removed TYPE_LABELS
 
 export default function SavedPage() {
   const [entries, setEntries] = useState<WatchlistEntry[] | null>(null);
@@ -115,7 +109,7 @@ export default function SavedPage() {
                                 day: "numeric",
                                 year: "numeric",
                               })}{" "}
-                            · {TYPE_LABELS[e.document_type] ?? e.document_type}
+                            · {e.document_name}
                             {e.severity_score !== null && e.severity_score !== 0 && (
                               <span
                                 className={`ml-1.5 rounded px-1.5 py-0.5 tabular-nums text-xs font-semibold ${

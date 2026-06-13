@@ -84,7 +84,7 @@ async function main(): Promise<void> {
         const c = state.classifications.get(clause.hash);
         if (!c || !isFlagged(c) || !affectsGrade(c)) continue;
         clauses.push({
-          document_type: state.document.type,
+          document_name: state.document.name || "Document",
           category: c.category,
           stance: c.stance,
           severity: c.severity,
@@ -124,7 +124,7 @@ async function main(): Promise<void> {
     // classifications — so a taxonomy fix retroactively corrects the
     // displayed deltas instead of showing stale scores.
     const docIds = published.map((s) => s.document.id);
-    const docTypeById = new Map(published.map((s) => [s.document.id, s.document.type]));
+    const docNameById = new Map(published.map((s) => [s.document.id, s.document.name ?? "Document"]));
     const { data: eventRows, error: eventsError } = await db
       .from("change_events")
       .select("*")
@@ -154,7 +154,7 @@ async function main(): Promise<void> {
       history.push({
         id: event.id,
         date: event.published_at ?? event.created_at,
-        document_type: docTypeById.get(event.document_id) ?? "other",
+        document_name: docNameById.get(event.document_id) ?? "Document",
         points: signedPoints(involved),
         summary: event.ai_summary,
         added: event.diff?.added.length ?? 0,
@@ -176,8 +176,8 @@ async function main(): Promise<void> {
       last_published_at: lastPublishedAt,
       summary: { good, bad },
       documents: published.map((s) => ({
-        type: s.document.type,
-        urls: s.document.source_urls,
+        name: s.document.name,
+        url: s.document.source_url,
       })),
       clauses,
       history,

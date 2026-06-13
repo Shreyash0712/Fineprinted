@@ -2,7 +2,7 @@
 
 import { sanitizeToRootDomain } from "@/lib/domain";
 import { createAdminClient } from "@/lib/supabase/admin";
-import type { ChangeEvent, DocumentType, Service } from "@/lib/types";
+import type { ChangeEvent, Service } from "@/lib/types";
 
 /**
  * Public server actions. No auth — identity is the FingerprintJS visitor id,
@@ -171,7 +171,7 @@ export async function getWatchedIds(fingerprint: string): Promise<string[]> {
 export interface WatchlistEntry {
   service: Service;
   events: (Pick<ChangeEvent, "id" | "ai_summary" | "severity_score" | "published_at"> & {
-    document_type: DocumentType;
+    document_name: string;
   })[];
 }
 
@@ -205,7 +205,7 @@ export async function getWatchlist(fingerprint: string): Promise<WatchlistEntry[
 
   const eventsByService = new Map<string, WatchlistEntry["events"]>();
   for (const row of events ?? []) {
-    const doc = row.documents as unknown as { service_id: string; type: DocumentType };
+    const doc = row.documents as unknown as { service_id: string; name: string };
     const list = eventsByService.get(doc.service_id) ?? [];
     if (list.length < 3) {
       list.push({
@@ -213,7 +213,7 @@ export async function getWatchlist(fingerprint: string): Promise<WatchlistEntry[
         ai_summary: row.ai_summary,
         severity_score: row.severity_score,
         published_at: row.published_at,
-        document_type: doc.type,
+        document_name: doc.name || "Document",
       });
     }
     eventsByService.set(doc.service_id, list);

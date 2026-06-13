@@ -7,7 +7,6 @@ import { createAdminClient } from "../supabase/admin";
 import type { Classification, Document, Service } from "../types";
 import { classifyClauses, copyClassifications } from "./classify";
 import { diffClauses, type ClauseDiff, type OldClause } from "./diff";
-import { extractDocument } from "./extract";
 import { recomputeServiceGrade } from "./grade";
 import { segmentMarkdown } from "./segment";
 
@@ -122,7 +121,7 @@ async function reclassifyIfStale(
   snapshotId: string,
   emit: Emit
 ): Promise<void> {
-  const step = document.type;
+  const step = document.name || "Document";
 
   const { data: clauses, error } = await db
     .from("clauses")
@@ -239,7 +238,7 @@ async function processDocument(
   document: Document,
   emit: Emit
 ): Promise<void> {
-  const step = document.type;
+  const step = document.name || "Document";
 
   // --- Heal partial runs ---
   // A snapshot with no change_event means an earlier run died mid-way (rate
@@ -266,18 +265,12 @@ async function processDocument(
     });
   }
 
-  // --- Extraction ---
-  emit({ level: "info", step, message: `Extracting ${document.source_urls.join(", ")}` });
-  const { markdown, parts } = await extractDocument(document.source_urls);
-  for (const part of parts) {
-    if (part.via === "browser") {
-      emit({
-        level: "info",
-        step,
-        message: `${part.url} needed the headless-browser fallback (${part.chars.toLocaleString()} chars)`,
-      });
-    }
+  // --- Normalization ---
+  if (!document.pasted_content || document.pasted_content.trim() === "") {
+    throw new Error("No pasted content available for this document");
   }
+  emit({ level: "info", step, message: `Processing pasted content` });
+  const markdown = document.pasted_content;
   const contentHash = sha256(markdown);
   emit({
     level: "info",
@@ -290,7 +283,7 @@ async function processDocument(
     .from("snapshots")
     .select("id, content_hash")
     .eq("document_id", document.id)
-    .order("fetched_at", { ascending: false })
+    .order("created_at", { ascending: false })
     .limit(1)
     .maybeSingle();
   if (prevError) throw new Error(`previous snapshot lookup failed: ${prevError.message}`);
@@ -304,7 +297,7 @@ async function processDocument(
   // The file is committed by the workflow's "commit & push" step alongside
   // the static export, so every fetched version stays retrievable even
   // after its clauses are pruned from the database.
-  const storageKey = snapshotKey(service.root_domain, document.type, contentHash);
+  const storageKey = snapshotKey(service.root_domain, document.name || "Document", contentHash);
   await writeSnapshot(storageKey, markdown);
   emit({ level: "info", step, message: `Archived markdown to ${storageKey}` });
 
@@ -384,7 +377,7 @@ async function processDocument(
   });
 
   // --- Change event (published immediately — no review gate) ---
-  const aiSummary = await summarizeChanges(document.type, !prevSnapshot, diff, byHash);
+  const aiSummary = await summarizeChanges(document.name || "Document", !prevSnapshot, diff, byHash);
   const { data: event, error: eventError } = await db
     .from("change_events")
     .insert({
@@ -474,18 +467,18 @@ export async function runServicePipeline(serviceId: string, emit: Emit): Promise
   if (docsError) throw new Error(`documents lookup failed: ${docsError.message}`);
 
   const docs = (documents ?? []) as Document[];
-  if (docs.every((d) => d.source_urls.length === 0)) {
+  if (docs.every((d) => !d.pasted_content || d.pasted_content.trim() === "")) {
     throw new Error(
-      "No document URLs are configured for this service. Open it in the admin panel and " +
-        "add the exact policy URLs under Documents — the pipeline does not auto-discover pages."
+      "No document content is configured for this service. Open it in the admin panel and " +
+        "paste the exact policy text under Documents — the pipeline no longer scrapes URLs."
     );
   }
 
   // --- Per-document pipeline; one failure doesn't kill the others ---
   let failures = 0;
   for (const document of docs) {
-    if (document.source_urls.length === 0) {
-      emit({ level: "warn", step: document.type, message: "No source URLs — skipping" });
+    if (!document.pasted_content || document.pasted_content.trim() === "") {
+      emit({ level: "warn", step: document.name || "Document", message: "No pasted content — skipping" });
       continue;
     }
     try {
@@ -494,7 +487,7 @@ export async function runServicePipeline(serviceId: string, emit: Emit): Promise
       failures++;
       emit({
         level: "error",
-        step: document.type,
+        step: document.name || "Document",
         message: err instanceof Error ? err.message : String(err),
       });
     }

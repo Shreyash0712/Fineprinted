@@ -10,7 +10,6 @@ import {
   type ServiceDetail,
   type StaticClause,
 } from "@/lib/static-data";
-import type { DocumentType } from "@/lib/types";
 
 /**
  * Public service page. Fully static: everything comes from the
@@ -26,14 +25,6 @@ export async function generateStaticParams(): Promise<{ domain: string }[]> {
   const { services } = await loadServicesIndex();
   return services.map((s) => ({ domain: s.root_domain }));
 }
-
-const TYPE_LABELS: Record<DocumentType, string> = {
-  terms_of_service: "Terms of Service",
-  privacy_policy: "Privacy Policy",
-  cookie_policy: "Cookie Policy",
-  acceptable_use: "Acceptable Use",
-  other: "Other",
-};
 
 const severityBadge: Record<string, string> = {
   critical:
@@ -155,7 +146,7 @@ export default async function ServicePage({
                             </p>
                             <details className="mt-2">
                               <summary className="cursor-pointer text-xs text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300">
-                                Show original clause · {TYPE_LABELS[clause.document_type]}
+                                Show original clause · {clause.document_name}
                               </summary>
                               <blockquote className="mt-2 whitespace-pre-wrap border-l-2 border-accent/30 pl-3 text-xs leading-relaxed text-zinc-650 dark:border-accent/20 dark:text-zinc-400">
                                 {clause.excerpt}
@@ -186,7 +177,7 @@ export default async function ServicePage({
                       <span className="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-zinc-50 dark:ring-zinc-950" />
                       <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
                         <time>{formatDate(e.date)}</time>
-                        <span>· {TYPE_LABELS[e.document_type]}</span>
+                        <span>· {e.document_name}</span>
                         {e.points !== 0 && (
                           <span
                             className={`rounded-md px-1.5 py-0.5 tabular-nums ${
@@ -254,15 +245,15 @@ export default async function ServicePage({
                 Documents tracked
               </h3>
               <ul className="flex flex-col gap-2">
-                {detail.documents.map((d) => (
-                  <li key={d.type}>
+                {detail.documents.map((d, idx) => (
+                  <li key={idx}>
                     <a
-                      href={d.urls[0]}
+                      href={d.url ?? "#"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-between rounded-xl border border-zinc-200 bg-zinc-50/50 px-3.5 py-2 text-xs font-medium text-zinc-700 shadow-sm transition hover:border-accent/40 hover:bg-white dark:border-zinc-800 dark:bg-zinc-950/20 dark:text-zinc-300 dark:hover:border-accent/30 dark:hover:bg-zinc-900/40"
                     >
-                      <span>{TYPE_LABELS[d.type]}</span>
+                      <span>{d.name || "Document"}</span>
                       <span className="text-zinc-400 font-normal">↗</span>
                     </a>
                   </li>

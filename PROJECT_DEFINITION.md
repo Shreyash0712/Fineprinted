@@ -30,8 +30,8 @@ The system is split across three free tiers, each doing the only thing it is goo
 
 ### 3.1 The Pipeline
 Executed by `scripts/run-pipeline.ts` on a GitHub Actions runner (dispatched by the admin panel via the GitHub API; run inline only in local dev):
-1. **Sources (admin-curated, mandatory):** The pipeline fetches exactly the document URLs the admin saved — it never guesses. (Heuristic discovery was removed after it scraped look-alike pages, e.g. a GitHub user profile named "cookie-policy"; an admin-side suggester still scans homepages, but only to pre-fill the form for review.) Runs fail fast if a service has no URLs.
-2. **Extraction & Normalization:** Converts HTML to canonical Markdown. Fetches use realistic browser headers with retries; bot-walled or JavaScript-only pages fall back to real headless Chrome (system browser via `playwright-core` — preinstalled on Actions runners, no download). Multi-page policies merge from several URLs in admin-saved order.
+1. **Sources (admin-curated, manual pasting):** The pipeline processes the document text directly pasted by the admin in the dashboard. The admin can also optionally provide a name and a link to the original document. Runs fail fast if no content is provided.
+2. **Normalization:** Converts pasted text to canonical Markdown. Since the content is already copied directly, bot-walled or JavaScript-only pages are no longer an issue, drastically simplifying the architecture and removing scraping.
 3. **Hash Comparison:** Generates a SHA-256 hash. If it matches the previous snapshot (and no cached classifications are from an older taxonomy), the workflow terminates ($0 cost).
 4. **Segmentation:** Splits the new document into distinct clauses.
 5. **Embedding & Diffing:** Embeds clauses and matches old to new using vector similarity.
@@ -87,8 +87,8 @@ Cached classifications carry a `taxonomy_version`; bumping the version in `lib/g
 ## 6. Database Schema
 
 * **`services`**: `id`, `name`, `root_domain`, `current_grade`, `current_score`.
-* **`documents`**: `id`, `service_id`, `type` (ToS, Privacy).
-* **`snapshots`**: `id`, `document_id`, `fetched_at`, `content_hash`, `storage_key`.
+* **`documents`**: `id`, `service_id`, `type` (ToS, Privacy), `name`, `source_url`, `pasted_content`.
+* **`snapshots`**: `id`, `document_id`, `content_hash`, `storage_key`.
 * **`clauses`**: `id`, `snapshot_id`, `position`, `clause_hash`, `embedding`.
 * **`classifications`**: `clause_hash` *(PK)*, `category`, `severity`, `plain_english_summary`, `confidence_score`.
 * **`change_events`**: `id`, `document_id`, `previous_snapshot_id`, `new_snapshot_id`, `severity_score`, `ai_summary`.
@@ -100,7 +100,7 @@ Cached classifications carry a `taxonomy_version`; bumping the version in `lib/g
 
 The protected dashboard serves as the operational command center:
 * **Queue Management:** Sorts incoming `service_requests` by `vote_count` so admins know what to review next.
-* **Document URLs (mandatory):** Admins paste the exact policy URLs (one per line; multiple pages merge into one document in order). A **Suggest** helper scans the homepage for candidates — shown with page title and extracted size, never auto-saved — and **Test fetch** dry-runs the pipeline's extraction so a bad URL is caught before a run is dispatched.
+* **Document Content (manual pasting):** Admins paste the exact text of the policy into a textbox, optionally providing a document name and link. This eliminates the need for scraping and headless browser fallbacks.
 * **Execution & Progress:** Triggers the AI pipeline by dispatching the GitHub Actions workflow; the runner appends progress events to `pipeline_runs` and the UI polls them live. The panel survives page refreshes and browser closes — the run continues regardless, then publishes results, recomputes the grade, and syncs the public site on its own.
 * **Confidence Overrides:** The one manual lever: low-confidence classifications (excluded from grades automatically) can be approved to count, which recomputes the grade and re-syncs the site. A "Sync site data" button re-dispatches the export if an automatic sync ever fails.
 
@@ -121,7 +121,7 @@ The protected dashboard serves as the operational command center:
 
 ### Phase 1 — Core Core Architecture & Pipelines
 * Deploy the single-server backend and PostgreSQL schema.
-* Build the markdown extraction and clause segmentation pipeline over admin-curated document URLs.
+* Build the text normalization and clause segmentation pipeline over admin-pasted document text.
 * Implement the global `clause_hash` caching layer to skip redundant LLM calls.
 * Implement the admin dashboard with SSE progress streaming.
 
@@ -139,7 +139,7 @@ The protected dashboard serves as the operational command center:
 
 ## 10. Success Metrics
 
-* **Coverage:** % of requested domains whose documents extract successfully once their URLs are configured (Target: >85%).
+* **Coverage:** % of requested domains whose documents process successfully once their text is pasted (Target: >85%).
 * **Precision:** % of published AI-flagged clauses that hold up under spot checks (no correction needed after the fact) (Target: >90%).
 * **Efficiency:** Average API cost to process a new service request (Target: < $0.05).
 * **Engagement:** Number of active email/Telegram watches per active user.

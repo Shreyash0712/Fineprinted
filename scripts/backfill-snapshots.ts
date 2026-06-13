@@ -25,7 +25,7 @@ async function main(): Promise<void> {
   const path = await import("node:path");
   const { createAdminClient } = await import("../lib/supabase/admin");
   const { snapshotKey, writeSnapshot } = await import("../lib/snapshots");
-  type DocumentType = import("../lib/types").DocumentType;
+  // Removed DocumentType
 
   const db = createAdminClient();
 
@@ -41,7 +41,7 @@ async function main(): Promise<void> {
   for (const service of services ?? []) {
     const { data: documents, error: docError } = await db
       .from("documents")
-      .select("id, type")
+      .select("id, name")
       .eq("service_id", service.id);
     if (docError) throw new Error(docError.message);
 
@@ -72,7 +72,7 @@ async function main(): Promise<void> {
       for (const snapshot of snapshots) {
         const key = snapshotKey(
           service.root_domain,
-          doc.type as DocumentType,
+          doc.name || "Document",
           snapshot.content_hash
         );
         const filePath = path.join(process.cwd(), key);

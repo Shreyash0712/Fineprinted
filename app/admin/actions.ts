@@ -10,14 +10,12 @@ import {
   requireAdmin,
   verifyPassword,
 } from "@/lib/admin/auth";
-import { suggestDocumentUrls, type SuggestResult } from "@/lib/admin/suggest-urls";
 import { sanitizeToRootDomain } from "@/lib/domain";
 import { dispatchWorkflow, githubConfigured } from "@/lib/github";
-import { verifyUrl, type UrlCheck } from "@/lib/pipeline/extract";
 import { recomputeServiceGrade } from "@/lib/pipeline/grade";
 import { createRun, failRun, isRunActive } from "@/lib/pipeline/run-store";
 import { createAdminClient } from "@/lib/supabase/admin";
-import type { DocumentType } from "@/lib/types";
+// Removed DocumentType import
 
 // ---------------------------------------------------------------------------
 // Auth
@@ -139,131 +137,49 @@ export async function rejectRequest(requestId: string): Promise<void> {
 }
 
 // ---------------------------------------------------------------------------
-// Documents (admin-curated URLs — mandatory; the pipeline never guesses)
+// Documents (Manual pasting)
 // ---------------------------------------------------------------------------
 
-const DOCUMENT_TYPES: DocumentType[] = [
-  "terms_of_service",
-  "privacy_policy",
-  "cookie_policy",
-  "acceptable_use",
-  "other",
-];
-
-const MAX_URLS_PER_DOCUMENT = 10;
-
-/** Parse one-URL-per-line input; reports lines that aren't http(s) URLs. */
-function parseUrlLines(text: string): { urls: string[]; rejected: string[] } {
-  const urls: string[] = [];
-  const rejected: string[] = [];
-  for (const raw of text.split(/\r?\n/)) {
-    const line = raw.trim();
-    if (!line) continue;
-    try {
-      const url = new URL(line);
-      if (url.protocol !== "https:" && url.protocol !== "http:") throw new Error();
-      if (!urls.includes(url.toString())) urls.push(url.toString());
-    } catch {
-      rejected.push(line);
-    }
-  }
-  return { urls, rejected };
-}
-
-export interface SaveUrlsResult {
-  error: string | null;
-  /** The normalized URL list that was actually saved. */
-  urls: string[];
-}
-
-export async function saveDocumentUrls(
+export async function saveDocument(
   serviceId: string,
-  type: DocumentType,
-  urlsText: string
-): Promise<SaveUrlsResult> {
+  docId: string | null,
+  name: string,
+  url: string,
+  pastedContent: string
+): Promise<{ error: string | null; documentId: string | null }> {
   await requireAdmin();
-  if (!serviceId || !DOCUMENT_TYPES.includes(type)) {
-    return { error: "Invalid input", urls: [] };
-  }
-
-  const { urls, rejected } = parseUrlLines(urlsText);
-  if (rejected.length > 0) {
-    return {
-      error: `Not a valid http(s) URL: ${rejected.join(", ")}`,
-      urls,
-    };
-  }
-  if (urls.length > MAX_URLS_PER_DOCUMENT) {
-    return { error: `At most ${MAX_URLS_PER_DOCUMENT} URLs per document`, urls };
-  }
-
   const db = createAdminClient();
-  if (urls.length === 0) {
-    const { error } = await db
-      .from("documents")
-      .delete()
-      .eq("service_id", serviceId)
-      .eq("type", type);
-    if (error) return { error: error.message, urls };
+  
+  if (!serviceId) return { error: "Missing service ID", documentId: null };
+  if (!pastedContent.trim()) return { error: "Pasted content is required", documentId: null };
+
+  const payload = {
+    service_id: serviceId,
+    name: name.trim() || null,
+    source_url: url.trim() || null,
+    pasted_content: pastedContent.trim(),
+  };
+
+  if (docId) {
+    const { error } = await db.from("documents").update(payload).eq("id", docId);
+    if (error) return { error: error.message, documentId: null };
+    revalidatePath(`/admin/services/${serviceId}`);
+    return { error: null, documentId: docId };
   } else {
-    const { error } = await db
-      .from("documents")
-      .upsert(
-        { service_id: serviceId, type, source_urls: urls },
-        { onConflict: "service_id,type" }
-      );
-    if (error) return { error: error.message, urls };
+    const { data, error } = await db.from("documents").insert(payload).select("id").single();
+    if (error) return { error: error.message, documentId: null };
+    revalidatePath(`/admin/services/${serviceId}`);
+    return { error: null, documentId: data.id };
   }
-  revalidatePath(`/admin/services/${serviceId}`);
-  return { error: null, urls };
 }
 
-/**
- * Dry-run extraction for the admin "Test fetch" button: fetches each URL
- * through the exact pipeline code path (browser fallback included, where
- * one is available) and reports what extracted — without writing anything
- * or burning a pipeline run.
- */
-export async function verifyDocumentUrls(urlsText: string): Promise<{
-  error: string | null;
-  checks: UrlCheck[];
-}> {
-  await requireAdmin();
-  const { urls, rejected } = parseUrlLines(urlsText);
-  if (rejected.length > 0) {
-    return { error: `Not a valid http(s) URL: ${rejected.join(", ")}`, checks: [] };
-  }
-  if (urls.length === 0) {
-    return { error: "No URLs to test", checks: [] };
-  }
-  if (urls.length > MAX_URLS_PER_DOCUMENT) {
-    return { error: `At most ${MAX_URLS_PER_DOCUMENT} URLs per document`, checks: [] };
-  }
-  const checks = await Promise.all(urls.map((url) => verifyUrl(url)));
-  return { error: null, checks };
-}
-
-/**
- * Scan the service's homepage (plus well-known paths) for candidate policy
- * URLs. Suggestions only pre-fill the form — nothing is saved until the
- * admin reviews and clicks Save.
- */
-export async function suggestServiceUrls(serviceId: string): Promise<{
-  error: string | null;
-  result: SuggestResult | null;
-}> {
+export async function deleteDocument(serviceId: string, docId: string): Promise<{ error: string | null }> {
   await requireAdmin();
   const db = createAdminClient();
-  const { data: service, error } = await db
-    .from("services")
-    .select("root_domain")
-    .eq("id", serviceId)
-    .maybeSingle();
-  if (error || !service) {
-    return { error: error?.message ?? "Service not found", result: null };
-  }
-  const result = await suggestDocumentUrls(service.root_domain);
-  return { error: null, result };
+  const { error } = await db.from("documents").delete().eq("id", docId);
+  if (error) return { error: error.message };
+  revalidatePath(`/admin/services/${serviceId}`);
+  return { error: null };
 }
 
 // ---------------------------------------------------------------------------

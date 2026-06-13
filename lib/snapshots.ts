@@ -1,6 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { DocumentType } from "./types";
+// Removed DocumentType import
 
 /**
  * Snapshot archive — full normalized markdown of every fetched document
@@ -18,10 +18,11 @@ const SNAPSHOT_ROOT = "data/snapshots";
 
 export function snapshotKey(
   rootDomain: string,
-  documentType: DocumentType,
+  documentName: string,
   contentHash: string
 ): string {
-  return `${SNAPSHOT_ROOT}/${rootDomain}/${documentType}/${contentHash}.md`;
+  const docSlug = documentName.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  return `${SNAPSHOT_ROOT}/${rootDomain}/${docSlug}/${contentHash}.md`;
 }
 
 /** Write the markdown for a snapshot key; creates directories as needed. */
