@@ -4,21 +4,24 @@
   "root_domain": "oracle.com",
   "grade": "A",
   "score": 100,
-  "generated_at": "2026-06-13T00:56:24.498Z",
+  "generated_at": "2026-06-13T01:06:01.538Z",
   "last_published_at": "2026-06-13T00:50:01.383+00:00",
   "summary": {
     "good": [],
     "bad": []
   },
   "documents": [
-    {}
+    {
+      "name": "Privacy",
+      "url": "https://www.oracle.com/legal/privacy/"
+    }
   ],
   "clauses": [],
   "history": [
     {
       "id": "bfb54b5c-0c33-41c7-b605-dc0af8621861",
       "date": "2026-06-13T00:50:01.383+00:00",
-      "document_type": "other",
+      "document_name": "Privacy",
       "points": 0,
       "summary": "No changes that affect users were found in the provided clauses. The extracted clauses do not contain any new or modified language that would impact users' privacy. Therefore, no changes are noted. Nothing user-hostile was found.",
       "added": 3,
