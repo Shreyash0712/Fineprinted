@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { type Document } from "@/lib/types";
 import { saveDocument, deleteDocument } from "../../actions";
+import { scrapeUrl } from "../scrape";
 
 const inputClass =
   "w-full rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 px-3 py-2 font-mono text-xs text-zinc-900 dark:text-zinc-200 placeholder:text-zinc-400 dark:placeholder:text-zinc-700 outline-none focus:border-accent transition";
@@ -16,7 +17,7 @@ export function DocumentsEditor({
   serviceId: string;
   initialDocuments: Document[];
 }) {
-  const [docs, setDocs] = useState<(Partial<Document> & { localId: string; busy: "save" | "delete" | null; error: string | null; saved: boolean })[]>(() => {
+  const [docs, setDocs] = useState<(Partial<Document> & { localId: string; busy: "save" | "delete" | "scrape" | null; error: string | null; saved: boolean })[]>(() => {
     return initialDocuments.map((d) => ({
       ...d,
       localId: d.id,
@@ -102,6 +103,28 @@ export function DocumentsEditor({
     }
   }
 
+  async function handleScrape(localId: string) {
+    const doc = docs.find((d) => d.localId === localId);
+    if (!doc || !doc.source_url) return;
+
+    patch(localId, { busy: "scrape", error: null });
+    try {
+      const result = await scrapeUrl(doc.source_url);
+      if (result.error) {
+        patch(localId, { busy: null, error: `Scraping failed: ${result.error}` });
+      } else if (result.text) {
+        patch(localId, {
+          busy: null,
+          pasted_content: result.text,
+          saved: false,
+          error: null,
+        });
+      }
+    } catch (err) {
+      patch(localId, { busy: null, error: err instanceof Error ? err.message : String(err) });
+    }
+  }
+
   return (
     <div className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
@@ -144,13 +167,23 @@ export function DocumentsEditor({
                 onChange={(e) => patch(doc.localId, { name: e.target.value, saved: false })}
                 className={inputClass}
               />
-              <input
-                type="text"
-                placeholder="Source URL (Optional)"
-                value={doc.source_url || ""}
-                onChange={(e) => patch(doc.localId, { source_url: e.target.value, saved: false })}
-                className={inputClass}
-              />
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Source URL (Optional)"
+                  value={doc.source_url || ""}
+                  onChange={(e) => patch(doc.localId, { source_url: e.target.value, saved: false })}
+                  className={inputClass}
+                />
+                <button
+                  type="button"
+                  onClick={() => handleScrape(doc.localId)}
+                  disabled={!doc.source_url || !!doc.busy}
+                  className={`${smallButtonClass} bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 flex-shrink-0 px-4`}
+                >
+                  {doc.busy === "scrape" ? "Fetching..." : "Fetch"}
+                </button>
+              </div>
               <textarea
                 rows={4}
                 value={doc.pasted_content || ""}
