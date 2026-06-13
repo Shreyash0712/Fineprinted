@@ -1,80 +1,9 @@
 {
-  "generated_at": "2026-06-12T22:32:57.971Z",
+  "generated_at": "2026-06-13T00:40:49.874Z",
   "stats": {
-    "services": 7,
-    "flagged_clauses": 184,
-    "changes_published": 37
+    "services": 0,
+    "flagged_clauses": 0,
+    "changes_published": 0
   },
-  "services": [
-    {
-      "id": "096c9cc4-a970-4a57-b135-d6d05247fa78",
-      "name": "Amazon",
-      "root_domain": "amazon.com",
-      "status": "active",
-      "current_score": 100,
-      "current_grade": "A",
-      "created_at": "2026-06-12T17:39:49.347557+00:00",
-      "updated_at": "2026-06-12T22:32:23.789+00:00"
-    },
-    {
-      "id": "9237488a-6004-4b36-ae20-0b1d3b65dbc4",
-      "name": "Anthropic",
-      "root_domain": "anthropic.com",
-      "status": "active",
-      "current_score": 20,
-      "current_grade": "F",
-      "created_at": "2026-06-12T00:50:12.244698+00:00",
-      "updated_at": "2026-06-12T04:19:05.146+00:00"
-    },
-    {
-      "id": "6b72883e-0eff-431b-bf39-2128175f9126",
-      "name": "Flipkart",
-      "root_domain": "flipkart.com",
-      "status": "active",
-      "current_score": 5,
-      "current_grade": "F",
-      "created_at": "2026-06-12T17:40:26.485643+00:00",
-      "updated_at": "2026-06-12T20:49:26.998+00:00"
-    },
-    {
-      "id": "e8335548-a877-4be8-b0a9-c6c9e3d8efb2",
-      "name": "Github",
-      "root_domain": "github.com",
-      "status": "active",
-      "current_score": 55,
-      "current_grade": "C",
-      "created_at": "2026-06-11T16:28:03.994905+00:00",
-      "updated_at": "2026-06-12T03:33:27.307+00:00"
-    },
-    {
-      "id": "7f5fd960-df5a-44ab-a0b3-0381ccaaedf3",
-      "name": "Google",
-      "root_domain": "google.com",
-      "status": "active",
-      "current_score": 100,
-      "current_grade": "A",
-      "created_at": "2026-06-11T16:04:29.549174+00:00",
-      "updated_at": "2026-06-12T02:59:12.679+00:00"
-    },
-    {
-      "id": "b6ec649e-c39c-496c-b237-d3e5c593b29c",
-      "name": "Netflix",
-      "root_domain": "netflix.com",
-      "status": "active",
-      "current_score": 0,
-      "current_grade": "F",
-      "created_at": "2026-06-11T16:06:29.693676+00:00",
-      "updated_at": "2026-06-12T03:50:31.351+00:00"
-    },
-    {
-      "id": "8737a4a3-d46e-4eee-8eeb-060375c6442c",
-      "name": "Reddit",
-      "root_domain": "reddit.com",
-      "status": "active",
-      "current_score": 25,
-      "current_grade": "D",
-      "created_at": "2026-06-12T18:36:53.301821+00:00",
-      "updated_at": "2026-06-12T22:22:31.775+00:00"
-    }
-  ]
+  "services": []
 }
