@@ -1,0 +1,690 @@
+{
+  "id": "7eabe603-8d73-4d82-98f1-984d941f8ac5",
+  "name": "Anthropic",
+  "root_domain": "anthropic.com",
+  "grade": "D",
+  "score": 37,
+  "generated_at": "2026-06-13T03:35:38.527Z",
+  "last_published_at": "2026-06-13T03:35:17.992+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "They won't use your name or likeness in marketing without consent.",
+        "points": 2
+      },
+      {
+        "text": "Children's data gets extra protection or isn't collected.",
+        "points": 4
+      },
+      {
+        "text": "They extend GDPR/CCPA-style rights to all users.",
+        "points": 5
+      },
+      {
+        "text": "You keep full ownership of the content you create.",
+        "points": 5
+      },
+      {
+        "text": "They promise advance notice before terms change.",
+        "points": 6
+      }
+    ],
+    "bad": [
+      {
+        "text": "You give up your right to sue in court over disputes.",
+        "points": -12
+      },
+      {
+        "text": "They can change the terms at any time without telling you.",
+        "points": -10
+      },
+      {
+        "text": "Your content and data are used to train their AI models.",
+        "points": -8
+      },
+      {
+        "text": "They take a broad, perpetual, sublicensable license to your content.",
+        "points": -8
+      },
+      {
+        "text": "They can suspend or close your account at any time, for any reason.",
+        "points": -8
+      },
+      {
+        "text": "They fingerprint your device to track you without cookies.",
+        "points": -6
+      },
+      {
+        "text": "You must cover their legal costs if claims arise from your use.",
+        "points": -6
+      },
+      {
+        "text": "Their liability to you is capped at almost nothing.",
+        "points": -6
+      },
+      {
+        "text": "Your content or balance can be erased when an account ends.",
+        "points": -6
+      },
+      {
+        "text": "Any lawsuit must happen in their distant home court.",
+        "points": -5
+      },
+      {
+        "text": "All payments are non-refundable, even unused time.",
+        "points": -5
+      },
+      {
+        "text": "They can raise prices at any time, sometimes without notice.",
+        "points": -5
+      },
+      {
+        "text": "Subscriptions auto-renew and keep charging you.",
+        "points": -5
+      },
+      {
+        "text": "The service is provided 'as is' with no guarantees.",
+        "points": -3
+      }
+    ]
+  },
+  "documents": [
+    {
+      "name": "Privacy Policy",
+      "url": "https://www.anthropic.com/legal/privacy"
+    },
+    {
+      "name": "Consumer Health Data Privacy Policy",
+      "url": "https://www.anthropic.com/legal/consumer-health-data-privacy-policy"
+    },
+    {
+      "name": "Cookie Policy",
+      "url": "https://www.anthropic.com/legal/cookies"
+    },
+    {
+      "name": "Responsible Disclosure Policy",
+      "url": "https://www.anthropic.com/responsible-disclosure-policy"
+    },
+    {
+      "name": "Commercial Terms of Service",
+      "url": "https://www.anthropic.com/legal/commercial-terms"
+    },
+    {
+      "name": "Usage Policy",
+      "url": "https://www.anthropic.com/legal/aup"
+    },
+    {
+      "name": "Consumer Terms of Service",
+      "url": "https://www.anthropic.com/legal/consumer-terms"
+    }
+  ],
+  "clauses": [
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "If a dispute isn’t resolved informally within 45 days, either party must proceed to arbitration, requiring the parties to waive court litigation.",
+      "excerpt": "I.4. Effect of Termination. Upon termination, Customer may no longer access the Services. The following provisions will survive termination or expiration of these Terms: (a) Sections E (Confidentiality), G (Publicity), H (Fees), I (Termination and Suspension), J (Disputes), K (Indemnification), L.2 (Disclaimer of Warranties), L.3 (Limits on Liability), and M (Miscellaneous); (b) any provision or condition that must survive to fulfill its essential purpose.\n\nJ. Disputes\nJ.1. Disputes. In the event of a dispute, claim or controversy relating to these Terms (“Dispute”), the parties will first att",
+      "confidence": 97
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Disputes must be resolved by binding arbitration, with users waiving their right to a jury trial and to bring or join class actions.",
+      "excerpt": "J.2. Arbitration. Any Dispute will be determined in English by final, binding arbitration according to the region-specific processes below. Judgment on any award issued through the arbitration process in this Section J.2 (Arbitration) may be entered in any court having jurisdiction. EACH PARTY AGREES THEY ARE WAIVING THE RIGHT TO A TRIAL BY JURY, AND THE RIGHT TO JOIN AND PARTICIPATE IN A CLASS ACTION, TO THE FULLEST EXTENT PERMITTED UNDER THE LAW IN CONNECTION WITH THESE TERMS.\n\nJ.2.a. For Customers residing in the EEA, Switzerland or UK, Disputes will be determined by a sole arbitrator in Du",
+      "confidence": 98
+    },
+    {
+      "document_name": "Responsible Disclosure Policy",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The company can change the privacy policy whenever it wants by posting a new version, and users must follow the new terms without any promised notice period.",
+      "excerpt": "Changes to this Policy\nWe reserve the right to make changes to this Policy at any time by publishing a new policy and amending the date of last update. Vulnerabilities disclosed prior to any update of this Policy will remain subject to the then-current policy in effect.",
+      "confidence": 96
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The clause says Anthropic may require additional terms that can alter your rights or obligations, and may link your account to an organization’s enterprise account with monitoring capabilities.",
+      "excerpt": "Business Domains. If you use an email address owned by your employer or another organization, your Account may be linked to the organization's Anthropic enterprise account, and the organization’s administrator may be able to monitor and control the Account, including having access to Materials (defined below). We will provide notice to you before linking your Account to an organization's enterprise account. However, if the organization is responsible for notifying you or has already informed you that it may monitor and control your Account, we may not provide additional notice.\n\nEvaluation and",
+      "confidence": 92
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The company can modify, suspend, or discontinue services at any time, often without notice, and isn’t liable for those changes.",
+      "excerpt": "OUR PROVIDERS ARE INTENDED THIRD PARTY BENEFICIARIES OF THE WARRANTY DISCLAIMERS AND LIMITATIONS OF LIABILITY CONTAINED IN THIS SECTION 11.\n\n12. General terms\nChanges to the Services. Our Services are novel and will change. We may sometimes add or remove features, increase or decrease capacity limits, offer new Services, or stop offering certain Services.\n\nUnless we specifically agree otherwise in a separate agreement with you, we reserve the right to modify, suspend, or discontinue the Services or your access to the Services, in whole or in part, at any time without notice to you. Although we",
+      "confidence": 94
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The company may revise the terms whenever it wants; if you keep using the service you’re deemed to accept the new terms.",
+      "excerpt": "Changes to these terms. We may revise and update these Terms at our discretion. Some examples of times, we may update these Terms include (1) to reflect changes in our Services, like when we add or remove features or services, or update our pricing, (2) for security or legal reasons, or (3) to promote safety or prevent abuse. If you continue to access the Services after we post the updated Terms on Anthropic’s website or otherwise give you notice of Terms changes, then you agree to the updated Terms. If you do not accept the updated Terms, you must stop using our Services.\n\nSupplemental terms.",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "The company gathers personal data from various sources to train its AI models, without offering an opt‑out in this clause.",
+      "excerpt": "Publicly available information via the Internet\nDatasets that we obtain through commercial agreements with third party businesses\nData that our users or crowd workers provide, including Inputs and Outputs from our Services (unless users opt out)\nFeedback that users explicitly provide about our Services\nMaterials flagged for safety, security, or policy review\nData that we generate internally\nFor more information about how we collect and use personal data to develop our language models that power our Services, the steps we take to minimize the privacy impact on individuals through the training p",
+      "confidence": 90
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "User feedback and content may be used to train and improve Anthropic's AI models, even re‑identifying data for enforcement if needed.",
+      "excerpt": "When you submit Feedback, we disassociate Inputs and Outputs from your user ID to use them for training and improving our models.\nIf our systems flag Inputs or Outputs for harmful content or for potentially violating our policies, we disassociate the content from your user ID to train our trust and safety internal classification and generative models. However, we may re-identify the Inputs or Outputs to enforce our Terms of Service or Usage Policy with the responsible user if necessary.\nTo improve user experience, we may analyze and aggregate general user behavior and usage data. This informat",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "The clause says the company may use your data, including inputs and outputs, to train and improve its AI models.",
+      "excerpt": "To improve the Services and conduct research (excluding model training)\t\nIdentity and Contact Data\nFeedback\nStudy Participation Data\nTechnical Information\nInputs and Outputs\nScientific Research\nLegitimate interests\nIt is in our legitimate interests and in the interest of Anthropic users to evaluate the use of the Services and adoption of new features to inform the development of future features and improve direction and development of the Services. Our research also benefits the AI industry and society: it investigates the safety, inner workings, and societal impact of AI models so that artifi",
+      "confidence": 96
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "Allows Anthropic to use any feedback the customer provides without any obligation to the customer, giving Anthropic a broad, unrestricted right to use that feedback.",
+      "excerpt": "A. Services\nA.1. Overview. Subject to these Terms, Anthropic gives Customer permission to use the Services, including to power products and services Customer makes available to its own customers and end users (“Users”).\n\nA.2. Third Party Features. Customer may elect (in its sole discretion) to use features, services or other content made available by third parties to Customer through the Services (“Third Party Features”). Customer acknowledges and agrees that Third Party Features are not Services and, accordingly, Anthropic is not responsible for them.\n\nA.3. Feedback. If Customer provides (in ",
+      "confidence": 92
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "Either party can end the agreement at any time for convenience with notice, and Anthropic can terminate immediately if it believes the service is illegal, giving the company broad power to end the relationship.",
+      "excerpt": "I.2. Termination.\n\nI.2.a. Each party may terminate these Terms at any time for convenience with Notice, except Anthropic must provide 30 days prior Notice.\n\nI.2.b. Either party may terminate these Terms for the other party’s material breach by providing 30 days prior Notice detailing the nature of the breach unless cured within that time.\n\nI.2.c. Anthropic may terminate these Terms immediately with Notice if Anthropic reasonably believes or determines that Anthropic’s provision of the Services to Customer is prohibited by applicable law.\n\nI.3. Suspension.",
+      "confidence": 94
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "Anthropic may suspend the customer's access to the services for security, policy violations, legal reasons, or third‑party issues, and limits its liability for any resulting losses.",
+      "excerpt": "I.3.a. Anthropic may suspend Customer’s access to any portion or all of the Services if: (a) Anthropic reasonably believes or determines that (i) there is a risk to or attack on any of the Services; (ii) Customer or any User is using the Services in violation of Sections D.1 (Compliance), D.2 (Policies and Service Terms) or D.4 (Use Restrictions); or (iii) Anthropic’s provision of the Services to Customer is prohibited by applicable law or would result in a material increase in the cost of providing the Services; or (b) any vendor suspends or terminates Anthropic’s use of any third-party servi",
+      "confidence": 93
+    },
+    {
+      "document_name": "Usage Policy",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "The company may throttle, suspend, or terminate your access if you violate the Usage Policy.",
+      "excerpt": "Universal Usage Standards: Our Universal Usage Standards apply to all users and use cases.\nHigh-Risk Use Case Requirements: Our High-Risk Use Case Requirements apply to specific consumer-facing use cases that pose an elevated risk of harm.\nAdditional Use Case Guidelines: Our Additional Use Case Guidelines apply to certain other use cases, including consumer-facing chatbots, products serving minors, agentic use, and Model Context Protocol servers.\nAnthropic’s Safeguards Team will implement detection and monitoring to enforce our Usage Policy, so please review this policy carefully before using ",
+      "confidence": 92
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "Allows the company to use user-provided materials to train its models by default, with an opt‑out option available in settings.",
+      "excerpt": "Outputs may not always be accurate and may contain material inaccuracies even if they appear accurate because of their level of detail or specificity.\nActions may not be error free or operate as you intended.\nYou should not rely on any Outputs or Actions without independently confirming their accuracy.\nThe Services and any Outputs may not reflect correct, current, or complete information.\nOutputs may contain content that is inconsistent with Anthropic’s views.\nOur use of Materials. We may use Materials to provide, maintain, and improve the Services and to develop other products and services, i",
+      "confidence": 90
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "The clause says that any feedback you give can be used by the company in any way they choose, without owing you anything.",
+      "excerpt": "5. Feedback\nWe appreciate feedback, including ideas and suggestions for improvement or rating an Output in response to an Input (“Feedback”). If you rate an Output in response to an Input—for example, by using the thumbs up/thumbs down icon—we will store the related conversation as part of your Feedback. You have no obligation to give us Feedback, but if you do, you agree that we may use the Feedback however we choose without any obligation or other payment to you.\n\n6. Subscriptions, fees and payment.\nFees and billing. You may be required to pay us fees to access or use our Services or certain",
+      "confidence": 92
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "The company can suspend or end your access at any time, for any reason, often without notice and without refund, giving it broad power to terminate your account.",
+      "excerpt": "Termination. You may stop accessing the Services at any time. We may suspend or terminate your access to the Services (including any Subscriptions) at any time without notice to you if we believe that you have breached these Terms, or if we must do so in order to comply with law. If we terminate your access to the Services due to a violation of these Terms and you have a Subscription, you will not be entitled to any refund. In addition, if you have a Subscription, we may terminate the Subscription at any time for any other reason. If we exercise this right and you purchased the subscription vi",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "DEVICE_FINGERPRINTING",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Device Fingerprinting",
+      "summary": "The service automatically collects detailed device and connection data, including identifiers and location, to track you across services.",
+      "excerpt": "Device and Connection Information: Consistent with your device or browser permissions, your device or browser automatically sends us information about when and how you install, access, or use our Services. This includes information such as your device type, operating system information, browser information and web page referers, mobile network, connection information, mobile operator or internet service provider (ISP), time zone setting, IP address (including information about the location of the device derived from your IP address), identifiers (including device or advertising identifiers, pr",
+      "confidence": 92
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "INDEMNIFICATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "You Indemnify Them",
+      "summary": "The customer must defend and indemnify Anthropic for third‑party claims arising from the customer's data, inputs, or policy violations.",
+      "excerpt": "K.2. Claims Against Anthropic. Customer will defend Anthropic and its personnel, successors, and assigns from and against any Anthropic Claim (as defined below) and indemnify them for any judgment that a court of competent jurisdiction grants a third party on such Anthropic Claim or that an arbitrator awards a third party under any Customer-approved settlement of such Anthropic Claim. “Anthropic Claim” means any third-party claim, suit, or proceeding related to Customer’s or its Users’ (a) Inputs or other data provided by Customer, or (b) use of the Services in violation of the Usage Policy, t",
+      "confidence": 95
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "INDEMNIFICATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "You Indemnify Them",
+      "summary": "Indemnification obligations do not apply if the claim stems from fraud, willful misconduct, or other excluded actions, limiting the user's protection.",
+      "excerpt": "K.3. Exclusions. Neither party’s defense or indemnification obligations will apply to the extent the underlying allegation arises from the indemnified party’s fraud, willful misconduct, violations of law, or breach of the Agreement. Additionally, Anthropic’s defense and indemnification obligations will not apply to the extent the Customer Claim arises from: (a) modifications made by Customer to the Services or Outputs; (b) the combination of the Services or Outputs with technology or content not provided by Anthropic; (c) Inputs or other data provided by Customer; (d) use of the Services or Ou",
+      "confidence": 93
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "LIABILITY_LIMITATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Liability Capped",
+      "summary": "The agreement limits each party’s liability to the fees paid in the prior year and excludes many types of damages.",
+      "excerpt": "L.3.a. Except as stated in Section L.3.b, the liability of each party, and its affiliates and licensors, for any damages arising out of or related to these Terms (i) excludes damages that are consequential, incidental, special, indirect, or exemplary damages, including lost profits, business, contracts, revenue, goodwill, production, anticipated savings, or data, and costs of procurement of substitute goods or services and (ii) is limited to Fees paid by Customer for the Services in the previous 12 months.\n\nL.3.b. The limitations of liability in this Section L.3 (Limits on Liability) do not ap",
+      "confidence": 96
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "LIABILITY_LIMITATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Liability Capped",
+      "summary": "Anthropic and its affiliates limit their liability, refusing responsibility for any direct, indirect, or consequential damages arising from the services.",
+      "excerpt": "TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, IN NO EVENT WILL WE, OUR PROVIDERS, OR OUR OR THEIR RESPECTIVE AFFILIATES, INVESTORS, DIRECTORS, OFFICERS, EMPLOYEES, AGENTS, SUCCESSORS OR ASSIGNS (COLLECTIVELY, THE “ANTHROPIC PARTIES”), BE LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR OTHER DAMAGES ARISING OUT OF OR IN ANY WAY RELATED TO THE SERVICES, THE MATERIALS, THE ACTIONS, OR THESE TERMS, WHETHER BASED IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR OTHER THEORY, EVEN IF ANY ANTHROPIC PARTIES HAVE BEEN ADVISED OF THE P",
+      "confidence": 98
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "LIABILITY_LIMITATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Liability Capped",
+      "summary": "The company caps its total liability to the greater of what you paid in the last six months or $100, limiting any damages you can claim.",
+      "excerpt": "TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, THE ANTHROPIC PARTIES’ TOTAL AGGREGATE LIABILITY TO YOU FOR ALL DAMAGES, LOSSES AND CAUSES OF ACTION ARISING OUT OF OR IN ANY WAY RELATED TO THE SERVICES, THE MATERIALS, THE ACTIONS, OR THESE TERMS, WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE) OR OTHERWISE, WILL NOT EXCEED THE GREATER OF THE AMOUNT YOU PAID TO US FOR ACCESS TO OR USE OF THE SERVICES (IF ANY) IN THE SIX MONTHS PRECEDING THE DATE SUCH DAMAGES, LOSSES, AND CAUSES OF ACTION FIRST AROSE, AND $100. THE FOREGOING LIMITATIONS ARE ESSENTIAL TO THESE TERMS, AND WE WOULD NOT OFF",
+      "confidence": 96
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "INDEMNIFICATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "You Indemnify Them",
+      "summary": "You must cover all costs and losses the company incurs from your alleged breaches, including legal fees, and may have to let the company control the defense.",
+      "excerpt": "YOU AGREE TO INDEMNIFY AND HOLD HARMLESS THE ANTHROPIC PARTIES FROM AND AGAINST ANY AND ALL LIABILITIES, CLAIMS, DAMAGES, EXPENSES (INCLUDING REASONABLE ATTORNEYS’ FEES AND COSTS), AND OTHER LOSSES ARISING OUT OF OR RELATED TO YOUR BREACH OR ALLEGED BREACH OF THESE TERMS; YOUR ACCESS TO, USE OF, OR ALLEGED USE OF THE SERVICES, THE MATERIALS, OR THE ACTIONS; YOUR FEEDBACK; ANY PRODUCTS OR SERVICES THAT YOU DEVELOP, OFFER, OR OTHERWISE MAKE AVAILABLE USING OR OTHERWISE IN CONNECTION WITH THE SERVICES; YOUR VIOLATION OF APPLICABLE LAW OR ANY THIRD-PARTY RIGHT; AND ANY ACTUAL OR ALLEGED FRAUD, INT",
+      "confidence": 95
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "CONTENT_LOSS_ON_TERMINATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Lose Content on Exit",
+      "summary": "When the agreement or your subscription ends, the company may delete any of your materials or data associated with your account.",
+      "excerpt": "Upon termination of these Terms, a Subscription, or your access to the Services, we may at our option delete any Materials or other data associated with your Account. Sections 6 (with respect to fees outstanding as of such expiration or termination) and 9 – 12 will survive any expiration or termination of our Terms or a Subscription.\n\nSeverability. If a particular Term or portion of these Terms is not valid or enforceable, this will have no effect on any other Terms.\n\nNo waiver. Any delay or failure on our part to enforce a provision of these Terms is not a waiver of our right to enforce them ",
+      "confidence": 92
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "The agreement forces any lawsuit to be heard only in the company's chosen courts (Ireland or California), limiting the user's ability to choose a more convenient venue.",
+      "excerpt": "M.6. Interpretation. These Terms will be construed mutually, with neither party considered the drafter. Document and section titles are provided for convenience and will not be interpreted. The phrases “for example” or “including” or “or” are not limiting.\n\nM.7. Governing Law; Venue.\n\nM.7.a. These Terms are governed by and construed in accordance with the Governing Laws, without giving effect to any choice of law provision. “Governing Laws” means (i) for Customers in the EEA, Switzerland, or UK, the Laws of Ireland; and (ii) for all other Customers, the laws of the State of California.\n\nM.7.b.",
+      "confidence": 96
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "NO_REFUNDS",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "No Refunds",
+      "summary": "It states that all payments are non‑refundable, so you cannot get your money back if you change your mind.",
+      "excerpt": "If you purchase access to our Services or features of our Services, you must provide complete and accurate billing information (“Payment Method”). You agree that we may charge the Payment Method for any applicable fees listed on our Services and any applicable tax. If the fees for these Services or features are specified to be recurring or based on usage, you agree that we may charge these fees and applicable taxes to the Payment Method on a periodic basis.\n\nIf you purchase access to our Services through a distributor (e.g. an app store) (“App Distributor”), then you will make payment to the A",
+      "confidence": 95
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "UNILATERAL_PRICE_CHANGE",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Price Changes Anytime",
+      "summary": "The company can raise fees at its discretion and may cut off your access if you don’t accept the new fees.",
+      "excerpt": "Additional fees. We may increase fees for our Services. If we charge additional fees in connection with our Services, we will give you an opportunity to review and accept the additional fees before you are charged. Also, additional fees may apply for additional Services or features of the Services that we may make available. If you do not accept any such additional fees, we may discontinue your access to the Services or features.\n\nYou agree that we will not be held liable for any errors caused by third-party payment processors used to process fees paid by you to us.\n\nSubscriptions. To access C",
+      "confidence": 94
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "AUTO_RENEWAL",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Auto-Renewal",
+      "summary": "The service automatically renews your subscription and charges you unless you cancel at least 24 hours before the renewal date, and refunds are not provided except where specific consumer rights apply.",
+      "excerpt": "Subscription content, features, and services. The content, features, and other services provided as part of your Subscription, and the duration of your Subscription, will be described in the order process. We may change the content, features, and other services from time to time, and we do not guarantee that any particular piece of content, feature, or other service will always be available through the Services. Subscription term and automatic renewal. If you sign up for a paid Subscription, we or the App Distributor will automatically charge your Payment Method on each agreed-upon periodic re",
+      "confidence": 94
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "UNILATERAL_PRICE_CHANGE",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Price Changes Anytime",
+      "summary": "The company can increase subscription fees after giving you at least 30 days' notice, and you must accept the higher price or cancel your subscription to avoid the new charges.",
+      "excerpt": "The 7-day cancellation period will not reset if you change subscription tiers or cancel and then resubscribe, as you have already had an opportunity to test the Services. Subscription fees. You will pay the fees, either to us or to the App Distributor, for the Initial Term and each subsequent Renewal Term up front, at the start of that Initial Term or Renewal Term, as applicable. We have the right to make changes to the fees applicable to your Subscription from time to time, although we will not make any change to the fees applicable to your Subscription during the current Initial Term or Rene",
+      "confidence": 92
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "The agreement forces any legal disputes to be handled in California courts, requiring you to waive rights to sue elsewhere.",
+      "excerpt": "Governing law and exclusive jurisdiction. Our Terms will be governed by, and construed and interpreted in accordance with, the laws of the State of California without giving effect to conflict of law principles. You and Anthropic agree that any disputes arising out of or relating to these Terms will be resolved exclusively in the state or federal courts located in San Francisco, California, and you and Anthropic submit to the personal and exclusive jurisdiction of those courts. By accessing our Services, you waive any claims that may arise under the laws of other jurisdictions.",
+      "confidence": 96
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "The provider disclaims all warranties, stating the services are offered “as is” and without any guarantee of accuracy or performance.",
+      "excerpt": "L.2. Disclaimer of Warranties. EXCEPT TO THE EXTENT EXPRESSLY PROVIDED FOR IN THESE TERMS, TO THE MAXIMUM EXTENT PERMITTED UNDER LAW (A) THE SERVICES AND OUTPUTS ARE PROVIDED \"AS IS\" AND \"AS AVAILABLE\" WITHOUT WARRANTY OF ANY KIND; AND (B) ANTHROPIC MAKES NO WARRANTIES, EXPRESS OR IMPLIED, RELATING TO THIRD-PARTY PRODUCTS OR SERVICES, INCLUDING THIRD-PARTY INTERFACES. ANTHROPIC EXPRESSLY DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE, AS WELL AS ANY IMPLIED WARRANTY ARISING FROM STATUTE, COURSE OF DEALING OR PER",
+      "confidence": 95
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "The services, outputs and related materials are provided “as is” with no warranties of any kind, placing all risk on the user.",
+      "excerpt": "11. Disclaimer of warranties, limitations of liability, and indemnity\nOur team works hard to provide great services, and we’re continuously working on improvements. However, there are certain aspects we can’t guarantee. We are using ALL CAPS to explain this, to make sure that you see it.\n\nYOUR USE OF THE SERVICES, MATERIALS, AND ACTIONS IS SOLELY AT YOUR OWN RISK. THE SERVICES, OUTPUTS, AND ACTIONS ARE PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS AND, TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, ARE PROVIDED WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY. ",
+      "confidence": 98
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "NAME_LIKENESS_USE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 2,
+      "label": "Likeness Protected",
+      "summary": "Anthropic may use the customer's name and logo for publicity, but the customer can opt out via a request form, giving the customer control over that use.",
+      "excerpt": "G. Publicity\nAnthropic may use Customer’s name and logo to publicly identify Customer as a customer of the Services; provided that Customer may opt-out via this request form. Customer will consider in good faith any request by Anthropic to (1) provide a quote from a Customer executive regarding Customer’s motivation for using the Services that Anthropic may use publicly and (2) participate in a public co-marketing activity.\n\nH. Fees\nH.1. Payment of Fees. Customer is responsible for fees incurred by its account, at the rates specified on the Model Pricing Page, unless otherwise agreed by the pa",
+      "confidence": 96
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "INDEMNIFICATION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 2,
+      "label": "No Broad Indemnity",
+      "summary": "Anthropic agrees to defend and indemnify the customer against third‑party IP claims related to the customer's use of the service.",
+      "excerpt": "K. Indemnification\nK.1. Claims Against Customer. Anthropic will defend Customer and its personnel, successors, and assigns from and against any Customer Claim (as defined below) and indemnify them for any judgment that a court of competent jurisdiction grants a third party on such Customer Claim or that an arbitrator awards a third party under any Anthropic-approved settlement of such Customer Claim. \"Customer Claim\" means a third-party claim, suit, or proceeding alleging that Customer’s paid use of the Services (which includes data Anthropic has used to train a model that is part of the Servi",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "CHILDREN_DATA",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Children Protected",
+      "summary": "Anthropic does not knowingly collect or share data from anyone under 18 and will delete such data if discovered.",
+      "excerpt": "7. Children\nOur Services are not directed towards, and we do not knowingly collect, use, disclose, sell, or share any information from children under the age of 18. We have measures in place to detect and remove children from our Services. If you become aware that a child under the age of 18 has provided any personal data to us while using our Services, please email us at privacy@anthropic.com and we will investigate the matter and, if appropriate, delete the personal data.\n\n8. Changes to Our Privacy Policy\nAnthropic may update this Privacy Policy from time to time. We will notify you of any m",
+      "confidence": 93
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause informs users of their legal data‑protection rights and how to exercise them, while noting the company may lawfully decline some requests.",
+      "excerpt": "4. Rights and Choices\nDepending on where you live and the laws that apply in your country of residence, you may enjoy certain rights regarding your personal data, as described further below. However, please be aware that these rights are limited, and that the processes by which we may need to action your requests regarding our training dataset are complex. We may also decline a request if we have a lawful reason for doing so. That said, we strive to prioritize the protection of personal data, and comply with all applicable privacy laws.\n\nTo exercise your rights, you or an authorized agent may ",
+      "confidence": 85
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "It outlines the timeframes for responding to data‑subject requests, the right to appeal denials, and a commitment not to discriminate against users exercising privacy rights.",
+      "excerpt": "We will respond to your request within the period required by the data protection law that applies to you. For example, where the EU GDPR or UK GDPR applies, we will respond within one calendar month of receiving a verifiable request, and where your request is complex or you have made a number of requests within a short timeframe, we may extend that period by up to a further two months. Where another law applies to you and sets a different period, we will respond within that period. You may also have the right to appeal requests that we deny by emailing privacy@anthropic.com. Anthropic will no",
+      "confidence": 90
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause grants users a suite of privacy rights—including access, portability, deletion, correction, objection, restriction, and consent withdrawal—while stating the company does not sell data or use solely automated decisions that affect legal rights.",
+      "excerpt": "Right to know: the right to know what personal data Anthropic processes about you, including the categories of personal data, the categories of sources from which it is collected, the business or commercial purposes for collection, and the categories of third parties to whom we disclose it.\nAccess & data portability: the right to request a copy of the personal data Anthropic processes about you, subject to certain exceptions and conditions. In certain cases and subject to applicable law, you have the right to port your information.\nDeletion: the right to request that we delete personal data co",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "Users are informed of their right to lodge complaints with data protection authorities in their jurisdiction.",
+      "excerpt": "If you have any questions about this Privacy Policy, or have any questions, complaints or requests regarding your personal data, you can contact us as described below:\n\nAnthropic PBC with a registered address at 548 Market St, PMB 90375, San Francisco, CA 94104 (United States).\nAnthropic Ireland, Limited with a registered address at 6th Floor, South Bank House, Barrow Street, Dublin 4, D04 TR29 (Ireland).\nYou can email us at privacy@anthropic.com and contact our Data Protection Officer at dpo@anthropic.com.\n\nPlease note that under many countries' laws, you have the right to lodge a complaint w",
+      "confidence": 90
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause outlines users' legal rights under Brazil’s LGPD and the company’s commitment to honor requests to exercise those rights.",
+      "excerpt": "Legal Bases. Depending on the specific purpose of the processing, we may rely on different grounds than those listed under section 2, where permitted by and in accordance with the Brazilian General Data Protection Law (LGPD). For example, we may rely on the \"exercise of legal rights\" basis to process personal data associated with customer complaints and to enforce our Terms of Service and similar terms and agreements, including our Usage Policy.\n\nData Subject's Rights. LGPD grants certain rights regarding your personal data, which differ from the ones listed under section 4. We will respond to",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause gives users a range of rights over their personal data, such as access, correction, deletion, portability, and the ability to withdraw consent or challenge automated decisions.",
+      "excerpt": "Confirmation of whether your data is being processed. You have the right to receive a confirmation on whether Anthropic processes your data.\nAccess to your data. You have the right to know what personal data Anthropic processes about you.\nCorrection of incomplete, inaccurate or outdated data. You have the right to request the correction of your data that is incomplete, inaccurate, or outdated.\nAnonymization, blocking or erasure of data. You have the right to request the anonymization, blocking or erasure of data that is unnecessary, excessive or processed in non-compliance with the provisions ",
+      "confidence": 96
+    },
+    {
+      "document_name": "Consumer Terms of Service",
+      "category": "CONTENT_OWNERSHIP",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "You Keep Ownership",
+      "summary": "States that users retain ownership of their submitted inputs and are granted rights to the outputs generated by the service.",
+      "excerpt": "Rights and Responsibilities. You are responsible for all Inputs you submit to our Services and all Actions. By submitting Inputs to our Services, you represent and warrant that you have all rights, licenses, and permissions that are necessary for us to process the Inputs under our Terms and to provide the Services to you, including for example, to integrate with third-party services, to share Materials with others at your direction, and to take Actions. You also represent and warrant that your submitting Inputs to us or directing Claude to take Actions will not violate our Terms, our Acceptabl",
+      "confidence": 95
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Advance Notice of Changes",
+      "summary": "The company may modify the terms, but any changes become effective only after a 30‑day notice period, giving the customer advance warning.",
+      "excerpt": "M.3. Amendment and Modification. Anthropic may update these Terms at any time, to be effective 30 days after the updates are posted by Anthropic or Customer otherwise receives Notice, except that updates made in response to changes to law or regulation take effect immediately upon posting or Notice. Changes will not apply retroactively. No other amendment to or modification of these Terms is effective unless it is in writing and signed by both parties. Failure to exercise or delay in exercising any rights or remedies arising from these Terms does not and will not be construed as a waiver; and ",
+      "confidence": 90
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "The policy says your inputs and outputs may be used to train models but lets you opt out in account settings, though some flagged data may still be used.",
+      "excerpt": "To provide, maintain and facilitate any products and services offered to you with respect to your Anthropic account, which are governed by our Terms of Service;\nTo provide, maintain and facilitate optional services and features that enhance platform functionality and user experience;\nTo provide you with service updates, communications, and to provide tailored recommendations about our Services that may be of interest to you;\nTo create and administer your Anthropic account;\nTo facilitate payments for products and services provided by Anthropic;\nTo prevent and investigate fraud, abuse, and viola",
+      "confidence": 88
+    },
+    {
+      "document_name": "Commercial Terms of Service",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "States that the customer retains all rights to its inputs and outputs and that Anthropic will not use the customer's content to train its models.",
+      "excerpt": "B. Customer Content\nAs between the parties and to the extent permitted by applicable law, Anthropic agrees that Customer (a) retains all rights to its Inputs, and (b) owns its Outputs. Anthropic disclaims any rights it receives to the Customer Content under these Terms. Subject to Customer’s compliance with these Terms, Anthropic hereby assigns to Customer its right, title and interest (if any) in and to Outputs. Anthropic may not train models on Customer Content from Services. “Inputs” means submissions to the Services by Customer or its Users and “Outputs” means responses generated by the Se",
+      "confidence": 96
+    }
+  ],
+  "history": [
+    {
+      "id": "ea0fdfe7-9402-47dc-9728-85311f7754fd",
+      "date": "2026-06-13T03:35:17.992+00:00",
+      "document_name": "Consumer Terms of Service",
+      "points": -70,
+      "summary": "Several changes to the Consumer Terms of Service allow Anthropic to modify user agreements and liability. The company can now require additional terms that alter user rights or obligations and link accounts to enterprise accounts with monitoring. Users' ability to get refunds for payments has been restricted. The company also reserves the right to change, suspend, or end services at any time without liability for those actions. Furthermore, Anthropic has broadened its limitations on liability and damages users can claim. No protective changes were noted.",
+      "added": 26,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "1fc19601-93fe-42c3-af9f-aa5bac2df678",
+      "date": "2026-06-13T03:28:15.97+00:00",
+      "document_name": "Usage Policy",
+      "points": -8,
+      "summary": "The company can limit, pause, or end your access if you don't follow the Usage Policy. This means your service could be interrupted or stopped if you violate the rules. No friendly provisions were found in this review.",
+      "added": 7,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "4fb320d3-1b15-45e7-a509-9191c9ab6c1c",
+      "date": "2026-06-13T03:26:15.614+00:00",
+      "document_name": "Commercial Terms of Service",
+      "points": -32,
+      "summary": "Changes to the Commercial Terms of Service allow Anthropic to use customer feedback without obligation, but also protect customers by stating they retain rights to inputs and outputs and can opt out of name and logo use. However, customers may face limitations, including broad company control over account termination, forced arbitration, and limited liability for Anthropic. The company disclaims warranties and limits liability to fees paid in the prior year. No major user-friendly changes were found.",
+      "added": 26,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "bb8f638a-e6e6-48e1-96a0-16ae3e9c1fe7",
+      "date": "2026-06-13T03:19:16.324+00:00",
+      "document_name": "Responsible Disclosure Policy",
+      "points": -10,
+      "summary": "The company can now change the Responsible Disclosure Policy at any time by posting a new version, without giving users any notice. This means users will have to keep checking for updates and will be bound by the new terms immediately. No protections for users were found that would counterbalance this change.",
+      "added": 9,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "b87a260f-5bea-4821-8772-7579715e3e0f",
+      "date": "2026-06-13T03:17:14.626+00:00",
+      "document_name": "Cookie Policy",
+      "points": 0,
+      "summary": "No changes were found that negatively impact users. The review did not reveal any user-hostile updates to the Cookie Policy document.",
+      "added": 3,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "1dce1612-324f-4ecc-a7d9-7f6cf6350dbe",
+      "date": "2026-06-13T03:16:14.929+00:00",
+      "document_name": "Consumer Health Data Privacy Policy",
+      "points": 0,
+      "summary": "No changes to report, the policy appears to be protecting users' rights to privacy and data protection, no user-hostile changes were found. The policy still requires the company to obtain consent before collecting and sharing consumer health data. The company is also still obligated to provide users with control over their data and to keep it confidential. Overall, no significant changes were identified that would negatively impact users.",
+      "added": 4,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "aeadf9bc-dc59-4298-b715-ede6b5f5cc60",
+      "date": "2026-06-13T03:15:14.546+00:00",
+      "document_name": "Privacy Policy",
+      "points": -5,
+      "summary": "The company updated its privacy policy to collect more device and connection data to track users across services. The policy also allows the company to use user data, including inputs and outputs, to train its AI models, although users can opt out in account settings. Additionally, the policy informs users of their legal data-protection rights and outlines the process for exercising those rights. No major changes were found that would indicate a significant shift against users' interests beyond existing data collection and AI training practices.",
+      "added": 27,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}
