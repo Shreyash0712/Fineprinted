@@ -8,11 +8,11 @@ Fineprinted reads the legal fine print of the apps and sites you use, flags the
 clauses that quietly work against you, grades each service **A–F**, and tells you
 — in plain English — when the rules change.
 
-[![Live site](https://img.shields.io/badge/live-fineprinted-8b6e44?style=flat-square)](https://github.com/Shreyash0712/FinePrint)
+[![Live site](https://img.shields.io/badge/live-fineprinted-8b6e44?style=flat-square)](https://github.com/Shreyash0712/Fineprinted)
 [![Built with Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Supabase](https://img.shields.io/badge/Supabase-postgres%20%2B%20pgvector-3ecf8e?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com)
-[![Stars](https://img.shields.io/github/stars/Shreyash0712/FinePrint?style=flat-square&color=8b6e44)](https://github.com/Shreyash0712/FinePrint/stargazers)
+[![Stars](https://img.shields.io/github/stars/Shreyash0712/Fineprinted?style=flat-square&color=8b6e44)](https://github.com/Shreyash0712/Fineprinted/stargazers)
 
 </div>
 
@@ -73,7 +73,7 @@ patterns land in **F**; only genuinely privacy-respecting services reach **A/B**
 
 If this is useful to you, a ⭐ helps a lot!
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Shreyash0712/FinePrint&type=Date)](https://star-history.com/#Shreyash0712/FinePrint&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Shreyash0712/Fineprinted&type=Date)](https://star-history.com/#Shreyash0712/Fineprinted&Date)
 
 ## Built with
 

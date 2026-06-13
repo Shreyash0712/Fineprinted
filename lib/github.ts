@@ -5,7 +5,7 @@
  * actual run takes.
  *
  * Required env (Vercel → Project Settings → Environment Variables):
- * - GITHUB_REPO  e.g. "Shreyash0712/FinePrint"
+ * - GITHUB_REPO  e.g. "Shreyash0712/Fineprinted"
  * - GITHUB_PAT   fine-grained token with Actions read+write on that repo
  * - GITHUB_BRANCH optional, defaults to "main"
  */
