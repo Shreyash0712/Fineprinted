@@ -1,0 +1,63 @@
+{
+  "id": "906df3f7-fa62-4721-abe1-ac7b10f0ecc2",
+  "name": "Oracle",
+  "root_domain": "oracle.com",
+  "grade": "A",
+  "score": 100,
+  "generated_at": "2026-06-13T01:15:01.910Z",
+  "last_published_at": "2026-06-13T01:14:54.442+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "Tracking is limited or can be opted out of.",
+        "points": 5
+      }
+    ],
+    "bad": []
+  },
+  "documents": [
+    {
+      "name": "Privacy",
+      "url": "https://www.oracle.com/legal/privacy/"
+    },
+    {
+      "name": "Privacy Choices",
+      "url": "https://www.oracle.com/legal/privacy/privacy-choices/"
+    }
+  ],
+  "clauses": [
+    {
+      "document_name": "Privacy Choices",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Limited Tracking",
+      "summary": "The clause tells users they can opt out of marketing emails and control cookie-based advertising and tracking through Oracle’s preference tools.",
+      "excerpt": "You may opt out of Oracle’s email marketing by modifying your online profile as described above or by using our general unsubscribe automated link that is included in Oracle marketing emails.\n\nYou can also find details on how to automatically unsubscribe from email communications, as well as how to submit requests to opt-out from phone and postal marketing, on our Oracle.com Account Help page.\n\nCookie Preferences on Oracle Websites\nOracle enables you to opt out of cookies that are not required to enable core site functionality. Oracle uses its cookie preferences tool to process Internet advert",
+      "confidence": 95
+    }
+  ],
+  "history": [
+    {
+      "id": "26ffd13f-01ca-4012-8137-e79a0f40296d",
+      "date": "2026-06-13T01:14:54.442+00:00",
+      "document_name": "Privacy Choices",
+      "points": 5,
+      "summary": "Users now have the option to opt out of marketing emails and control cookie-based advertising and tracking through Oracle's preference tools. This change allows users to make choices about their data and how it is used for marketing purposes. No user-hostile changes were found in this clause.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "684c639a-355f-42e7-825d-d13b773cb1fe",
+      "date": "2026-06-13T01:14:51.152+00:00",
+      "document_name": "Privacy",
+      "points": 0,
+      "summary": "No changes that affect users were found in the provided clauses, and nothing user-hostile was identified. The clauses appear to be neutral or protective of users' privacy. Users' privacy rights remain unchanged based on the extracted clauses. No action is required from users in response to these clauses.",
+      "added": 3,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}
