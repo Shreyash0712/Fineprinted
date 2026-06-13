@@ -32,21 +32,21 @@ never see) hide in documents designed not to be read.
 
 Think of it as a **nutrition label for legal documents**.
 
-1. 🧷 **It watches the documents.** Each tracked service's Terms of Service and
+1. **It watches the documents.** Each tracked service's Terms of Service and
    Privacy Policy is collected, normalized, and compared against the last
    version — down to the individual clause.
-2. 🤖 **AI reads the fine print.** Every clause is classified against a strict
+2. **AI reads the fine print.** Every clause is classified against a strict
    taxonomy of ~45 user-hostile (and user-friendly) patterns — forced
    arbitration, data sales, AI training on your data, biometric collection,
    dark-pattern cancellations, and more — and explained in plain English.
-3. 🅰️ **You get a grade.** Each service earns a letter grade from **A** to **F**,
+3. **You get a grade.** Each service earns a letter grade from **A** to **F**,
    with a good/bad "at a glance" summary. Every flag links back to the original
    clause, so you can always check the receipts yourself.
 
 And because terms change quietly, you can **save** a service and see exactly
 what changed, when, and what it means for you.
 
-> ⚠️ It's a fully automated AI analysis and can make mistakes — that's why every
+> It's a fully automated AI analysis and can make mistakes — that's why every
 > finding shows the original clause text. It's informational, not legal advice.
 
 ## How the grades work
@@ -66,14 +66,20 @@ what else it does.
 
 Typical Big-Tech terms land around a **D**; surveillance-heavy services with dark
 patterns land in **F**; only genuinely privacy-respecting services reach **A/B**.
-👉 The exact categories, point values, and worked examples are in
+The exact categories, point values, and worked examples are in
 **[GRADING.md](GRADING.md)**.
 
 ## Star history
 
 If this is useful to you, a ⭐ helps a lot!
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Shreyash0712/Fineprinted&type=Date)](https://star-history.com/#Shreyash0712/Fineprinted&Date)
+<a href="https://www.star-history.com/?repos=Shreyash0712%2FFineprinted&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Shreyash0712/Fineprinted&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Shreyash0712/Fineprinted&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Shreyash0712/Fineprinted&type=date&legend=top-left" />
+ </picture>
+</a>
 
 ## Built with
 
@@ -102,10 +108,10 @@ Supabase SQL Editor (or `supabase db push`). Full setup notes are in
 
 ## Documentation
 
-- 📐 **[ARCHITECTURE.md](ARCHITECTURE.md)** — how the system is built: the
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** — how the system is built: the
   three-tier free-tier design, the pipeline stages, the database, and the
   cost-control tricks.
-- 🅰️ **[GRADING.md](GRADING.md)** — the full clause taxonomy, every point value,
+- **[GRADING.md](GRADING.md)** — the full clause taxonomy, every point value,
   and exactly how a score is calculated (with worked examples).
 
 ---
