@@ -1,9 +1,20 @@
 {
-  "generated_at": "2026-06-13T00:40:49.874Z",
+  "generated_at": "2026-06-13T00:56:24.499Z",
   "stats": {
-    "services": 0,
+    "services": 1,
     "flagged_clauses": 0,
-    "changes_published": 0
+    "changes_published": 1
   },
-  "services": []
+  "services": [
+    {
+      "id": "85fd7d97-fd40-4bda-bff4-2cfb2fea8a1d",
+      "name": "Oracle",
+      "root_domain": "oracle.com",
+      "status": "active",
+      "current_score": 100,
+      "current_grade": "A",
+      "created_at": "2026-06-13T00:39:40.860899+00:00",
+      "updated_at": "2026-06-13T00:50:01.383+00:00"
+    }
+  ]
 }
