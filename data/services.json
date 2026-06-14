@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-14T01:03:49.742Z",
+  "generated_at": "2026-06-14T01:33:25.854Z",
   "stats": {
     "services": 2,
-    "flagged_clauses": 135,
-    "changes_published": 36
+    "flagged_clauses": 142,
+    "changes_published": 38
   },
   "services": [
     {
@@ -24,7 +24,7 @@
       "current_score": 52,
       "current_grade": "C",
       "created_at": "2026-06-13T03:43:44.517098+00:00",
-      "updated_at": "2026-06-14T01:03:04.185+00:00"
+      "updated_at": "2026-06-14T01:32:13.516+00:00"
     }
   ]
 }

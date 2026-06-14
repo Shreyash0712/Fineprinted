@@ -4,8 +4,8 @@
   "root_domain": "openai.com",
   "grade": "C",
   "score": 52,
-  "generated_at": "2026-06-14T01:03:49.740Z",
-  "last_published_at": "2026-06-14T01:03:04.185+00:00",
+  "generated_at": "2026-06-14T01:33:25.851Z",
+  "last_published_at": "2026-06-14T01:32:13.516+00:00",
   "summary": {
     "good": [
       {
@@ -174,6 +174,10 @@
       "url": "https://openai.com/policies/unauthorized-openai-equity-transactions/"
     },
     {
+      "name": "ARBITRATION AGREEMENT",
+      "url": "https://cdn.openai.com/pdf/applicant-arbitration-agreement.pdf"
+    },
+    {
       "name": "Serving civil subpoenas or other civil requests for user data on OpenAI",
       "url": "https://openai.com/en-GB/policies/civil-user-data-requests/"
     },
@@ -184,6 +188,10 @@
     {
       "name": "Ad Tools Terms",
       "url": "https://openai.com/policies/ad-tools-terms/"
+    },
+    {
+      "name": "OpenAI Ad Tools Data Processing Addendum",
+      "url": "https://openai.com/policies/ad-tools-dpa/"
     },
     {
       "name": "Conversion Terms",
@@ -348,6 +356,72 @@
       "summary": "You must resolve disputes through binding arbitration, waive jury trials, and accept batch arbitration procedures, limiting court actions.",
       "excerpt": "The parties agree to sever and litigate in court any request for public injunctive relief after completing arbitration for the underlying claim and all other claims. This does not prevent either party from participating in a class-wide settlement. You and OpenAI knowingly and irrevocably waive any right to trial by jury in any action, proceeding, or counterclaim. Batch arbitration. If 25 or more claimants represented by the same or similar counsel file demands for arbitration raising substantially similar Disputes within 90 days of each other, then you and OpenAI agree that NAM will administer",
       "confidence": 96
+    },
+    {
+      "document_name": "ARBITRATION AGREEMENT",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires you to resolve any employment‑related disputes with OpenAI through binding individual arbitration, waiving your right to go to court or a jury.",
+      "excerpt": "PLEASE READ THIS ARBITRATION AGREEMENT CAREFULLY. IT APPLIES TO YOU AND\nOPENAI. This Arbitration Agreement is a contract and covers important issues relating to your rights. It is your sole\nresponsibility to read it and understand it. You are free to seek assistance from independent advisors of your choice\noutside the Company or to refrain from doing so if that is your choice. Este Acuerdo de Arbitraje es un contrato y cubre aspectos importantes de tus derechos. Es tu absoluta responsabilidad\nleerlo y entenderlo. Tienes la libertad de buscar asistencia de asesores independientes de tu elección",
+      "confidence": 98
+    },
+    {
+      "document_name": "ARBITRATION AGREEMENT",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause says most disputes must be resolved by binding arbitration, limiting court access, though it lists several exceptions where arbitration does not apply.",
+      "excerpt": "But the Delegation Provision does not apply to any disputes about the\nEnding Forced Arbitration of Sexual Assault and Sexual Harassment Act, and/or any claim that all or any part of the Class Action\nWaiver or California PAGA Individual Action Requirement is unenforceable, inapplicable, unconscionable, void, or voidable, which will\nbe determined only by a court of competent jurisdiction and not by an arbitrator. Excluded Claims and Limitations on How this Agreement Applies. These claims are not covered under this Agreement: (i)\nclaims for workers’ compensation benefits, state disability insuran",
+      "confidence": 94
+    },
+    {
+      "document_name": "ARBITRATION AGREEMENT",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Disputes must be resolved through mandatory arbitration with a required demand, cooling‑off period, and informal settlement conference, and you can only bring claims individually, not as a class action.",
+      "excerpt": "All determinations of final relief, however, will be decided in\narbitration, and pursuing Provisional Relief shall not waive rights under this Agreement. Notice and Demand, Cooling Off Period, and Informal Settlement Conference. OpenAI and You agree that the party initiating the\nclaim must make a written demand for arbitration of the claim to the other party by the expiration of the statute of limitations (deadline\nfor filing) that the law requires for the claim. The demand for arbitration shall identify the claim(s) asserted, the facts upon which such\nclaims are based, and the relief and/or r",
+      "confidence": 96
+    },
+    {
+      "document_name": "ARBITRATION AGREEMENT",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires disputes to be resolved through binding arbitration administered by JAMS, with detailed selection procedures and costs largely borne by OpenAI, limiting court recourse.",
+      "excerpt": "If the Parties cannot mutually select an Arbitrator through the processes in the preceding paragraph, the arbitration will be\nadministered by JAMS, and except as provided in this Agreement, will be under the then current JAMS Employment Arbitration Rules\n& Procedures (“JAMS Rules”). The JAMS Rules are available upon request through the Company via email to\nemploymentarbdemand@openai.com), or via the internet at https://www.jamsadr.com/adr-rules-procedures/, or by using a service\nsuch as www.google.com to search for “JAMS Employment Arbitration Rules & Procedures”; provided however, that if the",
+      "confidence": 98
+    },
+    {
+      "document_name": "ARBITRATION AGREEMENT",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires disputes to be resolved through binding arbitration, limiting court actions and setting detailed arbitration procedures.",
+      "excerpt": "Each party shall pay for its\nown costs and attorneys' fees, if any, but if any party prevails on a claim which affords the prevailing party attorneys' fees and costs,\nthe arbitrator may award reasonable attorneys’ fees and costs to the prevailing party as provided by law. You and OpenAI are entitled to adequate civil discovery sufficient to explore the factual basis of the claims and defenses asserted. Accordingly, each party may take the deposition of three (3) individual fact witnesses and any expert witness designated by another\nparty. Each party also may propound requests for production of",
+      "confidence": 96
+    },
+    {
+      "document_name": "ARBITRATION AGREEMENT",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires you to resolve any disputes with OpenAI through binding arbitration, giving up your right to a court or jury trial, and includes a class‑action waiver.",
+      "excerpt": "To the maximum extent enforceable by law, this Agreement\napplies to any covered claims that OpenAI may have against You or that You may have against OpenAI and/or its Related Parties\n(defined below), and/or its Related Parties have against You. OpenAI’s past, present, and future: (i) officers, directors, shareholders,\nemployees, members, agents; (ii) parents, subsidiaries, or affiliates; (iii) benefit plans, the plans' sponsors, fiduciaries, administrators,\naffiliates, or agents; and (iv) successors (collectively, the “Related Parties”) are intended beneficiaries of this Agreement and may\nenfo",
+      "confidence": 98
     },
     {
       "document_name": "Advertising Terms",
@@ -557,6 +631,17 @@
       "summary": "The company can suspend or terminate your account for reasons like policy violations, legal compliance, risk, or inactivity, and may do so with advance notice but without needing a specific cause.",
       "excerpt": "In short:Student Data belongs to the School and remains under the School’s control.OpenAI performs services as a School Official with a legitimate educational interest.The School is responsible for any required notices/permissions and for securing access to accounts.8. Safety, misuse, and loss of accessIf we believe there’s misuse (including non‑educational use) or a security risk, we may limit or suspend access (we’ll try to notify you when reasonable). Your School is responsible for ensuring use complies with School policy.9. TerminationYou are free to stop using our Services at any time. We",
       "confidence": 85
+    },
+    {
+      "document_name": "ARBITRATION AGREEMENT",
+      "category": "CLASS_ACTION_WAIVER",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Class-Action Waiver",
+      "summary": "The clause forces you to give up the right to bring or join any class or collective lawsuit and requires all disputes, including certain PAGA claims, to be handled individually through arbitration.",
+      "excerpt": "Accordingly, OpenAI AND I WAIVE\nANY RIGHT FOR ANY DISPUTE TO BE BROUGHT, HEARD, DECIDED, OR ARBITRATED AS A CLASS AND/OR COLLECTIVE\nACTION AND THE ARBITRATOR WILL HAVE NO AUTHORITY TO HEAR OR PRESIDE OVER ANY CLASS AND/OR\nCOLLECTIVE ACTION (“Class Action Waiver”). Additionally, no arbitration proceeding under this Agreement may be consolidated or\njoined in any way with an arbitration proceeding involving claims by different employees. You and OpenAI also agree You are not\nentitled to notice of any class or collective action involving claims covered by this Agreement, including without limitati",
+      "confidence": 98
     },
     {
       "document_name": "Advertising Terms",
@@ -1232,6 +1317,26 @@
   ],
   "history": [
     {
+      "id": "aea4bb10-be6b-422d-b124-d3a93bbf2214",
+      "date": "2026-06-14T01:32:13.516+00:00",
+      "document_name": "OpenAI Ad Tools Data Processing Addendum",
+      "points": 0,
+      "summary": "No user-hostile changes were found in the provided document. The changes appear to relate to data processing for OpenAI's ad tools and primarily focus on outlining procedures and responsibilities. Users can expect that their data will be handled according to the updated procedures, but no significant changes impacting user rights were identified.",
+      "added": 3,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "c6b15f49-8de9-41e9-8aec-2e20fc6aaefe",
+      "date": "2026-06-14T01:31:14.426+00:00",
+      "document_name": "ARBITRATION AGREEMENT",
+      "points": -20,
+      "summary": "All clauses analyzed relate to forced arbitration and class-action waivers, which limit users' access to courts and ability to join or bring collective lawsuits. The changes require users to resolve employment-related disputes through individual arbitration, waiving their right to a court or jury trial, and prohibit class or collective lawsuits. This means users will have to pursue disputes on an individual basis through arbitration, rather than in a court of law. No protective clauses were found.",
+      "added": 7,
+      "modified": 0,
+      "removed": 0
+    },
+    {
       "id": "26bb5ccd-e73c-494e-bfda-7c25cd51cce2",
       "date": "2026-06-14T01:03:04.185+00:00",
       "document_name": "Enterprise privacy at OpenAI",
@@ -1508,16 +1613,6 @@
       "points": 51,
       "summary": "No changes to the legal document were found that would be considered user-hostile. The document appears to protect users' rights and provide them with control over their data, including options to opt out of certain uses, access and delete their data, and exercise statutory data-protection rights. The company also commits to using reasonable security measures to protect personal data and does not sell personal data. Overall, the document seems to prioritize users' interests and provide them with transparency and control.",
       "added": 25,
-      "modified": 0,
-      "removed": 0
-    },
-    {
-      "id": "b027f485-28d4-41c8-a09d-17f6e6d07bfe",
-      "date": "2026-06-14T00:02:51.394+00:00",
-      "document_name": "Terms of Use",
-      "points": -23,
-      "summary": "Changes to the Terms of Use include adding more details to clauses about arbitration, liability, and account termination. The company still requires disputes to be resolved through mandatory arbitration, which limits users' ability to go to court, and users' paid subscriptions are automatically renewed and charged unless cancelled. However, users now have more control over how their content is used for AI training and are given advance notice for account termination. No major changes were found that would make the terms more user-friendly.",
-      "added": 21,
       "modified": 0,
       "removed": 0
     }
