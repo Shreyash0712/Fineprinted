@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-13T03:35:38.529Z",
+  "generated_at": "2026-06-14T01:03:49.742Z",
   "stats": {
-    "services": 1,
-    "flagged_clauses": 45,
-    "changes_published": 7
+    "services": 2,
+    "flagged_clauses": 135,
+    "changes_published": 36
   },
   "services": [
     {
@@ -15,6 +15,16 @@
       "current_grade": "D",
       "created_at": "2026-06-13T02:57:54.818681+00:00",
       "updated_at": "2026-06-13T03:35:17.992+00:00"
+    },
+    {
+      "id": "d29f0bd1-7214-4099-89a0-474297dbecac",
+      "name": "OpenAI",
+      "root_domain": "openai.com",
+      "status": "active",
+      "current_score": 52,
+      "current_grade": "C",
+      "created_at": "2026-06-13T03:43:44.517098+00:00",
+      "updated_at": "2026-06-14T01:03:04.185+00:00"
     }
   ]
 }

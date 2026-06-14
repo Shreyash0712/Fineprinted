@@ -1,0 +1,1525 @@
+{
+  "id": "d29f0bd1-7214-4099-89a0-474297dbecac",
+  "name": "OpenAI",
+  "root_domain": "openai.com",
+  "grade": "C",
+  "score": 52,
+  "generated_at": "2026-06-14T01:03:49.740Z",
+  "last_published_at": "2026-06-14T01:03:04.185+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "Data is kept only as long as needed, then deleted.",
+        "points": 3
+      },
+      {
+        "text": "Third-party ad tracking is limited or can be turned off.",
+        "points": 3
+      },
+      {
+        "text": "You can get a human to review automated decisions.",
+        "points": 3
+      },
+      {
+        "text": "They don't build hidden behavioural profiles about you.",
+        "points": 3
+      },
+      {
+        "text": "Children's data gets extra protection or isn't collected.",
+        "points": 4
+      },
+      {
+        "text": "They commit to strong security like encryption.",
+        "points": 4
+      },
+      {
+        "text": "Sensitive categories are minimized or require explicit consent.",
+        "points": 4
+      },
+      {
+        "text": "They notify you of government data requests where allowed.",
+        "points": 4
+      },
+      {
+        "text": "You keep full ownership of the content you create.",
+        "points": 5
+      },
+      {
+        "text": "They extend GDPR/CCPA-style rights to all users.",
+        "points": 5
+      },
+      {
+        "text": "They promise advance notice before terms change.",
+        "points": 6
+      },
+      {
+        "text": "You can request deletion of your personal data.",
+        "points": 6
+      },
+      {
+        "text": "They state they do not sell your personal data.",
+        "points": 8
+      }
+    ],
+    "bad": [
+      {
+        "text": "You give up your right to sue in court over disputes.",
+        "points": -12
+      },
+      {
+        "text": "They can change the terms at any time without telling you.",
+        "points": -10
+      },
+      {
+        "text": "They take a broad, perpetual, sublicensable license to your content.",
+        "points": -8
+      },
+      {
+        "text": "You can't band together with others in a class action.",
+        "points": -8
+      },
+      {
+        "text": "Your data is shared widely with third parties.",
+        "points": -8
+      },
+      {
+        "text": "They can suspend or close your account at any time, for any reason.",
+        "points": -8
+      },
+      {
+        "text": "Your content and data are used to train their AI models.",
+        "points": -8
+      },
+      {
+        "text": "Their liability to you is capped at almost nothing.",
+        "points": -6
+      },
+      {
+        "text": "Your content or balance can be erased when an account ends.",
+        "points": -6
+      },
+      {
+        "text": "You must cover their legal costs if claims arise from your use.",
+        "points": -6
+      },
+      {
+        "text": "Subscriptions auto-renew and keep charging you.",
+        "points": -5
+      },
+      {
+        "text": "Any lawsuit must happen in their distant home court.",
+        "points": -5
+      },
+      {
+        "text": "They can raise prices at any time, sometimes without notice.",
+        "points": -5
+      },
+      {
+        "text": "The service is provided 'as is' with no guarantees.",
+        "points": -3
+      }
+    ]
+  },
+  "documents": [
+    {
+      "name": "Terms of Use",
+      "url": "https://openai.com/en-GB/policies/terms-of-use/"
+    },
+    {
+      "name": "Privacy policy",
+      "url": "https://openai.com/en-GB/policies/privacy-policy/"
+    },
+    {
+      "name": "Service terms",
+      "url": "https://openai.com/en-GB/policies/service-terms/"
+    },
+    {
+      "name": "OpenAI Data Processing Addendum",
+      "url": "https://openai.com/policies/data-processing-addendum/"
+    },
+    {
+      "name": "Approach To Patents",
+      "url": "https://openai.com/en-GB/approach-to-patents/"
+    },
+    {
+      "name": "App Developer Terms",
+      "url": "https://openai.com/en-GB/policies/developer-apps-terms/"
+    },
+    {
+      "name": "Using ChatGPT agent in line with our policies",
+      "url": "https://openai.com/policies/using-chatgpt-agent-in-line-with-our-policies/"
+    },
+    {
+      "name": "Using ChatGPT agent in line with our policies",
+      "url": "https://openai.com/policies/using-chatgpt-agent-in-line-with-our-policies/"
+    },
+    {
+      "name": "Outbound coordinated disclosure policy",
+      "url": "https://openai.com/policies/outbound-coordinated-disclosure-policy/"
+    },
+    {
+      "name": "Service credit terms",
+      "url": "https://openai.com/en-GB/policies/service-credit-terms/"
+    },
+    {
+      "name": "OpenAI Services Agreement",
+      "url": "https://openai.com/en-GB/policies/services-agreement/"
+    },
+    {
+      "name": "Teacher Access Terms",
+      "url": "https://openai.com/en-GB/policies/education-terms/"
+    },
+    {
+      "name": "Unauthorized OpenAI Equity Transactions",
+      "url": "https://openai.com/policies/unauthorized-openai-equity-transactions/"
+    },
+    {
+      "name": "Serving civil subpoenas or other civil requests for user data on OpenAI",
+      "url": "https://openai.com/en-GB/policies/civil-user-data-requests/"
+    },
+    {
+      "name": "Advertising Terms",
+      "url": "https://openai.com/en-GB/policies/advertising-terms/"
+    },
+    {
+      "name": "Ad Tools Terms",
+      "url": "https://openai.com/policies/ad-tools-terms/"
+    },
+    {
+      "name": "Conversion Terms",
+      "url": "https://openai.com/en-GB/policies/conversion-terms/"
+    },
+    {
+      "name": "OpenAI Merchant Feed Terms of Service",
+      "url": "https://openai.com/en-GB/policies/merchant-feed-terms-of-service/"
+    },
+    {
+      "name": "Usage policies",
+      "url": "https://openai.com/en-GB/policies/usage-policies/"
+    },
+    {
+      "name": "Creating images and videos in line with our policies",
+      "url": "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation"
+    },
+    {
+      "name": "Sharing & publication policy",
+      "url": "https://openai.com/en-GB/policies/sharing-publication-policy/"
+    },
+    {
+      "name": "Coordinated vulnerability disclosure policy",
+      "url": "https://openai.com/policies/coordinated-vulnerability-disclosure-policy/"
+    },
+    {
+      "name": "UK Tax Strategy",
+      "url": "https://openai.com/policies/uk-tax-strategy/"
+    },
+    {
+      "name": "How your data is used to improve model performance",
+      "url": "https://openai.com/en-GB/policies/how-your-data-is-used-to-improve-model-performance/"
+    },
+    {
+      "name": "How ChatGPT and our foundation models are developed",
+      "url": "https://openai.com/en-GB/policies/how-chatgpt-and-our-foundation-models-are-developed/"
+    },
+    {
+      "name": "Cookie policy",
+      "url": "https://openai.com/en-GB/policies/cookie-policy/"
+    },
+    {
+      "name": "Health Privacy Notice",
+      "url": "https://openai.com/policies/health-privacy-policy/"
+    },
+    {
+      "name": "Commerce policies",
+      "url": "https://openai.com/en-GB/policies/commerce-policies/"
+    },
+    {
+      "name": "Enterprise privacy at OpenAI",
+      "url": "https://openai.com/enterprise-privacy/Enterprise privacy at OpenAI"
+    }
+  ],
+  "clauses": [
+    {
+      "document_name": "Terms of Use",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The terms state that disputes will be resolved through mandatory arbitration, limiting users' ability to go to court.",
+      "excerpt": "Effective: January 1, 2026 (Previous version⁠)\n\nThank you for using OpenAI!\n\nThese Terms of Use apply to your use of ChatGPT, DALL·E, and OpenAI’s other services for individuals, along with any associated software applications and websites (all together, “Services”). These Terms form an agreement between you and OpenAI OpCo, LLC, a Delaware company, and they include our Service Terms⁠⁠ and important provisions for resolving disputes through arbitration. By using our Services, you agree to these Terms.\n\nIf you reside in the European Economic Area, Switzerland, or the UK, your use of the Service",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Disputes must be resolved through binding arbitration, and you waive the right to a class action, though you can opt out within a limited time frame.",
+      "excerpt": "Indemnity\nIf you are a business or organization, to the extent permitted by law, you will indemnify and hold harmless us, our affiliates, and our personnel, from and against any costs, losses, liabilities, and expenses (including attorneys’ fees) from third party claims arising out of or relating to your use of the Services and Content or any violation of these Terms.\n\nDispute resolution\nYOU AND OPENAI AGREE TO THE FOLLOWING MANDATORY ARBITRATION AND CLASS ACTION WAIVER PROVISIONS:\n\nMANDATORY ARBITRATION. You and OpenAI agree to resolve any claims arising out of or relating to these Terms or o",
+      "confidence": 95
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "You must try informal resolution for 60 days, then you and the company are required to go to binding arbitration instead of court.",
+      "excerpt": "Informal dispute resolution. We would like to understand and try to address your concerns prior to formal legal action. Before either of us files a claim against the other, we both agree to try to resolve the Dispute informally. You agree to do so by sending us notice through this form⁠. We will do so by sending you notice to the email address associated with your account. If we are unable to resolve a Dispute within 60 days, either of us has the right to initiate arbitration. We also both agree to attend an individual settlement conference if either party requests one during this time. Any st",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "It sets mandatory arbitration procedures, including video or in‑person hearings and a sole arbitrator, reinforcing the requirement to arbitrate disputes.",
+      "excerpt": "Arbitration procedures. The arbitration will be conducted by videoconference if possible, but if the arbitrator determines a hearing should be conducted in person, the location will be mutually agreed upon, in the county where you reside, or as determined by the arbitrator, unless the batch arbitration process applies. The arbitration will be conducted by a sole arbitrator. The arbitrator will be either a retired judge or an attorney licensed to practice law in the state of California. The arbitrator will have exclusive authority to resolve any Dispute, except the state or federal courts of Sa",
+      "confidence": 94
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires disputes to be resolved through binding arbitration, including batch arbitration for many claimants, limiting court access.",
+      "excerpt": "Batch arbitration. If 25 or more claimants represented by the same or similar counsel file demands for arbitration raising substantially similar Disputes within 90 days of each other, then you and OpenAI agree that NAM will administer them in batches of up to 50 claimants each (“Batch”), unless there are less than 50 claimants in total or after batching, which will comprise a single Batch. NAM will administer each Batch as a single consolidated arbitration with one arbitrator, one set of arbitration fees, and one hearing held by videoconference or in a location decided by the arbitrator for ea",
+      "confidence": 97
+    },
+    {
+      "document_name": "App Developer Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Disputes must be resolved through mandatory binding arbitration, and you waive the right to bring a class action, with limited opt‑out rights.",
+      "excerpt": "We may delete or disable content that we believe violates these Terms or is alleged to be infringing, and will terminate accounts of repeat infringers where appropriate.Copyright AgentOpenAI, LLC, Legal Department1455 3rd StreetSan Francisco, CA 941588.2 Written claims concerning copyright infringement must include the following information:A physical or electronic signature of the person authorized to act on behalf of the owner of the copyright interestA description of the copyrighted work that you claim has been infringed uponA description of where the allegedly infringing material is locate",
+      "confidence": 96
+    },
+    {
+      "document_name": "App Developer Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause forces disputes into binding arbitration, bans class actions and waives jury trials, limiting users' legal recourse.",
+      "excerpt": "The arbitrator has the authority to grant motions dispositive of all or part of any Dispute.9.5 Exceptions. This section does not require informal dispute resolution or arbitration of the following claims: (i) individual claims brought in small claims court; and (ii) injunctive or other equitable relief to stop unauthorized use or abuse of the Services or intellectual property infringement or misappropriation.9.6 CLASS AND JURY TRIAL WAIVERS. You and OpenAI agree that Disputes must be brought on an individual basis only, and may not be brought as a plaintiff or class member in any purported cl",
+      "confidence": 96
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The agreement requires all disputes to be settled by binding arbitration, preventing court action, which limits the user's ability to sue.",
+      "excerpt": "In addition, the Service-Specific Terms Indemnity, as of the Effective Date, is included in this Agreement, is not subject to any liability cap, and OpenAI may not materially reduce Customer’s protections under the Service-Specific Terms Indemnity without Customer’s written agreement.13.2. By Customer. Customer agrees to indemnify, defend, and hold OpenAI and its affiliates and licensors harmless against any liabilities, damages, and costs (including reasonable attorneys’ fees) payable to a third party arising out of a Claim related to: (a) use of the Services in violation of this Agreement; (",
+      "confidence": 96
+    },
+    {
+      "document_name": "Teacher Access Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires users to resolve disputes through mandatory arbitration and waives the right to bring class actions, limiting legal recourse to individual arbitration.",
+      "excerpt": "In that case, these Terms only limit our responsibilities to the maximum extent permissible in your country of residence.OPENAI’S AFFILIATES, SUPPLIERS, LICENSORS, AND DISTRIBUTORS ARE INTENDED THIRD PARTY BENEFICIARIES OF THIS SECTION.13. Dispute resolutionYOU AND OPENAI AGREE TO THE FOLLOWING MANDATORY ARBITRATION AND CLASS ACTION WAIVER PROVISIONS:MANDATORY ARBITRATION. You and OpenAI agree to resolve any claims arising out of or relating to these Terms or our Services, regardless of when the claim arose, even if it was before these Terms existed (a “Dispute”), through final and binding arb",
+      "confidence": 96
+    },
+    {
+      "document_name": "Teacher Access Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "You must resolve disputes through binding arbitration, waive jury trials, and accept batch arbitration procedures, limiting court actions.",
+      "excerpt": "The parties agree to sever and litigate in court any request for public injunctive relief after completing arbitration for the underlying claim and all other claims. This does not prevent either party from participating in a class-wide settlement. You and OpenAI knowingly and irrevocably waive any right to trial by jury in any action, proceeding, or counterclaim. Batch arbitration. If 25 or more claimants represented by the same or similar counsel file demands for arbitration raising substantially similar Disputes within 90 days of each other, then you and OpenAI agree that NAM will administer",
+      "confidence": 96
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The agreement requires all disputes to be settled by binding arbitration, limiting users' ability to go to court.",
+      "excerpt": "Despite anything to the contrary in these Advertising Terms: (a) you may choose to use Beta Services in your sole discretion; (b) Beta Services may not be supported and may be changed at any time without notice; (c) Beta Services may not be as reliable or available as the Advertising Services; (d) Beta Services have not been subjected to the same security measures and auditing as the Advertising Services; and (e) OPENAI WILL HAVE NO LIABILITY ARISING OUT OF OR IN CONNECTION WITH BETA SERVICES – USE AT YOUR OWN RISK.11. Suspension; Cancellation; Termination.11.1. Cancellation; Changes to Campai",
+      "confidence": 96
+    },
+    {
+      "document_name": "OpenAI Merchant Feed Terms of Service",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Disputes must be resolved by binding arbitration in California, with no right to join class actions, limiting users to individual claims only.",
+      "excerpt": "Sanctions, Export Control, and International Trade ComplianceWith respect to all of its activities pursuant to these Terms, Merchant, including its respective officers, directors, employees, subsidiaries, and/or any other person acting on its behalf: shall comply with all applicable international trade, economic sanctions, and export control laws and regulations with respect to its activities pursuant to these Terms, including U.S. (including the regulations administered by the U.S. Department of the Treasury’s Office of Foreign Asset Controls (“OFAC”) and the U.S. Department of Commerce’s Bur",
+      "confidence": 96
+    },
+    {
+      "document_name": "Outbound coordinated disclosure policy",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The clause states that OpenAI can change or deviate from this policy at its discretion, without creating contractual rights or obligations for users.",
+      "excerpt": "These may include disclosures to the public, or to a more limited set including to CERTs, CISA and other bodies within and outside the United States with responsibilities for ingestion and dissemination of vulnerability information.Public Disclosure TimelineWe do not commit to strict publication timelines. Public disclosures may occur in the following circumstances, where:Explicit vendor permission is obtained.There is credible evidence of active exploitation.Notifying or attempting to notify the vendor or open source maintainer may be futile, including because the recipient may not be reachab",
+      "confidence": 90
+    },
+    {
+      "document_name": "Service credit terms",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "OpenAI can change these credit terms at any time, and your continued use means you accept the new terms, even without advance notice.",
+      "excerpt": "OpenAISelect language…Updated: 1 January 2026Service credit termsThese OpenAI Service Credit Terms (“Terms”) are an agreement between you and OpenAI OpCo, LLC (or our affiliates) and govern your purchase, receipt, or use of any credit redeemable for our Services (“Service Credit”). Capitalized terms used but not defined in these Terms will have the meanings set forth in the agreement between you and OpenAI governing your use of the applicable Services (the “Agreement”).We may offer the option to prepay for certain Services through the purchase of credits (“Prepaid Service Credits”). Prepaid Se",
+      "confidence": 78
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "OpenAI can modify the agreement or policies at any time, and your continued use means you accept the changes, with only limited notice for material updates.",
+      "excerpt": "embargoed countries, are not identified on any Restricted Party List, and that Customer will comply with applicable export control laws, including any “know your customer” requirements or obligations applicable to Customer’s End Users.16.12. Geographical Limitations on Use. Customer and End Users may not access or offer access to the Services outside of the Supported Countries and Territories. A violation of this Section 16.12 may result in Services suspension under Section 8.16.13. Updates.a. Generally. OpenAI may update this Agreement, or OpenAI Policies, by providing Customer with reasonabl",
+      "confidence": 75
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "OpenAI can change how ads are delivered, formatted, priced, or displayed, and can review, reject, or remove any ad at any time for any reason, without giving you notice or liability.",
+      "excerpt": "OpenAI may conduct tests or experiments, or make product changes or updates, that may affect delivery, formatting, ranking, relevance, pricing, reporting, or targeting, without notice or liability to you.4.4. Ad Transparency. OpenAI may include Ads and related information in tools or features designed to improve transparency, support compliance, or help users to understand or customize their interaction with advertisements. User preferences or regulatory requirements may affect the delivery, visibility, or interaction with Ads. 4.5. Ad Review and Removal. OpenAI may review, reject, remove, or ",
+      "confidence": 92
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "OpenAI can modify these Advertising Terms at its discretion, with only reasonable notice (e.g., posting online), and your continued use means you accept the changes.",
+      "excerpt": "If there is a conflict among the documents that make up these Advertising Terms, the documents control in the following order: (a) the applicable Order, (b) the Ad Tools Terms, (c) these Advertising Terms, (d) the OpenAI Policies, and (e) any Documentation/technical specifications.13.3. Governing Law. These Advertising Terms will be governed by the Governing Laws. Without prejudice to Section 12 (Dispute Resolution), all claims arising out of or relating to these Advertising Terms will be brought exclusively in the Venue.13.4. Severability. Unenforceable provisions will be modified to reflect ",
+      "confidence": 85
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "User feedback can be used by the company without restriction or compensation, giving it a wide, perpetual license over that content.",
+      "excerpt": "Corporate domains. If you create an account using an email address owned by an organization (for example, your employer), that account may be added to the organization's business account with us, in which case we will provide notice to you so that you can help facilitate the transfer of your account (unless your organization has already provided notice to you that it may monitor and control your account). Once your account is transferred, the organization’s administrator will be able to control your account, including being able to access Content (defined below) and restrict or remove your acc",
+      "confidence": 94
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "CLASS_ACTION_WAIVER",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Class-Action Waiver",
+      "summary": "You waive the right to bring or join any class actions or representative suits and also waive a jury trial, limiting you to individual arbitration only.",
+      "excerpt": "Exceptions. This section does not require informal dispute resolution or arbitration of the following claims: (i) individual claims brought in small claims court; and (ii) injunctive or other equitable relief to stop unauthorized use or abuse of the Services or intellectual property infringement or misappropriation.\n\nCLASS AND JURY TRIAL WAIVERS. You and OpenAI agree that Disputes must be brought on an individual basis only, and may not be brought as a plaintiff or class member in any purported class, consolidated, or representative proceeding. Class arbitrations, class actions, and representa",
+      "confidence": 96
+    },
+    {
+      "document_name": "Service terms",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "Allows administrators to access, share, and remove user content and view usage logs, giving the provider broad rights over user‑generated material.",
+      "excerpt": "3. ChatGPT Enterprise, Edu, Healthcare and Business\n(a) Administrators. ChatGPT Enterprise, ChatGPT Edu, and ChatGPT for Healthcare (collectively, “Enterprise”) and ChatGPT Business accounts are managed by End Users with administrative privileges (“Administrators”). Administrators may be able to add, remove and suspend End Users’ access to the organization’s workspace. In addition, ChatGPT Enterprise Administrators may be able to (a) access, share and remove Content; and (b) access logging and information about End Users’ use of ChatGPT Enterprise. Customers are responsible for obtaining and m",
+      "confidence": 90
+    },
+    {
+      "document_name": "Service terms",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "By sharing a GPT, you give OpenAI a worldwide, irrevocable, royalty‑free license to use, modify, and distribute your GPT content and related output.",
+      "excerpt": "For Builders of GPTs:\n(a) GPT Content. The information or content that you upload to or include with your GPT (for example your GPT name, instructions, and description) (“GPT Content”) is your Content. As between you and OpenAI, you are solely responsible for your GPT Content, Actions, and configurations that you use or enable to create your GPT as well as any Output that is based on your GPT Content, Actions, and configurations. You must ensure your GPT complies with the Agreement and our Usage Policies⁠⁠⁠.\n\n(b) Distribution and Promotion of GPTs. By sharing your GPT with others, you grant a ",
+      "confidence": 96
+    },
+    {
+      "document_name": "Service terms",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "By sharing images or videos, you grant OpenAI a broad, perpetual right to reproduce, distribute, modify, display and perform the content for operating and promoting the service.",
+      "excerpt": "6. Image and Video Capabilities\nOur models can accept images and videos as part of Inputs to the Services (“Visual Capabilities”). You may not use Visual Capabilities to assist in identifying a person nor to solicit or infer private or sensitive information about a person. You may not use Visual Capabilities to reproduce the likeness of any person without express consent and all necessary rights. By choosing to share an image or video publicly on the Services, such as by sharing it to the Sora feed or uploading it to create a Sora cameo, you represent you have all necessary rights, and you giv",
+      "confidence": 92
+    },
+    {
+      "document_name": "Service terms",
+      "category": "DATA_SHARING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Data Sharing",
+      "summary": "When you enable an App, OpenAI will send your content and location data to the third‑party Application, and it is not responsible for that data once transferred.",
+      "excerpt": "(b) App Operation and Content. When you add or enable an App, the Services may send applicable portions of your Content and certain information such as your country and state (“App Data”) via the App to the Application. By using or enabling the App, you authorize and instruct us to send your App Data to the applicable Application, which will be handled in accordance with its terms. We are not responsible for App Data after it has been provided to an Application other than Applications owned by us. The App may retrieve information and content from the Application, which may be included in Outpu",
+      "confidence": 90
+    },
+    {
+      "document_name": "Service terms",
+      "category": "DATA_SHARING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Data Sharing",
+      "summary": "OpenAI may share information about your Academy activity with your organization’s owners or administrators.",
+      "excerpt": "12. OpenAI Academy\nOpenAI Academy is a free learning hub and community for users of OpenAI products and services. Use of OpenAI Academy is subject to OpenAI’s Terms of Use⁠ and OpenAI Academy’s Terms of Use and Code of Conduct⁠(opens in a new window).\n\nFor users with accounts associated with a business or enterprise workspace, the OpenAI Services Agreement or other business or enterprise terms do not apply to use of OpenAI Academy, even if a user uses Sign in with ChatGPT with their workspace account.\n\nIf you use an email address or account associated with an organization, including through Si",
+      "confidence": 92
+    },
+    {
+      "document_name": "App Developer Terms",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "You give OpenAI a worldwide, royalty‑free, perpetual license to use, store, copy, modify and distribute the responses your app generates, and also allow users to do the same.",
+      "excerpt": "OpenAISelect language…Updated: 17 December 2025App Developer TermsThese App Developer Terms only apply to the development and operation of custom apps, connectors, and actions, and do not apply to other OpenAI services. These App Developer Terms (\"Terms\") govern your development, publication, listing, and operation of custom apps, connectors, and actions (together, “Apps”) that can connect to your API or to another service that exposes an API, including via an MCP server (“API”) and enable third-party experiences on our services (“Services”) for users. “Apps” include apps built using the Apps ",
+      "confidence": 96
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "The clause gives OpenAI a perpetual, unrestricted right to use any feedback you provide, without compensation or limitation.",
+      "excerpt": "Use and Nondisclosure. Recipient agrees it will: (a) only use Discloser's Confidential Information to exercise its rights and fulfill its obligations under this Agreement; (b) take reasonable measures to protect the Confidential Information; and (c) not disclose the Confidential Information to any third party except as expressly permitted in this Agreement.7.2. Exceptions. The obligations in Section 7.1 do not apply to information that: (a) is or becomes generally available to the public through no fault of Recipient; (b) was in Recipient’s possession or known by it prior to receipt from Discl",
+      "confidence": 94
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "CLASS_ACTION_WAIVER",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Class-Action Waiver",
+      "summary": "The clause requires disputes to be resolved through individual arbitration and explicitly forbids class actions, also waiving the right to a jury trial.",
+      "excerpt": "The Parties agree to try to resolve Disputes informally before filing a claim against one another. Customer will do so by completing the Informal Dispute Resolution Form⁠. OpenAI will do so by notifying Customer at the Account email address. If the Parties cannot resolve a Dispute within sixty days, either Party may initiate arbitration. Both Parties also agree to attend an individual settlement conference if either Party requests one during this time. Any statute of limitations will be tolled during this informal resolution process.15.3. Generally. Customer and OpenAI agree to resolve any Dis",
+      "confidence": 96
+    },
+    {
+      "document_name": "Teacher Access Terms",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "The clause says that any content you create through a Teacher Account may give your school a broad, possibly perpetual license to use, modify, or delete that content.",
+      "excerpt": "Artificial intelligence and machine learning are rapidly evolving fields of study. We are constantly working to improve our Services to make them more accurate, reliable, safe, and beneficial. Given the probabilistic nature of machine learning, use of our Services may, in some situations, result in Output that does not accurately reflect real people, places, or facts. When you use our Services, you understand and agree:Output may not always be accurate. You should not rely on Output from our Services as a sole source of truth or factual information, or as a substitute for professional advice.Y",
+      "confidence": 92
+    },
+    {
+      "document_name": "Teacher Access Terms",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "The company can suspend or terminate your account for reasons like policy violations, legal compliance, risk, or inactivity, and may do so with advance notice but without needing a specific cause.",
+      "excerpt": "In short:Student Data belongs to the School and remains under the School’s control.OpenAI performs services as a School Official with a legitimate educational interest.The School is responsible for any required notices/permissions and for securing access to accounts.8. Safety, misuse, and loss of accessIf we believe there’s misuse (including non‑educational use) or a security risk, we may limit or suspend access (we’ll try to notify you when reasonable). Your School is responsible for ensuring use complies with School policy.9. TerminationYou are free to stop using our Services at any time. We",
+      "confidence": 85
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "OpenAI can suspend or restrict your account or access to the Ads Console at its sole discretion for policy violations, security issues, or reputational concerns, without needing to give you notice or a reason.",
+      "excerpt": "OpenAI may reject, monitor, suspend, disable, or restrict any Account or access to the Ads Console if OpenAI determines in its sole judgement that you, anyone accessing your Account, or any Authorized User violated these Advertising Terms, has a security deficiency, or may otherwise threaten or damage OpenAI’s reputation.3. Payment. 3.1. Fees; Payment Method; Past Due. You will pay OpenAI all applicable Fees. All metric-based Fees will be based on OpenAI’s measurement and/or data. You authorize OpenAI to charge the payment method associated with the Account or invoice you as specified in the O",
+      "confidence": 94
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "You give OpenAI an unrestricted, royalty‑free license to use any feedback you provide, and it can collect and use data from your ads for its own purposes.",
+      "excerpt": "You represent and warrant that (a) the foregoing comply with applicable law, rules, and regulations, including required disclosures, truthfulness and substantiation of claims, and lawful administration of promotions, contests, or endorsements; and (b) you have all necessary rights, licenses, consents, and permissions, including for any data, music, footage, images, endorsements, trademarks, or other third-party materials, for OpenAI to use the foregoing as contemplated by these Advertising Terms and the applicable Order. You will ensure all Destinations associated with your Ad campaigns will b",
+      "confidence": 96
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "CLASS_ACTION_WAIVER",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Class-Action Waiver",
+      "summary": "Users must bring disputes individually; they cannot join class actions or consolidated proceedings, and they waive the right to a jury trial if the dispute goes to court.",
+      "excerpt": "If a Party’s claim is determined to be frivolous, the Party who initiated the frivolous claim is responsible for reimbursing the other Party for all administrative, hearing, and other fees incurred as a result of the frivolous claim.12.4. Procedure. The arbitration will be conducted by telephone, based on written submissions, video conference, or in person in San Francisco, California or at another mutually agreed location. The arbitration will be conducted by a sole arbitrator by NAM under its then-prevailing rules. All issues are for the arbitrator to decide, except a California court has th",
+      "confidence": 96
+    },
+    {
+      "document_name": "OpenAI Merchant Feed Terms of Service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "By submitting content, the merchant gives OpenAI a worldwide, royalty‑free, perpetual license to reproduce, modify, and display the content and may use it for search indexing and service improvement, with no requirement that OpenAI actually use it.",
+      "excerpt": "OpenAISelect language…Published: 3 June 2026OpenAI Merchant Feed Terms of ServiceThese OpenAI Merchant Feed Terms of Service (“Terms”) are entered into by OpenAI OpCo, LLC and its Affiliates (together, “OpenAI”) and the entity agreeing to these Terms (“Merchant”). These Terms govern the sharing of Merchant content with OpenAI and OpenAI’s use of such content with its products and services. You represent that you are lawfully able to enter into these Terms and bind Merchant.1. DeliveryMerchant may submit (itself or through its agent(s)) product content (“Merchant Content”) to OpenAI using agree",
+      "confidence": 96
+    },
+    {
+      "document_name": "How your data is used to improve model performance",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "The clause states that retained interaction data is used to improve and train models, indicating the company will employ your data for AI training without mentioning an opt‑out.",
+      "excerpt": "What the process looks like\nWe retain certain data from your interactions with us, but we take steps to reduce the amount of personal information in our training datasets before they are used to improve and train our models. This data helps us better understand user needs and preferences, allowing our model to become more efficient over time.\n\nFor more on how we handle data, please see our Privacy Policy, Terms of Use, and Enterprise Privacy page.",
+      "confidence": 92
+    },
+    {
+      "document_name": "Enterprise privacy at OpenAI",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "OpenAI may use data from ChatGPT and other services to train its models unless the user explicitly opts in to share that data.",
+      "excerpt": "Model training FAQ\n\nHow does OpenAI train its models?\nOpenAI trains its models in two stages. First, we learn from a large amount of data. Then, we use data from ChatGPT users and human trainers to make sure the outputs are safe and accurate and to improve their general capabilities. Learn more about our training process⁠(opens in a new window).What sources of data are used for training OpenAI models?\nOpenAI uses data from different places including public sources, licensed third-party data, and information created by human reviewers. We also use data from versions of ChatGPT and other service",
+      "confidence": 90
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "LIABILITY_LIMITATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Liability Capped",
+      "summary": "The company limits its liability to the greater of what you paid in the last year or $100 and disclaims indirect or consequential damages.",
+      "excerpt": "Limitation of liability\nNEITHER WE NOR ANY OF OUR AFFILIATES OR LICENSORS WILL BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, OR DATA OR OTHER LOSSES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY UNDER THESE TERMS WILL NOT EXCEED ​​THE GREATER OF THE AMOUNT YOU PAID FOR THE SERVICE THAT GAVE RISE TO THE CLAIM DURING THE 12 MONTHS BEFORE THE LIABILITY AROSE OR ONE HUNDRED DOLLARS ($100). THE LIMITATIONS IN THIS SECTION APPLY ONLY TO THE MAXIMUM EXTENT PERMITTE",
+      "confidence": 94
+    },
+    {
+      "document_name": "Service terms",
+      "category": "CONTENT_LOSS_ON_TERMINATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Lose Content on Exit",
+      "summary": "OpenAI or GPT creators may remove or reject any GPT at any time for any reason without notice, potentially causing loss of your content.",
+      "excerpt": "(c) Actions. Any API, website, or service that interacts with a GPT (an “Action”) is subject to our App Developer Terms⁠⁠ and you are responsible for ensuring that any Action included with your GPT operates in compliance with those terms.\n\n(d) Removal. We may reject or remove any GPT from our Services at any time for any reason without notice to you, such as for legal or security reasons or if your GPT violates our Terms.\n\nFor Users of GPTs:\n(a) Third Party GPTs. Except where OpenAI is identified as the builder of a GPT, GPTs are created by other users and they may rely on content or third par",
+      "confidence": 94
+    },
+    {
+      "document_name": "App Developer Terms",
+      "category": "LIABILITY_LIMITATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Liability Capped",
+      "summary": "The clause caps the company’s liability to $100 and disclaims responsibility for indirect or consequential damages, limiting what users can recover.",
+      "excerpt": "NEITHER WE NOR ANY OF OUR AFFILIATES OR LICENSORS WILL BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, OR DATA OR OTHER LOSSES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY UNDER THESE TERMS SHALL NOT EXCEED ONE HUNDRED DOLLARS ($100). THE LIMITATIONS IN THIS SECTION APPLY ONLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.7. App Publication7.1 Submission Requirements. By submitting an App to be published, shareable, or otherwise made available to ChatGPT U",
+      "confidence": 96
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "INDEMNIFICATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "You Indemnify Them",
+      "summary": "You must defend and pay for any third‑party claims arising from your use of the advertising services, giving OpenAI control over the defense but requiring you to cover costs.",
+      "excerpt": "Recipient acknowledges that a disclosure of Confidential Information in violation of these terms would cause substantial harm for which damages alone would not be a sufficient remedy, and therefore upon any such disclosure by Recipient, Discloser will be entitled to seek appropriate equitable relief in addition to whatever other remedies it might have at law.8.5. Publicity. Except with the express written permission of OpenAI in each instance, Customer will not: (a) include OpenAI’s name or logo on its websites, media, or marketing materials; or (b) make any public statement about its relation",
+      "confidence": 96
+    },
+    {
+      "document_name": "Conversion Terms",
+      "category": "INDEMNIFICATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "You Indemnify Them",
+      "summary": "You must protect OpenAI from any third‑party claims related to your use of the Conversion Tools, covering all damages and legal costs.",
+      "excerpt": "For Restricted Processing only, you are the Data Controller and OpenAI is the Data Processor. Processing of Personal Data through the Conversion Tools is subject to the Ad Tools DPA, which is incorporated by reference.6. IndemnificationYou will indemnify, defend, and hold harmless OpenAI and its Affiliates and licensors against any liabilities, damages, and costs, including reasonable attorneys’ fees, payable to a third party arising out of a Claim related to (a) your use of the Conversion Tools; or (b) Conversion Data, including your collection, use, sharing, or provision of Conversion Data t",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "AUTO_RENEWAL",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Auto-Renewal",
+      "summary": "Your paid subscription is automatically renewed and charged each period unless you cancel, and payments are non‑refundable.",
+      "excerpt": "Paid accounts\nBilling. If you purchase any Services, you will provide complete and accurate billing information, including a valid payment method. For paid subscriptions, we will automatically charge your payment method on each agreed-upon periodic renewal until you cancel. You’re responsible for all applicable taxes, and we’ll charge tax when required. If your payment cannot be completed, we may downgrade your account or suspend your access to our Services until payment is received.\n\nService credits. You can pay for some Services in advance by purchasing service credits. All service credits a",
+      "confidence": 93
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "The agreement says California law governs and all disputes must be filed in San Francisco courts, limiting your ability to choose a more convenient jurisdiction.",
+      "excerpt": "Trade controls. You must comply with all applicable trade laws, including sanctions and export control laws. Our Services may not be used in or for the benefit of, or exported or re-exported to (a) any U.S. embargoed country or territory or (b) any individual or entity with whom dealings are prohibited or restricted under applicable trade laws. Our Services may not be used for any end use prohibited by applicable trade laws, and your Input may not include material or information that requires a government license for release or export.\n\nEntire agreement. These Terms contain the entire agreemen",
+      "confidence": 94
+    },
+    {
+      "document_name": "OpenAI Data Processing Addendum",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "Specifies that disputes will be resolved in English courts and that English law governs the agreement, limiting the user's choice of venue.",
+      "excerpt": "8.1 Module Two (Controller to Processor) of the SCCs apply when Customer is a Data Controller and OpenAI is processing Customer Data as a Data Processor. Module Three (Processor to Sub-Processor) of the SCCs apply when Customer is a Data Processor and OpenAI is processing Customer Data as a sub-processor.\n8.2 For each module of the SCCs, where applicable, the following applies: (i) The optional docking clause in Clause 7 does not apply; (ii) In Clause 9, Option 2 (general written authorization) applies, and the minimum time period for prior notice of sub-processor changes shall be as set forth",
+      "confidence": 95
+    },
+    {
+      "document_name": "App Developer Terms",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "It mandates that any disputes be litigated in California courts, requiring users to accept a distant and potentially inconvenient forum.",
+      "excerpt": "Bureau of Industry and Security, or any comparable list promulgated by other applicable government authorities.10.4 Miscellaneous. These Terms are the parties’ entire agreement on this topic. Amendments to these Terms must be in writing. Failure to enforce any provisions of these Terms will not constitute a waiver. If a provision is found unenforceable, it will be modified to reflect the parties’ intention and only to the extent necessary to make it enforceable; the remaining provisions will remain in full effect. OpenAI and you are not legal partners, and our relationship is that of independe",
+      "confidence": 94
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "UNILATERAL_PRICE_CHANGE",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Price Changes Anytime",
+      "summary": "OpenAI can change prices on its pricing page with a 14‑day notice and can correct pricing errors even after invoicing, giving it the ability to raise fees unilaterally.",
+      "excerpt": "Due to the nature of OpenAI’s Services and artificial intelligence generally, Output may not be unique, and other users may receive similar content from OpenAI’s services. Responses that are requested by and generated for other users are not considered Customer’s Output.5. Security and Privacy.5.1. Security Measures. OpenAI will comply with the Security Measures. OpenAI may periodically update the Security Measures. If OpenAI updates the Security Measures in a manner that materially diminishes the administrative, technical, or physical security features of the Services taken as a whole, Custom",
+      "confidence": 92
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "The agreement requires all disputes to be heard in a specific venue chosen by the company, limiting the user's ability to choose a more convenient court.",
+      "excerpt": "Nothing in this section will be deemed to waive or otherwise limit the right to seek public injunctive relief or any other non-waivable right, pending a ruling on the substance of that claim from the arbitrator.16. Miscellaneous.16.1. Entire Agreement. This Agreement is the entire agreement between Customer and OpenAI with respect to its subject matter and supersedes all prior or contemporaneous agreements, communications and understandings, whether written or oral. This Agreement hereby incorporates by this reference the OpenAI Policies and relevant Order Forms. Customer agrees that any terms",
+      "confidence": 94
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "Specifies that disputes must be litigated in courts in Dublin for EEA/UK customers or San Francisco County, California for others, limiting users' choice of venue.",
+      "excerpt": "Note that if Customer renews without a new Order Form, the Start Date for that Renewal Term will be calculated based on the original Start Date.“Supported Countries and Territories” means the countries and territories for which OpenAI supports access to API Services and our ChatGPT services. These countries and territories are available at: https://help.openai.com/articles/5347006-openai-api-supported-countries-and-territories⁠(opens in a new window) (for API) or https://help.openai.com/articles/7947663-chatgpt-supported-countries⁠(opens in a new window) (for ChatGPT), and may be updated from ",
+      "confidence": 93
+    },
+    {
+      "document_name": "Teacher Access Terms",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "All legal claims must be brought in federal or state courts in San Francisco, California, imposing a specific venue on users.",
+      "excerpt": "These Terms contain the entire agreement between you and OpenAI regarding the Services and supersedes any prior or contemporaneous agreements between you and OpenAI regarding the Services. Governing law. California law will govern these Terms except for its conflicts of laws principles. Except as provided in the dispute resolution section above, all claims arising out of or relating to these Terms will be brought exclusively in the federal or state courts of San Francisco, California.16. Government rightsIf the Services are accessed or used by any agency or other part of the U.S. Government, t",
+      "confidence": 94
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "Specifies that disputes must be resolved in courts in Dublin, Ireland or San Francisco County, California, limiting users to the company’s chosen venues.",
+      "excerpt": "Department of Commerce Bureau of Industry and Security Denied Persons List and Entity List, and any other applicable restricted party lists.“Reverse Engineer” means reverse assemble, reverse compile, decompile, translate, engage in model extraction or stealing attacks, or otherwise attempt to discover the source code or underlying components of the Advertising Services, algorithms, and systems of the Advertising Services (except to the extent these restrictions are contrary to applicable law).“Supported Countries and Territories” means the countries and territories for which OpenAI supports ac",
+      "confidence": 85
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "The service is provided “as is” with no warranties, and you use any outputs at your own risk.",
+      "excerpt": "Disclaimer of warranties\nOUR SERVICES ARE PROVIDED “AS IS.” EXCEPT TO THE EXTENT PROHIBITED BY LAW, WE AND OUR AFFILIATES AND LICENSORS MAKE NO WARRANTIES (EXPRESS, IMPLIED, STATUTORY OR OTHERWISE) WITH RESPECT TO THE SERVICES, AND DISCLAIM ALL WARRANTIES INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, NON-INFRINGEMENT, AND QUIET ENJOYMENT, AND ANY WARRANTIES ARISING OUT OF ANY COURSE OF DEALING OR TRADE USAGE. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ACCURATE OR ERROR FREE, OR THAT ANY CONTENT WILL BE SECU",
+      "confidence": 96
+    },
+    {
+      "document_name": "Service terms",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "Disclaims all warranties for Beta Services, stating they are provided “as‑is” with no guarantee of availability, security, or error‑free operation.",
+      "excerpt": "2. Beta Services\nThis section governs your use of services or features that OpenAI offers on an alpha, preview, early access, or beta basis (“Beta Services”). Beta Services are offered “as-is” to allow testing and evaluation and are excluded from any indemnification obligations OpenAI may have to you.\n\nOpenAI makes no representations or warranties for Beta Services, including any warranty that Beta Services will be generally available, uninterrupted or error-free, or that Content will be secure or not lost or damaged. Except to the extent prohibited by law, OpenAI expressly disclaims all warra",
+      "confidence": 94
+    },
+    {
+      "document_name": "OpenAI Merchant Feed Terms of Service",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "The clause states that the merchant and OpenAI make no warranties beyond those expressly listed, disclaims all implied warranties, and limits liability, meaning users cannot rely on any additional guarantees about the service.",
+      "excerpt": "WarrantiesMerchant warrants that it: (i) has full power and authority to enter into these Terms; and (ii) will comply with applicable law in the exercise of its rights and performance of its obligations under these Terms.Merchant represents and warrants that:it holds, and will maintain, the rights to provide the Merchant Content as set forth herein and to grant the licenses and rights set forth in Section 3;it will not provide any Merchant Content that violates Policies, applicable law or any applicable privacy policies, infringes any third party intellectual property rights, or is threatening",
+      "confidence": 96
+    },
+    {
+      "document_name": "Service terms",
+      "category": "INDEMNIFICATION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 2,
+      "label": "No Broad Indemnity",
+      "summary": "States OpenAI will indemnify API customers for third‑party IP claims except in several listed situations, giving users a right to be defended.",
+      "excerpt": "1. API\nOpenAI’s indemnification obligations to API customers under the Agreement include any third party claim that Customer’s use or distribution of Output infringes a third party’s intellectual property right. This indemnity does not apply where: (i) Customer or Customer’s End Users knew or should have known the Output was infringing or likely to infringe, (ii) Customer or Customer’s End Users disabled, ignored, or did not use any relevant citation, filtering or safety features or restrictions provided by OpenAI, (iii) Output was modified, transformed, or used in combination with products or",
+      "confidence": 92
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "DATA_RETENTION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Retention",
+      "summary": "The clause lets you delete your data and explains that the company keeps data longer only for limited legal, safety, or financial reasons.",
+      "excerpt": "Information we retain until you delete it: Some of our Services allow you to delete Personal Data stored in your account. For example, you can delete specific, or all, of your ChatGPT conversations, delete specific Saved Memories⁠(opens in a new window), or delete your account. Once you choose to delete Personal Data, we will remove it from our systems within 30 days unless we need to retain it for longer as described below, or it has already been de-identified and disassociated from your account when you allow us to use your Content to improve our models⁠(opens in a new window). \nInformation ",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Tracking",
+      "summary": "It describes targeted, cross‑context advertising and provides mechanisms for you to opt out of such third‑party tracking.",
+      "excerpt": "This is known as “targeted advertising” or sharing for “cross-context behavioral advertising” under certain state privacy laws. You can opt out using the marketing privacy control in your account settings. If you’re not logged in, you can opt out using the Manage Cookies link on our website. You can also opt out using a legally recognized opt-out mechanism, like Global Privacy Control. You can learn more about the types of data we use and share for these purposes and controls we offer you here⁠(opens in a new window). We don’t engage in these activities for users we know to be under 18 years o",
+      "confidence": 88
+    },
+    {
+      "document_name": "Using ChatGPT agent in line with our policies",
+      "category": "AUTOMATED_DECISION_MAKING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Human Review",
+      "summary": "The clause forbids users from making fully automated decisions in regulated or high‑risk areas without human oversight, protecting users from potentially harmful automated outcomes.",
+      "excerpt": "3. Harmful Activities\nAgent users are prohibited from creating harmful content or engaging in harmful behaviors or interactions, including:\n\nProducing, sharing, or facilitating content or experiences that sexualize children\nBullying, harassment, defamation, or discrimination based on protected attributes\nInciting or enabling violence\n4. High Stakes Domains\nOur policies prohibit using ChatGPT Agent for regulated activities without following applicable laws and rules. Specifically, users should not:\n\nMake automated decisions in sensitive domains without human involvement, including law enforceme",
+      "confidence": 94
+    },
+    {
+      "document_name": "Using ChatGPT agent in line with our policies",
+      "category": "AUTOMATED_DECISION_MAKING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Human Review",
+      "summary": "The clause forbids users from making fully automated decisions in regulated or high‑risk areas without human oversight, protecting users from potentially harmful automated outcomes.",
+      "excerpt": "3. Harmful Activities\nAgent users are prohibited from creating harmful content or engaging in harmful behaviors or interactions, including:\n\nProducing, sharing, or facilitating content or experiences that sexualize children\nBullying, harassment, defamation, or discrimination based on protected attributes\nInciting or enabling violence\n4. High Stakes Domains\nOur policies prohibit using ChatGPT Agent for regulated activities without following applicable laws and rules. Specifically, users should not:\n\nMake automated decisions in sensitive domains without human involvement, including law enforceme",
+      "confidence": 94
+    },
+    {
+      "document_name": "Ad Tools Terms",
+      "category": "PROFILING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "No Hidden Profiling",
+      "summary": "The clause prohibits you from using audience tools and data to identify, re‑identify, or infer sensitive information about OpenAI users, or to create audience segments that target or relate to them, limiting profiling of individuals.",
+      "excerpt": "You will not use Audience Tools, Audience Data, related Reporting Data, or other data collected in connection with the Audience Tools and Advertising Services to (a) identify or re-identify any OpenAI user, (b) infer sensitive or other information about any person, or (c) create, adjust, or modify audience segments, profiles, or data sets that explicitly or implicitly identify, target, or relate to OpenAI, its users, or its brands, except through campaign functionality expressly made available by OpenAI.2.5. Processing of Personal Data. Except for Restricted Processing, you and OpenAI each act",
+      "confidence": 85
+    },
+    {
+      "document_name": "Cookie policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Tracking",
+      "summary": "The clause tells users how to view and change their cookie preferences, noting that disabling certain cookies may affect service functionality, and provides resources for managing cookies.",
+      "excerpt": "If you are in a jurisdiction that allows for that control, you can access your cookie settings directly on our various sites. Your web browser may also allow you to manage your cookie preferences, including to delete and disable cookies. You can take a look at the help section of your web browser or follow the links below to understand your options.Chrome⁠(opens in a new window)Explorer⁠(opens in a new window)Safari⁠(opens in a new window)Firefox⁠(opens in a new window)Opera⁠(opens in a new window)Please note that changes you make to your cookie settings may affect the availability or function",
+      "confidence": 85
+    },
+    {
+      "document_name": "Enterprise privacy at OpenAI",
+      "category": "DATA_RETENTION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Retention",
+      "summary": "Admins decide how long data is kept and deleted conversations are removed within 30 days, giving users control over retention.",
+      "excerpt": "What are ChatGPT Enterprise, ChatGPT Edu, and ChatGPT for Healthcare?\nBuilt for businesses, ChatGPT Enterprise offers organizations the ability to use ChatGPT with controls, deployment tools, and speed required to make your entire organization more productive. Built for universities, ChatGPT Edu offers an easy way to deploy ChatGPT to students, faculty, researchers, and campus operations, while providing admins with the same controls as in ChatGPT Enterprise. ChatGPT for Healthcare is a secure workspace designed to support HIPAA compliance and built for healthcare organizations and their clini",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "CHILDREN_DATA",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Children Protected",
+      "summary": "It states the services are not for children under 13, that they do not knowingly collect such data, and they will delete a child's data if notified.",
+      "excerpt": "OpenAI processes your Personal Data for the purposes described in this policy on servers located in various jurisdictions, including processing and storing your Personal Data in our facilities and servers in the United States, or in countries or territories where our affiliates and partners or our vendors and service providers are located. While data protection law varies by country, we apply the protections described in this policy to your Personal Data regardless of where it is processed, and only transfer that data pursuant to legally valid transfer mechanisms.\n\n7. Children\nOur Services are",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "SECURITY_COMMITMENT",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Strong Security",
+      "summary": "The company says it uses reasonable security measures to protect personal data, though it notes no system is perfectly secure.",
+      "excerpt": "8. Security\nWe implement commercially reasonable technical, administrative, and organizational measures designed to protect Personal Data from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. However, no Internet or email transmission is ever fully secure or error free. Therefore, you should take special care in deciding what information you provide to the Services. In addition, we are not responsible for circumvention of any privacy settings or security measures contained on the Service, or third-party websites.",
+      "confidence": 93
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "SENSITIVE_DATA_COLLECTION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Sensitive Data Protected",
+      "summary": "The clause clarifies that the company does not process sensitive personal data to infer characteristics about users.",
+      "excerpt": "9. Additional U.S. state disclosures\nSome U.S. state privacy laws⁠(opens in a new window) require specific disclosures. The following table provides additional information about the categories of Personal Data we collect and how we use and disclose that information. You can read more about the Personal Data we collect and where we collect it from in “Personal Data we collect⁠” above, how we use Personal Data in “How we use Personal Data⁠” above, when we disclose Personal Data in “Disclosure of Personal Data⁠” above and how we retain Personal Data in “Retention⁠” above. We don’t process sensiti",
+      "confidence": 92
+    },
+    {
+      "document_name": "OpenAI Data Processing Addendum",
+      "category": "SECURITY_COMMITMENT",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Strong Security",
+      "summary": "OpenAI commits to implementing reasonable security measures, promptly notifying the customer of any personal data breach, and assisting with compliance, which protects the customer's data.",
+      "excerpt": "1. Details. 1.1 Scope and Roles. As part of providing the Services to the Customer under the Agreement, OpenAI may Process Customer Data on behalf of Customer. OpenAI acts as a Data Processor on the Customer’s behalf, and this DPA governs such Processing. 1.2 Details of Processing. OpenAI will only Process Customer Data for the purposes of delivering the Services to Customer pursuant to the Agreement and this DPA. Details regarding the nature, duration, as well as the types of Customer Data and categories of Data Subjects involved, are set out in Schedule 1 (Details of Processing) to this DPA.",
+      "confidence": 96
+    },
+    {
+      "document_name": "Serving civil subpoenas or other civil requests for user data on OpenAI",
+      "category": "GOV_REQUEST_NOTICE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Notifies on Gov Requests",
+      "summary": "OpenAI says it will notify users before disclosing their data in response to valid civil legal requests, when legally possible.",
+      "excerpt": "This page provides information for attorneys and individuals or parties seeking to serve OpenAI OpCo, LLC (OpenAI) with a request for user data in civil proceedings. OpenAI responds to civil requests for user data that are validly served on OpenAI in accordance with applicable law. We carefully review all such requests, and will produce information only as permitted under applicable laws. We will notify users before any data is disclosed, where legally possible and appropriate.\n\nThis process applies only to civil requests for user data. OpenAI’s policies regarding law enforcement and governmen",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "CONTENT_OWNERSHIP",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "You Keep Ownership",
+      "summary": "You keep ownership of the input you provide and own the output generated, with OpenAI assigning any rights it may have in the output to you.",
+      "excerpt": "Content\nYour content. You may provide input to the Services (“Input”), and receive output from the Services based on the Input (“Output”). Input and Output are collectively “Content.” You are responsible for Content, including ensuring that it does not violate any applicable law or these Terms. You represent and warrant that you have all rights, licenses, and permissions needed to provide Input to our Services.\n\nOwnership of content. As between you and OpenAI, and to the extent permitted by applicable law, you (a) retain your ownership rights in Input and (b) own the Output. We hereby assign t",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Fair Termination",
+      "summary": "The company can suspend or terminate your account for breaches, legal compliance, risk, or inactivity, but must give advance notice and allows you to appeal the decision.",
+      "excerpt": "Termination and suspension\nTermination. You are free to stop using our Services at any time. We reserve the right to suspend or terminate your access to our Services or delete your account if we determine:\n\nYou breached these Terms or our Usage Policies⁠⁠.\nWe must do so to comply with the law.\nYour use of our Services could cause risk or harm to OpenAI, our users, or anyone else.\nWe also may terminate your account if it has been inactive for over a year and you do not have a paid account. If we do, we will provide you with advance notice.\n\nAppeals. If you believe we have suspended or terminate",
+      "confidence": 88
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause lists users’ statutory data‑protection rights such as access, deletion, portability, and how to exercise them.",
+      "excerpt": "6. Your rights\nDepending on where you live, you may have certain statutory rights in relation to your Personal Data. For example, you may have the right to:\n\nAccess your Personal Data and information relating to how it is processed.\nRectify or update your Personal Data\nDelete your Personal Data from our records.\nRestrict how we process your Personal Data.\nTransfer your Personal Data to a third party (right to data portability).\nWithdraw your consent—where we rely on consent as the legal basis for processing. \nLodge a complaint with your local data protection authority.\nYou can exercise some of",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "You have the right to access, delete, correct your personal data and to be free from retaliation, with a process to request these rights.",
+      "excerpt": "The right to know information about our processing of your Personal Data, including the right to access your Personal Data, often in a portable format;\nThe right to request deletion of your Personal Data;\nThe right to correct your Personal Data; and\nThe right to be free from retaliation relating to the exercise of any of your privacy rights.\nYou can exercise these privacy rights described in this section by submitting a request through privacy.openai.com⁠(opens in a new window) or to dsar@openai.com. Review our California privacy rights reporting here⁠.\n\nVerification. In order to protect your ",
+      "confidence": 96
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "CONTENT_OWNERSHIP",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "You Keep Ownership",
+      "summary": "The clause says the customer keeps ownership of the data they input and owns the output generated, with OpenAI assigning any rights it may have to the customer.",
+      "excerpt": "This includes the right to use OpenAI’s API to integrate the Services into Customer Applications and to make Customer Applications available to End Users. 2.3. Modifications. OpenAI may update the Services periodically. If an OpenAI update materially reduces the Services functionality, OpenAI will notify Customer at the Account email address. Within five business days of receipt of this notice, Customer may choose to terminate the Agreement by providing thirty days written notice. This termination right will not apply to updates made to features provided on a beta or evaluation basis.3. Custom",
+      "confidence": 96
+    },
+    {
+      "document_name": "Teacher Access Terms",
+      "category": "CONTENT_OWNERSHIP",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "You Keep Ownership",
+      "summary": "The clause says teachers keep ownership of the input they provide and the output they receive, and OpenAI only uses that content to run the service, not to improve it.",
+      "excerpt": "The Policies are hereby incorporated by reference into these Terms.Because your School can take control of, and become an Admin to your account, you should only use the Services and your Teacher Account for educational purposes in your role as a teacher (for example: lesson planning, classroom activities, learning assessment, or communications with students and families). Your Teacher Account is separate from your personal OpenAI account. You agree not to use your Teacher Account for any personal or commercial projects unrelated to your work as an educator. We may suspend or revoke access if w",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Advance Notice of Changes",
+      "summary": "The clause promises at least 30 days advance notice for material changes that negatively affect users, while other changes take effect immediately.",
+      "excerpt": "Changes to these Terms or our Services. We are continuously working to develop and improve our Services. We may update these Terms or our Services accordingly from time to time. For example, we may make changes to these Terms or the Services due to:\n\nChanges to the law or regulatory requirements.\nSecurity or safety reasons.\nCircumstances beyond our reasonable control.\nChanges we make in the usual course of developing our Services.\nTo adapt to new technologies.\nWe will give you at least 30 days advance notice of changes to these Terms that materially adversely impact you either via email or an ",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "DATA_DELETION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Right to Delete Data",
+      "summary": "The clause tells users they can request correction or removal of inaccurate information about them, giving them a right to have their data deleted or corrected.",
+      "excerpt": "A note about accuracy: Services like ChatGPT generate responses by reading a user’s request and, in response, predicting the words most likely to appear next. In some cases, the words most likely to appear next may not be the most factually accurate. For this reason, you should not rely on the factual accuracy of output from our models. If you notice that ChatGPT output contains factually inaccurate information about you and you would like to request a correction or removal of the information, you can submit these requests through privacy.openai.com⁠(opens in a new window) or to dsar@openai.co",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Advance Notice of Changes",
+      "summary": "The policy states it will publish updates and an effective date when the privacy policy changes, giving you notice of any revisions.",
+      "excerpt": "Authorized Agents. Depending upon where you reside, you may also submit a rights request through an authorized agent. If you do so, the agent must present authority to act on your behalf, such as signed written permission, and you may also be required to independently verify your identity with us. Authorized agent requests can be submitted to dsar@openai.com.\n\nAppeals. Depending on where you live, you may have the right to appeal a decision we make relating to requests to exercise your rights. To appeal a decision, please send your request to dsar@openai.com.\n\n10. Changes to the privacy policy",
+      "confidence": 92
+    },
+    {
+      "document_name": "OpenAI Data Processing Addendum",
+      "category": "DATA_DELETION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Right to Delete Data",
+      "summary": "OpenAI must return or delete the customer's data after the agreement ends, unless law requires retention, giving the customer control over its data.",
+      "excerpt": "OpenAI will, on Customer’s reasonable written request and to the extent required by Data Protection Laws: (i) no more than once per year, provide Customer with OpenAI’s privacy and security policies and other such information necessary to demonstrate compliance with OpenAI’s obligations under this DPA;  and (ii) provided that the Parties have an appropriate confidentiality agreement in place, allow for and contribute to audits or inspections by, or on behalf of, Customer at Customer’s sole expense. Such audit or inspection must be: (A) conducted in a manner that is minimally disruptive to Open",
+      "confidence": 96
+    },
+    {
+      "document_name": "OpenAI Services Agreement",
+      "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Advance Notice of Changes",
+      "summary": "The agreement requires the customer to give at least 30 days' notice before a renewal term starts if they do not want the service to auto‑renew, giving them a clear window to opt out.",
+      "excerpt": "OpenAISelect language…Updated: 1 December 2025OpenAI Services AgreementDownload PDF(opens in a new window)View previous business termsEffective: January 1, 2026This OpenAI Services Agreement only applies to use of OpenAI’s APIs, ChatGPT Enterprise, ChatGPT Business, ChatGPT for Clinicians, and other services for customers who are businesses and developers, and does not apply to OpenAI services used by consumers or individuals unless specified above.This OpenAI Services Agreement (“Agreement”) is entered as of the Effective Date between the organization agreeing to these terms (“Customer”) and ",
+      "confidence": 94
+    },
+    {
+      "document_name": "Advertising Terms",
+      "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Advance Notice of Changes",
+      "summary": "The company must give you at least 30 days' notice before any material change that affects your rights, and the changes won’t apply retroactively to existing disputes or orders.",
+      "excerpt": "If an update materially impacts your rights or obligations, OpenAI will provide at least thirty days’ notice unless the update is necessary to comply with law or address security, fraud, abuse, or operational risk. Your continued access to or use of the Advertising Services after an update is effective constitutes acceptance of the update. Updates will not apply retroactively to Disputes or to Orders signed by both Parties before the effective date, except to the extent the update is required by law or applies to a new Advertising Service, tool, or feature first used after the update. 13.13. G",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Use",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "OpenAI may use your content to train its models, but you can opt out of this use through the provided instructions.",
+      "excerpt": "Our use of content. We may use Content to provide, maintain, develop, and improve our Services, comply with applicable law, enforce our terms and policies, and keep our Services safe. If you're using ChatGPT through Apple's integrations, see this Help Center article⁠⁠(opens in a new window) for how we handle your Content.\n\nOpt out. If you do not want us to use your Content to train our models, you can opt out by following the instructions in this article⁠. Please note that in some cases this may limit the ability of our Services to better address your specific use case.\n\nAccuracy. Artificial i",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "It says user‑provided content may be used to train the models, but users can opt out of this use through provided instructions.",
+      "excerpt": "As noted above, we may use Content you provide us to improve our Services, for example to train the models that power ChatGPT. Read our instructions⁠(opens in a new window) on how you can opt out of our use of your Content to train our models.\n\n3. Disclosure of Personal Data\nWe disclose your Personal Data in the following circumstances:",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "You can choose whether your content is used to train the company’s models, giving you an opt‑out option.",
+      "excerpt": "You can easily choose whether your Content can be used to improve and train our models⁠(opens in a new window).\nYou can decide whether we will remember details between chats to make Content more personalized and relevant.\nYou can export your ChatGPT history and data in your account’s data controls.\nYou can delete or archive chats in ChatGPT, or delete your account entirely.\nIf you enable Temporary Chat⁠(opens in a new window) in ChatGPT, those conversations with ChatGPT will not appear in your history or be used to improve OpenAI’s models.\nDepending on applicable law, you may be able to choose",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "It states that your content may be used to train the company’s models, but this is subject to your control, giving you an option to limit that use.",
+      "excerpt": "Provide, analyze, and maintain our Services\nImprove and develop our Services and conduct research, including using your Content to train our models (subject to your control)\nTo personalize and customize your experience across our Services\nCommunicate with you, including to respond to your questions, and send you information about our Services and events, for example about changes or improvements to the Services or offers or information that may interest you\nTo identify your contacts who use our Services when you choose to connect your contacts and update you if they join our Services later.\nPr",
+      "confidence": 90
+    },
+    {
+      "document_name": "Privacy policy",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No Data Sale",
+      "summary": "The clause explicitly says the company does not sell personal data and only shares limited data with marketing partners based on your choices.",
+      "excerpt": "Vendors, service providers, and affiliates to assist us in meeting business operations needs and to perform certain services and functions described above\nGovernment authorities or other third parties for the legal reasons described above\nParties involved in Transactions\nBusiness account administrators for the reasons described above\nParents or guardians of teen users for account linking purposes described above\nOther users and third parties you interact or share information with\nYour Opt-Out Rights. We don’t “sell” Personal Data. Depending upon your choices, we may share limited data with sel",
+      "confidence": 92
+    },
+    {
+      "document_name": "OpenAI Data Processing Addendum",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No Data Sale",
+      "summary": "OpenAI promises not to sell or share your personal data and to keep any de‑identified data from being re‑identified, limiting how it can be used.",
+      "excerpt": "5.1 OpenAI agrees to (a) not provide Customer with monetary or other valuable consideration in exchange for Customer Data from Customer. The parties acknowledge and agree that Customer has not “sold” (as such term is defined by U.S. Privacy Laws) Customer Data to OpenAI; (b) not “sell” (as such term is defined by U.S. Privacy Laws) or “share” (as such term is defined by the CCPA) Personal Data; (c) to the extent that Customer permits or instructs OpenAI to process Customer Data subject to U.S. Privacy Laws in a de-identified form as part of the Services, OpenAI shall (i) adopt reasonable measu",
+      "confidence": 96
+    },
+    {
+      "document_name": "How your data is used to improve model performance",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "The clause says your content can be used to train AI models, but you can opt out through the privacy portal, so you retain control over that use.",
+      "excerpt": "One of the most useful and promising features of AI models is that they can improve over time. We continuously improve our models through research breakthroughs as well as exposure to real-world problems and data. When you share your content with us, it helps our models become more accurate and better at solving your specific problems and it also helps improve their general capabilities and safety. ChatGPT, for instance, improves by further training on the conversations people have with it, unless you opt out⁠(opens in a new window).\n\nServices for individuals, such as ChatGPT, Sora, and Operat",
+      "confidence": 96
+    },
+    {
+      "document_name": "How your data is used to improve model performance",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "It explains that certain chats are excluded from training and that business users are not trained on by default, with opt‑in required, giving users protection against unwanted training.",
+      "excerpt": "When you use ChatGPT, you can also use Temporary Chat from the dropdown. Chats from Temporary Chat won't appear in history, use or create memories, or be used to train our models.\n\nSora has separate controls, and you can similarly turn off training in the Sora Settings ⁠(opens in a new window)menu. Additionally, if you opt out of training through our privacy porta⁠(opens in a new window)l, this will apply to Sora too. (Note that adjusting your settings in the ChatGPT interface will not affect your Sora settings, however.)\n\nServices for businesses, such as ChatGPT Team, ChatGPT Enterprise, and ",
+      "confidence": 94
+    },
+    {
+      "document_name": "How ChatGPT and our foundation models are developed",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "The clause explains that OpenAI uses publicly available data, partner data, and user‑provided content to train its models, but it also tells users they can opt out of having their ChatGPT conversations used for training, giving them a control right.",
+      "excerpt": "OpenAISelect language…Updated: 30 April 2025How ChatGPT and our foundation models are developedLearn more about how we develop our models and apply them in products like ChatGPT.What is ChatGPT and how does it work?What is ChatGPT and how does it work?What type of public information is used to teach ChatGPT?Is personal information used to teach ChatGPT?How does the development of ChatGPT comply with privacy laws?Table of contentsWhat is ChatGPT and how does it work?What type of public information is used to teach ChatGPT?Is personal information used to teach ChatGPT?How does the development of",
+      "confidence": 96
+    },
+    {
+      "document_name": "How ChatGPT and our foundation models are developed",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "The clause explains that OpenAI trains its models on publicly available data, avoids paywalled or dark‑web sources, filters out harmful content, and does not intentionally collect personal information, while offering ways to object to processing of personal data.",
+      "excerpt": "When generating a response to a user request, the model uses these learned weights to predict and create new content.What type of public information is used to teach ChatGPT?For publicly available internet content, we use only information that is freely and openly accessible on the internet. We do not intentionally gather data from sources known to be behind paywalls or from the dark web. Additionally, we apply filters to remove material we do not want our models to learn from, such as hate speech, adult content, sites that aggregate personal information, and spam. The remaining information is",
+      "confidence": 94
+    },
+    {
+      "document_name": "Health Privacy Notice",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No Data Sale",
+      "summary": "The clause states that OpenAI does not sell users' personal data, including data collected through Health, and informs users about how their data may be shared with connected third‑party apps and for legal reasons.",
+      "excerpt": "Apps let you work with external tools like fitness trackers so you can get more done in Health conversations; for example, when connected Health can search and reference information from Apps, or run research across multiple connected Apps. Learn more⁠(opens in a new window) about how Apps work generally in our services, including what information is shared with Apps and how our services use Apps data. Make sure you understand the terms and policies of connected Apps before you share information with them by connecting Apps with Health. You can also connect Health with your electronic medical ",
+      "confidence": 96
+    },
+    {
+      "document_name": "Enterprise privacy at OpenAI",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "The clause states that OpenAI does not use your business data to train its models by default, giving you ownership and control over your inputs and outputs.",
+      "excerpt": "Our commitments\nOur commitments provide you with ownership and control over your business data (inputs and outputs from ChatGPT Business, ChatGPT Enterprise, ChatGPT for Healthcare, ChatGPT Edu, ChatGPT for Teachers and our API Platform) and support for your compliance needs.\n\nOwnership\nYou own and control your data\n\nWe do not train our models on your data by default\n\nYou own your inputs and outputs (where allowed by law)\n\nYou control how long your data is retained (ChatGPT Enterprise, ChatGPT for Healthcare, ChatGPT Edu)\n\nYou control which internal sources are connected\n\nControl\nYou decide wh",
+      "confidence": 96
+    },
+    {
+      "document_name": "Enterprise privacy at OpenAI",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "Data from ChatGPT for Teachers is not used to train the models by default, protecting users from their content being used for AI training.",
+      "excerpt": "As with our Enterprise, Business, and Edu offerings, information shared with ChatGPT for Teachers is not used to train our models by default.What compliance standards does ChatGPT for Teachers meet?\nInfrastructure supporting ChatGPT for Teachers is adherent to industry best practices for security & privacy. Read more in our Security Portal⁠⁠(opens in a new window).What is OpenAI’s policy on data retention for ChatGPT for Teachers?\nEach of your workspace members control whether their conversations are retained. Any deleted conversations are removed from our systems within 30 days, unless we are",
+      "confidence": 96
+    }
+  ],
+  "history": [
+    {
+      "id": "26bb5ccd-e73c-494e-bfda-7c25cd51cce2",
+      "date": "2026-06-14T01:03:04.185+00:00",
+      "document_name": "Enterprise privacy at OpenAI",
+      "points": -5,
+      "summary": "OpenAI updated its policy on using business data and conversations to train its models. Now, by default, business data and conversations from ChatGPT for Teachers are not used for model training, giving users more control. However, users must opt-in to prevent their data from being used for training in standard ChatGPT and other services. This change provides more protection for some users but may still affect others.",
+      "added": 10,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "cc17626c-c35a-4f42-855c-a937eaa8e185",
+      "date": "2026-06-14T01:00:04.418+00:00",
+      "document_name": "Commerce policies",
+      "points": 0,
+      "summary": "No changes were found that negatively impact users. The analysis did not reveal any user-hostile updates to the commerce policies. All changes reviewed appear to be neutral or protective of users' interests. Users are not affected by any newly restrictive or invasive provisions.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "0206bc72-d356-4de2-b6ca-d800431b3d70",
+      "date": "2026-06-14T00:59:03.424+00:00",
+      "document_name": "Health Privacy Notice",
+      "points": 8,
+      "summary": "OpenAI clarified that it does not sell users' personal data collected through Health and provided more information on data sharing with third-party apps and for legal purposes. This change aims to protect users by being transparent about their data. No user-hostile changes were found.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "384096ec-19cd-4078-90af-16d2660e1323",
+      "date": "2026-06-14T00:58:03.378+00:00",
+      "document_name": "Cookie policy",
+      "points": 3,
+      "summary": "No changes were found that would negatively impact users. The policy still provides users with information on managing their cookie preferences and notes potential effects on service functionality if certain cookies are disabled. Users can still view and change their cookie preferences as before.",
+      "added": 3,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "e3912883-e5c2-4390-a95c-7e5d5aadf82a",
+      "date": "2026-06-14T00:57:02.07+00:00",
+      "document_name": "How ChatGPT and our foundation models are developed",
+      "points": 8,
+      "summary": "No changes were found in the provided clauses. The clauses continue to protect users by providing control over their ChatGPT conversations used for training and ensuring that OpenAI trains its models in a way that avoids harmful content and respects personal data.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "9bafef6b-1522-400e-8525-33520904af71",
+      "date": "2026-06-14T00:56:01.974+00:00",
+      "document_name": "How your data is used to improve model performance",
+      "points": -8,
+      "summary": "The company clarified that you can opt out of using your content to train AI models through the privacy portal. They also specified that certain chats and business users have protections against being used for AI training by default. However, it was noted that retained interaction data will be used to improve and train models without providing an opt-out option. This means some of your data may still be used for AI training even if you opt out of other uses.",
+      "added": 3,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "da1e6228-2c9f-497f-948d-7a7419307bcf",
+      "date": "2026-06-14T00:55:58.096+00:00",
+      "document_name": "UK Tax Strategy",
+      "points": 0,
+      "summary": "No user-hostile changes were found in the provided document. The extracted clause does not contain any information that negatively impacts users. The UK Tax Strategy document appears to be focused on outlining the country's approach to tax policy, and no specific changes affecting end users were identified.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "125f9c34-79d9-41cd-b88c-ee0e96b86265",
+      "date": "2026-06-14T00:55:01.637+00:00",
+      "document_name": "Coordinated vulnerability disclosure policy",
+      "points": 0,
+      "summary": "No changes were found that affect users. The reviewed policy appears to be neutral or protective of users, with no identified clauses working against them. Users are not impacted by changes to this policy.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "2ee4d9aa-6726-4659-8e5c-d0a5aeea5da6",
+      "date": "2026-06-14T00:54:57.919+00:00",
+      "document_name": "Sharing & publication policy",
+      "points": 0,
+      "summary": "No changes were found that negatively impact users. The analysis did not reveal any user-hostile clauses. All reviewed parts of the document appear to be neutral or protective of users' interests. No summary of changes is necessary as no changes were identified.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "e0dc6b98-4ed0-4a52-8ec7-3247bb11e3df",
+      "date": "2026-06-14T00:53:58.406+00:00",
+      "document_name": "Creating images and videos in line with our policies",
+      "points": 0,
+      "summary": "No changes were found that affect users in a significant way. The document appears to be informational and does not contain any user-hostile or protective clauses. The extracted clause relates to creating images and videos according to company policies.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "9be5f21a-3e6d-4c83-bac9-4e716f85c6e7",
+      "date": "2026-06-14T00:52:58.586+00:00",
+      "document_name": "Usage policies",
+      "points": 0,
+      "summary": "No changes were found that negatively impact users. The extracted clauses do not contain any user-hostile language. Therefore, it can be concluded that no changes were found.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "b711744b-bbeb-4443-aa1a-ed0d3410b20f",
+      "date": "2026-06-14T00:51:58.037+00:00",
+      "document_name": "OpenAI Merchant Feed Terms of Service",
+      "points": -23,
+      "summary": "OpenAI changed its Merchant Feed Terms of Service to give itself broad rights over user-submitted content, allowing it to use, modify, and display the content without obligation. The company also limited its liability by disclaiming implied warranties, which means users have fewer guarantees about the service. Additionally, OpenAI now requires disputes to be resolved through individual arbitration in California, rather than through class action lawsuits or in users' local courts. No protective clauses for users were found.",
+      "added": 5,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "5e8a6749-c22e-4c0e-9512-ab5be1202a34",
+      "date": "2026-06-14T00:48:59.88+00:00",
+      "document_name": "Conversion Terms",
+      "points": -6,
+      "summary": "You now have to protect OpenAI from any third-party claims related to your use of the Conversion Tools. This means you may be responsible for covering damages and legal costs if someone else makes a claim against OpenAI because of how you used the tools. This change could potentially increase your financial risk if you use the Conversion Tools.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "04b048de-e4c4-4da2-9f44-c2ccfccd41cf",
+      "date": "2026-06-14T00:46:57.056+00:00",
+      "document_name": "Ad Tools Terms",
+      "points": 3,
+      "summary": "OpenAI added a clause that prohibits using ad tools to identify or infer sensitive information about users, or creating audience segments that target them. This change helps protect users from being profiled. No user-hostile changes were found in the other clauses.",
+      "added": 3,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "b6bc207b-40f2-4c40-afdb-460de170ea08",
+      "date": "2026-06-14T00:44:57.546+00:00",
+      "document_name": "Advertising Terms",
+      "points": -51,
+      "summary": "OpenAI can now suspend or restrict your account without notice or reason if they suspect policy violations, security issues, or reputational concerns. They also have the power to change ad delivery, formatting, pricing, and display at any time without notice, and can review, reject, or remove ads for any reason. Additionally, you must defend and pay for any third-party claims arising from your ad use, and agree to binding arbitration and waive your right to a jury trial. These changes generally favor OpenAI over users.",
+      "added": 11,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "68f54cf8-7040-4ee1-ada9-f76df5856832",
+      "date": "2026-06-14T00:38:57.107+00:00",
+      "document_name": "Serving civil subpoenas or other civil requests for user data on OpenAI",
+      "points": 4,
+      "summary": "OpenAI now provides notice to users before disclosing their data in response to civil subpoenas or requests, when allowed by law. This change gives users more awareness and potentially more opportunity to respond or object to the disclosure of their data. No user-hostile changes were found in this document.",
+      "added": 5,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "cc9e121d-6338-4a03-bfd3-93f72621d584",
+      "date": "2026-06-14T00:34:56.106+00:00",
+      "document_name": "Unauthorized OpenAI Equity Transactions",
+      "points": 0,
+      "summary": "OpenAI may cancel or restrict unauthorized equity transactions. This means that if someone buys or sells OpenAI shares without permission, OpenAI can take action to undo or limit those transactions. No user-hostile terms were found that specifically target users.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "cb6ee1d0-cedd-437c-ab57-685b56182bdd",
+      "date": "2026-06-14T00:34:53.278+00:00",
+      "document_name": "Teacher Access Terms",
+      "points": -28,
+      "summary": "Changes to the Teacher Access Terms may affect users in several ways. The company can now suspend or terminate accounts with advance notice but without a specific cause, and users must resolve disputes through mandatory arbitration, waiving their right to class actions. Additionally, users may grant their school a broad license to use, modify, or delete content created through a Teacher Account. No protective changes were found that benefit users.",
+      "added": 7,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "eb505978-6586-49e4-b014-382f42dabdd4",
+      "date": "2026-06-14T00:30:53.046+00:00",
+      "document_name": "OpenAI Services Agreement",
+      "points": -37,
+      "summary": "Changes to the OpenAI Services Agreement give OpenAI more control over pricing, data usage, and dispute resolution. The company can now unilaterally change prices with a short 14-day notice and correct pricing errors after invoicing. Users must also agree to binding arbitration and waive their right to a jury trial, limiting their ability to sue. Additionally, OpenAI can modify the agreement at any time with limited notice, and users have restricted choices for resolving disputes.",
+      "added": 12,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "52132525-f582-4964-95cb-0bbac55419fb",
+      "date": "2026-06-14T00:24:52.382+00:00",
+      "document_name": "Service credit terms",
+      "points": -10,
+      "summary": "OpenAI can now change the service credit terms at any time without notifying users in advance. If users continue to use the service, they automatically accept the new terms. This means users have less control over the terms that govern their use of the service.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "bad0b4e7-fb91-462d-9c62-3a1907d63b6d",
+      "date": "2026-06-14T00:23:52.292+00:00",
+      "document_name": "Outbound coordinated disclosure policy",
+      "points": -10,
+      "summary": "OpenAI can now change or deviate from its outbound coordinated disclosure policy at its own discretion, without being bound by the changes or having to notify users. This means users have less predictability and control over how the policy may be applied to them. No protective clauses were found.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "030c14ae-ea2f-4eae-8071-b0d47f55021c",
+      "date": "2026-06-14T00:22:54.771+00:00",
+      "document_name": "Using ChatGPT agent in line with our policies",
+      "points": 3,
+      "summary": "The policy now requires human oversight for automated decisions in regulated or high-risk areas. This means users cannot rely solely on ChatGPT for critical decisions in areas like finance or healthcare. The change aims to prevent potentially harmful outcomes from automated decisions. No user-hostile changes were found.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "6a46fa3c-2e7f-4b72-9c5b-5eb541956f14",
+      "date": "2026-06-14T00:22:52.252+00:00",
+      "document_name": "Using ChatGPT agent in line with our policies",
+      "points": 3,
+      "summary": "The policy now requires human oversight for automated decisions in regulated or high-risk areas. This means users cannot rely solely on ChatGPT for critical decisions in these areas. The change aims to prevent potentially harmful outcomes by ensuring human review and approval. No user-hostile changes were found beyond this protective measure.",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "2666037a-32c0-4eae-9658-1c0a1ffea3a7",
+      "date": "2026-06-14T00:21:52.4+00:00",
+      "document_name": "App Developer Terms",
+      "points": -31,
+      "summary": "Changes to the App Developer Terms include expanding the license granted to OpenAI for content generated by the app, capping the company's liability at $100, and requiring disputes to be resolved through binding arbitration rather than in court. These changes limit users' rights, including the ability to recover damages and participate in class actions. No changes were found that benefit or protect users.",
+      "added": 7,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "8f8d9c96-b946-492d-ad87-b2e21bb829f2",
+      "date": "2026-06-14T00:17:54.688+00:00",
+      "document_name": "Approach To Patents",
+      "points": 0,
+      "summary": "No user-hostile or protective clauses were found in the provided document. The document appears to be neutral. \n\nThe document contains 1 clause related to patents approach with no clear changes identified. Therefore, no changes are described.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "20a8f214-3a2b-429f-87fa-9677cc6ec3c4",
+      "date": "2026-06-14T00:17:52.025+00:00",
+      "document_name": "OpenAI Data Processing Addendum",
+      "points": 13,
+      "summary": "OpenAI made some changes to its data processing addendum. The company now commits to implementing reasonable security measures and promptly notifying customers in case of a personal data breach. Additionally, OpenAI promises to return or delete customer data after the agreement ends and not to sell or share personal data. However, users should note that any disputes will now be resolved in English courts, under English law, which may be unfavorable to them.",
+      "added": 10,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "7def411e-8aa2-4693-b3a8-166909e7ccbb",
+      "date": "2026-06-14T00:13:51.782+00:00",
+      "document_name": "Service terms",
+      "points": -23,
+      "summary": "Changes to the service terms give OpenAI broad rights over user-generated content, allow the company to remove or reject user content at any time, and permit sharing of user data with third parties. Specifically, users now grant OpenAI a worldwide license to use, modify, and distribute their content when sharing a GPT, and OpenAI may share user activity information with organization administrators. Additionally, users are given limited to no guarantees about the availability, security, or performance of the Beta Services, which are provided \"as-is\". These changes generally work against users, giving OpenAI more control over their content and data.",
+      "added": 15,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "2cbb32a4-d6ef-4d2f-8d6a-d98c588f49f4",
+      "date": "2026-06-14T00:09:51.097+00:00",
+      "document_name": "Privacy policy",
+      "points": 51,
+      "summary": "No changes to the legal document were found that would be considered user-hostile. The document appears to protect users' rights and provide them with control over their data, including options to opt out of certain uses, access and delete their data, and exercise statutory data-protection rights. The company also commits to using reasonable security measures to protect personal data and does not sell personal data. Overall, the document seems to prioritize users' interests and provide them with transparency and control.",
+      "added": 25,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "b027f485-28d4-41c8-a09d-17f6e6d07bfe",
+      "date": "2026-06-14T00:02:51.394+00:00",
+      "document_name": "Terms of Use",
+      "points": -23,
+      "summary": "Changes to the Terms of Use include adding more details to clauses about arbitration, liability, and account termination. The company still requires disputes to be resolved through mandatory arbitration, which limits users' ability to go to court, and users' paid subscriptions are automatically renewed and charged unless cancelled. However, users now have more control over how their content is used for AI training and are given advance notice for account termination. No major changes were found that would make the terms more user-friendly.",
+      "added": 21,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}
