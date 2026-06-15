@@ -1,0 +1,357 @@
+{
+  "id": "36e446f0-5042-4f52-8f99-69f7c4440234",
+  "name": "Discord",
+  "root_domain": "discord.com",
+  "grade": "C",
+  "score": 56,
+  "generated_at": "2026-06-15T04:43:38.314Z",
+  "last_published_at": "2026-06-15T04:43:18.632+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "They extend GDPR/CCPA-style rights to all users.",
+        "points": 5
+      },
+      {
+        "text": "They promise advance notice before terms change.",
+        "points": 6
+      },
+      {
+        "text": "You can request deletion of your personal data.",
+        "points": 6
+      },
+      {
+        "text": "They state they do not sell your personal data.",
+        "points": 8
+      }
+    ],
+    "bad": [
+      {
+        "text": "You give up your right to sue in court over disputes.",
+        "points": -12
+      },
+      {
+        "text": "They can change the terms at any time without telling you.",
+        "points": -10
+      },
+      {
+        "text": "They take a broad, perpetual, sublicensable license to your content.",
+        "points": -8
+      },
+      {
+        "text": "They can suspend or close your account at any time, for any reason.",
+        "points": -8
+      },
+      {
+        "text": "You can't band together with others in a class action.",
+        "points": -8
+      },
+      {
+        "text": "Your content and data are used to train their AI models.",
+        "points": -8
+      },
+      {
+        "text": "Your data is shared widely with third parties.",
+        "points": -8
+      },
+      {
+        "text": "They can discontinue the service anytime with no responsibility.",
+        "points": -4
+      },
+      {
+        "text": "The service is provided 'as is' with no guarantees.",
+        "points": -3
+      }
+    ]
+  },
+  "documents": [
+    {
+      "name": "Terms",
+      "url": "https://discord.com/terms"
+    },
+    {
+      "name": "Privacy",
+      "url": "https://discord.com/privacy"
+    },
+    {
+      "name": "Guidelines",
+      "url": "https://discord.com/guidelines"
+    }
+  ],
+  "clauses": [
+    {
+      "document_name": "Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The terms require users to resolve disputes through binding arbitration and waive the right to bring class actions, limiting legal recourse.",
+      "excerpt": "Archived VersionsDiscord's Terms of ServiceEffective: September 29, 2025Last Updated: August 29, 20251. Who we are2. Age requirements and responsibility of parents and legal guardians3. What you can expect from us• • • 4. Your Discord account5. Content in Discord’s services• Your content• Discord's content• Other content6. Software in Discord’s services7. Copyright8. Discord’s paid services9. Restrictions on your use of Discord’s services10. Term & Termination11. Appeals12. Indemnity13. Services “AS IS”14. Data Charges15. Limitation of liability16. Settling disputes between you and Discord17. ",
+      "confidence": 98
+    },
+    {
+      "document_name": "Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "You must resolve disputes through binding arbitration, waive the right to a jury trial, and cannot bring class or collective actions, with a one‑year claim deadline.",
+      "excerpt": "You agree that any Dispute between you and Discord that for any reason is not subject to the “Agreement to Arbitrate” section below may only be pursued by you on an individual basis, and you may not bring a claim as a plaintiff or a class member in a class, collective, or representative action. To the extent a Dispute between you and Discord is subject to arbitration, the provisions set forth in the “Agreement to Arbitrate” apply, including those regarding class arbitration, private attorney general arbitration, arbitration involving joint or consolidated claims, and batching.Time for Initiati",
+      "confidence": 98
+    },
+    {
+      "document_name": "Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires disputes to be resolved through mandatory arbitration, limits the process, and waives the right to class actions, imposing this on users.",
+      "excerpt": "For residents of all states other than California if, and only if, NAM is not available to arbitrate, the alternative arbitrator shall be ADR Services, Inc. (“ADR Services”) (https://www.adrservices.com/).Except as modified by this Agreement to Arbitrate, NAM will administer any arbitration in accordance with the NAM “Comprehensive Dispute Resolution Rules and Procedures,” “Fees For Disputes When One of the Parties is a Consumer,” and the “Mass Filing Supplemental Dispute Resolution Rules and Procedures” in effect at the time any demand for arbitration is filed with NAM, excluding any rules or",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires disputes to be resolved by binding arbitration, limits court involvement, and sets arbitration venues, effectively forcing users to waive their right to court litigation.",
+      "excerpt": "The decision of the arbitrator will be in writing and binding on you and Discord, and judgment to enforce the decision may be entered by any court of competent jurisdiction.Except as explicitly set forth in this Agreement to Arbitrate, the arbitrator, and not any federal, state or local court or agency, shall have exclusive authority to resolve all Disputes arising out of or relating to the interpretation, applicability, enforceability or formation of these terms, including any claim that all or any part of these terms are void or voidable, whether a claim is subject to arbitration, and any di",
+      "confidence": 98
+    },
+    {
+      "document_name": "Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires disputes to be resolved through mandatory video arbitration, including a mass‑filing process that batches many claims together, limiting users' ability to go to court.",
+      "excerpt": "The Parties agree that arbitration may take place exclusively by video, where such arrangements are acceptable to the appointed arbitrator.Mass Filings.For arbitrations before NAM (or any substitute provider for NAM that is agreed upon by the Parties or appointed by a court, due to NAM’s unavailability for any reason), to increase the efficiency of administration and resolution of arbitrations, in the event 100 or more similar arbitration demands (those asserting the same or substantially similar facts or claims, and seeking the same or substantially similar relief) presented by or with the as",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause makes arbitration the default way to resolve disputes, with detailed rules, but lets users opt out within a limited time, otherwise they must arbitrate.",
+      "excerpt": "If your demand for arbitration is included in the Mass Filing, any statute of limitation applicable to your claims will remain tolled until your demand for arbitration is decided, withdrawn, or is settled.For arbitrations before NAM, the results of the first completely adjudicated batch of demands will be given to a NAM mediator selected from a group of 5 mediators proposed by NAM, with Discord and the remaining claimants’ counsel being able to strike one mediator each and then rank the remaining mediators and the highest collectively ranked mediator being selected. The selected mediator will ",
+      "confidence": 90
+    },
+    {
+      "document_name": "Terms",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "If Discord adds an arbitration clause, you must accept it by continuing to use the service for 30 days, unless you opt out by email, otherwise disputes will be settled by binding arbitration.",
+      "excerpt": "If Discord changes this Agreement to Arbitrate after the date you first accepted this agreement (or accepted any subsequent changes to this agreement), you agree that your continued use of the Discord product(s) or services 30 days after such change will be deemed acceptance of those changes. If you do not agree to such change, you may opt out of this Agreement to Arbitrate by emailing an opt-out notice to arbitration-opt-out@discord.com before the 30 day period expires.More important stuffYou have certain rights that, by law, can’t be limited by these terms, and we in no way intend to restric",
+      "confidence": 96
+    },
+    {
+      "document_name": "Guidelines",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "Discord may enforce new or updated guidelines at its discretion and only promises to try to notify users, giving the company broad power to change rules without guaranteed notice.",
+      "excerpt": "This means we may take action against an account, server, or content that violates the spirit of these Guidelines when we encounter a new threat or harm that is not explicitly covered in the current version.We will always make our best effort to notify you when we update these Guidelines, but it is up to you to follow them and to use Discord responsibly: Keep Discord safe and help us ensure it remains a great place to build friendships around the joy of playing games. Thanks for doing your part.‍",
+      "confidence": 90
+    },
+    {
+      "document_name": "Terms",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "By using Discord, you give the company a worldwide, royalty‑free, sublicensable and transferable license to use, reproduce, distribute and create derivative works of your content for providing and improving the service.",
+      "excerpt": "Please understand where you are posting on Discord, familiarize yourself with the relevant server permissions when joining and posting in a certain space, and choose the right space, features, and settings for you and your content.Your content is yours, but you give us a license (which is a form of permission) to it when you use Discord. Your content may be protected by certain intellectual property rights. We don’t own those. But by using our services, you grant us a license to use, reproduce, distribute, create derivative works of, display, and perform your content. The rights you grant in t",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "Discord can suspend or end your account at any time, for any reason, and often without notice, which may cause loss of access to the service.",
+      "excerpt": "Among other things, this includes trying to gain access to, intentionally overburdening, or attacking our systems; scraping our services without our written consent, including by using any robot, spider, crawler, scraper, or other automatic device, process, or software; selling, licensing, or otherwise commercializing content or data obtained from our services; transmitting viruses or other malicious code to our services; using any unauthorized software designed to modify the services; abusing or defrauding us or our payment systems; copying, dismantling, or reverse engineering any of our serv",
+      "confidence": 92
+    },
+    {
+      "document_name": "Terms",
+      "category": "CLASS_ACTION_WAIVER",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Class-Action Waiver",
+      "summary": "Users must first try informal negotiation and, if unresolved, agree that any dispute will be governed by California law and heard in Delaware (or Amsterdam for EU consumers), and they waive the right to bring or join a class action.",
+      "excerpt": "If you have an issue with the services or Discord, you agree that you will reach out to us and use good faith efforts to settle the Dispute informally through negotiation before initiating a lawsuit or arbitration. This requires emailing disputes@discordapp.com a written notice (“Written Notice”) about your issue, which must include: (1) your name; (2) the email address or phone number associated with your Discord account; (3) a detailed description of the issue; and (4) how you’d like to resolve it. This notice must be provided on an individual basis and you, along with your counsel if you ha",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms",
+      "category": "CLASS_ACTION_WAIVER",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Class-Action Waiver",
+      "summary": "The clause forces users to bring claims only individually, prohibiting class or representative lawsuits, and limits arbitration relief to individual parties.",
+      "excerpt": "You or Discord may still pursue claims, if they qualify, exclusively in a small claims court in the United States on an individual basis for Disputes and actions within the scope of such court’s jurisdiction, regardless of what forum the filing Party initially chose, and you and Discord both consent to venue and personal jurisdiction in that court. The small claims court, and not any arbitrator or arbitration provider, shall have the exclusive authority to resolve Disputes regarding whether a Dispute is properly within the jurisdiction of a small claims court. Additionally, Disputes concerning",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "Discord says it may use the content you post to develop, improve, and power its services, including safety features, without offering an opt‑out, which imposes the practice on users.",
+      "excerpt": "Archived VersionsDiscord Privacy PolicyEffective: September 29, 2025Last Updated: August 29, 20251. Welcome!2. A little bit about Discord3. The information we collect• Information you provide to us• Information we collect automatically• Information we receive from other sources4. How we use your information5. How we disclose your information• • • 6. Data retention7. How we protect your information8. How to control your privacy9. International data transfers10. Services offered by third parties11. Data Protection Officer12. Information about local privacy laws13. Changes to this Privacy Policy1",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "Discord uses your data, including content and usage information, to train and improve its machine‑learning systems that detect prohibited content and personalize the service, without offering an opt‑out.",
+      "excerpt": "This processing can include use of automated technologies such as machine learning systems that help us power and improve our services. In certain jurisdictions, we rely on consent (implied or express) to collect, use and disclose personal information, subject to limited exceptions. As a result, the legal bases below may not apply to you. Please see Information About Local Privacy Laws page located here.To fulfill our contract with youTo provide you with the services. We use your information to provide you with the Discord services. For example, when you start a video call, we process your ima",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy",
+      "category": "DATA_SHARING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Data Sharing",
+      "summary": "The clause says Discord will use your personal information for advertising, marketing, and to share it with vendors and third‑party services, with only limited opt‑out for marketing messages.",
+      "excerpt": "This includes information about how you use our services and how servers are structured. We may also use certain content that is widely available to better understand, for example, what topics servers cover and what content is most interesting within those servers. Similarly, you can limit to what extent we use your personal information for these purposes.To advertise our services on Discord and other platforms. We are proud of the product we've built. We may tell you about our paid services and other features directly in the services and through our own channels, and we spend money advertisin",
+      "confidence": 85
+    },
+    {
+      "document_name": "Privacy",
+      "category": "DATA_SHARING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Data Sharing",
+      "summary": "Discord shares limited user information with advertising and analytics partners to target ads and measure performance, without offering an opt‑out.",
+      "excerpt": "We may also provide limited information to advertising platforms to help us reach people that we think will like our products and to measure the performance of our ads shown on those platforms. We do this to help bring more users to Discord and make our business successful, and provide only the information required to facilitate these services. This may include information like the fact that you installed our app or registered to use Discord. We may also provide information to analytics and measurement partners to measure the effectiveness of sponsored content if you engage with it (for exampl",
+      "confidence": 94
+    },
+    {
+      "document_name": "Terms",
+      "category": "SERVICE_DISCONTINUATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -4,
+      "label": "Can Shut Down Anytime",
+      "summary": "Discord may add, remove, or stop features at any time without guarantee of continuity, and it disclaims liability for outages or loss of content.",
+      "excerpt": "We also provide tools and resources like Family Center and our Guardian’s Guide to help parents and guardians better understand how Discord works, how their teens may use Discord, and how they can develop collaborative approaches to build positive online behaviors. We also provide features to help make Discord more accessible as described here.We’re actively developing new features and products to improve Discord. As part of these efforts, we may add or remove features, start offering new services, or stop offering some services entirely (or just in some places or for some users) if they no lo",
+      "confidence": 92
+    },
+    {
+      "document_name": "Terms",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "The service is provided ‘as is’ and all implied warranties are disclaimed, limiting any guarantees about the service’s quality or performance.",
+      "excerpt": "THE SERVICES ARE PROVIDED “AS IS.” WE ALSO DISCLAIM ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT, AND NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE. THE LAWS OF CERTAIN JURISDICTIONS OR STATES DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES. TO THE EXTENT SUCH WARRANTIES CANNOT BE DISCLAIMED UNDER THE LAWS OF YOUR JURISDICTION, WE LIMIT THE DURATION AND REMEDIES OF SUCH WARRANTIES TO THE FULL EXTENT PERMISSIBLE UNDER THOSE LAWS.Data ChargesYou are responsible for any mobile charges that you may incur for u",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause informs users of their legal privacy rights (access, correction, deletion, portability, etc.) and how to exercise them, and promises notice of significant policy changes.",
+      "excerpt": "Please review these privacy policies, as they describe what the third-party services may do with your information. We also require that certain popular apps apply for access to certain data. But because these services are operated by third parties, we don’t control them or what information they collect. It’s up to you whether to participate in a server or other space that uses apps, and whether to engage with third-party services in general.Data Protection OfficerYou can contact Discord Netherlands BV’s Data Protection Officer at dpo@discord.com.We’ve appointed VeraSafe as Discord’s representa",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms",
+      "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Advance Notice of Changes",
+      "summary": "The clause says Discord will give reasonable advance notice for material changes (unless urgent) and that continued use means acceptance, otherwise you must stop using the service.",
+      "excerpt": "If these changes materially affect your Discord use or your legal rights, we’ll give you reasonable advance notice (unless the updates are urgent). If you continue to use our services after the changes have taken effect, it means that you agree to the changes. If you don’t agree, you must stop using our services.Apple App Store. If you download the Discord app from the Apple App Store or use our app on an iOS device, the below paragraph applies to you.These terms grant a non-transferable license to use the Discord App on any Apple/Mac product that you might own or control and as permitted by A",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy",
+      "category": "DATA_DELETION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Right to Delete Data",
+      "summary": "Users can disable or permanently delete their account, stop new data processing, and request a copy of their data, giving them control over their personal information.",
+      "excerpt": "You can choose what messages to send or post, who to engage with (e.g., one or more particular users or a potentially unlimited group of users), what information to include in your profile, whether to connect any third party services to your Discord account, and more. For example, if you share content in certain spaces, such as servers listed in Server Discovery or with public invite links, your content may be accessed by anyone.Customize your personal Discord settingsWe offer a number of settings that allow you to tailor your experience within Discord. Some of these relate to specific feature",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No Data Sale",
+      "summary": "The clause states Discord does not sell your personal information to third parties, indicating a user‑friendly stance on data sales.",
+      "excerpt": "We will always try to let you know the type of space you are in (although we don’t control where invite links are shared or the permissions for that server). You can limit the extent to which your content is used for these purposes as described in the “How to control your privacy” section below. You can learn more about our approach to safety and content moderation, including how we use your information for these purposes, in our Safety Center. You should take all of this into account when you are using our services, and choose the spaces, features, and settings that are most appropriate for y",
+      "confidence": 96
+    }
+  ],
+  "history": [
+    {
+      "id": "ddd35058-3068-4ea8-b5a5-66066a3b80ef",
+      "date": "2026-06-15T04:43:18.632+00:00",
+      "document_name": "Guidelines",
+      "points": -10,
+      "summary": "Discord can now make changes to the guidelines without having to notify users, and it only promises to try to give notice. This means users will have to regularly check for updates to the guidelines to stay informed. No friendly provisions were found in the reviewed text.",
+      "added": 4,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "52a3b6b2-3656-403e-9f6e-30248f2e1f5f",
+      "date": "2026-06-15T04:41:18.409+00:00",
+      "document_name": "Privacy",
+      "points": 3,
+      "summary": "Discord updated its privacy policy to use user content for AI training and to share data with third parties for advertising and analytics without offering opt-outs, which could be seen as invasive. On the other hand, the policy also protects users by not selling personal information to third parties and providing ways for users to control their data, such as deleting their account or exercising statutory rights. Additionally, users are informed about their legal privacy rights and how to exercise them. No major user-hostile changes were found beyond existing data usage practices.",
+      "added": 9,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "e06738c7-1638-48b1-b4da-6ed8008e425a",
+      "date": "2026-06-15T04:36:19.936+00:00",
+      "document_name": "Terms",
+      "points": -37,
+      "summary": "Several changes to the terms now restrict users' legal rights. The company can now suspend or end accounts at any time without notice, and users must resolve disputes through binding arbitration instead of going to court. Users also give up their right to bring or join class actions, and any disputes will be governed by California law and heard in Delaware or Amsterdam. Additionally, the company disclaims liability for outages or loss of content, and users' content can be used by the company without their consent. No protective changes were found that benefit users.",
+      "added": 16,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}
