@@ -154,7 +154,7 @@ produces no commit and no redeploy.
   amortize the system prompt; malformed batch output falls back to single-clause
   calls. The category reference in the prompt is **generated from
   `lib/taxonomy.ts`**, so it can never drift from the scoring values.
-- **Summaries:** Groq `meta-llama/llama-4-scout-17b-16e-instruct` for change
+- **Summaries:** Google `gemini-2.5-flash` for change
   summaries (cheap, high-limit).
 - **Rate limiting:** every AI call is throttled client-side to provider free-tier
   limits (sliding 60s RPM/TPM windows, `retry-after` respected, per-request abort

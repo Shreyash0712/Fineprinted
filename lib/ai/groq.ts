@@ -13,8 +13,8 @@ import { envInt, estimateTokens, sleep, SlidingWindowLimiter } from "./rate-limi
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
 
-export const REASONING_MODEL = "openai/gpt-oss-120b";
-export const BULK_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct";
+export const REASONING_MODEL = process.env.REASONING_MODEL || "openai/gpt-oss-120b";
+export const BULK_MODEL = process.env.BULK_MODEL || "gemini-2.5-flash";
 
 const limiters = new Map<string, SlidingWindowLimiter>();
 
@@ -23,10 +23,10 @@ function limiterFor(model: string): SlidingWindowLimiter {
   if (!limiter) {
     limiter =
       model === BULK_MODEL
-        ? new SlidingWindowLimiter(envInt("GROQ_BULK_RPM", 30), envInt("GROQ_BULK_TPM", 30_000))
+        ? new SlidingWindowLimiter(envInt("BULK_RPM", 1000), envInt("BULK_TPM", 1_000_000))
         : new SlidingWindowLimiter(
-            envInt("GROQ_REASONING_RPM", 30),
-            envInt("GROQ_REASONING_TPM", 8_000)
+            envInt("REASONING_RPM", 30),
+            envInt("REASONING_TPM", 8_000)
           );
     limiters.set(model, limiter);
   }
@@ -79,10 +79,13 @@ interface ChatOptions {
 }
 
 async function chat(opts: ChatOptions): Promise<string> {
-  const apiKey = process.env.GROQ_API_KEY;
+  const isGemini = opts.model.includes("gemini");
+  const apiKey = process.env.LLM_API_KEY || (isGemini ? process.env.GEMINI_API_KEY : process.env.GROQ_API_KEY);
   if (!apiKey || apiKey.startsWith("your_")) {
-    throw new Error("GROQ_API_KEY is not configured");
+    throw new Error(`API key is not configured for model ${opts.model}`);
   }
+
+  const url = process.env.LLM_URL || (isGemini ? "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions" : GROQ_URL);
 
   const maxTokens = opts.maxTokens ?? 1024;
   // Groq's TPM accounting charges prompt + max_tokens up front.
@@ -96,7 +99,7 @@ async function chat(opts: ChatOptions): Promise<string> {
 
     let res: Response;
     try {
-      res = await fetch(GROQ_URL, {
+      res = await fetch(url, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${apiKey}`,
