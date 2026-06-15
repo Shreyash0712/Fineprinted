@@ -250,6 +250,18 @@ export async function triggerPipeline(serviceId: string): Promise<TriggerPipelin
   return { runId: null, resumed: false, error: message };
 }
 
+export async function cancelPipelineRun(runId: string): Promise<{ error: string | null }> {
+  await requireAdmin();
+  const db = createAdminClient();
+  const { error } = await db
+    .from("pipeline_runs")
+    .update({ status: "failed", error: "Cancelled manually by admin" })
+    .eq("id", runId)
+    .in("status", ["queued", "running"]);
+  if (error) return { error: error.message };
+  return { error: null };
+}
+
 /** Manually re-dispatch the static-data export (e.g. after a failed sync). */
 export async function syncStaticData(): Promise<{ error: string | null }> {
   await requireAdmin();

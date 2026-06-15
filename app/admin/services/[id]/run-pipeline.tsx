@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { PipelineRun, PipelineRunEvent } from "@/lib/types";
-import { triggerPipeline } from "../../actions";
+import { triggerPipeline, cancelPipelineRun } from "../../actions";
 
 /**
  * Pipeline control panel. Triggering only dispatches a GitHub Actions
@@ -111,6 +111,24 @@ export function RunPipeline({
     }
   }
 
+  async function cancelRun() {
+    if (!run) return;
+    setPending(true);
+    setActionError(null);
+    try {
+      const result = await cancelPipelineRun(run.id);
+      if (result.error) {
+        setActionError(result.error);
+      } else {
+        setRun({ ...run, status: "failed", error: "Cancelled manually by admin" });
+        wasActiveRef.current = false;
+        router.refresh();
+      }
+    } finally {
+      setPending(false);
+    }
+  }
+
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
@@ -121,6 +139,15 @@ export function RunPipeline({
         >
           {isActive(run) ? "Running…" : pending ? "Starting…" : "Run pipeline"}
         </button>
+        {isActive(run) && (
+          <button
+            onClick={cancelRun}
+            disabled={pending}
+            className="rounded-xl bg-red-500/10 text-red-400 hover:bg-red-500/20 px-4 py-2.5 text-sm font-semibold transition disabled:opacity-50 cursor-pointer"
+          >
+            Force Cancel
+          </button>
+        )}
         {!hasContent && !isActive(run) && (
           <span className="text-xs text-yellow-600 dark:text-yellow-400 font-medium">
             Paste at least one document&apos;s text below first — the pipeline
