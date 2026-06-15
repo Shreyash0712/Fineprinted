@@ -1,0 +1,978 @@
+{
+  "id": "8e8c70fc-e90d-4b68-bb4c-1b062259b2f6",
+  "name": "ElevenLabs",
+  "root_domain": "elevenlabs.io",
+  "grade": "F",
+  "score": 12,
+  "generated_at": "2026-06-15T23:20:57.648Z",
+  "last_published_at": "2026-06-15T23:20:25.632+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "Data is kept only as long as needed, then deleted.",
+        "points": 3
+      },
+      {
+        "text": "They publish transparency reports on data requests.",
+        "points": 3
+      },
+      {
+        "text": "Children's data gets extra protection or isn't collected.",
+        "points": 4
+      },
+      {
+        "text": "They extend GDPR/CCPA-style rights to all users.",
+        "points": 5
+      },
+      {
+        "text": "You keep full ownership of the content you create.",
+        "points": 5
+      },
+      {
+        "text": "You can request deletion of your personal data.",
+        "points": 6
+      },
+      {
+        "text": "They promise advance notice before terms change.",
+        "points": 6
+      }
+    ],
+    "bad": [
+      {
+        "text": "Your personal data can be sold or handed to data brokers.",
+        "points": -15
+      },
+      {
+        "text": "You give up your right to sue in court over disputes.",
+        "points": -12
+      },
+      {
+        "text": "They can change the terms at any time without telling you.",
+        "points": -10
+      },
+      {
+        "text": "They collect biometric data like your face, voice or fingerprints.",
+        "points": -10
+      },
+      {
+        "text": "Your content and data are used to train their AI models.",
+        "points": -8
+      },
+      {
+        "text": "They take a broad, perpetual, sublicensable license to your content.",
+        "points": -8
+      },
+      {
+        "text": "They can suspend or close your account at any time, for any reason.",
+        "points": -8
+      },
+      {
+        "text": "You can't band together with others in a class action.",
+        "points": -8
+      },
+      {
+        "text": "Your data is shared widely with third parties.",
+        "points": -8
+      },
+      {
+        "text": "Your content or balance can be erased when an account ends.",
+        "points": -6
+      },
+      {
+        "text": "You must cover their legal costs if claims arise from your use.",
+        "points": -6
+      },
+      {
+        "text": "Their liability to you is capped at almost nothing.",
+        "points": -6
+      },
+      {
+        "text": "You're tracked across the web for targeted advertising.",
+        "points": -6
+      },
+      {
+        "text": "Subscriptions auto-renew and keep charging you.",
+        "points": -5
+      },
+      {
+        "text": "All payments are non-refundable, even unused time.",
+        "points": -5
+      },
+      {
+        "text": "You waive your right to a jury trial.",
+        "points": -5
+      },
+      {
+        "text": "Any lawsuit must happen in their distant home court.",
+        "points": -5
+      },
+      {
+        "text": "The service is provided 'as is' with no guarantees.",
+        "points": -3
+      }
+    ]
+  },
+  "documents": [
+    {
+      "name": "CCPA Notice at Collection",
+      "url": "https://elevenlabs.io/ccpa-notice-at-collection?_gl=1*13phv6x*_up*MQ..*_ga*MTQ1OTkzMDU5Ny4xNzgxNTE2MzMy*_ga_82RG1PXYVW*czE3ODE1MTYzMzEkbzEkZzAkdDE3ODE1MTYzMzEkajYwJGwwJGgw"
+    },
+    {
+      "name": "EU-US DATA PRIVACY FRAMEWORK POLICY",
+      "url": "https://elevenlabs.io/eu-us-data-privacy-framework-policy?_gl=1*13phv6x*_up*MQ..*_ga*MTQ1OTkzMDU5Ny4xNzgxNTE2MzMy*_ga_82RG1PXYVW*czE3ODE1MTYzMzEkbzEkZzAkdDE3ODE1MTYzMzEkajYwJGwwJGgw"
+    },
+    {
+      "name": "AI Transparency",
+      "url": "https://elevenlabs.io/ai-transparency?_gl=1*13phv6x*_up*MQ..*_ga*MTQ1OTkzMDU5Ny4xNzgxNTE2MzMy*_ga_82RG1PXYVW*czE3ODE1MTYzMzEkbzEkZzAkdDE3ODE1MTYzMzEkajYwJGwwJGgw"
+    },
+    {
+      "name": "ElevenLabs Terms of Service (non-EEA)",
+      "url": "https://elevenlabs.io/terms-of-use?_gl=1*13phv6x*_up*MQ..*_ga*MTQ1OTkzMDU5Ny4xNzgxNTE2MzMy*_ga_82RG1PXYVW*czE3ODE1MTYzMzEkbzEkZzAkdDE3ODE1MTYzMzEkajYwJGwwJGgw"
+    },
+    {
+      "name": "Privacy Policy",
+      "url": "https://elevenlabs.io/privacy-policy?_gl=1*13phv6x*_up*MQ..*_ga*MTQ1OTkzMDU5Ny4xNzgxNTE2MzMy*_ga_82RG1PXYVW*czE3ODE1MTYzMzEkbzEkZzAkdDE3ODE1MTYzMzEkajYwJGwwJGgw"
+    },
+    {
+      "name": "EU Digital Services Act (DSA)",
+      "url": "https://elevenlabs.io/digital-services-act?_gl=1*13phv6x*_up*MQ..*_ga*MTQ1OTkzMDU5Ny4xNzgxNTE2MzMy*_ga_82RG1PXYVW*czE3ODE1MTYzMzEkbzEkZzAkdDE3ODE1MTYzMzEkajYwJGwwJGgw"
+    },
+    {
+      "name": "Modern Slavery Policy Statement",
+      "url": "https://elevenlabs.io/modern-slavery-policy-statement?_gl=1*13phv6x*_up*MQ..*_ga*MTQ1OTkzMDU5Ny4xNzgxNTE2MzMy*_ga_82RG1PXYVW*czE3ODE1MTYzMzEkbzEkZzAkdDE3ODE1MTYzMzEkajYwJGwwJGgw"
+    }
+  ],
+  "clauses": [
+    {
+      "document_name": "Privacy Policy",
+      "category": "DATA_SALE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -15,
+      "label": "Sells Your Data",
+      "summary": "The policy says personal information may be shared or sold to advertising vendors and other parties for targeted advertising, including past sales in the last year.",
+      "excerpt": "The following types of Personal Information may be processed for purposes of targeted advertising, and may have been “shared” or “sold” in the 12 months prior to the last modified date of the privacy policy:\n\nOnline Identifiers: IP address; unique identifier.\nEach category of Personal Information listed above may be “shared” with or “sold” to the following third parties in connection with our marketing activities:\n\nAdvertising vendors (e.g., affiliate marketing companies, tracking technology providers).\nParties to a corporate transaction (e.g., if we are involved in the purchase, sale, lease, ",
+      "confidence": 96
+    },
+    {
+      "document_name": "EU-US DATA PRIVACY FRAMEWORK POLICY",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Unresolved privacy complaints are sent to JAMS, an arbitration provider, meaning disputes must be resolved through binding arbitration rather than court.",
+      "excerpt": "In compliance with the EU-U.S. DPF ElevenLabs commits to refer unresolved complaints concerning our handling of personal data received in reliance on the EU-U.S. DPF and the UK Extension to the EU-U.S. DPF and the Swiss-U.S. DPF to JAMS, an alternative dispute resolution provider based in the United States. If you do not receive timely acknowledgment of your DPF Principles-related complaint from us, or if we have not addressed your DPF Principles-related complaint to your satisfaction, please visit https://www.jamsadr.com/dpf-dispute-resolution for more information or to file a complaint.  The",
+      "confidence": 94
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Disputes must be resolved through binding arbitration, and you waive the right to join class actions or have a jury trial, limiting your legal recourse.",
+      "excerpt": "SECTION 12 CONTAINS PROVISIONS THAT GOVERN HOW TO RESOLVE DISPUTES BETWEEN YOU AND ELEVENLABS. ADDITIONALLY, SECTION 12 INCLUDES AN AGREEMENT TO ARBITRATE WHICH REQUIRES, WITH LIMITED EXCEPTIONS, THAT ALL DISPUTES BETWEEN YOU AND ELEVENLABS SHALL BE RESOLVED BY BINDING AND FINAL ARBITRATION. SECTION 12 ALSO CONTAINS A CLASS ACTION AND JURY TRIAL WAIVER. PLEASE READ SECTION 12 CAREFULLY. UNLESS YOU OPT OUT OF ARBITRATION WITHIN THIRTY (30) DAYS AS SET FORTH IN SECTION 12: (1) YOU WILL ONLY BE PERMITTED TO PURSUE DISPUTES OR CLAIMS AND SEEK RELIEF AGAINST ELEVENLABS ON AN INDIVIDUAL BASIS, NOT A",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Users must resolve certain disputes through binding individual arbitration, waiving their right to go to court, have a jury trial, or bring a class action.",
+      "excerpt": "12. Dispute Resolution; Binding Arbitration\nPlease read this Section 12 carefully because it requires you and ElevenLabs to arbitrate certain disputes and claims and limits the manner in which we can seek relief from each other. Arbitration precludes you and ElevenLabs from suing in court or having a jury trial. You and ElevenLabs agree that arbitration will be solely on an individual basis and not as a class arbitration, class action, or any other kind of representative proceeding. ElevenLabs and you are each waiving the right to trial by a jury.Follow the instructions below if you wish to op",
+      "confidence": 98
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Disputes must first go through a 30‑day notice process and, if not resolved, are required to be settled by binding arbitration rather than court.",
+      "excerpt": "If you assert a Dispute against ElevenLabs, you will first contact ElevenLabs by sending a written notice of your Dispute to ElevenLabs by email to legal@elevenlabs.io. If ElevenLabs asserts a Dispute against you, ElevenLabs will contact you by sending a written notice of ElevenLabs’ Dispute to you via email to the primary email address associated with your account.\nIf you and ElevenLabs cannot reach an agreement to resolve the Dispute within 30 days after you or ElevenLabs receives the applicable notice, then either party may submit the Dispute to binding arbitration as set forth below. The s",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "To start arbitration, the requesting party must submit a detailed request with personal info, claim details, and filing fees.",
+      "excerpt": "A party who wishes to initiate arbitration must provide the other party with a request for arbitration (the “Request”). The Request must include: (i) the name, mailing address, email address, and telephone number of the party seeking arbitration and the email address associated with any applicable account; (ii) a statement of the legal claims being asserted and the factual bases of those claims; (iii) a description of the remedy sought and an accurate, good faith calculation of the amount in controversy in United States dollars; (iv) a statement certifying completion of the informal dispute re",
+      "confidence": 94
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "If represented by counsel, the arbitration request must also include the lawyer’s contact information and certifications about the claim’s legitimacy.",
+      "excerpt": "If the party requesting arbitration is represented by counsel, the Request shall also include such counsel’s name, mailing address, email address, and telephone number. Such counsel must also sign the Request. By signing the Request, counsel certifies to the best of counsel’s knowledge, information, and belief, formed after an inquiry reasonable under the circumstances, that: (A) the Request is not being presented for an improper purpose, such as to harass, cause unnecessary delay, or needlessly increase the cost of dispute resolution; (B) the claims, defenses and other legal contentions are w",
+      "confidence": 93
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The clause requires that large numbers of similar disputes be resolved through a mandatory batch arbitration process administered by JAMS, limiting users to a single arbitrator and consolidated hearing per batch.",
+      "excerpt": "(h) Batch Arbitration. To increase the efficiency of administration and resolution of arbitrations, you and ElevenLabs agree that in the event that there are 100 or more individual Requests of a substantially similar nature filed against ElevenLabs by or with the assistance of the same law firm, group of law firms, or organizations, within a 30 day period (or as soon as possible thereafter), JAMS shall: (i) administer the arbitration demands in batches of 100 Requests per batch (plus, to the extent there are less than 100 Requests left over after the batching described above, a final batch con",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "It defines how disputes over applying the batch arbitration are decided by an administrative arbitrator appointed by JAMS, reinforcing the mandatory arbitration framework.",
+      "excerpt": "All parties agree that Requests are of a “substantially similar nature” if they arise out of or relate to the same event or factual scenario and raise the same or similar legal issues and seek the same or similar relief. To the extent the parties disagree on the application of the Batch Arbitration process, the disagreeing party shall advise JAMS, and JAMS shall appoint a sole standing arbitrator to determine the applicability of the Batch Arbitration process (“Administrative Arbitrator”). In an effort to expedite resolution of any such dispute by the Administrative Arbitrator, the parties agr",
+      "confidence": 95
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "The parties must cooperate with JAMS to carry out the batch arbitration, including paying fees and following expedited procedures, further cementing the compulsory arbitration requirement.",
+      "excerpt": "You and ElevenLabs agree to cooperate in good faith with JAMS to implement the Batch Arbitration process, including the payment of single filing and administrative fees for batches of Requests, as well as any steps to minimize the time and costs of arbitration, which may include: (1) the appointment of a discovery special master to assist the arbitrator in the resolution of discovery disputes; and (2) the adoption of an expedited calendar of the arbitration proceedings. This Batch Arbitration provision shall in no way be interpreted as authorizing a class, collective and/or mass arbitration or",
+      "confidence": 94
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The company can change the Terms at any time, provide notice by any reasonable means, and the changes take effect immediately, binding you upon continued use.",
+      "excerpt": "Our Service-Specific Terms, which apply to your use of certain Services;\nOur Prohibited Use Policy, which applies to your use of all of our Services;\nThe Voice Library Addendum, which applies your use of our Voice Library Service;\nOur Beta Services Addendum, which applies to your use of our Beta Services;\nOur Music Marketplace Addendum, which applies to your use of the Music Marketplace;\nOur OEM Terms, which apply to your bundling, making available and sublicensing of certain Services (ex. incorporating the ElevenLabs Services in your own solution);\nOur Data Processing Addendum, which governs ",
+      "confidence": 90
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The company can change, limit, suspend, or end any part of the service at any time, with no notice or liability to you.",
+      "excerpt": "14. Modifying and Terminating Our Services\nWe may: (a) modify, impose limits on, replace, upgrade, update, suspend, or terminate providing all or part of our Services at any time; (b) charge, modify, or waive any fees required to use the Services; or (c) offer opportunities to some or all end users of the Services, each of (a) through (c) without any liability or additional notice to you. All modifications and additions to the Services will be governed by the Terms or Supplemental Terms, unless otherwise expressly stated by ElevenLabs in writing. We are not responsible for any loss or harm rel",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "BIOMETRIC_DATA",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Biometric Collection",
+      "summary": "The clause says the service will collect and process your voice recordings, which can be considered biometric data, to provide and improve its services, including verification and model creation.",
+      "excerpt": "Purpose\tDescription\tLegal Ground (where required under applicable law)\nProviding the services\tWe may process your Personal Data to provide the Services you request from us, as described in the applicable Terms of Service.\tThe processing is necessary for entering into, or performance of a contract to which you are a party\nCollecting your audio recordings and other Voice Data for use in connection with our Services\tWe collect the audio recordings of your voice that you choose to share with us, as well as any other Voice Data to provide our Services to you.\tThe processing is necessary for enterin",
+      "confidence": 92
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "BIOMETRIC_DATA",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Biometric Collection",
+      "summary": "The service collects voice recordings that may be classified as biometric data and uses them to build a voice model of your vocal traits.",
+      "excerpt": "(b) Personal Data and ElevenLabs Voice Modeling Services\n\nElevenLabs uses Voice Data to provide its voice services, including voice modeling, speech-to-speech, and dubbing services. For voice modeling, when you provide us with recordings of your voice, we utilize our proprietary, AI-based technologies that analyze your speech characteristics to formulate a distinct voice model of your vocal traits. This voice model can be used to generate audio resembling your voice. Depending on where you reside and how we use your Voice Data (as set out in this Policy), applicable law may define your Voice D",
+      "confidence": 85
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "BIOMETRIC_DATA",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Biometric Collection",
+      "summary": "The service collects biometric information (e.g., voice data) for verification, shares it with affiliates and service providers, and retains it for up to three years after the relationship ends.",
+      "excerpt": "Additionally, all users are strictly prohibited from uploading, transmitting, emailing, or otherwise making Voice Data from children under the age of 18 available to us or other users or using them for any of our Services. If you believe we may have inadvertently processed such Personal Data, please contact us at legal@elevenlabs.io.\n\n12. Additional Information About Biometric Data.\nCertain ElevenLabs’ Service may involve the collection of biometric information. We collect this information for verification purposes. We may disclose this information where necessary to our affiliates, service pr",
+      "confidence": 94
+    },
+    {
+      "document_name": "CCPA Notice at Collection",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "The clause says the company collects publicly available and third‑party information to train its AI models, without offering an opt‑out, so users’ data may be used for training.",
+      "excerpt": "Information from Third Parties. Where permitted by applicable laws, we collect publicly available information from third-party sites to enable the training of our models and systems. We may also work with third parties directly to collect information such as to enable the training of our models and systems.\nThird-Party Logins. If you choose to register or log in to our Services using your account with third parties, we receive Personal Information about you from such third parties, such as your name, email address, username, and profile picture.\nInformation from Service Providers. We may recei",
+      "confidence": 94
+    },
+    {
+      "document_name": "CCPA Notice at Collection",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "The stated purposes include research and development of AI models, indicating user data will be used for AI training with no user control, which is a hostile practice.",
+      "excerpt": "2. Purposes of Processing Personal Information:\n\nWe collect Personal Information for the following purposes:\n\n·       To provide, maintain, and improve our products and services\n\n·       To prevent fraud and for safety and verification purposes, including use of CAPTCHA data for verification purposes.\n\n·       To provide technical assistance and customer support services\n\n·       To send marketing communications\n\n·       To comply with our legal obligations and for administrative and compliance purposes\n\n·       For the research and development of AI models\n\n3. Data Retention:",
+      "confidence": 92
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "The company may use personal data you provide to train and improve its AI models, without offering an opt‑out.",
+      "excerpt": "2. Personal Data\nYou may provide certain information to ElevenLabs in connection with your access to or use of our Services, or we may otherwise collect certain information about you when you access or use our Services. You agree to receive communications from ElevenLabs via the Services using the email address or other contact information you provide in connection with the Services. You represent and warrant that any information that you provide to ElevenLabs in connection with the Services is accurate. For information about how we collect, use, share, and otherwise process information about ",
+      "confidence": 92
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "You grant the company a wide, perpetual license to use, modify, and commercialize your content, including your voice, for providing and improving the service.",
+      "excerpt": "(d) License to Your Content. You hereby grant to ElevenLabs a license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, publicly or otherwise perform and display, and use your Content to provide the Services (including the trust and safety features therein), to improve the Services, and to develop new services and products. For avoidance of doubt, to the extent that your Content includes your voice, the foregoing license allows ElevenLabs to reproduce, modify, publish, create derivative works from, distribute, publicly or otherwise perform, and use",
+      "confidence": 95
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "You give the company a perpetual, irrevocable, worldwide, royalty‑free, sublicensable license to use your content and voice models.",
+      "excerpt": "perpetual and irrevocable (which means this license cannot be withdrawn),\nnonexclusive (which means you can license your Input to others),\nroyalty-free and fully paid (which means there are no monetary fees for this license),\nworldwide (which means it’s valid anywhere in the world), and\nsub-licensable, through multiple tiers (which means we can make it available to others).\n(e) License to User Voice Models. To the extent you own or acquire any intellectual property rights in or to any User Voice Models, you hereby grant to ElevenLabs a license to use, reproduce, modify, adapt, publish, transla",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "You grant the company a perpetual, irrevocable, worldwide, royalty‑free, sublicensable license to use your content and voice models, and must have all rights to do so.",
+      "excerpt": "perpetual and irrevocable (which means this license cannot be withdrawn),\nnonexclusive (which means you can license your Input to others),\nroyalty-free and fully paid (which means there are no monetary fees for this license),\nworldwide (which means it’s valid anywhere in the world), and\nsub-licensable, through multiple tiers (which means we can make it available to others).\n(g) Necessary Rights. You may not provide Input or create Output for which you do not have all the rights necessary to grant us the license described above. You represent and warrant that the Content and User Voice Models, ",
+      "confidence": 95
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "The company may suspend or terminate your access, remove content, or cooperate with law enforcement at its discretion, often without notice.",
+      "excerpt": "(ii) terminate or suspend your access to all or part of the Services, temporarily or permanently, if the Content is reasonably likely, in our sole determination, to violate applicable law or these Terms;\n\n(iii) take any action with respect to the Content that is necessary or appropriate, in ElevenLabs’ sole discretion, to ensure compliance with applicable law and these Terms, or to protect Company’s rights, or to protect any third-party rights, including third-party intellectual property and privacy rights (e.g., providing information to copyright owners in furtherance of Digital Millennium Co",
+      "confidence": 93
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "User feedback can be used by ElevenLabs for any purpose without compensation, giving the company a broad, perpetual license to that content.",
+      "excerpt": "(d) Feedback. You may voluntarily post, submit, or otherwise communicate to us any questions, comments, suggestions, ideas, original or creative materials, or other information about ElevenLabs or our Services (collectively, “Feedback”). You understand that we may use such Feedback for any purpose, commercial or otherwise, without acknowledgement or compensation to you, including to develop, copy, publish, or improve the Feedback or Services, or to improve or develop new products, services, or technologies in ElevenLabs’ sole discretion. ElevenLabs will exclusively own any improvements to, or ",
+      "confidence": 94
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "Allows the company to forfeit any remaining prepaid credits without refund when the user's account is suspended or terminated.",
+      "excerpt": "(viii) Prohibited Transfers and Misuse. ElevenLabs does not permit or recognize the sale, transfer, gift, trade, or exchange of Prepaid Credits. Any such attempt constitutes a material breach and may result, at ElevenLabs’ discretion, in cancellation or forfeiture of Prepaid Credits or termination of your Account without refund.\n\n(ix) Changes to Prepaid Credits Terms. ElevenLabs may modify Prepaid Credits pricing, usage rates, expiration periods, or eligible Services under Section 14. Such changes apply prospectively and will not reduce the remaining validity of purchased Prepaid Credits, exce",
+      "confidence": 93
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "The company can bar you from transactions, change payment options, or refuse service at any time, often without notice.",
+      "excerpt": "(f) Reservation of Rights. ElevenLabs reserves the right, including without prior notice to impose conditions on the honoring of any coupon, discount, or similar promotion; to bar any user from making any transaction; to alter the payment option for services; and to refuse to provide any user with any Service.\n\n(g) JCT. If the Services under these Terms are subject to JCT under the reverse charge mechanism, you agree to self-assess, report, and remit the applicable tax directly to the Japanese tax authorities. ElevenLabs will not charge or remit JCT for these Services.\n\n7. Copyright Complaints",
+      "confidence": 90
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "CLASS_ACTION_WAIVER",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Class-Action Waiver",
+      "summary": "The parties agree to bring claims only individually, waiving any right to class, collective, or representative actions in arbitration.",
+      "excerpt": "(g) Waiver of Class and Other Non-Individualized Relief. YOU AND ELEVENLABS AGREE THAT, EXCEPT AS SPECIFIED IN SECTION 12(h), EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY ON AN INDIVIDUAL BASIS AND NOT ON A CLASS, REPRESENTATIVE, OR COLLECTIVE BASIS, AND THE PARTIES HEREBY WAIVE ALL RIGHTS TO HAVE ANY DISPUTE BE BROUGHT, HEARD, ADMINISTERED, RESOLVED, OR ARBITRATED ON A CLASS, COLLECTIVE, REPRESENTATIVE, OR MASS ACTION BASIS. ONLY INDIVIDUAL RELIEF IS AVAILABLE, AND DISPUTES OF MORE THAN ONE CUSTOMER OR USER CANNOT BE ARBITRATED OR CONSOLIDATED WITH THOSE OF ANY OTHER CUSTOMER OR USER. S",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "The company collects publicly available information and data from third parties to train its machine‑learning models, without offering an opt‑out.",
+      "excerpt": "Information from Third Parties. Where permitted by applicable laws, we collect publicly available information from third-party sites to enable the training of our models and systems. We may also work with third parties directly to collect information such as to enable the training of our models and systems.\nThird-Party Logins. If you choose to register or log in to our Services using your account with third parties, we receive Personal Data about you from such third parties, such as your name, email address, username, and profile picture.\nInformation from Service Providers. We may receive info",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "The clause states the company will process your personal data to train and improve its AI models, which imposes AI training on you.",
+      "excerpt": "We need it to comply with a legal obligation, for instance, to comply with a court order. Research and development of AI models\nWe may process your Personal Data to research, develop, train and/or otherwise improve our AI models. This may include processing audio, text, video content, your preferences or feedback, and/or any metadata associated with any of the foregoing that you provide or that is collected or generated in connection with your use of the Services. Our training practices are designed to disassociate (or fully remove) data included in the training dataset that could reasonably i",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "DATA_SHARING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Data Sharing",
+      "summary": "The company may share your input and output, which can include personal data, with third parties for content moderation and safety purposes.",
+      "excerpt": "ElevenLabs does not undertake to review all Content and expressly disclaims any duty or obligation to monitor or review content. However, to maintain the integrity and security of your data, and for fraud prevention purposes, ElevenLabs reserves the right to moderate all Input (including voice and text data input) and Output (including voice or other outputs). In certain circumstances, ElevenLabs may share your Input or Output, which may include Personal Data, with third parties to support the content moderation and safety initiatives. Users found to have engaged in activity that violates the ",
+      "confidence": 90
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "DATA_SHARING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Data Sharing",
+      "summary": "Personal data may be shared with affiliates, vendors, other users, and various third parties for purposes ranging from service provision to marketing and corporate transactions.",
+      "excerpt": "Affiliates. We may share any Personal Data we receive with our current or future affiliates for any of the purposes described in this Privacy Policy.\nVendors and Service Providers. We may share your Personal Data with third-party vendors and service providers who provide services such as verification/background checks, content moderation, website hosting, data analysis or enrichment, advertising, information technology and related infrastructure provision, customer service, email delivery, auditing, and payment processing.\nOther Users. We may share your Personal Data with other users if you in",
+      "confidence": 92
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "CONTENT_LOSS_ON_TERMINATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Lose Content on Exit",
+      "summary": "If your account is closed or terminated, any unused credits are forfeited and you cannot retrieve them.",
+      "excerpt": "3. Accounts\nWe may require that you create an account in order to use some or all of our Services. You may not share or permit others to use your individual account credentials. You will promptly update any information contained in your account if it changes. You must maintain the security of your account, as applicable, and promptly notify us if you discover or suspect that someone has accessed your account without your permission. If your account is closed or terminated, you will forfeit all unused credits related to our Services (including character credits) associated with your account.",
+      "confidence": 95
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "INDEMNIFICATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "You Indemnify Them",
+      "summary": "You must indemnify and defend the company against any claims arising from your use of the service or any wrongdoing, and the company controls the defense.",
+      "excerpt": "9. Indemnification\nTo the fullest extent permitted by applicable law, you will indemnify, defend (at our option), and hold harmless ElevenLabs and our officers, directors, partners, licensors, employees and agents from and against any losses, liabilities, claims, demands, damages, expenses or costs (\"Claims\") arising out of or related to: (a) your access to or use of the Services; (b) the Content or Feedback; (c) your violation of these Terms; (d) your violation, misappropriation, or infringement of any rights of another (including intellectual property rights or privacy rights); or (e) your c",
+      "confidence": 98
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "LIABILITY_LIMITATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Liability Capped",
+      "summary": "The company limits its total liability to either $100 or the amount the user paid in the past year, and disclaims liability for indirect or consequential damages.",
+      "excerpt": "11. Limitation of Liability\n(a) To the fullest extent permitted by applicable law, ElevenLabs will not be liable to you under any theory of liability (whether based in contract, tort, negligence, warranty, or otherwise) for any indirect, consequential, exemplary, incidental, punitive, or special damages or lost profits, even if ElevenLabs has been advised of the possibility of such damages.\n\n(b) The total liability of ElevenLabs for any claim arising out of or relating to these Terms or our Services, regardless of the form of the action, is limited to the greater of: (i) One Hundred United Sta",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Third-Party Tracking",
+      "summary": "The service uses cookies and similar technologies to collect location, device, and usage data about you, which may be shared with third‑party partners.",
+      "excerpt": "Information from Cookies and Similar Technologies. We and our third-party partners may collect information about you using cookies, pixel tags, SDKs, or similar technologies (“Cookies”). See the “Your Cookie Choices” section of this Policy for further detail. Categories of information we may collect using cookies include: \nLocation Information. When you use our Services, we infer your general location information, for example by using your internet protocol (IP) address. In some jurisdictions, we will ask for your permission before doing so.\nDevice Information. We receive information about the",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Third-Party Tracking",
+      "summary": "The service and its partners use cookies and similar technologies to collect detailed information about your online activities across sites.",
+      "excerpt": "7. Your Cookie Choices.\nCookies, pixel tags, SDKs, or similar technologies are technologies used to collect information about users and their activities on a website. We and our third-party partners, such as analytics and advertising partners, may collect information about you using Cookies to collect information about your online activities over time and across different services.\n\nThe information collected via Cookies may include information such as unique identifiers, system information, IP address, web browser, device type, and the web pages that you visit just before or just after you use",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Third-Party Tracking",
+      "summary": "Uses analytics and marketing cookies to track you for advertising and may require consent, enabling extensive profiling.",
+      "excerpt": "Strictly Necessary Cookies. Cookies that are essential to make our Services available to you, for example, to provide login functionality or to identify bots who try to access our website. These cookies cannot be disabled as we cannot provide you with the Services without this type of Cookie.\nPerforming & Analytics Cookies. Cookies for website and app analytics purposes to support operation, maintenance, and improvement of our Services. We may use our own analytics Cookies or third-party analytics providers, such as Google Analytics, to collect and process certain analytics data on our behalf ",
+      "confidence": 92
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "AUTO_RENEWAL",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Auto-Renewal",
+      "summary": "Subscriptions automatically renew for the same term at the current fee unless you actively opt out, meaning you may be charged repeatedly without explicit renewal each time.",
+      "excerpt": "website located at elevenlabs.io and all associated web pages, websites, and social media pages (the “Website”); and\nservices (including mobile applications) and products accessible via the Website or our application programming interfaces (APIs), or otherwise made available to you by us (together with the Website, the “Services”). For the avoidance of doubt, Beta Services (as defined in the Beta Services Addendum) are not considered “Services” under these Terms.\nIF YOU SUBSCRIBE TO ANY FEATURE OR FUNCTIONALITY OF THE SERVICES FOR A TERM (THE “INITIAL TERM”), THEN YOUR SUBSCRIPTION WILL BE AUT",
+      "confidence": 95
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "AUTO_RENEWAL",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Auto-Renewal",
+      "summary": "Subscriptions automatically renew and are charged without further action, and price changes can be made unilaterally with limited refund rights.",
+      "excerpt": "6. Subscription Services; Payment\n(a) Subscriptions. To access and use certain Services, you may be required to enroll in a subscription payment plan (a “Recurring Subscription”). Your Recurring Subscription will automatically renew until you cancel it or your Recurring Subscription is otherwise terminated. You authorize us to store your payment method information and to automatically charge your payment method(s) for the amount of your Recurring Subscription with no further action required by you. The length of your Recurring Subscription will be provided when you make your purchase. In the e",
+      "confidence": 95
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "AUTO_RENEWAL",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Auto-Renewal",
+      "summary": "Sets up automatic recurring purchases that charge the user's saved payment method unless they disable the feature.",
+      "excerpt": "(iii) Purchase of Prepaid Credits. Prepaid Credits may be purchased through your Account under Section 6, either as a one-time purchase or via recurring purchase. ElevenLabs may impose purchase limits, and Prepaid Credits are issued upon successful payment. If you elect to enable recurring purchase, you authorize ElevenLabs to automatically charge your saved Payment Method and add additional Prepaid Credits to your Account when your available Prepaid Credits balance falls below the threshold you select. The recurring purchase will continue until you disable the feature or your Account is termi",
+      "confidence": 94
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "NO_REFUNDS",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "No Refunds",
+      "summary": "States prepaid credit purchases are non‑refundable and that expired or unused credits will not be returned, even if the account is suspended or terminated.",
+      "excerpt": "(v) Account Balance and Responsibility. Your available Prepaid Credits balance is viewable through your Account, and you are solely responsible for verifying all Prepaid Credits additions and deductions. Your Prepaid Credits balance is not a bank account, digital wallet, stored value account, or other payment device.\n\n(vi) Expiration of Prepaid Credits. Unless otherwise specified at the time of purchase or issuance, all Prepaid Credits expire twelve (12) months after the date of purchase or issuance, as applicable. Expired Prepaid Credits are automatically removed from your Account and may not",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "NO_REFUNDS",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "No Refunds",
+      "summary": "All sales are final and refunds are only offered at the company's discretion, meaning you generally cannot get your money back.",
+      "excerpt": "(d) Payment. You represent and warrant that you have the right to use any payment method that you submit in connection with a payment. We may receive updated information from your issuing bank or our payment service provider about any payment method you have stored with us. You authorize us to charge your payment method, including any updated payment method information we receive, for any charges you are responsible for under these Terms. Verification of information may be required prior to the acknowledgment or completion of any transaction. You agree to pay all charges incurred by you or on ",
+      "confidence": 94
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "JURY_TRIAL_WAIVER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Jury-Trial Waiver",
+      "summary": "Both parties waive their constitutional and statutory right to a jury trial, agreeing to resolve all disputes through arbitration.",
+      "excerpt": "(f) Waiver of Jury Trial. YOU AND ELEVENLABS HEREBY WAIVE ANY CONSTITUTIONAL AND STATUTORY RIGHTS TO SUE IN COURT AND HAVE A TRIAL IN FRONT OF A JUDGE OR A JURY. You and ElevenLabs are instead electing that all Disputes shall be resolved by arbitration under these Terms, except as specified in Section 12(b).",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "The clause mandates that any court actions be brought exclusively in New York courts and that users waive objections to that venue, imposing a potentially inconvenient forum on users.",
+      "excerpt": "13. Governing Law\nAny Claims will be governed by and construed and enforced in accordance with the laws of the State of New York, except to the extent preempted by U.S. Federal Law, without regard to conflict of law rules or principles (whether of the State of New York or any other jurisdiction) that would cause the application of the laws of any other jurisdiction. If any Claim is not subject to arbitration pursuant to Section 12, then the state and federal courts located in New York City, New York, will have exclusive jurisdiction. You and ElevenLabs waive any objection to venue in any such ",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "The company states that its services are provided \"as is\" without any warranties, meaning users get no guarantee that the service will work properly, be error‑free, or be safe from viruses.",
+      "excerpt": "10. Disclaimers\nYour use of our Services, Beta Services and any content or materials provided therein or therewith (including the Third-Party Content and Third-Party Services) is at your sole risk. To the fullest extent permitted under applicable law, our Services, Beta Services and any content or materials provided therein or therewith (including the Third-Party Content and Third-Party Services) are provided “as is” and “as available” without warranties of any kind, either express or implied. ElevenLabs disclaims all warranties with respect to the foregoing, including implied warranties of me",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "The clause states that Apple provides no warranties or support for the app and that Eleven Labs disclaims all warranties, leaving users without warranty protection.",
+      "excerpt": "(iii) Maintenance and Support. You and ElevenLabs acknowledge that Apple has no obligation whatsoever to furnish any maintenance and support services with respect to the Mobile App.\n\n(iv) Warranty. You acknowledge that Apple is not responsible for any product warranties, whether express or implied by law, with respect to the Mobile App. In the event of any failure of the Mobile App to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price, if any, paid to Apple for the Mobile App by you; and to the maximum extent permitted by applicable law, Apple wi",
+      "confidence": 98
+    },
+    {
+      "document_name": "CCPA Notice at Collection",
+      "category": "DATA_RETENTION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Retention",
+      "summary": "The clause limits retention of voice data to three years after the last interaction, providing a clear, time‑bound retention period that protects users.",
+      "excerpt": "We take measures to delete your Personal Information or keep it in a form that does not permit identifying you when this information is no longer necessary for the purposes for which we process it unless we are required or permitted by law to keep this information for a longer period. When determining the specific retention period, we consider various factors, such as the type of service provided to you, the nature and length of our relationship with you, and mandatory retention periods provided by law and any relevant statute of limitations. ElevenLabs will not keep data it generates about yo",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Tracking",
+      "summary": "The clause says the company may use tracking technologies like mouse movements and clicks to understand usage, but it obtains your consent before doing so.",
+      "excerpt": "Communicating with you\tFor potential users, we may process your Personal Data to send Marketing Communications including emails to provide information regarding products or Services that may interest you. You have provided your consent. Billing and accounting\nWe may process your Personal Data to handle any payments from you or to you as described in the applicable Terms of Service, including keeping records of payments. The processing is necessary for entering into, or performance of a contract to which you are a party. Preventing fraud\nWe may process your Personal Data to protect against and ",
+      "confidence": 92
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "DATA_RETENTION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Retention",
+      "summary": "States that personal data will be deleted or anonymized when no longer needed, and limits storage of voice data to three years after the last interaction.",
+      "excerpt": "Please note that the data protection laws in the locations where we transfer or process data may differ from those in your area. While the data is in another jurisdiction, it may be accessed by the courts, law enforcement, and national security authorities.\n\n6. Data Retention.\nWe take measures to delete your Personal Data or keep it in a form that does not permit identifying you when this information is no longer necessary for the purposes for which we process it unless we are required or permitted by law to keep this information for a longer period. When determining the specific retention per",
+      "confidence": 90
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Tracking",
+      "summary": "Provides ways to opt out of or block cookies and personalized ads, giving users control over tracking.",
+      "excerpt": "Browser Settings. Certain web browsers allow you to manage your preferences relating to Cookies. You can set your browser to refuse Cookies or delete certain Cookies. Please note that if you choose to block all Cookies, doing so may impair the use of our Services.\nGoogle Analytics Opt-out. To opt out from Google Analytics' use of information collected on the Services through Cookies, you can download the Google Analytics opt-out browser add-on, available at https://tools.google.com/dlpage/gaoptout.\nThird Party Advertising Companies' Opt-Out. We work with third party advertising partners to sho",
+      "confidence": 95
+    },
+    {
+      "document_name": "EU Digital Services Act (DSA)",
+      "category": "TRANSPARENCY_REPORT",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Transparency Reports",
+      "summary": "The clause commits to publish transparency reports and to notify users when their content is restricted, offering a way to complain and seek redress.",
+      "excerpt": "Overview\n\nThis page describes ElevenLabs’ reporting channels, content moderation standards, user notification and redress, points of contact, privacy alignment, and transparency reporting required by the EU Digital Services Act (“DSA”).\n\nReporting Illegal Content\n\nAnyone can notify us of allegedly illegal content using our online reporting form. The form is accessible without login and is designed to be easy to use. We review reports in line with our legal obligations. Where required by law, we may notify competent authorities.\n\nContent Moderation Standards\n\nWe assess reported content and acco",
+      "confidence": 94
+    },
+    {
+      "document_name": "EU Digital Services Act (DSA)",
+      "category": "DATA_RETENTION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Retention",
+      "summary": "The clause states that personal data from reports and moderation is kept only as long as needed for legal compliance and service integrity, limiting indefinite storage.",
+      "excerpt": "Authorities point of contact (pursuant to Article 11 of the DSA): legal@elevenlabs.io\n\nUser point of contact (pursuant to Article 12 of the DSA): via our webform or via legal@elevenlabs.io We accept communications in English.\n\nPrivacy and Data Protection\n\nWe process personal data related to reports, moderation, and complaints in accordance with GDPR and our Privacy Policy, for purposes including compliance with legal obligations and maintaining service integrity. We retain information only as necessary for these purposes and as required by law.\n\nTransparency Reporting\n\nWe publish transparency ",
+      "confidence": 92
+    },
+    {
+      "document_name": "CCPA Notice at Collection",
+      "category": "CHILDREN_DATA",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Children Protected",
+      "summary": "The clause states the service does not knowingly sell or share personal information of users under 18, providing a safeguard for minors.",
+      "excerpt": "Advertising vendors (e.g., affiliate marketing companies, tracking technology providers).\nParties to a corporate transaction (e.g., if we are involved in the purchase, sale, lease, or other acquisition of our systems containing personal information).\nDue to the fact that our services are intended for users age 18 or over, we do not knowingly “sell” or “share” Personal Information of individuals under the age of 18.",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "CHILDREN_DATA",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Children Protected",
+      "summary": "The service is not intended for children under 18; it does not knowingly collect their data and will delete it if discovered.",
+      "excerpt": "10. Security.\nWe implement reasonable security measures to secure and protect your Personal Data. The up-to-date list of measures along with relevant audit certifications can be obtained at: https://compliance.elevenlabs.io/. We note that, as no electronic transmission or storage of information can be entirely secure, we can make no guarantees as to the security or privacy of your information, to the extent permitted by applicable law.\n\n11. Children's Privacy.\nOur Services are not intended for or directed at children under the age of 18 and ElevenLabs does not knowingly collect, store, or proc",
+      "confidence": 88
+    },
+    {
+      "document_name": "CCPA Notice at Collection",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause outlines California residents’ rights to access, correct, delete, and opt out of data sale or sharing, granting users statutory privacy protections.",
+      "excerpt": "Access Your Personal Information: Receive confirmation of processing and request access the Personal Information we maintain about you. Most of your Personal Information can be accessed and exported by logging into your account. Where provided by applicable law, you may request that we include a description of the purpose of the processing of your Personal Information, third parties with which your data has been shared, and information regarding the safeguards for international data transfer.\nCorrect Your Personal Information: Request to update and correct inaccuracies in your Personal Informa",
+      "confidence": 95
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "CONTENT_OWNERSHIP",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "You Keep Ownership",
+      "summary": "It states that you keep all rights to the audio recordings (Input) you provide and can delete the voice models you create.",
+      "excerpt": "(b) User Voice Models. Some of our Services allow you to create a voice model that can be used to generate Output in the form of synthetic audio sounding like your voice or a voice you are authorized to share with us (a \"User Voice Model\"). To create a User Voice Model through our Services, you may be asked to upload audio recordings of your voice or the voice you are authorized to share with us as Input to our Services, and ElevenLabs is permitted to use those audio recordings of the voice you provide to us subject to subsection 4(d) below. For more information on how we collect, use, share, ",
+      "confidence": 92
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "CONTENT_OWNERSHIP",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "You Keep Ownership",
+      "summary": "It confirms that you retain all rights to the output generated by the service.",
+      "excerpt": "(ii) For the avoidance of doubt, Output may be generated by, but does not include, ElevenLabs’ foundational and other artificial intelligence voice models (the “Voice Models”) or ElevenLabs’ foundational and other artificial intelligence or language learning models (“LLMs”) (Voice Models and LLMs, collectively, the “Models”). Except as expressly set forth herein, as between you and ElevenLabs, you retain all rights in and to your Output.",
+      "confidence": 93
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause informs users that they may have legal rights to control how their personal data is collected, used, and communicated, such as access, correction, deletion, and other choices.",
+      "excerpt": "Depending on where you are located or reside, you may have certain rights regarding the Personal Data we maintain about you and certain choices about what Personal Data we collect from you, how we use it, and how we communicate with you. Such rights may include the rights to:",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "It lists specific user rights—including access, correction, deletion, portability, consent withdrawal, and opting out of data use for training—giving users control over their personal data.",
+      "excerpt": "Access Your Personal Data: Receive confirmation of processing and request access to the Personal Data we maintain about you. Most of your Personal Data can be accessed and exported by logging into your account. Where provided by applicable law, you may request that we include a description of the purpose of the processing of your personal data, third parties with which your data has been shared, and information regarding the safeguards for international data transfer. Correct Your Personal Data: Request to update and correct inaccuracies in your Personal Data. Most of your Personal Data can be",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "Describes how users can exercise their data rights via an online form or email, with verification steps, reinforcing users' ability to request those rights.",
+      "excerpt": "You may exercise these rights, as applicable, by using this online form (or to the extent such online form is unavailable, by emailing our Data Protection Office at the following email address: legal@elevenlabs.io). If using the form, please select “Other” and, whether using the form or submitting a request via email, include the right you would like to exercise in the subject (e.g., “Withdraw my Consent”) and note the location in which you reside. Before fulfilling your request, we may ask you to provide reasonable information to verify your identity and/or residence. Please note that applica",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "It allows an authorized agent to request and exercise your data rights on your behalf, after verification.",
+      "excerpt": "Authorized Agents. In those states where it is applicable, your authorized agent may submit a request to exercise any of the above rights on your behalf. ElevenLabs may request additional information to verify their authority to act on your behalf before processing any requests.\n\n(c) Residents of India\n\nIf you are in India, in addition to the rights in Section 8(a), you also have the following rights regarding your Personal Data:",
+      "confidence": 82
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "You can nominate someone to act for you after death or incapacity and you have a grievance redress process to contact the company about data handling.",
+      "excerpt": "Right to nominate: You have the right to nominate any individual who will exercise the rights available to you in case of your death or incapacity.\nRight of grievance redressal: You have the right to contact us about how we process your Personal Data, our obligations in relation to such Personal Data and/or with regard to your rights regarding such Personal Data. You may exercise these rights by contacting us as described in Section 14, unless otherwise required under the law.\n9. Third Parties.\nOur Services may contain links to other websites, products, or services that we do not own or operat",
+      "confidence": 78
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The policy tells users how to contact the Data Protection Officer and exercise their data‑protection rights, such as withdrawing consent, with verification steps as required.",
+      "excerpt": "You may also write our Data Protection Office at:\n\nEleven Labs Inc.\n169 Madison Ave #2484\nNew York, NY 10016\nUnited States\nFor residents of Brazil, our Data Protection Officer is Paulo Eduardo Lilia, who can be reached at legal@elevenlabs.io.\n\nYou may exercise these rights, as applicable, by using this online form (or to the extent such online form is unavailable, by emailing legal@elevenlabs.io). If using the form, please select “Other” and, whether using the form or submitting a request via email, include the right you would like to exercise in the subject (e.g., “Withdraw my Consent”) and n",
+      "confidence": 96
+    },
+    {
+      "document_name": "EU-US DATA PRIVACY FRAMEWORK POLICY",
+      "category": "DATA_DELETION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Right to Delete Data",
+      "summary": "You can request access to your personal data and ask the company to correct, amend, or delete it if it is inaccurate, and they must provide a reasonable process for doing so.",
+      "excerpt": "Upon request, and as required by DPF Principles and applicable law, ElevenLabs will provide individuals with reasonable access to Personal Data about them. ElevenLabs will also take reasonable steps to allow individuals to review Personal Data for the purposes of correcting, amending or deleting such information in instances where Personal Data is demonstrated to be incomplete or inaccurate.\n\nIndividuals can contact ElevenLabs at legal@elevenlabs.io in order to request access or to make inquiries regarding limiting the use and disclosure of Personal Data about them.\n\nDispute Resolution\n\nEleven",
+      "confidence": 96
+    },
+    {
+      "document_name": "EU-US DATA PRIVACY FRAMEWORK POLICY",
+      "category": "NOTICE_OF_CHANGE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Advance Notice of Changes",
+      "summary": "The privacy policy may be updated, but the company promises to give appropriate notice before any changes take effect.",
+      "excerpt": "ElevenLabs complies with the EU-U.S. DPF, the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. DPF as set forth by the U.S. Department of Commerce. ElevenLabs has certified to the U.S. Department of Commerce that it adheres to the EU-U.S. DPF Principles with regard to the processing of personal data received from the European Union and the United Kingdom in reliance on the EU-U.S. DPF and the UK Extension to the EU-U.S. DPF. ElevenLabs has certified to the U.S. Department of Commerce that it adheres to the Swiss-U.S. DPF Principles (Swiss-U.S. DPF Principles) with regard to the processing o",
+      "confidence": 93
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "DATA_DELETION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 6,
+      "label": "Right to Delete Data",
+      "summary": "You may request deletion of your personal data and opt out of having your content used to train the service’s models.",
+      "excerpt": "(i) Data Deletion and Opt Out. You may request for us to delete your personal data as required under applicable law. Please see our Privacy Policy for more information. In addition, you may opt out of our use of your Content for training at any time by navigating to the 'Data use' menu in the 'Terms and Privacy' section of your ElevenLabs account. Your Content will no longer be used to improve our Services (including the Models) once the request has been processed by our team, except as may be necessary to provide the Services to you, but does not affect any uses of (or materials resulting fro",
+      "confidence": 94
+    },
+    {
+      "document_name": "CCPA Notice at Collection",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No Data Sale",
+      "summary": "The clause acknowledges that personal information may be sold or shared for targeted advertising, but gives users a way to opt out via a cookie‑preference banner.",
+      "excerpt": "5. Sale of Personal Information, Sharing for Cross-Context Behavioral Advertising, and Targeted Advertising\n\nWhen we share Personal Information through our targeting cookies or with vendors that provide advertising services to us, that is considered a sale or sharing for cross-context behavioral advertising or targeted advertising under CCPA. You can opt out of the sale of your Personal Information, including the sharing of your Personal Information for targeted or cross-contextual behavioral advertising by updating your preferences in the 'Modify Cookies' banner within the webpage footer.\n\nTh",
+      "confidence": 96
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "Right to Go to Court",
+      "summary": "The parties must keep arbitration materials confidential, and you may opt out of binding arbitration within 30 days of accepting the terms.",
+      "excerpt": "You and ElevenLabs agree that all materials and documents exchanged during the arbitration proceedings shall be kept confidential and shall not be shared with anyone except the parties’ attorneys, accountants, or authorized representatives, and shall be subject to the condition that they agree to keep all materials and documents exchanged during the arbitration proceedings strictly confidential.\n\n(c) Opting Out of Arbitration. You have the right to opt out of binding arbitration within 30 days of the date you first accepted these Terms by providing us with notice of your decision to opt-out vi",
+      "confidence": 95
+    },
+    {
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "category": "FORCED_ARBITRATION",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "Right to Go to Court",
+      "summary": "You can reject any future changes to the arbitration clause by sending a signed notice within 30 days, keeping the previous version in effect.",
+      "excerpt": "Eleven Labs Inc.\nAttn: Legal Department – Arbitration Opt-Out\n169 Madison Ave #2484\nNew York, NY 10016\nLegal@elevenlabs.io\n(d) Rejection of Future Arbitration Changes. You may reject any change we make to Section 12 (except address changes) by personally signing and sending us notice within 30 days of the change by certified mail addressed to:\n\nEleven Labs Inc.\nAttn: Legal Department – Arbitration Opt-Out\n169 Madison Ave #2484\nNew York, NY 10016\nIf you do, the most recent version of Section 12 before the change you rejected will apply.",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Policy",
+      "category": "DATA_SALE",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No Data Sale",
+      "summary": "States that sharing personal information for targeted advertising is considered a sale under certain U.S. laws, but users can opt out of such sales and sharing.",
+      "excerpt": "In addition to the rights listed above, you may also have the right to lodge a complaint with a supervisory authority, including in your country of residence, place of work, or where an incident took place.\n\n(b) United States Residents\n\nResidents of certain U.S. states, including California, Connecticut, Colorado, Utah, Virginia, Oregon, Montana, or Texas, have additional privacy rights disclosures regarding their Personal Information, as described below. In certain U.S. states, you have the following rights in addition to those listed in Section 8(a):\n\nSale of Personal Information, Sharing fo",
+      "confidence": 93
+    }
+  ],
+  "history": [
+    {
+      "id": "6bc591ca-cc18-4191-9e62-2367e0d8ed8d",
+      "date": "2026-06-15T23:20:25.632+00:00",
+      "document_name": "Modern Slavery Policy Statement",
+      "points": 0,
+      "summary": "Based on the analysis of the Modern Slavery Policy Statement, no",
+      "added": 18,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "8f2767ae-df20-4452-8fcd-8701cb817395",
+      "date": "2026-06-15T23:15:26.64+00:00",
+      "document_name": "EU Digital Services Act (DSA)",
+      "points": 6,
+      "summary": "The EU Digital Services Act now includes provisions for increased transparency and",
+      "added": 2,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "fc68ba31-af35-4f8f-aeaf-fff5fdd55c97",
+      "date": "2026-06-15T23:15:19.345+00:00",
+      "document_name": "Privacy Policy",
+      "points": -35,
+      "summary": "This Privacy Policy indicates that the service extensively collects",
+      "added": 30,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "515591f3-db66-4b42-923c-a3ea69871ef6",
+      "date": "2026-06-15T23:05:18.852+00:00",
+      "document_name": "ElevenLabs Terms of Service (non-EEA)",
+      "points": -84,
+      "summary": "Your subscriptions will automatically renew and charge your payment method unless",
+      "added": 59,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "8c2d4586-aefb-4259-be6a-b2bdbd5d8706",
+      "date": "2026-06-15T22:51:06.587+00:00",
+      "document_name": "AI Transparency",
+      "points": 0,
+      "summary": "This is the first analysis of the AI Transparency document. No specific changes or clauses that work against users were identified in this review. Therefore, there are no immediate negative implications for users based on this analysis.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "ea089623-a53c-45c4-93a7-c4fd8033bb6b",
+      "date": "2026-06-15T22:50:04.987+00:00",
+      "document_name": "EU-US DATA PRIVACY FRAMEWORK POLICY",
+      "points": 0,
+      "summary": "This policy allows you to request access, correction, or",
+      "added": 9,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "d9117a5c-19d7-449a-9d53-adebbb749489",
+      "date": "2026-06-15T09:52:48.472+00:00",
+      "document_name": "CCPA Notice at Collection",
+      "points": 12,
+      "summary": "This document indicates that your data, including publicly available and third",
+      "added": 9,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}

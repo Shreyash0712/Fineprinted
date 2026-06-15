@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-15T05:44:12.241Z",
+  "generated_at": "2026-06-15T23:21:30.501Z",
   "stats": {
-    "services": 4,
-    "flagged_clauses": 183,
-    "changes_published": 43
+    "services": 5,
+    "flagged_clauses": 252,
+    "changes_published": 50
   },
   "services": [
     {
@@ -25,6 +25,16 @@
       "current_grade": "C",
       "created_at": "2026-06-15T04:27:29.692323+00:00",
       "updated_at": "2026-06-15T04:43:18.632+00:00"
+    },
+    {
+      "id": "8e8c70fc-e90d-4b68-bb4c-1b062259b2f6",
+      "name": "ElevenLabs",
+      "root_domain": "elevenlabs.io",
+      "status": "active",
+      "current_score": 12,
+      "current_grade": "F",
+      "created_at": "2026-06-15T09:40:27.533284+00:00",
+      "updated_at": "2026-06-15T23:20:25.632+00:00"
     },
     {
       "id": "d29f0bd1-7214-4099-89a0-474297dbecac",
