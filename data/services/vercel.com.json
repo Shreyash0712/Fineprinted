@@ -1,0 +1,290 @@
+{
+  "id": "a1e87e3e-9039-44ee-b73e-6acffdac4f63",
+  "name": "Vercel",
+  "root_domain": "vercel.com",
+  "grade": "C",
+  "score": 51,
+  "generated_at": "2026-06-15T05:44:12.240Z",
+  "last_published_at": "2026-06-15T05:43:41.932+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "You can get a human to review automated decisions.",
+        "points": 3
+      },
+      {
+        "text": "They extend GDPR/CCPA-style rights to all users.",
+        "points": 5
+      }
+    ],
+    "bad": [
+      {
+        "text": "Your personal data can be sold or handed to data brokers.",
+        "points": -15
+      },
+      {
+        "text": "You give up your right to sue in court over disputes.",
+        "points": -12
+      },
+      {
+        "text": "They can change the terms at any time without telling you.",
+        "points": -10
+      },
+      {
+        "text": "Your content and data are used to train their AI models.",
+        "points": -8
+      },
+      {
+        "text": "You're tracked across the web for targeted advertising.",
+        "points": -6
+      },
+      {
+        "text": "Any lawsuit must happen in their distant home court.",
+        "points": -5
+      }
+    ]
+  },
+  "documents": [
+    {
+      "name": "Privacy Notice",
+      "url": "https://vercel.com/legal/privacy-notice"
+    },
+    {
+      "name": "Acceptable Use Policy",
+      "url": "https://vercel.com/legal/acceptable-use-policy"
+    }
+  ],
+  "clauses": [
+    {
+      "document_name": "Privacy Notice",
+      "category": "DATA_SALE",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -15,
+      "label": "Sells Your Data",
+      "summary": "The clause acknowledges that Vercel may have shared personal data with third‑party advertising networks, which can be considered a sale or sharing of personal information under certain laws.",
+      "excerpt": "Categories of Personal Information Shared and the Categories of Third Parties to Whom it was Shared: Our Services are for users ages 16 and older, and we do not \"sell\" or \"share\" the personal information of users we know are under 16 years old. To the extent that certain US Data Privacy Laws consider some sharing of personal information for Advertising purposes to be \"selling\" or \"sharing\" of personal information, Vercel may have shared the following categories of personal information with third-party advertising networks in the preceding 12 months:\n\nIdentifiers;\nCommercial information; and\nIn",
+      "confidence": 85
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "FORCED_ARBITRATION",
+      "stance": "hostile",
+      "severity": "critical",
+      "points": -12,
+      "label": "Forced Arbitration",
+      "summary": "Users must submit unresolved DPF‑related complaints to a binding arbitration process outlined in Annex I.",
+      "excerpt": "In compliance with the EU-U.S. DPF, the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. DPF, Vercel is obligated to arbitrate claims and follow the terms as set forth in Annex I of the DPF Principles. You have the possibility, under certain conditions, to invoke binding arbitration for complaints regarding DPF compliance not resolved by any of the other DPF mechanisms. For additional information please see Annex I.\n\nYour Privacy Rights and Choices\nYou may have certain rights and choices available when it comes to how we collect and use your information. The rights available to you depend o",
+      "confidence": 90
+    },
+    {
+      "document_name": "Acceptable Use Policy",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The clause says Vercel can modify the policy at any time by posting it online, and the changes take effect immediately upon posting.",
+      "excerpt": "6. Changes to Policy\nVercel may update this Policy by posting a revised version at vercel.com/legal, effective upon posting.",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "Vercel may share de‑identified data, including AI product information, with AI partners to train and improve machine‑learning models, a practice imposed on users even though the data is de‑identified.",
+      "excerpt": "Note that we may also disclose information that we have de-identified. For Hobby and Pro plan users, subject to your data preferences in your team settings, we may disclose de-identified information (including de-identified AI Product Information) to AI business partners for their product improvement and development, including training and improving AI and machine learning models, with the ultimate purpose of improving the Vercel Services you use. You can learn more here.\n\nHow We Secure Your Information\nWe use reasonable and appropriate administrative, technical, and physical safeguards design",
+      "confidence": 88
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "AI_TRAINING",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Trains AI on Your Data",
+      "summary": "It lists personal data types that Vercel may use to train its AI models, indicating that your information can be used for AI product improvement.",
+      "excerpt": "Contact information, Professional and organizational information, Account information, Transactional information, Domain registration information, User content and file information, Website information, Device, location, and telemetry information, Image and audio information, AI product information\n\nWhere necessary, we process this information to perform a contract with you, such as processing your contact information to send you a technical announcement about the Services.\n\nInternal product development and improvement, including AI model training\n\nAI product information, Domain registration i",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Third-Party Tracking",
+      "summary": "The clause says the company may use cookies and other tracking technologies to deliver targeted ads based on your interests.",
+      "excerpt": "Communication. To send you marketing and administrative messages, such as technical or legal notices, invoices, product updates, surveys, security alerts, marketing promotions, newsletters, training, event reminders, and/or provide other news or information about Vercel and/or our partners. Please see Your Privacy Choices and Rights to learn how to manage your communication preferences.\n\nAccount Administration. To create and manage your account, complete transactions, and send billing, tax and other administrative information, such as purchase confirmations, receipts, and invoices.\n\nMarketing ",
+      "confidence": 92
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "UNFAVORABLE_JURISDICTION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Inconvenient Venue",
+      "summary": "The clause states that the U.S. Federal Trade Commission has jurisdiction over Vercel’s compliance, imposing a potentially inconvenient forum on users.",
+      "excerpt": "For transfers of personal information to a third party acting as a controller, Vercel complies with the DPF Notice Principle and Choice Principle. For onward transfers, Vercel is responsible for the processing of personal information it receives under the DPF Principles and subsequently transfers to a third party acting as an agent on its behalf. Vercel remains liable under the DPF Principles if its agent processes such personal information in a manner inconsistent with the DPF Principles, unless Vercel proves that it is not responsible for the event giving rise to the damage.\n\nThe Federal Tra",
+      "confidence": 85
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "AUTOMATED_DECISION_MAKING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Human Review",
+      "summary": "Vercel says it uses AI‑driven decisions but never for legal or similarly significant effects, limiting the impact on users.",
+      "excerpt": "Right to Restriction. You have the right to request that Vercel restrict the processing of your personal information in certain instances and/or restrict further disclosures, such as for certain sensitive information.\n\nRight to Delete. You have the right to request that we delete your personal information that we have collected.\n\nRight to Withdraw Consent. You have the right to withdraw consent where you have provided your consent for us to process your personal information. Please note that the withdrawal of your consent will not affect processing done previously based on that consent.\n\nAutom",
+      "confidence": 80
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause tells users they can complain to a data‑protection authority and exercise rights like accessing, updating, or deleting their data through account settings or a privacy request portal.",
+      "excerpt": "Right to Lodge a Complaint. You may also have the right to lodge a complaint with a supervisory authority about our processing of your personal information. This may, for example, be the supervisory authority of your specific jurisdiction.\n\nExercising your Rights. To exercise your rights you can either:\n\nUse your Account and Team Preferences as described below,\nSubmit a request via our Privacy Request Center, or\nContact us using the Contact Us information provided below.\nAccount Preferences. Your Account Preferences allow you to:\n\nAccess, update and correct certain account information at any t",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause outlines users' rights to access, correct, delete, withdraw consent, opt out of sale, limit sensitive data use, receive non‑discriminatory treatment, and obtain data portability.",
+      "excerpt": "Right to Access. You have the right to request access and receive certain information that we have collected about you.\nRight to Correct. You have the right to request correction of your personal information where it is inaccurate or incomplete. We generally recommend first making any changes in your Account Settings.\nRight to Delete. You have the right to request that we delete your personal information.\nRight to Withdraw Consent. You have the right to withdraw consent where you have provided your consent for us to process your personal information.\nRight to Know. You have the right to reques",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause explains how you can request access to or control over your personal data, including using an authorized agent, and sets verification requirements.",
+      "excerpt": "Use your Account and Team Preferences (as described in section Your Rights and Privacy Choices)\nSubmit a request via our Privacy Request Center\nContact us using the Contact Us information provided below.\nYou, or an authorized individual acting on your behalf, may submit a request relating to your personal information.\n\nWe may need you to provide certain identifying information related to your account (i.e., user ID) or your recent interactions with us to verify your identity or the identity of any individual for whom you are requesting information. We cannot respond to your request if we canno",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "It states that Vercel will respond to data‑subject requests within 45 days but may limit them for legal reasons, and clarifies its role as data controller under GDPR.",
+      "excerpt": "We fulfill requests within 45 days of receiving your request. Please note that your request may be limited in certain cases, for example if complying with your request would conflict with:\n\nFederal, state, or local law;\nRegulatory inquiries;\nSubpoenas; or\nExercising or defending legal claims.\nEEA and UK\nThis section applies to individuals based in the EEA and UK and outlines the processing of your personal information under Data Privacy Laws, including the General Data Protection Regulation (\"GDPR\").\n\nVercel acts as a data controller for personal information that we collect about you while usi",
+      "confidence": 92
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause informs users that they have certain privacy rights regarding their personal information, granting them legal protections.",
+      "excerpt": "Your Privacy Rights\nYou have certain rights related to the personal information that we process when you use our Sites and Services. Some of these rights only apply in certain circumstances, as set out below.",
+      "confidence": 95
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "The clause gives users a range of privacy rights—including access, correction, data portability, deletion, restriction, objection, and consent withdrawal—and explains they can exercise these rights.",
+      "excerpt": "Right of Access. You have the right to request access and receive certain information about how we use your personal information and with whom we share it.\nRight to Rectification. You have the right to request correction of your personal information where it is inaccurate or incomplete. We generally recommend first making any changes in your Account Settings.\nRight to Data Portability. You have the right to request a copy of your personal information in a structured, machine-readable format and to ask us to share this information with another entity.\nRight to Erasure. You have the right to req",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "It explains how users can submit verified requests for their privacy rights, the verification needed, and a 30‑day response window.",
+      "excerpt": "Use your Account and Team Preferences, (as described in section Your Rights and Privacy Choices)\nSubmit a request via our Privacy Request Center, or\nContact us using the Contact Us information provided below.\nYou, or an authorized individual acting on your behalf, may submit a verifiable request to exercise your rights relating to the personal information that we process about you.\n\nWe may need to provide certain identifying information, related to your account (i.e., user ID) or your recent interactions with us to verify your identity, or the identity of any data subject for whom you are requ",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "STATUTORY_RIGHTS",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 5,
+      "label": "Privacy Rights for All",
+      "summary": "It lists the limited circumstances where a user’s privacy requests may be denied and directs users to supervisory authorities for unresolved issues.",
+      "excerpt": "Where fulfilling your request would adversely affect other individuals, company trade secrets or intellectual property;\nWhere there are overriding public interest reasons; or\nWhere we are required by law to retain your personal information.\nIf you have unresolved concerns, we encourage you to come to us in the first instance, but you are entitled to address any grievance directly to the relevant Supervisory Authority. In certain instances if you are an End User, we encourage you to reach out to the relevant Customer first to address any complaints.",
+      "confidence": 92
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "It states that collected information may be used to train AI products, but also provides customers with ways to control how their data is used for AI training.",
+      "excerpt": "How We Use Information\nWe use your information as described in this Notice to provide our Sites and Services. For example, we may use your information in the following ways:\n\nService Operation. To operate and administer our Sites and provide, operate, deliver, monitor, and maintain our Services, including troubleshooting, system maintenance and upgrades.\n\nProduct Development and Improvement. To improve functionality, quality, user experience, and develop new features, including our AI Products and Services. Customers can learn about how to control the use of their information for AI product tr",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "Users may opt out of having their data used to train the company’s AI models, giving them control over that use.",
+      "excerpt": "Opt-out of Model Training as described in Section 3 of the Terms of Service. You can learn more here.\nMinimum Age Requirements for Our Sites and Services\nThe Sites and Services are not directed or intended for use by individuals under the age of 16. To use Vercel's Sites and Services, you must be old enough to consent to the processing of your information in your jurisdiction. We do not knowingly collect personal information from anyone under the age of 16. If you are a parent or guardian and you become aware that your child has provided us with personal information, please contact us. If we b",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy Notice",
+      "category": "AI_TRAINING",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 8,
+      "label": "No AI Training / Opt-Out",
+      "summary": "The clause says the company may use your data to train AI models but provides you with an opt‑out, limiting the practice.",
+      "excerpt": "We process this information based on our legitimate interest and the interests of third-party AI providers in developing and improving AI models under commercial arrangements, subject to appropriate and feasible safeguards and user opt-out rights. This processing does not apply to Enterprise Customers and is handled solely in accordance with applicable customer agreements and data processing addenda.\n\nCustomer support\t\nTroubleshooting and support information, Device, location, and telemetry information, Contact Information, Account Information, User Content and file Information, AI Product Inf",
+      "confidence": 96
+    }
+  ],
+  "history": [
+    {
+      "id": "9ccf8bea-8b73-4aec-ad53-46b713cb5ddf",
+      "date": "2026-06-15T05:43:41.932+00:00",
+      "document_name": "Acceptable Use Policy",
+      "points": -10,
+      "summary": "Vercel can now make changes to the Acceptable Use Policy at any time and have those changes take effect immediately. This means users must check the policy regularly to stay informed. No notice to users is required before changes occur.",
+      "added": 6,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "445431ee-3e00-4d6d-ab0b-e403e6f76e1e",
+      "date": "2026-06-15T05:41:42.962+00:00",
+      "document_name": "Privacy Notice",
+      "points": -38,
+      "summary": "Changes to the privacy notice allow the company to use collected information for AI training and share de-identified data with AI partners, but also provide users with ways to control how their data is used. The company may use cookies and tracking technologies for targeted ads and may have shared personal data with third-party advertising networks. Users have certain rights, including accessing, correcting, or deleting their data, and opting out of data use for AI training or targeted ads. A binding arbitration process has been introduced for unresolved complaints.",
+      "added": 47,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}

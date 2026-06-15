@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-15T04:44:08.798Z",
+  "generated_at": "2026-06-15T05:44:12.241Z",
   "stats": {
-    "services": 3,
-    "flagged_clauses": 164,
-    "changes_published": 41
+    "services": 4,
+    "flagged_clauses": 183,
+    "changes_published": 43
   },
   "services": [
     {
@@ -35,6 +35,16 @@
       "current_grade": "C",
       "created_at": "2026-06-13T03:43:44.517098+00:00",
       "updated_at": "2026-06-14T01:32:13.516+00:00"
+    },
+    {
+      "id": "a1e87e3e-9039-44ee-b73e-6acffdac4f63",
+      "name": "Vercel",
+      "root_domain": "vercel.com",
+      "status": "active",
+      "current_score": 51,
+      "current_grade": "C",
+      "created_at": "2026-06-15T05:27:36.347397+00:00",
+      "updated_at": "2026-06-15T05:43:41.932+00:00"
     }
   ]
 }
