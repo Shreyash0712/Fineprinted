@@ -2,10 +2,10 @@
   "id": "4427b1a6-f3bc-443e-a3fa-9ec633573740",
   "name": "Hugging Face",
   "root_domain": "huggingface.co",
-  "grade": "C",
-  "score": 72,
-  "generated_at": "2026-06-17T01:46:49.214Z",
-  "last_published_at": "2026-06-17T01:46:15.849+00:00",
+  "grade": "B",
+  "score": 75,
+  "generated_at": "2026-06-17T02:03:01.027Z",
+  "last_published_at": "2026-06-17T02:02:40.363+00:00",
   "summary": {
     "good": [
       {
@@ -27,12 +27,12 @@
         "points": -8
       },
       {
-        "text": "They can suspend or close your account at any time, for any reason.",
-        "points": -8
-      },
-      {
         "text": "Their liability to you is capped at almost nothing.",
         "points": -6
+      },
+      {
+        "text": "They can raise prices at any time, sometimes without notice.",
+        "points": -5
       },
       {
         "text": "The service is provided 'as is' with no guarantees.",
@@ -41,10 +41,6 @@
     ]
   },
   "documents": [
-    {
-      "name": "Terms of Service",
-      "url": "https://huggingface.co/terms-of-service"
-    },
     {
       "name": "Privacy",
       "url": "https://huggingface.co/privacy"
@@ -56,20 +52,13 @@
     {
       "name": "Code of Conduct",
       "url": "https://huggingface.co/code-of-conduct"
+    },
+    {
+      "name": "Terms of Service",
+      "url": "https://huggingface.co/terms-of-service"
     }
   ],
   "clauses": [
-    {
-      "document_name": "Terms of Service",
-      "category": "UNILATERAL_CHANGE",
-      "stance": "hostile",
-      "severity": "major",
-      "points": -10,
-      "label": "Silent Term Changes",
-      "summary": "The company can modify the terms at any time and those changes become binding after 10 days of posting, with continued use counting as acceptance.",
-      "excerpt": "Terms of ServicePrivacy PolicyContent PolicyCode of Conduct Terms of Service 🗓 Effective Date: September 15, 2022 Thanks for using Hugging Face and being part of our awesome community! 🤗 We drafted the following Terms of Service to make your user experience as smooth, private and secure as possible. We are very much open to feedback - contact us at legal@huggingface.co with any question or concern! Please read these Terms carefully as they contain important information about what we do and do not offer, and what you can and cannot do. Whenever you want to use or purchase the Services that we",
-      "confidence": 96
-    },
     {
       "document_name": "Privacy",
       "category": "UNILATERAL_CHANGE",
@@ -77,8 +66,8 @@
       "severity": "major",
       "points": -10,
       "label": "Silent Term Changes",
-      "summary": "The policy says the company can change the privacy terms at any time, and the changes become effective 10 days after posting, with continued use counting as acceptance.",
-      "excerpt": "Terms of ServicePrivacy PolicyContent PolicyCode of Conduct Hugging Face Privacy Policy 🗓 Effective Date: March 28, 2023 We have implemented this Privacy Policy because your privacy is important to us. This Privacy Policy (the “Policy”) describes the type of information that Hugging Face, Inc. (the “Company”) gathers from users of the Hugging Face services (the “Services”), and how the Company uses that information. The Policy is part of the Company Terms of Use. The Policy applies to all users of the Services (“Users”). The Company occasionally collects Personal Information from Users. “Pers",
+      "summary": "The policy says the company can change the privacy terms at any time and those changes become effective after 10 days, with continued use counting as acceptance.",
+      "excerpt": "We have implemented this Privacy Policy because your privacy is important to us. This Privacy Policy (the “Policy”) describes the type of information that Hugging Face, Inc. (the “Company”) gathers from users of the Hugging Face services (the “Services”), and how the Company uses that information. The Policy is part of the Company Terms of Use. The Policy applies to all users of the Services (“Users”). The Company occasionally collects Personal Information from Users. “Personal Information” means any information that can, alone or associated with other information, be used to identify an indiv",
       "confidence": 96
     },
     {
@@ -88,9 +77,31 @@
       "severity": "major",
       "points": -10,
       "label": "Silent Term Changes",
-      "summary": "The policy says changes become effective 10 days after posting and using the platform after that means you accept the new terms, giving the company the right to modify terms unilaterally.",
-      "excerpt": "Terms of ServicePrivacy PolicyContent PolicyCode of Conduct Content Policy 🤗 🗓 Effective Date: April 10, 2025 At Hugging Face, we are dedicated to helping the entire AI Community work together to advance Open, Collaborative, and Responsible Machine Learning. We value these relationships and aim to maintain an environment where people feel welcome and supported and get the most out of their contributions and experiences. We created the following Content Policy to outline our actions to protect our Community on our Platform and to provide important information about the Content we authorize to",
+      "summary": "The policy says the company can modify the rules at any time, and if you keep using the platform after 10 days of posting the new version, you are deemed to have accepted the changes.",
+      "excerpt": "At Hugging Face, we are dedicated to helping the entire AI Community work together to advance Open, Collaborative, and Responsible Machine Learning. We value these relationships and aim to maintain an environment where people feel welcome and supported and get the most out of their contributions and experiences. We created the following Content Policy to outline our actions to protect our Community on our Platform and to provide important information about the Content we authorize to be posted on our Platform. This Policy is incorporated into our Terms of Service, which is a binding agreement ",
       "confidence": 96
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The agreement says Hugging Face can modify the terms at any time, with changes becoming effective 10 days after posting, and continued use of the service after that means you accept the new terms.",
+      "excerpt": "Thanks for using Hugging Face and being part of our awesome community! 🤗 We drafted the following Terms of Service to make your user experience as smooth, private and secure as possible. We are very much open to feedback - contact us at legal@huggingface.co with any question or concern! Please read these Terms carefully as they contain important information about what we do and do not offer, and what you can and cannot do. Whenever you want to use or purchase the Services that we provide at https://huggingface.co and related sites (the \"Website\"), these Terms of Service, together with our Sup",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The clause lets the company change, suspend, or discontinue any service at any time, even without notifying users.",
+      "excerpt": "\"Machine Learning Application\" refers to a repository hosted on the Hub that allows a User to showcase Machine Learning experiments. \"Model\" refers to a pre-trained machine learning model including algorithms and weights, which can be run to make predictions. \"Order Form\" refers to the document shared by Hugging Face to the Customer describing the quantity of services ordered by the Customer and the fees payable for such services. Additional Order Forms may be negotiated between and executed by the Parties, and shall be incorporated into the Agreement. \"Organization\" refers to a workspace repr",
+      "confidence": 94
     },
     {
       "document_name": "Terms of Service",
@@ -99,30 +110,8 @@
       "severity": "major",
       "points": -8,
       "label": "Broad Content License",
-      "summary": "By posting, you give the company a worldwide, royalty‑free, non‑exclusive license to use and distribute your content, and for public content you also grant other users a perpetual, irrevocable license.",
-      "excerpt": "🚀 You must use our Services in strict compliance with these Terms, the Supplemental Terms for each Service, all of our policies available on our Website, and all applicable laws or regulations in the relevant jurisdiction(s). We may at any time modify, suspend, or discontinue, temporarily or permanently, the Services (or any part thereof) with or without notice. You agree that we will not be liable to you or to any third party for any modification, suspension or discontinuance of the Services. 👤 Your Account Pretty basic, but necessary before accessing some of our Services! In order to creat",
-      "confidence": 96
-    },
-    {
-      "document_name": "Terms of Service",
-      "category": "ACCOUNT_TERMINATION",
-      "stance": "hostile",
-      "severity": "major",
-      "points": -8,
-      "label": "Termination Any Time",
-      "summary": "The company can suspend or terminate your access to the services at any time, for any reason, and without notice.",
-      "excerpt": "When Content contains notice of a reasonable and customary license, (such as an open source license) such Content is intended to remain under the terms of such license when further accessed, distributed, or used. Neither party is permitted to remove reference to any such license. Any Content you download, access or use from us or another User, is at your own risk and subject to these Terms and/or the terms accompanying such Content. 💰 Payment We work hard to make our Services most useful to you, and we thank you for your trust and support! Our plans and fees payable for the use of the Service",
-      "confidence": 92
-    },
-    {
-      "document_name": "Terms of Service",
-      "category": "CONTENT_LICENSE_BROAD",
-      "stance": "hostile",
-      "severity": "major",
-      "points": -8,
-      "label": "Broad Content License",
-      "summary": "You give the company a perpetual, irrevocable, worldwide, royalty‑free license to use any feedback you provide, allowing them to commercialize it without further permission.",
-      "excerpt": "All information relating to these Terms and/or during negotiations before the execution of any binding document that we may share between us shall be treated as confidential (“Confidential Information”). During the Service Term, and for at least one (1) year thereafter, we expressly agree (i) to maintain the strict confidentiality of such Confidential Information, and to refrain from disclosing such Confidential Information to any third party, except as authorized by the original disclosing party in writing; (ii) to use such Confidential Information only for the purposes of performing its obli",
+      "summary": "The clause gives the company a perpetual, irrevocable, worldwide, royalty‑free license to use any feedback you provide, meaning you lose control over how your ideas are used.",
+      "excerpt": "During the Service Term, and for at least one (1) year thereafter, we expressly agree (i) to maintain the strict confidentiality of such Confidential Information, and to refrain from disclosing such Confidential Information to any third party, except as authorized by the original disclosing party in writing; (ii) to use such Confidential Information only for the purposes of performing its obligations or exercising its rights under this Agreement; and (iii) to use at least a reasonable standard of care in protecting the Confidential Information. These restrictions on the use or disclosure of Co",
       "confidence": 94
     },
     {
@@ -132,9 +121,31 @@
       "severity": "minor",
       "points": -6,
       "label": "Liability Capped",
-      "summary": "The clause caps the company’s and related parties’ liability to the amount you paid in the past year (or $50 for free services) and disclaims many types of damages, making the company less financially responsible for issues.",
-      "excerpt": "If you have any claims that any content on our Website violates or infringes your intellectual property rights, you may send your complaint to dmca@huggingface.co with detailed and accurate information supporting your claim. You also represent and warrant that you will not knowingly provide misleading information to support your claim. Open Source. Certain items provided with the Services may be subject to \"open source\" or \"creative commons\" or other similar licenses (collectively, \"Open Source\"). The Open Source license terms are not intended to be replaced or overridden by the license and ot",
-      "confidence": 92
+      "summary": "The clause says the company is not liable for any changes, suspension, or ending of the services, limiting its responsibility to users.",
+      "excerpt": "You agree that we will not be liable to you or to any third party for any modification, suspension or discontinuance of the Services. 👤 Your Account Pretty basic, but necessary before accessing some of our Services! In order to create an Account for yourself or for your Organization on our Website, you must be a natural person of at least age 13, or a legal entity duly registered. If you decide to create an Account for your Organization, you represent that you have the authority to act on behalf of your Organization and bind your Organization to these Terms. When you create your Account, we a",
+      "confidence": 94
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "LIABILITY_LIMITATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Liability Capped",
+      "summary": "The agreement caps the company’s total liability to the amount you paid in the past year (or $50 for free services) and limits damages to indirect or consequential types, which restricts your ability to recover larger losses.",
+      "excerpt": "Certain items provided with the Services may be subject to \"open source\" or \"creative commons\" or other similar licenses (collectively, \"Open Source\"). The Open Source license terms are not intended to be replaced or overridden by the license and other terms of these Terms; however, the limitations of liabilities, disclaimers, and this provision apply to any such Open Source. Nothing in these Terms limit your rights under, or grants you rights that supersede, the terms and conditions of any applicable Open Source license. If we (or you) make modifications to Open Source, and if the applicable ",
+      "confidence": 94
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "UNILATERAL_PRICE_CHANGE",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -5,
+      "label": "Price Changes Anytime",
+      "summary": "The company can change its prices at its discretion, with new rates applying to future subscriptions, and all fees are non‑refundable.",
+      "excerpt": "💰 Payment We work hard to make our Services most useful to you, and we thank you for your trust and support! Our plans and fees payable for the use of the Services you decide to purchase are available at https://huggingface.co/pricing. You may decide to choose a custom plan, in which case the payable fees and payment terms will be subject to further discussions and mutual agreement with us, and will be specified in the applicable Services Agreement, Order Form or any other binding document signed between us. All fees are exclusive of any applicable taxes, which You are solely responsible to p",
+      "confidence": 94
     },
     {
       "document_name": "Terms of Service",
@@ -143,9 +154,9 @@
       "severity": "minor",
       "points": -3,
       "label": "No Warranties",
-      "summary": "The company states that the services are provided \"as is\" without any warranties, meaning they are not liable for errors, availability, or any damages you may suffer from using the service.",
-      "excerpt": "In this regard, we make no warranties or representations about these Services. In other words, except as expressly provided otherwise herein, and to the fullest extent permitted by law, the Services and Content are provided \"as is\" and \"as available\". We disclaim all warranties or guarantees of any kind, express or implied, whether arising under any law or from any usage in trade, or otherwise, including but not limited to the implied warranties of merchantability, non-infringement, quiet enjoyment, fitness for a particular purpose, or otherwise. We further disclaim all warranties or guarantee",
-      "confidence": 96
+      "summary": "The clause says the service provides no warranties or guarantees about its performance, availability, or accuracy, and you are fully responsible for any damage from using it.",
+      "excerpt": "We disclaim all warranties or guarantees of any kind, express or implied, whether arising under any law or from any usage in trade, or otherwise, including but not limited to the implied warranties of merchantability, non-infringement, quiet enjoyment, fitness for a particular purpose, or otherwise. We further disclaim all warranties or guarantees about the accuracy, reliability or benefits of any Services, artificial intelligence, Models or any other technology or Content, or that the Services or Content will meet your requirements, be secure, uninterrupted or available at any time or locatio",
+      "confidence": 94
     },
     {
       "document_name": "Privacy",
@@ -171,6 +182,46 @@
     }
   ],
   "history": [
+    {
+      "id": "c5f68edc-25f6-456f-b825-6b67f60b778f",
+      "date": "2026-06-17T02:02:40.363+00:00",
+      "document_name": "Terms of Service",
+      "points": -32,
+      "summary": "The updated Terms of Service introduce several changes that",
+      "added": 0,
+      "modified": 8,
+      "removed": 0
+    },
+    {
+      "id": "3417ef2a-b2f1-4978-bc08-918bdfac8c75",
+      "date": "2026-06-17T01:58:40.047+00:00",
+      "document_name": "Code of Conduct",
+      "points": 0,
+      "summary": "One clause in the Code of Conduct was modified",
+      "added": 0,
+      "modified": 1,
+      "removed": 0
+    },
+    {
+      "id": "764914a7-a466-4370-a414-556e2f31aa4f",
+      "date": "2026-06-17T01:57:45.102+00:00",
+      "document_name": "Content Policy",
+      "points": -10,
+      "summary": "The Content Policy now permits the company to modify",
+      "added": 0,
+      "modified": 3,
+      "removed": 0
+    },
+    {
+      "id": "7eaf643d-1b25-4674-96f7-8e5e7cd1ada7",
+      "date": "2026-06-17T01:56:39.578+00:00",
+      "document_name": "Privacy",
+      "points": -10,
+      "summary": "The Privacy Policy was updated. The company can now",
+      "added": 0,
+      "modified": 1,
+      "removed": 0
+    },
     {
       "id": "90e5322b-4902-4fba-b9e2-c98e3e452441",
       "date": "2026-06-17T01:46:15.849+00:00",
