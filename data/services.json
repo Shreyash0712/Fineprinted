@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-15T23:21:30.501Z",
+  "generated_at": "2026-06-17T01:47:23.116Z",
   "stats": {
-    "services": 5,
-    "flagged_clauses": 252,
-    "changes_published": 50
+    "services": 6,
+    "flagged_clauses": 262,
+    "changes_published": 54
   },
   "services": [
     {
@@ -35,6 +35,16 @@
       "current_grade": "F",
       "created_at": "2026-06-15T09:40:27.533284+00:00",
       "updated_at": "2026-06-15T23:20:25.632+00:00"
+    },
+    {
+      "id": "4427b1a6-f3bc-443e-a3fa-9ec633573740",
+      "name": "Hugging Face",
+      "root_domain": "huggingface.co",
+      "status": "active",
+      "current_score": 72,
+      "current_grade": "C",
+      "created_at": "2026-06-17T01:34:13.431595+00:00",
+      "updated_at": "2026-06-17T01:46:15.849+00:00"
     },
     {
       "id": "d29f0bd1-7214-4099-89a0-474297dbecac",

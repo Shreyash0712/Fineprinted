@@ -1,0 +1,215 @@
+{
+  "id": "4427b1a6-f3bc-443e-a3fa-9ec633573740",
+  "name": "Hugging Face",
+  "root_domain": "huggingface.co",
+  "grade": "C",
+  "score": 72,
+  "generated_at": "2026-06-17T01:46:49.214Z",
+  "last_published_at": "2026-06-17T01:46:15.849+00:00",
+  "summary": {
+    "good": [
+      {
+        "text": "Third-party ad tracking is limited or can be turned off.",
+        "points": 3
+      },
+      {
+        "text": "Children's data gets extra protection or isn't collected.",
+        "points": 4
+      }
+    ],
+    "bad": [
+      {
+        "text": "They can change the terms at any time without telling you.",
+        "points": -10
+      },
+      {
+        "text": "They take a broad, perpetual, sublicensable license to your content.",
+        "points": -8
+      },
+      {
+        "text": "They can suspend or close your account at any time, for any reason.",
+        "points": -8
+      },
+      {
+        "text": "Their liability to you is capped at almost nothing.",
+        "points": -6
+      },
+      {
+        "text": "The service is provided 'as is' with no guarantees.",
+        "points": -3
+      }
+    ]
+  },
+  "documents": [
+    {
+      "name": "Terms of Service",
+      "url": "https://huggingface.co/terms-of-service"
+    },
+    {
+      "name": "Privacy",
+      "url": "https://huggingface.co/privacy"
+    },
+    {
+      "name": "Content Policy",
+      "url": "https://huggingface.co/content-policy"
+    },
+    {
+      "name": "Code of Conduct",
+      "url": "https://huggingface.co/code-of-conduct"
+    }
+  ],
+  "clauses": [
+    {
+      "document_name": "Terms of Service",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The company can modify the terms at any time and those changes become binding after 10 days of posting, with continued use counting as acceptance.",
+      "excerpt": "Terms of ServicePrivacy PolicyContent PolicyCode of Conduct Terms of Service 🗓 Effective Date: September 15, 2022 Thanks for using Hugging Face and being part of our awesome community! 🤗 We drafted the following Terms of Service to make your user experience as smooth, private and secure as possible. We are very much open to feedback - contact us at legal@huggingface.co with any question or concern! Please read these Terms carefully as they contain important information about what we do and do not offer, and what you can and cannot do. Whenever you want to use or purchase the Services that we",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The policy says the company can change the privacy terms at any time, and the changes become effective 10 days after posting, with continued use counting as acceptance.",
+      "excerpt": "Terms of ServicePrivacy PolicyContent PolicyCode of Conduct Hugging Face Privacy Policy 🗓 Effective Date: March 28, 2023 We have implemented this Privacy Policy because your privacy is important to us. This Privacy Policy (the “Policy”) describes the type of information that Hugging Face, Inc. (the “Company”) gathers from users of the Hugging Face services (the “Services”), and how the Company uses that information. The Policy is part of the Company Terms of Use. The Policy applies to all users of the Services (“Users”). The Company occasionally collects Personal Information from Users. “Pers",
+      "confidence": 96
+    },
+    {
+      "document_name": "Content Policy",
+      "category": "UNILATERAL_CHANGE",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -10,
+      "label": "Silent Term Changes",
+      "summary": "The policy says changes become effective 10 days after posting and using the platform after that means you accept the new terms, giving the company the right to modify terms unilaterally.",
+      "excerpt": "Terms of ServicePrivacy PolicyContent PolicyCode of Conduct Content Policy 🤗 🗓 Effective Date: April 10, 2025 At Hugging Face, we are dedicated to helping the entire AI Community work together to advance Open, Collaborative, and Responsible Machine Learning. We value these relationships and aim to maintain an environment where people feel welcome and supported and get the most out of their contributions and experiences. We created the following Content Policy to outline our actions to protect our Community on our Platform and to provide important information about the Content we authorize to",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "By posting, you give the company a worldwide, royalty‑free, non‑exclusive license to use and distribute your content, and for public content you also grant other users a perpetual, irrevocable license.",
+      "excerpt": "🚀 You must use our Services in strict compliance with these Terms, the Supplemental Terms for each Service, all of our policies available on our Website, and all applicable laws or regulations in the relevant jurisdiction(s). We may at any time modify, suspend, or discontinue, temporarily or permanently, the Services (or any part thereof) with or without notice. You agree that we will not be liable to you or to any third party for any modification, suspension or discontinuance of the Services. 👤 Your Account Pretty basic, but necessary before accessing some of our Services! In order to creat",
+      "confidence": 96
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "ACCOUNT_TERMINATION",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Termination Any Time",
+      "summary": "The company can suspend or terminate your access to the services at any time, for any reason, and without notice.",
+      "excerpt": "When Content contains notice of a reasonable and customary license, (such as an open source license) such Content is intended to remain under the terms of such license when further accessed, distributed, or used. Neither party is permitted to remove reference to any such license. Any Content you download, access or use from us or another User, is at your own risk and subject to these Terms and/or the terms accompanying such Content. 💰 Payment We work hard to make our Services most useful to you, and we thank you for your trust and support! Our plans and fees payable for the use of the Service",
+      "confidence": 92
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "CONTENT_LICENSE_BROAD",
+      "stance": "hostile",
+      "severity": "major",
+      "points": -8,
+      "label": "Broad Content License",
+      "summary": "You give the company a perpetual, irrevocable, worldwide, royalty‑free license to use any feedback you provide, allowing them to commercialize it without further permission.",
+      "excerpt": "All information relating to these Terms and/or during negotiations before the execution of any binding document that we may share between us shall be treated as confidential (“Confidential Information”). During the Service Term, and for at least one (1) year thereafter, we expressly agree (i) to maintain the strict confidentiality of such Confidential Information, and to refrain from disclosing such Confidential Information to any third party, except as authorized by the original disclosing party in writing; (ii) to use such Confidential Information only for the purposes of performing its obli",
+      "confidence": 94
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "LIABILITY_LIMITATION",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -6,
+      "label": "Liability Capped",
+      "summary": "The clause caps the company’s and related parties’ liability to the amount you paid in the past year (or $50 for free services) and disclaims many types of damages, making the company less financially responsible for issues.",
+      "excerpt": "If you have any claims that any content on our Website violates or infringes your intellectual property rights, you may send your complaint to dmca@huggingface.co with detailed and accurate information supporting your claim. You also represent and warrant that you will not knowingly provide misleading information to support your claim. Open Source. Certain items provided with the Services may be subject to \"open source\" or \"creative commons\" or other similar licenses (collectively, \"Open Source\"). The Open Source license terms are not intended to be replaced or overridden by the license and ot",
+      "confidence": 92
+    },
+    {
+      "document_name": "Terms of Service",
+      "category": "WARRANTY_DISCLAIMER",
+      "stance": "hostile",
+      "severity": "minor",
+      "points": -3,
+      "label": "No Warranties",
+      "summary": "The company states that the services are provided \"as is\" without any warranties, meaning they are not liable for errors, availability, or any damages you may suffer from using the service.",
+      "excerpt": "In this regard, we make no warranties or representations about these Services. In other words, except as expressly provided otherwise herein, and to the fullest extent permitted by law, the Services and Content are provided \"as is\" and \"as available\". We disclaim all warranties or guarantees of any kind, express or implied, whether arising under any law or from any usage in trade, or otherwise, including but not limited to the implied warranties of merchantability, non-infringement, quiet enjoyment, fitness for a particular purpose, or otherwise. We further disclaim all warranties or guarantee",
+      "confidence": 96
+    },
+    {
+      "document_name": "Privacy",
+      "category": "TRACKING_THIRD_PARTY",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 3,
+      "label": "Limited Tracking",
+      "summary": "The company says it respects Do Not Track signals and will not use cookies or advertising when those signals are present, and it does not sell personal data to third parties for advertising without consent.",
+      "excerpt": "370, amending the California Online Privacy Protection Act to require website operators to disclose how they respond to \"Do Not Track Signals\"; and whether third parties collect personally identifiable information about users when they use online services. The Company honors \"do not track\" signals and does not track, use cookies, or use advertising when a “do not track” mechanism is in place. The Company does not authorize the collection of personally identifiable information from our users for third party use through advertising technologies without separate member consent. California Civil C",
+      "confidence": 94
+    },
+    {
+      "document_name": "Privacy",
+      "category": "CHILDREN_DATA",
+      "stance": "protective",
+      "severity": "positive",
+      "points": 4,
+      "label": "Children Protected",
+      "summary": "The clause says the service is not aimed at children under 13, does not intend to collect their data, and will delete any such data if collected without parental consent.",
+      "excerpt": "If you have any questions about security, you can contact the Company at privacy@huggingface.co. In the event of an incident affecting your Personal Information, we will act promptly acceptable means to identify and address the incident, and to notify you. Please be aware that certain Personal Information and other information provided by you in connection with your use of the Services may be stored on your device (even if that Information is not collected by the Company). You are solely responsible for maintaining the security of your device from unauthorized access. Similarly, you also remai",
+      "confidence": 85
+    }
+  ],
+  "history": [
+    {
+      "id": "90e5322b-4902-4fba-b9e2-c98e3e452441",
+      "date": "2026-06-17T01:46:15.849+00:00",
+      "document_name": "Code of Conduct",
+      "points": 0,
+      "summary": "No user-hostile changes were found in this version of the Code of Conduct.",
+      "added": 1,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "9788db9b-4835-4269-92d5-3131d32f4ea6",
+      "date": "2026-06-17T01:45:16.785+00:00",
+      "document_name": "Content Policy",
+      "points": -10,
+      "summary": "The Content Policy now includes a clause allowing the company",
+      "added": 4,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "fc95ad4b-e613-4a15-bcb3-9e99f3c0d590",
+      "date": "2026-06-17T01:43:19.947+00:00",
+      "document_name": "Privacy",
+      "points": -3,
+      "summary": "This Privacy Policy includes a clause allowing the company to change",
+      "added": 5,
+      "modified": 0,
+      "removed": 0
+    },
+    {
+      "id": "a068604d-721a-4bc0-9ee3-63b1ac28a025",
+      "date": "2026-06-17T01:40:16.329+00:00",
+      "document_name": "Terms of Service",
+      "points": -35,
+      "summary": "These new Terms of Service introduce several significant conditions. The",
+      "added": 8,
+      "modified": 0,
+      "removed": 0
+    }
+  ]
+}
